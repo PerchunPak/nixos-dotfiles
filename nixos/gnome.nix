@@ -12,7 +12,6 @@
     environment.systemPackages = with pkgs; [
       gnome-text-editor
       gnome.gnome-calculator
-      gnome.gnome-logs
       loupe # image viewer
       gnome.nautilus # file manager
       snapshot # screenshot utility
