@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -33,4 +35,6 @@
     enable = true;
     user = "perchun";
   };
+
+  services.xserver.excludePackages = [ pkgs.xterm ];
 }
