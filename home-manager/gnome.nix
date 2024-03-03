@@ -46,7 +46,8 @@ in {
       mass = 60;
       resize-effect = true;
     };
-    "org/gnome/shell/extensions/dash-to-panel" = { # automatically generated
+    # automatically generated
+    "org/gnome/shell/extensions/dash-to-panel" = {
       animate-appicon-hover = true;
       animate-appicon-hover-animation-convexity = "{'RIPPLE': 2.0, 'PLANK': 1.0, 'SIMPLE': 0.0}";
       animate-appicon-hover-animation-extent = "{'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}";
