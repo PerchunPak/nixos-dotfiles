@@ -20,6 +20,7 @@
     # You can also split up your configuration and import pieces of it here:
     ./nvim.nix
     ./gnome.nix
+    ./git.nix
   ];
 
   nixpkgs = {
@@ -59,11 +60,6 @@
   # home.packages = with pkgs; [ steam ];
 
   programs.home-manager.enable = true;
-  programs.git = {
-    enable = true;
-    userName = "PerchunPak";
-    userEmail = "git@perchun.it";
-  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
