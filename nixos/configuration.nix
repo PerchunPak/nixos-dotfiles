@@ -97,6 +97,11 @@
   boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.useOSProber = true;
 
+  # Let sudo to remember my password for longer time
+  security.sudo.extraConfig = ''
+    Defaults        timestamp_timeout=30
+  '';
+
   users.users = {
     perchun = {
       isNormalUser = true;
