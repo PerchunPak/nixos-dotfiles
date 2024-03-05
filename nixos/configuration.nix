@@ -106,6 +106,7 @@
     perchun = {
       isNormalUser = true;
       description = "Perchun Pak";
+      hashedPassword = "$y$j9T$K1EYVhXG6o2yQPH4IUDsw0$P8nQZaE554VdULdAdPmJ2Z9S/fwQ132V6oYiM.RGZWB";
       # TODO remove after migrating from VM
       openssh.authorizedKeys.keys = [
         "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0DC/ybIBaOD4wi2paqfhkbXRbMTe1fqHOTHSSEuYqAYaQfEjIjEG3ZPE6qKO7Gy/QasMYn5GD9sO0JvQXlmaj7oLVskRww2Y6/c+zKQt+o7T1nLMz1UJjlsS1j97dmEYQYKZ/Ku8Tf2e/9VUSAxuRN92EZrEk8gSckO18rnCbYTUJeZS8nx0035y+1PUTq3PvVJvm3uPMhdCW3eoZPm/NOyxQlbxwNujC6DUyz5ovjsWCC9S8rKNz+n1RiFS4TEv/JgZwEgdQbAttzDStoeFDPOVdyxjFsf2GsNYfS9cqO14YfJe/43ntQxmJ5c2Tmx+z+QsRWlyy874J4sYGBL6cidXFHK3wC43au2avMmbaa1NBnYl1Pf+97z2m+oqwTDopO0B6wehj3Bg03xqzosaJ+yeJ0sKudRj1HYvr8qpwp9zJBZf1xPyeHjR0oXJt/7X0OUVHFXpdjI06s0lKb+Zt9VtmucaMma4RbmIWmPKoCnM0xlxNWmU2FS3bEmTggSc="
