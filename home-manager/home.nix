@@ -21,7 +21,9 @@
     ./nvim.nix
     ./gnome.nix
     ./git.nix
+    ./gpg.nix
     ./other.nix
+    ./secrets.nix
   ];
 
   nixpkgs = {
