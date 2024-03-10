@@ -26,6 +26,7 @@
     ./other.nix
     ./secrets.nix
     ./fish.nix
+    ./kitty.nix
   ];
 
   nixpkgs = {
