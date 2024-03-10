@@ -17,7 +17,6 @@
       gnome.nautilus # file manager
       snapshot # screenshot utility
       gnome.totem # video player
-      gnome.gnome-software # gui package installer
 
       gnome.gnome-tweaks
     ];
