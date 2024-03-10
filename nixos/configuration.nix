@@ -97,6 +97,8 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.useOSProber = true;
+  
+  networking.hostName = "perchun-pc";
 
   # Let sudo to remember my password for longer time
   security.sudo.extraConfig = ''
