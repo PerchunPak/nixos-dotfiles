@@ -25,6 +25,7 @@
     ./ssh.nix
     ./other.nix
     ./secrets.nix
+    ./fish.nix
   ];
 
   nixpkgs = {
