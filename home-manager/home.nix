@@ -65,6 +65,9 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
 
+  # create ~/dev folder
+  home.file."dev/.keep".text = "";
+
   programs.home-manager.enable = true;
 
   # Nicely reload system units when changing configs
