@@ -12,7 +12,7 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
-    outputs.homeManagerModules
+    outputs.homeManagerModules.setup-secret
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -22,6 +22,7 @@
     ./gnome.nix
     ./git.nix
     ./gpg.nix
+    ./ssh.nix
     ./other.nix
     ./secrets.nix
   ];
