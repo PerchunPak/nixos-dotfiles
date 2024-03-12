@@ -108,6 +108,7 @@
   # Let sudo to remember my password for longer time
   security.sudo.extraConfig = ''
     Defaults        timestamp_timeout=30
+    Defaults        lecture=never
   '';
 
   programs.fish.enable = true; # for making it default shell
