@@ -16,6 +16,7 @@
       ".ssh"
       ".local/share/keyrings"
       ".local/share/direnv"
+      ".local/share/fish"
       {
         directory = ".local/share/Steam";
         method = "symlink";
