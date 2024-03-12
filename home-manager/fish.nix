@@ -12,7 +12,7 @@
       docker-start = "sudo systemctl start docker";
       kssh = "kitten ssh";
       cop = "gh copilot suggest -t shell";
-      rebuild = "git add /home/perchun/dotfiles && sudo nixos-rebuild switch --flake /home/perchun/dotfiles";
+      rebuild = "nix fmt && git add . && sudo nixos-rebuild switch --flake .";
       rebuildt = "rebuild --show-trace";
       rebuildc = "rebuild && git commit";
     };
