@@ -35,6 +35,7 @@
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
       # "/etc/NetworkManager/system-connections" # TODO can't I setup it in nix?
+      "/etc/ssh" # ssh server keys # TODO remove when will migrate from VM
       {
         directory = "/var/lib/colord";
         user = "colord";
@@ -44,10 +45,6 @@
     ];
     files = [
       "/etc/machine-id"
-      {
-        file = "/var/keys/secret_file";
-        parentDirectory = {mode = "u=rwx,g=,o=";};
-      }
     ];
   };
 
