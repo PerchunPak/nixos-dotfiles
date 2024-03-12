@@ -24,6 +24,7 @@
     ./x11.nix
     ./gnome.nix
     ./fonts.nix
+    ./impermanence.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -94,10 +95,11 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/vda";
+  boot.loader.grub.device = "nodev";
+  boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
-  
+  boot.loader.efi.canTouchEfiVariables = true;
+
   networking.hostName = "perchun-pc";
 
   # Let sudo to remember my password for longer time

@@ -19,6 +19,14 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    impermanence = {
+      url = "github:nix-community/impermanence";
+    };
   };
 
   outputs = {
@@ -63,6 +71,11 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
+
+          inputs.disko.nixosModules.default
+          (import ./modules/nixos/disko.nix {device = "/dev/vda";})
+
+          inputs.impermanence.nixosModules.impermanence
         ];
       };
     };
