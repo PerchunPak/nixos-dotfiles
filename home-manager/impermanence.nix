@@ -5,6 +5,7 @@
 
   home.persistence."/persist/home" = {
     directories = [
+      "dotfiles"
       # "Downloads"
       # "Music"
       # "Pictures"

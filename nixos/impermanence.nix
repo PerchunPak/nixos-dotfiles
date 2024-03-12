@@ -29,7 +29,7 @@
   environment.persistence."/persist/system" = {
     hideMounts = true;
     directories = [
-      "/etc/nixos"
+      # "/etc/nixos" # i have it in ~/dotfiles
       "/var/log"
       "/var/lib/bluetooth"
       "/var/lib/nixos"
