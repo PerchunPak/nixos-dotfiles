@@ -13,7 +13,7 @@
       kssh = "kitten ssh";
       cop = "gh copilot suggest -t shell";
       rebuild = "nix fmt && git add . && sudo nixos-rebuild switch --flake .";
-      rebuildt = "rebuild --show-trace";
+      rebuildt = "rebuild --show-trace --option eval-cache false";
       rebuildc = "rebuild && git commit";
     };
     plugins = [
