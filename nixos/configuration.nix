@@ -95,9 +95,12 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  boot.loader.grub.device = "nodev";
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.useOSProber = true;
+  boot.loader.grub = {
+    enable = true;
+    device = "nodev";
+    efiSupport = true;
+    useOSProber = true;
+  };
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "perchun-pc";
@@ -107,7 +110,8 @@
     Defaults        timestamp_timeout=30
   '';
 
-  programs.fish.enable = true;
+  programs.fish.enable = true; # for making it default shell
+
   users.users = {
     perchun = {
       isNormalUser = true;
