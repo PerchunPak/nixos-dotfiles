@@ -18,6 +18,7 @@
       ".local/share/keyrings"
       ".local/share/direnv"
       ".local/share/fish"
+      ".mozilla"
       {
         directory = ".local/share/Steam";
         method = "symlink";

@@ -28,6 +28,7 @@
     ./fish.nix
     ./kitty.nix
     ./impermanence.nix
+    ./firefox.nix
   ];
 
   nixpkgs = {
@@ -40,6 +41,7 @@
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
+      inputs.nur.overlay
 
       # Or define it inline, for example:
       # (final: prev: {
