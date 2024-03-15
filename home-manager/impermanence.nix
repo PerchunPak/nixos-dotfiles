@@ -19,6 +19,7 @@
       ".local/share/direnv"
       ".local/share/fish"
       ".mozilla"
+      ".cache/tlrc"
       {
         directory = ".local/share/Steam";
         method = "symlink";
