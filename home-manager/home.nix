@@ -30,6 +30,7 @@
     ./impermanence.nix
     ./firefox.nix
     ./gaming.nix
+    ./python.nix
   ];
 
   nixpkgs = {
