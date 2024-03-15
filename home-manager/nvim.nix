@@ -381,6 +381,15 @@
           "_" = ["trim_whitespace"];
         };
       };
+      # LSP
+      lsp = {
+        enable = true;
+        servers = {
+          nil_ls.enable = true; # nixd.enable = true; # TODO replace it when will work https://github.com/nix-community/nixd/issues/357
+          pyright.enable = true; # pylyzer.enable = true; # TODO replace it when will work https://github.com/NixOS/nixpkgs/issues/295735
+          ruff-lsp.enable = true;
+        };
+      };
       # Autocompletion
       cmp = {
         enable = true;
