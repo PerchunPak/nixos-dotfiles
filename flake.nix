@@ -28,6 +28,11 @@
     impermanence = {
       url = "github:nix-community/impermanence";
     };
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs = {
