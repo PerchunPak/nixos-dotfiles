@@ -29,6 +29,7 @@
     ./kitty.nix
     ./impermanence.nix
     ./firefox.nix
+    ./gaming.nix
   ];
 
   nixpkgs = {
