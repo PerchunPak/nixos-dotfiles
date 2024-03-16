@@ -25,17 +25,23 @@
       conform-nvim = {
         enable = true;
         # notifyOnError = false; # why kickstarter has this off?
+        formatOnSave = {
+          timeoutMs = 500;
+          lspFallback = true;
+        };
+        # WARN Do not forget to add these to `programs.nixvim.extraPackages` in default.nix
         formattersByFt = {
           lua = ["stylua"];
           # Conform will run multiple formatters sequentially
-          python = ["isort" "black"];
+          python = ["ruff_fix" "ruff_format"];
           # Use a sub-list to run only the first available formatter
           javascript = [["prettierd" "prettier"]];
           # Use the "*" filetype to run formatters on all filetypes.
-          "*" = ["codespell"];
+          "*" = ["codespell" "trim_whitespace"];
           # Use the "_" filetype to run formatters on filetypes that don't
           # have other formatters configured.
-          "_" = ["trim_whitespace"];
+          # "_" = ["trim_whitespace"];
+          nix = ["alejandra"];
         };
       };
       # LSP

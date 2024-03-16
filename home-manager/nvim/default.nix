@@ -15,5 +15,13 @@
   programs.nixvim = {
     enable = true;
     extraConfigLua = builtins.readFile ./config.lua;
+    extraPackages = with pkgs.unstable; [
+      stylua
+      ruff
+      prettierd
+      codespell
+      gawk # trim_whitespace
+      alejandra
+    ];
   };
 }
