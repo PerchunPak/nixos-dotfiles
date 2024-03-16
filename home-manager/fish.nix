@@ -9,6 +9,7 @@
       tide configure --auto --style=Lean --prompt_colors="True color" --show_time=No --lean_prompt_height="One line" --prompt_spacing=Compact --icons="Few icons" --transient=No
     '';
     shellAliases = {
+      v = "nvim";
       ls = "${pkgs.eza}/bin/eza --icons";
       la = "${pkgs.eza}/bin/eza --icons -la";
       lt = "${pkgs.eza}/bin/eza --icons --tree";
