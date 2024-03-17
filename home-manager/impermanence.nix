@@ -20,6 +20,8 @@
       ".local/share/fish"
       ".mozilla"
       ".cache/tlrc"
+      ".local/share/pypoetry"
+      ".cache/pypoetry"
       {
         directory = ".local/share/Steam";
         method = "symlink";
