@@ -25,10 +25,16 @@
       conform-nvim = {
         enable = true;
         # notifyOnError = false; # why kickstarter has this off?
-        formatOnSave = {
-          timeoutMs = 500;
-          lspFallback = true;
-        };
+        # see https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
+        formatOnSave = ''
+          function(bufnr)
+            -- Disable with a global or buffer-local variable
+            if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+              return
+            end
+            return { timeout_ms = 500, lsp_fallback = true }
+          end
+        '';
         # WARN Do not forget to add these to `programs.nixvim.extraPackages` in default.nix
         formattersByFt = {
           lua = ["stylua"];
