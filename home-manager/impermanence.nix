@@ -19,7 +19,6 @@
       ".local/share/direnv"
       ".local/share/fish"
       ".mozilla"
-      ".cache/tlrc"
       ".local/share/pypoetry"
       ".cache/pypoetry"
       {
