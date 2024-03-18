@@ -63,20 +63,20 @@
       # Autocompletion
       cmp = {
         enable = true;
-        settings.options = {
-          completion.completeopt = "menu,menuone,noinsert";
+        settings = {
+          options = {
+            completion.completeopt = "menu,menuone,noinsert";
+          };
+          sources = [
+            {name = "nvim_lsp";}
+            {name = "luasnip";}
+            {name = "path";}
+            {name = "fish";} # idk what it does, it is here because I use fish
+          ];
         };
       };
       # Snippet Engine & its associated nvim-cmp source
       luasnip.enable = true;
-      cmp_luasnip.enable = true;
-      # Adds other completion capabilities.
-      #  nvim-cmp does not ship with all sources by default. They are split
-      #  into multiple repos for maintenance purposes.
-      cmp-nvim-lsp.enable = true;
-      cmp-path.enable = true;
-      # idk what it does, it is here because I use fish
-      cmp-fish.enable = true;
 
       # Highlight todo, notes, etc in comments
       todo-comments.enable = true;
