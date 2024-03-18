@@ -32,6 +32,7 @@
     ./gaming.nix
     ./python.nix
     ./qbittorrent
+    ./neofetch
   ];
 
   nixpkgs = {
