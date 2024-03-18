@@ -7,7 +7,7 @@
   home.packages = with pkgs; [
     fd
     eza
-    tlrc # tldr in rust
+    tldr
     mission-center
     ncdu
     tor-browser
