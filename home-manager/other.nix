@@ -15,7 +15,6 @@
     gnome.pomodoro
     vlc
     meld
-    element-desktop # TODO impermanence
     zoom-us # TODO impermanence?
     gnumake
   ];
