@@ -21,6 +21,7 @@
       ".mozilla"
       ".local/share/pypoetry"
       ".cache/pypoetry"
+      ".local/share/PrismLauncher"
       {
         directory = ".local/share/Steam";
         method = "symlink";
