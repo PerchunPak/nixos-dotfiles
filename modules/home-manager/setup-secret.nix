@@ -18,7 +18,6 @@ in {
   };
 
   config = {
-    #    _ = lib.traceVal config;
     systemd.user.services =
       lib.concatMapAttrs (
         name: secret: {

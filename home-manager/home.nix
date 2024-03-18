@@ -31,6 +31,7 @@
     ./firefox.nix
     ./gaming.nix
     ./python.nix
+    ./qbittorrent
   ];
 
   nixpkgs = {

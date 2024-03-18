@@ -9,7 +9,6 @@
     eza
     tlrc # tldr in rust
     mission-center
-    qbittorrent # TODO impermanence
     ncdu
     tor-browser
     peazip
