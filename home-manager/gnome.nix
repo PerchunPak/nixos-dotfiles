@@ -10,7 +10,7 @@
     appindicator
     burn-my-windows
     tiling-assistant
-    # keyboard-layout-groups # self-written extention; needs to be repackaged manually - will do later, it doesn't work anyway
+    # keyboard-layout-groups # self-written extension; needs to be repackaged manually - will do later, it doesn't work anyway
   ];
 in {
   home.packages = extensions;
@@ -102,5 +102,16 @@ in {
     "org/gnome/shell/extensions/trayIconsReloaded" = {
       invoke-to-workspace = false;
     };
+
+    ### Apps section ###
+
+    "org/gnome/pomodoro/preferences" = {
+      pomodoro-duration = 1800.0;
+      short-break-duration = 420.0;
+      hide-system-notifications = true;
+      enabled-plugins = ["sounds" "dark-theme" "notifications"];
+    };
+    # goes with gnome-pomodoro settings
+    "org/gnome/desktop/notifications" = {show-banners = true;};
   };
 }

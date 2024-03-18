@@ -12,7 +12,7 @@
     ncdu
     tor-browser
     peazip
-    gnome.pomodoro # TODO impermanence
+    gnome.pomodoro
     vlc
     meld
     element-desktop # TODO impermanence
