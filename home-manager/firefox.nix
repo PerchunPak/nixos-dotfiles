@@ -19,6 +19,7 @@
 
           # was removed from store
           # see https://github.com/vladikoff/netflix-1080p-firefox/issues/63
+          # (sus tbh)
           (
             buildFirefoxXpiAddon
             {
