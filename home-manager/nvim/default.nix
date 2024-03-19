@@ -14,6 +14,7 @@
 
   programs.nixvim = {
     enable = true;
+    enableMan = false;
     extraConfigLua = builtins.readFile ./config.lua;
     extraPackages = with pkgs.unstable; [
       stylua
