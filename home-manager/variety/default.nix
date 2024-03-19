@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   home.packages = [pkgs.variety];
 
+  home.file.".config/autostart/variety.desktop".source = "${pkgs.variety}/share/variety/variety-autostart.desktop.template";
+
   xdg.configFile = {
     "variety/.firstrun".text = "2023-10-27 11:06:59";
     "variety/Downloaded/.variety_download_folder".text = "2023-10-27 11:06:59";
