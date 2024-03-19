@@ -35,6 +35,7 @@
     ./neofetch
     ./github-cli.nix
     ./variety
+    ./vesktop
   ];
 
   nixpkgs = {
