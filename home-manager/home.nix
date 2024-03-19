@@ -33,6 +33,7 @@
     ./python.nix
     ./qbittorrent
     ./neofetch
+    ./github-cli.nix
   ];
 
   nixpkgs = {
