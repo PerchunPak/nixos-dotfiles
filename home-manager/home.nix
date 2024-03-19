@@ -34,6 +34,7 @@
     ./qbittorrent
     ./neofetch
     ./github-cli.nix
+    ./variety
   ];
 
   nixpkgs = {
