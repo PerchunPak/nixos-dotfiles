@@ -19,6 +19,12 @@ in {
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = map (extension: extension.extensionUuid) extensions;
+      favorite-apps = [
+        "firefox.desktop"
+        "org.gnome.Nautilus.desktop"
+        "kitty.desktop"
+        "vesktop.desktop"
+      ];
     };
 
     "org/gnome/desktop/interface" = {
