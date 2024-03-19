@@ -78,6 +78,9 @@
   # create ~/dev folder
   home.file."dev/.keep".text = "";
 
+  # `allowUnfree` for experimental nix commands
+  xdg.configFile."nixpkgs/config.nix".text = "{ allowUnfree = true; }";
+
   programs.home-manager.enable = true;
 
   # Nicely reload system units when changing configs
