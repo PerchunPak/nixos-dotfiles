@@ -19,6 +19,7 @@
       rebuild = "nix fmt && git add . && sudo nixos-rebuild switch --flake .";
       rebuildt = "rebuild --show-trace --option eval-cache false";
       rebuildc = "rebuild && git commit";
+      mount-diskroot = "sudo mkdir /disk-root && sudo mount /dev/root_vg/root /disk-root";
     };
     plugins = [
       {
