@@ -4,22 +4,23 @@
   ...
 }: let
   cfg = config.my.setup-stuff;
-  enabledServices = lib.attrsets.filterAttrs (e: e.enable) cfg;
+  enabledServices = lib.attrsets.filterAttrs (n: v: v.enable) cfg;
 in {
   options = {
     my.setup-stuff = lib.mkOption {
       description = "Attribute set of simple objects to create systemd service for setting up some stuff.";
-      type = lib.types.attrsOf lib.types.submodule {
+      type = lib.types.attrsOf (lib.types.submodule {
         options = {
           enable = lib.mkEnableOption "Enable this service.";
           command = lib.mkOption {type = lib.types.string;};
         };
-      };
+      });
     };
   };
 
   config.systemd.user.services =
-    lib.lists.optional enabledServices
+    lib.mkIf
+    (enabledServices == [])
     (
       lib.concatMapAttrs (
         name: {command}:
