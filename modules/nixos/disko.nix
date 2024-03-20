@@ -22,18 +22,22 @@
             };
           };
           swap = {
-            size = "4G";
+            size = "8G";
             content = {
               type = "swap";
               resumeDevice = true;
             };
           };
-          root = {
-            name = "root";
+          luks = {
             size = "100%";
             content = {
-              type = "lvm_pv";
-              vg = "root_vg";
+              type = "luks";
+              name = "encrypted";
+              settings.allowDiscards = true;
+              content = {
+                type = "lvm_pv";
+                vg = "root_vg";
+              };
             };
           };
         };
