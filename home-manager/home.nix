@@ -25,7 +25,7 @@
     ./ssh.nix
     ./other.nix
     ./secrets.nix
-    ./fish
+    ./fish.nix
     ./kitty.nix
     ./impermanence.nix
     ./firefox.nix

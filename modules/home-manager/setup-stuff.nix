@@ -12,7 +12,7 @@ in {
       type = lib.types.attrsOf (lib.types.submodule {
         options = {
           enable = lib.mkEnableOption "Enable this service.";
-          command = lib.mkOption {type = lib.types.string;};
+          command = lib.mkOption {type = lib.types.str;};
         };
       });
     };
@@ -20,29 +20,28 @@ in {
 
   config.systemd.user.services =
     lib.mkIf
-    (enabledServices == [])
+    (enabledServices != [])
     (
       lib.concatMapAttrs (
-        name: {command}:
-          {
-            "setup-${name}" = {
-              Unit = {
-                After = ["agenix.service"];
-                # 3 total retries
-                StartLimitIntervalSec = 0;
-                StartLimitBurst = 3;
-              };
-
-              Install.WantedBy = ["default.target"];
-              Service = {
-                Type = "oneshot";
-                RestartSec = 5;
-                Restart = "onfailure";
-                ExecStart = command;
-              };
+        name: {command, ...}: {
+          "setup-${name}" = {
+            Unit = {
+              After = ["agenix.service"];
+              # 3 total retries
+              StartLimitIntervalSec = 0;
+              StartLimitBurst = 3;
             };
-          }
-          enabledServices
+
+            Install.WantedBy = ["default.target"];
+            Service = {
+              Type = "oneshot";
+              RestartSec = 5;
+              Restart = "onfailure";
+              ExecStart = command;
+            };
+          };
+        }
       )
+      enabledServices
     );
 }

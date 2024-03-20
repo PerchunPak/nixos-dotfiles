@@ -4,8 +4,8 @@
   home.file.".config/autostart/variety.desktop".source = "${pkgs.variety}/share/variety/variety-autostart.desktop.template";
 
   xdg.configFile = {
-    "variety/.firstrun".text = "2023-10-27 11:06:59";
-    "variety/Downloaded/.variety_download_folder".text = "2023-10-27 11:06:59";
+    #"variety/.firstrun".text = "2023-10-27 11:06:59";
+    #"variety/Downloaded/.variety_download_folder".text = "2023-10-27 11:06:59";
     "variety/ui.conf".source = ./ui.conf;
     "variety/variety.conf".source = ./variety.conf;
   };

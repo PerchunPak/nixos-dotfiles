@@ -1,8 +1,4 @@
 {pkgs, ...}: {
-  imports = [
-    ./tide.nix
-  ];
-
   programs.fish = {
     enable = true;
     loginShellInit = ''
@@ -33,6 +29,17 @@
         name = "z";
         src = pkgs.fishPlugins.z.src;
       }
+      {
+        name = "tide";
+        src = pkgs.fishPlugins.tide.src;
+      }
     ];
+  };
+
+  my.setup-stuff.fish-variables = {
+    enable = true;
+    command = ''
+      ${pkgs.fish}/bin/fish -c 'tide configure --auto --style=Lean --prompt_colors="True color" --show_time=No --lean_prompt_height="One line" --prompt_spacing=Compact --icons="Few icons" --transient=No'
+    '';
   };
 }
