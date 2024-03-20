@@ -14,8 +14,17 @@ cd nixos-dotfiles
 # Format disk; also modify device name if needed
 sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko ./modules/nixos/disko.nix --arg device '"/dev/vda"'
 sudo nixos-generate-config --root /mnt
+sudo rm -rf /mnt/etc/nixos
+sudo cp ~/nixos-dotfiles /mnt/etc/nixos
 sudo nixos-install --root /mnt
-reboot # Boot into installed clear OS
+# Try to boot into installed OS
+reboot
+# It won't work for the first time, just type any letter as long as it asks
+# if you want to ignore errors
+#
+# After kernel panic, it will delete all configs and will boot into clear OS
+# though without terminal emulator. Press Ctrl Alt F4 to open another TTY.
+# Then login into user and type these commands
 nix-shell -p git neovim
 git clone https://github.com/PerchunPak/nixos-dotfiles ~/dotfiles
 cd ~/dotfiles
