@@ -7,13 +7,6 @@
     directories = [
       "dotfiles"
       "dev"
-      # "Downloads"
-      # "Music"
-      # "Pictures"
-      # "Documents"
-      # "Videos"
-      # "VirtualBox VMs"
-      # ".gnupg"
       ".ssh"
       ".local/share/keyrings"
       ".local/share/direnv"
@@ -22,14 +15,13 @@
       ".local/share/pypoetry"
       ".cache/pypoetry"
       ".local/share/PrismLauncher"
-      ".config/monitors.xml" # monitor configuration
       {
         directory = ".local/share/Steam";
         method = "symlink";
       }
     ];
     files = [
-      # ".screenrc"
+      ".config/monitors.xml" # monitor configuration
     ];
     allowOther = true;
   };
