@@ -35,6 +35,6 @@
       enabled-plugins = ["sounds" "dark-theme" "notifications"];
     };
     # goes with gnome-pomodoro settings
-    "org/gnome/desktop/notifications" = {show-banners = true;};
+    "org/gnome/desktop/notifications".show-banners = true;
   };
 }
