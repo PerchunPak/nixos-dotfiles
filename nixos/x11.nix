@@ -4,8 +4,9 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    layout = "us,cz,ua,ru";
+    xkbVariant = ",qwerty,,";
+    xkbOptions = "grp:ctrl_shift_toggle";
   };
 
   # Enable sound with pipewire.

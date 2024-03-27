@@ -19,20 +19,8 @@ in {
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = map (extension: extension.extensionUuid) extensions;
-      favorite-apps = [
-        "firefox.desktop"
-        "org.gnome.Nautilus.desktop"
-        "kitty.desktop"
-        "vesktop.desktop"
-      ];
     };
 
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-      enable-hot-corners = false;
-    };
-
-    # Extensions
     "org/gnome/shell/extensions/blur-my-shell/applications" = {
       blur = false;
     };
@@ -108,16 +96,5 @@ in {
     "org/gnome/shell/extensions/trayIconsReloaded" = {
       invoke-to-workspace = false;
     };
-
-    ### Apps section ###
-
-    "org/gnome/pomodoro/preferences" = {
-      pomodoro-duration = 1800.0;
-      short-break-duration = 420.0;
-      hide-system-notifications = true;
-      enabled-plugins = ["sounds" "dark-theme" "notifications"];
-    };
-    # goes with gnome-pomodoro settings
-    "org/gnome/desktop/notifications" = {show-banners = true;};
   };
 }

@@ -22,6 +22,7 @@
       ".local/share/pypoetry"
       ".cache/pypoetry"
       ".local/share/PrismLauncher"
+      ".config/monitors.xml" # monitor configuration
       {
         directory = ".local/share/Steam";
         method = "symlink";
