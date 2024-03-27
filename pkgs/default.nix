@@ -5,7 +5,6 @@ pkgs: let
 in {
   my = rec {
     # example = pkgs.callPackage ./example { };
-    gh-copilot = pkgs.callPackage ./gh-copilot.nix {};
     cruft = callPythonPackage ./cruft.nix {inherit examples;};
     examples = callPythonPackage ./python-examples {};
   };
