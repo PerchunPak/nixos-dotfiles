@@ -55,7 +55,7 @@
       lsp = {
         enable = true;
         servers = {
-          nixd.enable = true;
+          nil_ls.enable = true;
           pyright.enable = true; # pylyzer.enable = true; # TODO replace it when will work https://github.com/NixOS/nixpkgs/issues/295735
           ruff-lsp.enable = true;
           yamlls.enable = true;

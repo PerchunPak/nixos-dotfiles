@@ -19,6 +19,7 @@
       rebuildt = "rebuild --show-trace --option eval-cache false";
       rebuildc = "rebuild && git commit";
       mount-diskroot = "sudo mkdir /disk-root && sudo mount /dev/root_vg/root /disk-root";
+      pystart = "source ~/dev/python-template/.venv/bin/activate.fish && cruft create ~/dev/python-template && deactivate";
     };
     plugins = [
       {
@@ -41,5 +42,10 @@
     command = ''
       ${pkgs.fish}/bin/fish -c 'tide configure --auto --style=Lean --prompt_colors="True color" --show_time=No --lean_prompt_height="One line" --prompt_spacing=Compact --icons="Few icons" --transient=No'
     '';
+  };
+
+  my.setup-stuff.python-template = {
+    enable = true;
+    command = "/usr/bin/env bash ${./setup-python-template.sh}";
   };
 }
