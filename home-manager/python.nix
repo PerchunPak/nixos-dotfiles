@@ -4,5 +4,6 @@
     python312Packages.black
     ruff
     poetry
+    pkgs.my.cruft
   ];
 }

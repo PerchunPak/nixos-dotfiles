@@ -3,9 +3,8 @@
 pkgs: let
   callPythonPackage = pkgs.lib.callPackageWith (pkgs // pkgs.python3Packages // {pydantic_1 = pkgs.python3Packages.pydantic;});
 in {
-  my = rec {
+  my = {
     # example = pkgs.callPackage ./example { };
-    cruft = callPythonPackage ./cruft.nix {inherit examples;};
-    examples = callPythonPackage ./python-examples {};
+    cruft = callPythonPackage ./cruft.nix {pytest_7 = pkgs.python3Packages.pytest;};
   };
 }
