@@ -12,6 +12,7 @@
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       enable-hot-corners = false;
+      clock-show-seconds = true;
     };
 
     "org/gnome/mutter".dynamic-workspaces = true;
