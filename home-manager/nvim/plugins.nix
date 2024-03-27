@@ -2,15 +2,15 @@
   programs.nixvim = {
     plugins = {
       transparent.enable = true;
-      comment-nvim.enable = true;
+      comment.enable = true;
       gitsigns = {
         enable = true;
-        signs = {
-          add = {text = "+";};
-          change = {text = "~";};
-          delete = {text = "_";};
-          topdelete = {text = "‾";};
-          changedelete = {text = "~";};
+        settings.signs = {
+          add.text = "+";
+          change.text = "~";
+          delete.text = "_";
+          topdelete.text = "‾";
+          changedelete.text = "~";
         };
       };
       which-key.enable = true;
@@ -25,6 +25,7 @@
       conform-nvim = {
         enable = true;
         # notifyOnError = false; # why kickstarter has this off?
+
         # see https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
         formatOnSave = ''
           function(bufnr)
