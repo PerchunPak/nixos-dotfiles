@@ -18,7 +18,7 @@
   my.setup-stuff.qbittorrent-config = {
     enable = true;
     command = ''
-      ${pkgs.coreutils}/bin/cp -rn ${config.xdg.configHome}/qBittorrent-example/. ${config.xdg.configHome}/qBittorrent
+      /usr/bin/env bash -c '${pkgs.coreutils}/bin/cp -rn ${config.xdg.configHome}/qBittorrent-example/. ${config.xdg.configHome}/qBittorrent || true'
     '';
   };
 }
