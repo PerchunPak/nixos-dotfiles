@@ -222,13 +222,13 @@
         #  Symbols are things like variables, functions, types, etc.
         "<leader>ds" = {
           action = "lsp_document_symbols";
-          desc = "[D]ocument [S]ymbols";
+          desc = "[D]ocument [S]symbols";
         };
         # Fuzzy find all the symbols in your current workspace
         #  Similar to document symbols, except searches over your whole project.
         "<leader>ws" = {
           action = "lsp_dynamic_workspace_symbols";
-          desc = "[W]orkspace [S]ymbols";
+          desc = "[W]orkspace [S]symbols";
         };
       };
       # For an understanding of why these mappings were
@@ -272,6 +272,7 @@
           end, { 'i', 's' })
         '';
       };
+      toggleterm.openMapping = "<c-\\>";
     };
   };
 }

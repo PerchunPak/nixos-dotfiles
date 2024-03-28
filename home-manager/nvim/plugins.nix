@@ -123,6 +123,14 @@
         #    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
         #    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
       };
+      toggleterm = {
+        enable = true;
+        shadeTerminals = false;
+        terminalMappings = true;
+        # for system reproducibility reasons
+        persistSize = false;
+        persistMode = false;
+      };
     };
     extraPlugins = with pkgs.unstable.vimPlugins; [
       vim-sleuth # Detect tabstop and shiftwidth automatically
