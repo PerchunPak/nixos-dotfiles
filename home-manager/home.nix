@@ -72,9 +72,6 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
 
-  # create ~/dev folder
-  home.file."dev/.keep".text = "";
-
   # `allowUnfree` for experimental nix commands
   xdg.configFile."nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
