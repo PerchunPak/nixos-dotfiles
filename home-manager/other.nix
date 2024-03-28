@@ -1,9 +1,12 @@
 {pkgs, ...}: {
-  programs.ripgrep.enable = true;
-  programs.bat.enable = true;
-  programs.chromium.enable = true;
-  programs.obs-studio.enable = true;
-  programs.htop.enable = true;
+  programs = {
+    ripgrep.enable = true;
+    bat.enable = true;
+    chromium.enable = true;
+    obs-studio.enable = true;
+    htop.enable = true;
+    lazygit.enable = true;
+  };
   home.packages = with pkgs; [
     fd
     eza

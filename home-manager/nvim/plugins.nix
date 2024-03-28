@@ -137,6 +137,7 @@
       vim-sleuth # Detect tabstop and shiftwidth automatically
       nvim-web-devicons # Useful for getting pretty icons, but requires a Nerd Font.
       neodev-nvim # used for completion, annotations and signatures of Neovim apis
+      lazygit-nvim
     ];
   };
 }

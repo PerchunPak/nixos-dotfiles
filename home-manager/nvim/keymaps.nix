@@ -127,6 +127,13 @@
         action = "vim.lsp.buf.rename";
         options = {desc = "[R]e[n]ame";};
       }
+
+      {
+        mode = "n";
+        key = "<leader>g";
+        action = ":LazyGit<CR>";
+        options = {desc = "Open [G]it";};
+      }
     ];
     plugins = {
       which-key.registrations = {
