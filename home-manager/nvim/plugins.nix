@@ -27,7 +27,10 @@ in {
           ui-select.enable = true;
         };
       };
-      fidget.enable = true; # bottom left notifications
+      fidget = {
+        enable = true; # bottom left notifications
+        notification.window.winblend = 0;
+      };
       conform-nvim = {
         enable = true;
         # notifyOnError = false; # why kickstarter has this off?
