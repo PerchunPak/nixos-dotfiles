@@ -168,6 +168,13 @@ in {
         };
       };
       rainbow-delimiters.enable = true;
+      undotree = {
+        enable = true;
+        settings = {
+          DiffpanelHeight = 0;
+          SetFocusWhenToggle = 1;
+        };
+      };
     };
     extraPlugins = with pkgs.unstable.vimPlugins; [
       vim-sleuth # Detect tabstop and shiftwidth automatically

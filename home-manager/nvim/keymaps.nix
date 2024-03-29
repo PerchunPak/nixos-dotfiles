@@ -134,6 +134,13 @@
         action = ":LazyGit<CR>";
         options = {desc = "Open [G]it";};
       }
+
+      {
+        mode = "n";
+        key = "<leader>u";
+        action = ":UndotreeToggle<CR>";
+        options = {desc = "Open [U]ndo tree";};
+      }
     ];
     plugins = {
       which-key.registrations = {
