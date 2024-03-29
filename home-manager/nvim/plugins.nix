@@ -132,6 +132,10 @@
         persistSize = false;
         persistMode = false;
       };
+      alpha = {
+        enable = true;
+        theme = "startify";
+      };
     };
     extraPlugins = with pkgs.unstable.vimPlugins; [
       vim-sleuth # Detect tabstop and shiftwidth automatically
