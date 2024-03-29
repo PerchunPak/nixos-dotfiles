@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: let
+  nixvimHelpers = inputs.nixvim.lib.x86_64-linux.helpers;
+in {
   programs.nixvim = {
     plugins = {
       transparent.enable = true;
@@ -110,6 +116,18 @@
             # cursor location to LINE:COLUMN
             section_location = "%2l:%-2v";
           };
+          indentscope = {
+            draw = {
+              delay = 0;
+              animation = nixvimHelpers.mkRaw "function() return 0 end"; # disable animation
+              priority = 2;
+            };
+            options = {
+              try_as_border = true;
+              border = "top";
+            };
+            symbol = "▎";
+          };
         };
       };
       # Highlight, edit, and navigate code
@@ -135,6 +153,19 @@
       alpha = {
         enable = true;
         theme = "startify";
+      };
+      indent-blankline = {
+        enable = true;
+        settings = {
+          indent = {
+            smart_indent_cap = false;
+            priority = 1;
+          };
+          scope = {
+            show_start = false;
+            show_end = false;
+          };
+        };
       };
     };
     extraPlugins = with pkgs.unstable.vimPlugins; [
