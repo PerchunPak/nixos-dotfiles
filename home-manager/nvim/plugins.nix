@@ -7,7 +7,6 @@
 in {
   programs.nixvim = {
     plugins = {
-      transparent.enable = true;
       comment.enable = true;
       gitsigns = {
         enable = true;
@@ -144,6 +143,7 @@ in {
         #    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
         #    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
       };
+      transparent.enable = true;
       nvim-autopairs.enable = true;
       toggleterm = {
         enable = true;
