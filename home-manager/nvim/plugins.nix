@@ -167,6 +167,7 @@ in {
           };
         };
       };
+      rainbow-delimiters.enable = true;
     };
     extraPlugins = with pkgs.unstable.vimPlugins; [
       vim-sleuth # Detect tabstop and shiftwidth automatically
