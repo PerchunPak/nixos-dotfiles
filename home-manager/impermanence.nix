@@ -22,6 +22,7 @@
     ];
     files = [
       ".config/monitors.xml" # monitor configuration
+      ".config/lazygit/state.yml"
     ];
     allowOther = true;
   };
