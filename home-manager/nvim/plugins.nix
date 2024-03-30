@@ -130,6 +130,9 @@ in {
             };
             symbol = "▎";
           };
+          basics = {
+            enable = true;
+          };
         };
       };
       # Highlight, edit, and navigate code

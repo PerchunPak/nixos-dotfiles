@@ -6,12 +6,11 @@
       maplocalleader = " ";
       transparent_enabled = true;
     };
-    options = {
+    opts = {
       number = true;
       relativenumber = true;
       mouse = ""; # completely disable mouse
       showmode = false; # Don't show the mode, since it's already in status line
-      clipboard = "unnamedplus"; # Sync clipboard between OS and Neovim.
       breakindent = true;
       undofile = true; # Save undo history
       # Case-insensitive searching UNLESS \C or capital in search
@@ -40,6 +39,7 @@
       scrolloff = 10;
 
       hlsearch = true;
+      splitkeep = "cursor";
     };
   };
 }
