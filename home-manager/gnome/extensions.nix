@@ -4,7 +4,6 @@
     compiz-alike-magic-lamp-effect
     compiz-windows-effect
     dash-to-panel
-    # material-you-theme # outdated for gnome 45
     tray-icons-reloaded
     caffeine
     appindicator

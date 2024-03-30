@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  gtk.enable = true;
   programs = {
     ripgrep.enable = true;
     bat.enable = true;

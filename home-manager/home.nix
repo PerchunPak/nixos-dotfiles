@@ -33,6 +33,7 @@
     ./github-cli.nix
     ./variety
     ./vesktop
+    ./catppuccin.nix
   ];
 
   nixpkgs = {
@@ -76,6 +77,7 @@
   xdg.configFile."nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
   programs.home-manager.enable = true;
+  xdg.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

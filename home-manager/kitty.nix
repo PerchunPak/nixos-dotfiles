@@ -6,7 +6,6 @@
       name = "MesloLGS NF";
       package = pkgs.meslo-lgs-nf;
     };
-    theme = "Darkside";
     settings = {
       font_size = "10.7";
       scrollback_pager_history_size = 10;

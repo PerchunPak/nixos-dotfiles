@@ -34,6 +34,8 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.home-manager.follows = "home-manager";
     };
+
+    catppuccin.url = "github:Stonks3141/ctp-nix";
   };
 
   outputs = {
