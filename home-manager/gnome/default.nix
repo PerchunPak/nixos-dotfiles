@@ -3,6 +3,7 @@
     ./extensions.nix
     ./settings.nix
     ./mimeapps.nix
+    ./exclude-desktop-entries.nix
   ];
 
   # alert sound
