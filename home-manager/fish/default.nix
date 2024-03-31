@@ -27,10 +27,6 @@
         src = pkgs.fishPlugins.done.src;
       }
       {
-        name = "z";
-        src = pkgs.fishPlugins.z.src;
-      }
-      {
         name = "tide";
         src = pkgs.fishPlugins.tide.src;
       }
