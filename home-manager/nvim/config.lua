@@ -55,6 +55,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
+-- You can configure sections in the statusline by overriding their
+-- default behavior. For example, here we set the section for
+-- cursor location to LINE:COLUMN
+MiniStatusline.section_location = function()
+	return "%2l:%-2v"
+end
+
 -- See https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
 vim.api.nvim_create_user_command("FormatDisable", function(args)
 	if args.bang then

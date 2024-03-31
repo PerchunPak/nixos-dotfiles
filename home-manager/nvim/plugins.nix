@@ -113,10 +113,6 @@ in {
           #  and try some other statusline plugin
           statusline = {
             use_icons = true;
-            # You can configure sections in the statusline by overriding their
-            # default behavior. For example, here we set the section for
-            # cursor location to LINE:COLUMN
-            section_location = "%2l:%-2v";
           };
           indentscope = {
             draw = {
@@ -133,6 +129,9 @@ in {
           basics = {
             enable = true;
           };
+          bracketed.enable = true;
+          comment.enable = true;
+          pairs.enable = true;
         };
       };
       # Highlight, edit, and navigate code
@@ -147,7 +146,6 @@ in {
         #    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
       };
       transparent.enable = true;
-      nvim-autopairs.enable = true;
       toggleterm = {
         enable = true;
         shadeTerminals = false;
