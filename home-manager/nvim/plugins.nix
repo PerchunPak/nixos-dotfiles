@@ -111,9 +111,7 @@ in {
           # Simple and easy statusline.
           #  You could remove this setup call if you don't like it,
           #  and try some other statusline plugin
-          statusline = {
-            use_icons = true;
-          };
+          statusline.use_icons = true;
           indentscope = {
             draw = {
               delay = 0;
@@ -126,12 +124,10 @@ in {
             };
             symbol = "▎";
           };
-          basics = {
-            enable = true;
-          };
-          bracketed.enable = true;
-          comment.enable = true;
-          pairs.enable = true;
+          basics = {};
+          bracketed = {};
+          comment = {};
+          pairs = {};
         };
       };
       # Highlight, edit, and navigate code
