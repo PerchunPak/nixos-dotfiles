@@ -7,6 +7,7 @@
     obs-studio.enable = true;
     htop.enable = true;
     lazygit.enable = true;
+    jq.enable = true;
   };
   home.packages = with pkgs; [
     fd
