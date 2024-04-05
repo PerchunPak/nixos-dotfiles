@@ -6,7 +6,7 @@
   services.xserver = {
     layout = "us,cz,ua,ru";
     xkbVariant = ",qwerty,,";
-    xkbOptions = "grp:ctrl_shift_toggle";
+    xkbOptions = "grp:alt_shift_toggle";
   };
 
   # Enable sound with pipewire.
