@@ -82,7 +82,7 @@
           ./nixos/configuration.nix
 
           inputs.disko.nixosModules.default
-          (import ./modules/nixos/disko.nix {device = "/dev/vda";})
+          (import ./modules/nixos/disko.nix {device = "/dev/nvme0n1";})
 
           inputs.impermanence.nixosModules.impermanence
           inputs.nur.nixosModules.nur

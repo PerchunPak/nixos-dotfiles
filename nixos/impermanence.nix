@@ -16,8 +16,7 @@
         btrfs subvolume delete "$1"
     }
 
-    # TODO it wipes out data older than 3 days, change it when will move out from vm
-    for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +3); do
+    for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +30); do
         delete_subvolume_recursively "$i"
     done
 
@@ -34,8 +33,7 @@
       "/var/lib/bluetooth"
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
-      # "/etc/NetworkManager/system-connections" # TODO can't I setup it in nix?
-      "/etc/ssh" # ssh server keys # TODO remove when will migrate from VM
+      "/etc/NetworkManager/system-connections"
       {
         directory = "/var/lib/colord";
         user = "colord";

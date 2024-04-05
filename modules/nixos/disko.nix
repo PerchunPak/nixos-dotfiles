@@ -6,11 +6,6 @@
       content = {
         type = "gpt";
         partitions = {
-          boot = {
-            name = "boot";
-            size = "1M";
-            type = "EF02";
-          };
           esp = {
             name = "ESP";
             size = "500M";
@@ -21,8 +16,10 @@
               mountpoint = "/boot";
             };
           };
+          fedora_2 = {};
+          fedora_3 = {};
           swap = {
-            size = "8G";
+            size = "32G";
             content = {
               type = "swap";
               resumeDevice = true;
