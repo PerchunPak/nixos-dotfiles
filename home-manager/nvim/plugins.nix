@@ -127,7 +127,6 @@ in {
           basics = {};
           bracketed = {};
           comment = {};
-          pairs = {};
         };
       };
       # Highlight, edit, and navigate code
@@ -142,6 +141,7 @@ in {
         #    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
       };
       transparent.enable = true;
+      nvim-autopairs.enable = true;
       toggleterm = {
         enable = true;
         shadeTerminals = false;
