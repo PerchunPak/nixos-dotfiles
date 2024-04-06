@@ -11,14 +11,14 @@
 
   # Enable sound, these are settings from Gnome live ISO.
   # Enabling only pipewire results in crackling sound for me
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  sound.enable = false;
+  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
-    alsa.enable = false;
-    alsa.support32Bit = false;
-    pulse.enable = false;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
   };
