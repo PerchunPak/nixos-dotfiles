@@ -26,6 +26,7 @@
     ./fonts.nix
     ./impermanence.nix
     ./catppuccin.nix
+    ./apple-keyboard.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
