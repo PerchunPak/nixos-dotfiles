@@ -7,7 +7,7 @@
       package = pkgs.meslo-lgs-nf;
     };
     settings = {
-      font_size = "10.7";
+      font_size = "14.0";
       scrollback_pager_history_size = 10;
       scrollback_fill_enlarged_window = true;
       show_hyperlink_targets = true;
