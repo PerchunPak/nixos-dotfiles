@@ -12,6 +12,7 @@
       ".local/share/direnv"
       ".local/share/fish"
       ".mozilla"
+      ".cache/mozilla"
       ".local/share/pypoetry"
       ".cache/pypoetry"
       ".local/share/PrismLauncher"
