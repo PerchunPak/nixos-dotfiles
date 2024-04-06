@@ -13,6 +13,7 @@
       color-scheme = "prefer-dark";
       enable-hot-corners = false;
       clock-show-seconds = true;
+      text-scaling-factor = 1.3;
     };
 
     "org/gnome/mutter".dynamic-workspaces = true;
