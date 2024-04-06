@@ -16,8 +16,14 @@
       text-scaling-factor = 1.3;
     };
 
-    "org/gnome/mutter".dynamic-workspaces = true;
+    "org/gnome/mutter" = {
+      dynamic-workspaces = true;
+      center-new-windows = true;
+    };
+
     "org/gnome/desktop/session".idle-delay = lib.hm.gvariant.mkUint32 900;
+    "org/gnome/desktop/peripherals/mouse".speed = -0.75;
+    "org/gnome/desktop/wm/preferences".button-layout = "appmenu:minimize,maximize,close";
 
     "org/gnome/desktop/wm/keybindings" = {
       show-desktop = ["<Super>d"];
