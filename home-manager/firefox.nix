@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }: {
   programs.firefox = {
@@ -117,4 +118,7 @@
       };
     };
   };
+
+  # Autostart firefox
+  xdg.configFile."autostart/firefox.desktop".source = "${config.programs.firefox.package}/share/applications/firefox.desktop";
 }
