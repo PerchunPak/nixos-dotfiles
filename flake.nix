@@ -37,11 +37,6 @@
     };
 
     catppuccin.url = "github:Stonks3141/ctp-nix";
-
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
   };
 
   outputs = {
