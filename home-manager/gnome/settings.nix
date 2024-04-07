@@ -24,6 +24,7 @@
     "org/gnome/desktop/session".idle-delay = lib.hm.gvariant.mkUint32 900;
     "org/gnome/desktop/peripherals/mouse".speed = -0.75;
     "org/gnome/desktop/wm/preferences".button-layout = "appmenu:minimize,maximize,close";
+    "org/gnome/settings-daemon/plugins".media-keys = 2; # volume adjustment step
 
     "org/gnome/desktop/wm/keybindings" = {
       show-desktop = ["<Super>d"];
