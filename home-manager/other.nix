@@ -22,6 +22,7 @@
     meld
     zoom-us
     gnumake
+    dig
   ];
 
   home.sessionVariables = {
