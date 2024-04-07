@@ -60,9 +60,21 @@ in {
         enable = true;
         servers = {
           nil_ls.enable = true;
-          pylyzer.enable = true;
-          ruff-lsp.enable = true;
+          pylsp = {
+            enable = true;
+            settings.plugins = {
+              black = {
+                enabled = true;
+                line_length = 120;
+              };
+              isort.enabled = true;
+              rope.enabled = true;
+              # rope_autoimport.enabled = true; # Isn't it already enabled in Jedi?
+              ruff.enabled = true;
+            };
+          };
           yamlls.enable = true;
+          typos-lsp.enable = true;
         };
       };
       # Autocompletion
