@@ -6,7 +6,6 @@
   services.xserver = {
     layout = "us,cz,ua,ru";
     xkbVariant = ",qwerty,,";
-    xkbOptions = "grp:alt_shift_toggle";
   };
 
   # Enable sound, these are settings from Gnome live ISO.

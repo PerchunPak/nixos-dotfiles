@@ -9,6 +9,7 @@
     appindicator
     burn-my-windows
     tiling-assistant
+    quick-lang-switch
     # keyboard-layout-groups # self-written extension; needs to be repackaged manually - will do later, it doesn't work anyway
   ];
 in {
