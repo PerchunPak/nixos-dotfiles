@@ -17,6 +17,7 @@
           languagetool
           disable-javascript
           enhancer-for-youtube
+          simple-tab-groups
 
           # was removed from store
           # see https://github.com/vladikoff/netflix-1080p-firefox/issues/63
