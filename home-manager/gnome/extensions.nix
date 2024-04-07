@@ -26,6 +26,7 @@ in {
     };
     "org/gnome/shell/extensions/burn-my-windows" = {
       show-support-dialog = false;
+      last-prefs-version = 39;
     };
     "org/gnome/shell/extensions/caffeine" = {
       show-notifications = false;
@@ -37,7 +38,7 @@ in {
     };
     "org/gnome/shell/extensions/com/github/hermes83/compiz-windows-effect" = {
       speedup-factor-divider = 22.0;
-      mass = 60;
+      mass = 20.0;
       resize-effect = true;
     };
     # automatically generated
@@ -96,5 +97,15 @@ in {
     "org/gnome/shell/extensions/trayIconsReloaded" = {
       invoke-to-workspace = false;
     };
+  };
+
+  xdg.configFile = {
+    "burn-my-windows/profiles/1712511832337322.conf".text = ''
+      [burn-my-windows-profile]
+      show-support-dialog=false
+      profile-window-type=0
+      profile-animation-type=0
+      fire-enable-effect=true
+    '';
   };
 }
