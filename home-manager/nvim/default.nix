@@ -15,6 +15,7 @@
   programs.nixvim = {
     enable = true;
     enableMan = false;
+    clipboard.providers.wl-copy.enable = true;
     extraConfigLua = builtins.readFile ./config.lua;
     extraPackages = with pkgs.unstable; [
       stylua
