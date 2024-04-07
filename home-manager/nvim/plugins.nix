@@ -32,7 +32,9 @@ in {
       };
       conform-nvim = {
         enable = true;
-        # notifyOnError = false; # why kickstarter has this off?
+        # If you save file with syntax errors, it will stop you from
+        # typing for next ~0.5s. Which is really annoying
+        notifyOnError = false;
 
         # see https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
         formatOnSave = ''
@@ -46,17 +48,11 @@ in {
         '';
         # WARN Do not forget to add these to `programs.nixvim.extraPackages` in default.nix
         formattersByFt = {
-          lua = ["stylua"];
-          # Conform will run multiple formatters sequentially
-          python = ["ruff_fix" "ruff_format"];
-          # Use a sub-list to run only the first available formatter
-          javascript = [["prettierd" "prettier"]];
-          # Use the "*" filetype to run formatters on all filetypes.
-          "*" = ["codespell" "trim_whitespace"];
-          # Use the "_" filetype to run formatters on filetypes that don't
-          # have other formatters configured.
-          # "_" = ["trim_whitespace"];
           nix = ["alejandra"];
+          lua = ["stylua"];
+          python = ["ruff_fix" "ruff_format"];
+          javascript = ["prettierd"];
+          "*" = ["codespell" "trim_whitespace"];
         };
       };
       # LSP

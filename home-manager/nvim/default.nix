@@ -18,12 +18,13 @@
     clipboard.providers.wl-copy.enable = true;
     extraConfigLua = builtins.readFile ./config.lua;
     extraPackages = with pkgs.unstable; [
-      stylua
-      ruff
-      prettierd
-      codespell
-      gawk # trim_whitespace
+      # For conform-nvim
       alejandra
+      codespell
+      prettierd
+      ruff
+      stylua
+      gawk # trim_whitespace
     ];
   };
 }
