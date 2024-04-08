@@ -23,6 +23,7 @@
     zoom-us
     gnumake
     dig
+    pciutils # neofetch needs this to display GPU
   ];
 
   home.sessionVariables = {
