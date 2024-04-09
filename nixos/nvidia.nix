@@ -41,6 +41,6 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = pkgs.unstable.linuxPackages_latest.nvidia_x11;
+    package = pkgs.linuxPackages_latest.nvidia_x11;
   };
 }
