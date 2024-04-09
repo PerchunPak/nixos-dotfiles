@@ -24,6 +24,7 @@
     gnumake
     dig
     pciutils # neofetch needs this to display GPU
+    gnome.gnome-clocks
   ];
 
   home.sessionVariables = {
