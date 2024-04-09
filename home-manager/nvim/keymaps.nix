@@ -169,80 +169,80 @@
         # See `:help telescope.builtin`
         "<leader>sh" = {
           action = "help_tags";
-          desc = "[S]earch [H]elp";
+          options.desc = "[S]earch [H]elp";
         };
         "<leader>sk" = {
           action = "keymaps";
-          desc = "[S]earch [K]eymaps";
+          options.desc = "[S]earch [K]eymaps";
         };
         "<leader>sf" = {
           action = "find_files";
-          desc = "[S]earch [F]iles";
+          options.desc = "[S]earch [F]iles";
         };
         "<leader>ss" = {
           action = "builtin";
-          desc = "[S]earch [S]elect Telescope";
+          options.desc = "[S]earch [S]elect Telescope";
         };
         "<leader>sw" = {
           action = "grep_string";
-          desc = "[S]earch current [W]ord";
+          options.desc = "[S]earch current [W]ord";
         };
         "<leader>sg" = {
           action = "live_grep";
-          desc = "[S]earch by [G]rep";
+          options.desc = "[S]earch by [G]rep";
         };
         "<leader>sd" = {
           action = "diagnostics";
-          desc = "[S]earch [D]iagnostics";
+          options.desc = "[S]earch [D]iagnostics";
         };
         "<leader>sr" = {
           action = "resume";
-          desc = "[S]earch [R]esume";
+          options.desc = "[S]earch [R]esume";
         };
         "<leader>s." = {
           action = "oldfiles";
-          desc = "[S]earch Recent Files (\".\" for repeat)";
+          options.desc = "[S]earch Recent Files (\".\" for repeat)";
         };
         "<leader><leader>" = {
           action = "buffers";
-          desc = "[ ] Find existing buffers";
+          options.desc = "[ ] Find existing buffers";
         };
         #  Jump to the definition of the word under your cursor.
         #   This is where a variable was first declared, or where a function is defined, etc.
         #   To jump back, press <C-t>.
         "gd" = {
           action = "lsp_definitions";
-          desc = "[G]oto [D]efinition";
+          options.desc = "[G]oto [D]efinition";
         };
         # Find references for the word under your cursor.
         "gr" = {
           action = "lsp_references";
-          desc = "[G]oto [R]eferences";
+          options.desc = "[G]oto [R]eferences";
         };
         # Jump to the implementation of the word under your cursor.
         #  Useful when your language has ways of declaring types without an actual implementation.
         "gI" = {
           action = "lsp_implementations";
-          desc = "[G]oto [I]mplementation";
+          options.desc = "[G]oto [I]mplementation";
         };
         # Jump to the type of the word under your cursor.
         #  Useful when you're not sure what type a variable is and you want to see
         #  the definition of its *type*, not where it was *defined*.
         "<leader>D" = {
           action = "lsp_type_definitions";
-          desc = "Type [D]efinition";
+          options.desc = "Type [D]efinition";
         };
         # Fuzzy find all the symbols in your current document.
         #  Symbols are things like variables, functions, types, etc.
         "<leader>ds" = {
           action = "lsp_document_symbols";
-          desc = "[D]ocument [S]symbols";
+          options.desc = "[D]ocument [S]symbols";
         };
         # Fuzzy find all the symbols in your current workspace
         #  Similar to document symbols, except searches over your whole project.
         "<leader>ws" = {
           action = "lsp_dynamic_workspace_symbols";
-          desc = "[W]orkspace [S]symbols";
+          options.desc = "[W]orkspace [S]symbols";
         };
       };
       # For an understanding of why these mappings were

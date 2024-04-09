@@ -31,7 +31,7 @@
     };
 
     nixvim = {
-      url = "github:nix-community/nixvim?ref=pull/1388/head";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.home-manager.follows = "home-manager";
     };
