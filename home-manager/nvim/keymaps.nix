@@ -247,7 +247,7 @@
       };
       # For an understanding of why these mappings were
       # chosen, you will need to read `:help ins-completion`
-      cmp.settings.options.mapping = {
+      cmp.settings.mapping = {
         # Select the [n]ext item
         "<C-n>" = "cmp.mapping.select_next_item()";
         # Select the [p]revious item
