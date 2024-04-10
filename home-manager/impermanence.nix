@@ -7,6 +7,7 @@
     directories = [
       "dotfiles"
       "dev"
+      "persistent"
       ".ssh"
       ".local/share/keyrings"
       ".local/share/direnv"
