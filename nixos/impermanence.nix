@@ -1,4 +1,8 @@
-{lib, ...}: {
+{
+  lib,
+  config,
+  ...
+}: {
   boot.initrd.postDeviceCommands = lib.mkAfter ''
     mkdir /btrfs_tmp
     mount /dev/mapper/root_vg-root /btrfs_tmp
@@ -40,6 +44,7 @@
         group = "colord";
         mode = "u=rwx,g=rx,o=";
       }
+      (lib.mkIf config.my.zerotier.enable "/var/lib/zerotier-one")
     ];
     files = [
       "/etc/machine-id"

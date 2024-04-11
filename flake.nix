@@ -83,8 +83,9 @@
           ./nixos/configuration.nix
 
           inputs.disko.nixosModules.default
-          (import ./modules/nixos/disko.nix {device = "/dev/nvme0n1";})
+          (outputs.nixosModules.disko {device = "/dev/nvme0n1";})
 
+          outputs.nixosModules.zerotier
           inputs.impermanence.nixosModules.impermanence
           inputs.nur.nixosModules.nur
         ];
