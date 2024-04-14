@@ -33,7 +33,7 @@
       switch-applications-backward = [];
       switch-windows = ["<Alt>Tab"];
       switch-windows-backward = ["<Shift><Alt>Tab"];
-      switch-input-source = ["<Shift>Alt_L" "Alt_L<Shift>"];
+      switch-input-source = ["<Shift>Alt_L"];
     };
 
     ### Apps section ###
