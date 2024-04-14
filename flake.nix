@@ -51,5 +51,9 @@
       overlays = with inputs; [
         nur.overlay
       ];
+
+      systems.modules.nixos = with inputs; [
+        disko.nixosModules.default
+      ];
     };
 }
