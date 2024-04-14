@@ -1,12 +1,15 @@
 {pkgs, ...}: {
   programs.fish = {
     enable = true;
+
     loginShellInit = ''
       set -gx EDITOR nvim
     '';
+
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
     '';
+
     shellAliases = {
       v = "nvim";
       ls = "${pkgs.eza}/bin/eza --icons";
@@ -21,6 +24,7 @@
       mount-diskroot = "sudo mkdir /disk-root && sudo mount /dev/root_vg/root /disk-root";
       pystart = "source ~/dev/python-template/.venv/bin/activate.fish && cruft create ~/dev/python-template && deactivate";
     };
+
     plugins = [
       {
         name = "done";
@@ -33,15 +37,7 @@
     ];
   };
 
-  my.setup-stuff.fish-variables = {
-    enable = true;
-    command = ''
-      ${pkgs.fish}/bin/fish -c 'tide configure --auto --style=Lean --prompt_colors="True color" --show_time=No --lean_prompt_height="One line" --prompt_spacing=Compact --icons="Few icons" --transient=No'
-    '';
-  };
-
-  my.setup-stuff.python-template = {
-    enable = true;
-    command = "/usr/bin/env bash ${./setup-python-template.sh}";
-  };
+  my.setup-stuff.fish-prompt.command = ''
+    ${pkgs.fish}/bin/fish -c 'tide configure --auto --style=Lean --prompt_colors="True color" --show_time=No --lean_prompt_height="One line" --prompt_spacing=Compact --icons="Few icons" --transient=No'
+  '';
 }
