@@ -11,7 +11,7 @@ in {
       description = "Attribute set of simple objects to create systemd service for setting up some stuff.";
       type = lib.types.attrsOf (lib.types.submodule {
         options = {
-          enable = lib.mkEnableOption "Enable this service.";
+          enable = lib.my.mkEnableByDefaultOption "this service";
           command = lib.mkOption {type = lib.types.str;};
         };
       });
@@ -36,7 +36,7 @@ in {
             Service = {
               Type = "oneshot";
               RestartSec = 5;
-              Restart = "onfailure";
+              Restart = "on-failure";
               ExecStart = command;
             };
           };
