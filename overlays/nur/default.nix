@@ -1,2 +1,0 @@
-{inputs}:
-inputs.nur.overlay

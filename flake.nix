@@ -43,8 +43,13 @@
     inputs.snowfall-lib.mkFlake {
       inherit inputs;
       src = ./.;
+
       snowfall = {
         namespace = "my";
       };
+
+      overlays = with inputs; [
+        nur.overlay
+      ];
     };
 }
