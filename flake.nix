@@ -56,6 +56,7 @@
 
       systems.modules.nixos = with inputs; [
         disko.nixosModules.default
+        catppuccin.nixosModules.catppuccin
       ];
     };
 }

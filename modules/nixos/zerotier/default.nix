@@ -19,5 +19,7 @@ in {
       enable = true;
       joinNetworks = cfg.networks;
     };
+
+    my.impermanence.directories = ["/var/lib/zerotier-one"];
   };
 }

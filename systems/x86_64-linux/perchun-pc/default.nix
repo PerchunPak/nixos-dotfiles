@@ -1,4 +1,8 @@
 {...}: {
+  imports = [
+    ./hardware-configuration.nix
+  ];
+
   networking.hostName = "perchun-pc";
 
   # Let sudo to remember my password for longer time

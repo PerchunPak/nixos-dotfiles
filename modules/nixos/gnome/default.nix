@@ -1,11 +1,25 @@
 {
   pkgs,
   lib,
+  config,
   ...
-}: {
-  config = {
+}: let
+  cfg = config.my.gnome;
+in {
+  options = {
+    my.gnome = {
+      enable = lib.my.mkEnableByDefaultOption "GNOME";
+    };
+  };
+
+  config = lib.mkIf cfg.enable {
+    # Workaround for crashing session on auto-login
+    # see https://github.com/NixOS/nixpkgs/issues/103746
+    systemd.services."getty@tty1".enable = false;
+    systemd.services."autovt@tty1".enable = false;
+
     services.xserver = {
-      enable = lib.mkDefault true;
+      enable = true;
       displayManager = {
         gdm.enable = true;
         defaultSession = "gnome";
