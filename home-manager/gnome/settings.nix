@@ -14,6 +14,7 @@
       enable-hot-corners = false;
       clock-show-seconds = true;
       text-scaling-factor = 1.3;
+      cursor-size = 32;
     };
 
     "org/gnome/mutter" = {

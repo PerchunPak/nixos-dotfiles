@@ -25,15 +25,16 @@
     },
     "catppuccin": {
       "locked": {
-        "lastModified": 1712890104,
-        "narHash": "sha256-56RS7wdJ2QDUNCQt/9lx8MFcwuTdVQnzBV+9QToLLmM=",
+        "lastModified": 1713087400,
+        "narHash": "sha256-vL5Ebw42QJV9mL5+lsx/il2vvBm3jAP16Slletqw95A=",
         "owner": "catppuccin",
         "repo": "nix",
-        "rev": "850c26a3a2474b0d068abc89c905f536cca415de",
+        "rev": "ee3bcd9296e8054c8d26737f9906a1a4215406b3",
         "type": "github"
       },
       "original": {
         "owner": "catppuccin",
+        "ref": "pull/116/head",
         "repo": "nix",
         "type": "github"
       }

@@ -36,7 +36,7 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin.url = "github:catppuccin/nix?ref=pull/116/head";
   };
 
   outputs = {
