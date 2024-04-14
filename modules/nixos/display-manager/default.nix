@@ -1,8 +1,7 @@
 {pkgs, ...}: {
-  # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Configure keymap in X11
+  # Configure keymap
   services.xserver = {
     layout = "us,cz,ua,ru";
     xkbVariant = ",qwerty,,";
