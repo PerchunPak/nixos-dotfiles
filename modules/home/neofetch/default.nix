@@ -1,7 +1,11 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  channels,
+  ...
+}: {
   programs.hyfetch = {
     enable = true;
-    package = pkgs.unstable.hyfetch;
+    package = channels.unstable.hyfetch;
     settings = {
       preset = "transgender"; # yes, questions?
       mode = "rgb";
@@ -25,4 +29,7 @@
   programs.fish.shellAliases = {
     neofetch = "neowofetch";
   };
+
+  # neofetch needs this to display GPU
+  home.packages = with pkgs; [pciutils];
 }

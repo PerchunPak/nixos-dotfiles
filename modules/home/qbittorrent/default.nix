@@ -15,10 +15,7 @@
 
   # Copy configuration file, if it doesn't exists yet
   # (qBittorrent writes to its config file)
-  my.setup-stuff.qbittorrent-config = {
-    enable = true;
-    command = ''
-      /usr/bin/env bash -c '${pkgs.coreutils}/bin/cp -rn ${config.xdg.configHome}/qBittorrent-example/. ${config.xdg.configHome}/qBittorrent || true'
-    '';
-  };
+  my.setup-stuff.qbittorrent-config.command = ''
+    /usr/bin/env bash -c '${pkgs.coreutils}/bin/cp -rn ${config.xdg.configHome}/qBittorrent-example/. ${config.xdg.configHome}/qBittorrent || true'
+  '';
 }
