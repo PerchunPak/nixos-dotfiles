@@ -152,11 +152,13 @@ in {
       nvim-autopairs.enable = true;
       toggleterm = {
         enable = true;
-        shadeTerminals = false;
-        terminalMappings = true;
-        # for system reproducibility reasons
-        persistSize = false;
-        persistMode = false;
+        settings = {
+          shade_terminals = false;
+          terminal_mappings = true;
+          # for system reproducibility reasons
+          persist_size = false;
+          persist_mode = false;
+        };
       };
       alpha = {
         enable = true;

@@ -36,7 +36,7 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    catppuccin.url = "github:Stonks3141/ctp-nix";
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = {

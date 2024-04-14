@@ -286,7 +286,7 @@
           end, { 'i', 's' })
         '';
       };
-      toggleterm.openMapping = "<c-\\>";
+      toggleterm.settings.open_mapping = "[[<c-\\>]]";
     };
   };
 }
