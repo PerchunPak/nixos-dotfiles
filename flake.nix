@@ -59,11 +59,5 @@
         catppuccin.nixosModules.catppuccin
         impermanence.nixosModules.impermanence
       ];
-
-      homes.modules = with inputs; [
-        catppuccin.homeManagerModules.catppuccin
-        agenix.homeManagerModules.default
-        impermanence.nixosModules.home-manager.impermanence
-      ];
     };
 }

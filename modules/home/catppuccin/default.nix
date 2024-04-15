@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   lib,
   ...
@@ -8,6 +9,10 @@
   # or permalink https://github.com/catppuccin/nix/blob/03b95cad3bbeb9913db6d89dc3f4fccc6c8fcbd4/modules/lib/default.nix#L24-L38
   accent = "maroon";
 in {
+  imports = [
+    inputs.catppuccin.homeManagerModules.catppuccin
+  ];
+
   options = {
     my.catppuccin = {
       enable = lib.my.mkEnableByDefaultOption "auto-theming catppuccin";

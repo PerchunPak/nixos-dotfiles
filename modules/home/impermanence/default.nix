@@ -1,10 +1,15 @@
 {
   lib,
   config,
+  inputs,
   ...
 }: let
   cfg = config.my.persistence;
 in {
+  imports = [
+    inputs.impermanence.nixosModules.home-manager.impermanence
+  ];
+
   options = {
     my.persistence = {
       directories = lib.mkOption {type = lib.types.listOf lib.types.str;};
