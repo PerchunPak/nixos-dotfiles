@@ -7,8 +7,14 @@
 in {
   options = {
     my.persistence = {
-      directories = lib.mkOption {type = lib.types.listOf lib.types.str;};
-      files = lib.mkOption {type = lib.types.listOf lib.types.str;};
+      directories = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [];
+      };
+      files = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [];
+      };
     };
   };
 
