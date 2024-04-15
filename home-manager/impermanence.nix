@@ -8,6 +8,7 @@
       "dotfiles"
       "dev"
       "persistent"
+      "torrents"
       ".ssh"
       ".local/share/keyrings"
       ".local/share/direnv"
