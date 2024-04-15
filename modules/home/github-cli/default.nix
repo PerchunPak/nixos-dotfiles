@@ -7,5 +7,5 @@
     };
   };
 
-  my.impermanence.files = [".config/gh/hosts.yml"];
+  my.persistence.files = [".config/gh/hosts.yml"];
 }

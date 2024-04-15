@@ -10,7 +10,7 @@
     "variety/variety.conf".source = ./variety.conf;
   };
 
-  home.persistence."/persist/home" = {
+  my.persistence = {
     directories = [
       ".config/variety/Downloaded"
     ];

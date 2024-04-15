@@ -3,7 +3,7 @@
 in {
   home.packages = [pkg];
 
-  home.persistence."/persist/home".directories = [".config/vesktop"];
+  my.persistence.directories = [".config/vesktop"];
 
   xdg.configFile = {
     "vesktop/settings" = {

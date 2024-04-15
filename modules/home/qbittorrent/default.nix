@@ -4,7 +4,7 @@
   ...
 }: {
   home.packages = [pkgs.qbittorrent];
-  home.persistence."/persist/home".directories = [".config/qBittorrent"];
+  my.persistence.directories = [".config/qBittorrent"];
   xdg.configFile."qBittorrent-example" = {
     source = ./configs;
     recursive = true;

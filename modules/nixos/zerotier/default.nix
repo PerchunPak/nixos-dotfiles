@@ -20,6 +20,6 @@ in {
       joinNetworks = cfg.networks;
     };
 
-    my.impermanence.directories = ["/var/lib/zerotier-one"];
+    my.persistence.directories = ["/var/lib/zerotier-one"];
   };
 }

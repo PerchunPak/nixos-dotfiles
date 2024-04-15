@@ -3,10 +3,10 @@
   config,
   ...
 }: let
-  cfg = config.my.impermanence;
+  cfg = config.my.persistence;
 in {
   options = {
-    my.impermanence = {
+    my.persistence = {
       directories = lib.mkOption {type = lib.types.listOf lib.types.str;};
       files = lib.mkOption {type = lib.types.listOf lib.types.str;};
     };
