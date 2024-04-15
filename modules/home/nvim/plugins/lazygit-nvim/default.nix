@@ -1,6 +1,6 @@
-{channels, ...}: {
+{pkgs, ...}: {
   programs.nixvim = {
-    extraPlugins = with channels.unstable.vimPlugins; [
+    extraPlugins = with pkgs.unstable.vimPlugins; [
       lazygit-nvim
     ];
   };

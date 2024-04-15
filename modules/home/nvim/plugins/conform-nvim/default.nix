@@ -1,4 +1,4 @@
-{channels, ...}: {
+{pkgs, ...}: {
   programs.nixvim = {
     plugins.conform-nvim = {
       enable = true;
@@ -26,7 +26,7 @@
       };
     };
 
-    extraPackages = with channels.unstable; [
+    extraPackages = with pkgs.unstable; [
       alejandra
       codespell
       prettierd

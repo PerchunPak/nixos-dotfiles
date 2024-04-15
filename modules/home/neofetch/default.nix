@@ -1,11 +1,7 @@
-{
-  pkgs,
-  channels,
-  ...
-}: {
+{pkgs, ...}: {
   programs.hyfetch = {
     enable = true;
-    package = channels.unstable.hyfetch;
+    package = pkgs.unstable.hyfetch;
     settings = {
       preset = "transgender"; # yes, questions?
       mode = "rgb";

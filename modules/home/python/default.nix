@@ -1,9 +1,5 @@
-{
-  pkgs,
-  channels,
-  ...
-}: {
-  home.packages = with channels.unstable; [
+{pkgs, ...}: {
+  home.packages = with pkgs.unstable; [
     python312
     python312Packages.black
     python312Packages.ipython

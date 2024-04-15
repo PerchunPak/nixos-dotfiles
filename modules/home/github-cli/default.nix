@@ -1,7 +1,7 @@
-{channels, ...}: {
+{pkgs, ...}: {
   programs.gh = {
     enable = true;
-    extensions = [channels.unstable.gh-copilot];
+    extensions = [pkgs.unstable.gh-copilot];
     settings = {
       git_protool = "ssh";
     };
