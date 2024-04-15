@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  age.secrets.ssh-config.file = ../secrets/ssh-config.age;
+  age.secrets.ssh-config.file = lib.my.toSecretFile "ssh-config";
   age.secrets.ssh-config.path = ".ssh/real_config";
 
   programs.ssh = {

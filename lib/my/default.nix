@@ -5,4 +5,6 @@
       default = true;
       example = false;
     };
+
+  toSecretFile = name: ../../secrets/${name}.age;
 }
