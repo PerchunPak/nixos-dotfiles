@@ -37,6 +37,7 @@
     };
 
     catppuccin.url = "github:catppuccin/nix?ref=pull/116/head";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs = inputs:
@@ -59,5 +60,7 @@
         catppuccin.nixosModules.catppuccin
         impermanence.nixosModules.impermanence
       ];
+
+      formatter = inputs.flake-utils.lib.eachDefaultSystemMap (system: inputs.nixpkgs.legacyPackages.${system}.alejandra);
     };
 }
