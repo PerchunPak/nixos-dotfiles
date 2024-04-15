@@ -9,7 +9,7 @@ in {
     my.nvim = {
       keymaps = lib.mkOption {
         # [ "mode" "key" "action" {additional} ]
-        type = with lib.types; listOf (listOf str);
+        type = with lib.types; listOf (listOf (either str attrs));
       };
     };
   };
