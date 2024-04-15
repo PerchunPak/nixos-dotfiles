@@ -11,7 +11,7 @@
     };
 
     snowfall-lib = {
-      url = "github:snowfallorg/lib";
+      url = "github:snowfallorg/lib?ref=pull/71/head";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
