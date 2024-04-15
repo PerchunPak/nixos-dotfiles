@@ -9,7 +9,7 @@ in {
   options = {
     my.nvidia = {
       enable = lib.mkEnableOption "Nvidia proprietary drivers";
-      package = lib.mkPackageOption pkgs "linuxPackages_latest.nvidia_x11";
+      package = lib.mkPackageOption pkgs ["linuxPackages_latest" "nvidia_x11"] {};
     };
   };
 
