@@ -5,5 +5,6 @@
     #protontricks
     prismlauncher
     xonotic
+    wineWowPackages.stable
   ];
 }
