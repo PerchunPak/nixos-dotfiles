@@ -1,7 +1,11 @@
-{...}: {
+{pkgs, ...}: {
   home = {
     username = "perchun";
     homeDirectory = "/home/perchun";
+  };
+
+  my = {
+    gaming.additional-games = with pkgs; [xonotic];
   };
 
   # `allowUnfree` for experimental nix commands
