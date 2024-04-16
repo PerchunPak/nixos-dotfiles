@@ -24,5 +24,6 @@
     gnumake
     dig
     gnome.gnome-clocks
+    mtr
   ];
 }
