@@ -20,6 +20,7 @@
     "org/gnome/mutter" = {
       dynamic-workspaces = true;
       center-new-windows = true;
+      workspaces-only-on-primary = true;
     };
 
     "org/gnome/desktop/session".idle-delay = lib.hm.gvariant.mkUint32 900;
