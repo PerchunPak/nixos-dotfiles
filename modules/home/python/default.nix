@@ -7,4 +7,9 @@
     poetry
     pkgs.my.cruft
   ];
+
+  my.persistence.directories = [
+    ".local/share/pypoetry"
+    ".cache/pypoetry"
+  ];
 }

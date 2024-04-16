@@ -9,7 +9,10 @@
     };
   };
 
-  my.nvim.keymaps = [
-    ["n" "<leader>u" ":UndotreeToggle<CR>" {options.desc = "Open [U]ndo tree";}]
-  ];
+  my = {
+    nvim.keymaps = [
+      ["n" "<leader>u" ":UndotreeToggle<CR>" {options.desc = "Open [U]ndo tree";}]
+    ];
+    persistence.directories = [".local/state/nvim/undo"];
+  };
 }

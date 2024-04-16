@@ -6,4 +6,6 @@
       theme = "startify";
     };
   };
+
+  my.persistence.directories = [".local/state/nvim/shada"];
 }

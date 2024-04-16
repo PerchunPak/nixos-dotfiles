@@ -37,7 +37,10 @@
     ];
   };
 
-  my.setup-stuff.fish-prompt.command = ''
-    ${pkgs.fish}/bin/fish -c 'tide configure --auto --style=Lean --prompt_colors="True color" --show_time=No --lean_prompt_height="One line" --prompt_spacing=Compact --icons="Few icons" --transient=No'
-  '';
+  my = {
+    persistence.directories = [".local/share/fish"];
+    setup-stuff.fish-prompt.command = ''
+      ${pkgs.fish}/bin/fish -c 'tide configure --auto --style=Lean --prompt_colors="True color" --show_time=No --lean_prompt_height="One line" --prompt_spacing=Compact --icons="Few icons" --transient=No'
+    '';
+  };
 }

@@ -17,4 +17,7 @@
       };
     };
   };
+
+  programs.lazygit.enable = true;
+  my.persistence.files = [".config/lazygit/state.yml"];
 }
