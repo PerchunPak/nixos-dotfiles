@@ -30,5 +30,7 @@
     user = "perchun";
   };
 
+  programs.xwayland.enable = true;
+
   services.xserver.excludePackages = [pkgs.xterm];
 }
