@@ -9,4 +9,8 @@
     ++ (with pkgs; [
       e2fsprogs
     ]);
+
+  environment.systemPackages = with pkgs; [
+    steam-run
+  ];
 }
