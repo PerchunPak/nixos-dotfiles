@@ -52,6 +52,10 @@
             }
           )
         ];
+
+        settings = {
+          "browser.sessionstore.max_resumed_crashes" = -1;
+        };
       };
       stuff = {
         id = 1;
