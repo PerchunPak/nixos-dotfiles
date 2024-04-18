@@ -11,8 +11,7 @@
   programs.nh = {
     enable = true;
     package = pkgs.unstable.nh;
-    # hacky way to say /home/perchun/dotfiles without hardcoding /home/perchun
-    flake = /. + config.home-manager.users.perchun.home.homeDirectory + "/dotfiles";
+    flake = config.home-manager.users.perchun.home.homeDirectory + "/dotfiles";
     clean = {
       enable = true;
       extraArgs = "--keep 10 --keep-since 1d";
