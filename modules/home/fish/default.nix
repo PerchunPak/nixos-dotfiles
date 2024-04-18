@@ -19,7 +19,7 @@
       kssh = "kitten ssh";
       cop = "gh copilot suggest -t shell";
       rebuild = "git add . && sudo true && nh os switch";
-      rebuildt = "git add . && sudo nixos-rebuild switch --flake ~/dotfiles --show-trace --option eval-cache false";
+      rebuildt = "rebuild -- --show-trace --option eval-cache false";
       mount-diskroot = "sudo mkdir /disk-root && sudo mount /dev/root_vg/root /disk-root";
       pystart = "source ~/dev/python-template/.venv/bin/activate.fish && cruft create ~/dev/python-template && deactivate";
     };
