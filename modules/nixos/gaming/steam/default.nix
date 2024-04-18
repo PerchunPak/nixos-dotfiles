@@ -22,5 +22,9 @@ in {
     };
 
     programs.gamemode.enable = true;
+
+    environment.variables = {
+      FONTCONFIG_PATH = "/etc/fonts";
+    };
   };
 }
