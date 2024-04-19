@@ -36,7 +36,7 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    catppuccin.url = "github:catppuccin/nix?ref=pull/116/head";
+    catppuccin.url = "github:catppuccin/nix";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
