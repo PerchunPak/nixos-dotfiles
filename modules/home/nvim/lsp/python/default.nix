@@ -4,6 +4,7 @@
       pylsp = {
         enable = true;
         settings.plugins = {
+          pylsp_mypy.enabled = true;
           black = {
             enabled = true;
             line_length = 120;
