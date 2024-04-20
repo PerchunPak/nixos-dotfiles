@@ -23,5 +23,6 @@
     dig
     gnome.gnome-clocks
     mtr
+    mpv
   ];
 }
