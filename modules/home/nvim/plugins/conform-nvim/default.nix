@@ -30,7 +30,8 @@
       alejandra
       codespell
       prettierd
-      ruff
+      black
+      isort
       stylua
       gawk # trim_whitespace
     ];
