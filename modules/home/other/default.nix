@@ -17,7 +17,6 @@
     tor-browser
     peazip
     gnome.pomodoro
-    vlc
     meld
     zoom-us
     gnumake
