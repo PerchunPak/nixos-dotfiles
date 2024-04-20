@@ -20,7 +20,7 @@
       formattersByFt = {
         nix = ["alejandra"];
         lua = ["stylua"];
-        python = ["ruff_fix" "ruff_format"];
+        python = ["black" "isort"];
         javascript = ["prettierd"];
         "*" = ["codespell" "trim_whitespace"];
       };
