@@ -24,5 +24,6 @@
     gnome.gnome-clocks
     mtr
     mpv
+    onefetch
   ];
 }
