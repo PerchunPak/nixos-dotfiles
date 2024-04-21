@@ -7,6 +7,7 @@
     obs-studio.enable = true;
     htop.enable = true;
     jq.enable = true;
+    ranger.enable = true;
   };
   home.packages = with pkgs; [
     fd
