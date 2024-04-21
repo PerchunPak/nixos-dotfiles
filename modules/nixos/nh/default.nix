@@ -1,16 +1,10 @@
 {
-  inputs,
   config,
   pkgs,
   ...
 }: {
-  imports = [
-    "${inputs.nixpkgs-unstable}/nixos/modules/programs/nh.nix"
-  ];
-
   programs.nh = {
     enable = true;
-    package = pkgs.unstable.nh;
     flake = config.home-manager.users.perchun.home.homeDirectory + "/dotfiles";
     clean = {
       enable = true;
@@ -20,7 +14,7 @@
   };
 
   # related great packages
-  environment.systemPackages = with pkgs.unstable; [
+  environment.systemPackages = with pkgs; [
     nix-output-monitor
     nvd
   ];

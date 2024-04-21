@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  pkg = pkgs.unstable.vesktop; # vesktop on 23.11 is broken
+  pkg = pkgs.vesktop;
 in {
   home.packages = [pkg];
 

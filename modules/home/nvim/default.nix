@@ -1,11 +1,6 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
-    # overwrite nixpkgs with unstable branch
-    ({...} @ args: (inputs.nixvim.homeManagerModules.nixvim (args // {pkgs = pkgs.unstable;})))
+    inputs.nixvim.homeManagerModules.nixvim
   ];
 
   programs.nixvim = {

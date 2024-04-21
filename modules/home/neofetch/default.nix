@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.hyfetch = {
     enable = true;
-    package = pkgs.unstable.hyfetch;
+    package = pkgs.hyfetch;
     settings = {
       preset = "transgender"; # yes, questions?
       mode = "rgb";

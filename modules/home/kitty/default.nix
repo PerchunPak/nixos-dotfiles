@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   programs.kitty = {
     enable = true;
+    package = pkgs.stable.kitty; # https://github.com/kovidgoyal/kitty/issues/7021
 
     shellIntegration.enableFishIntegration = true;
 

@@ -21,7 +21,7 @@ with python3Packages;
     ];
 
     nativeCheckInputs = [
-      pytestCheckHook
+      (pytestCheckHook.override {pytest = pytest_7;})
     ];
 
     propagatedBuildInputs = [

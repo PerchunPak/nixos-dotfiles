@@ -26,7 +26,7 @@
       };
     };
 
-    extraPackages = with pkgs.unstable; [
+    extraPackages = with pkgs; [
       alejandra
       codespell
       prettierd
