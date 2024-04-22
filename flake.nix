@@ -60,12 +60,6 @@
         nur.overlay
       ];
 
-      systems.modules.nixos = with inputs; [
-        disko.nixosModules.default
-        catppuccin.nixosModules.catppuccin
-        impermanence.nixosModules.impermanence
-      ];
-
       formatter = inputs.flake-utils.lib.eachDefaultSystemMap (system: inputs.nixpkgs.legacyPackages.${system}.alejandra);
     };
 }

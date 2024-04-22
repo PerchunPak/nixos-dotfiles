@@ -1,10 +1,15 @@
 {
+  inputs,
   lib,
   config,
   ...
 }: let
   cfg = config.my.persistence;
 in {
+  imports = [
+    inputs.impermanence.nixosModules.impermanence
+  ];
+
   options = {
     my.persistence = {
       directories = lib.mkOption {

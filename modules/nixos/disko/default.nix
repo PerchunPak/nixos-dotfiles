@@ -1,10 +1,15 @@
 {
+  inputs,
   config,
   lib,
   ...
 }: let
   cfg = config.my.disko;
 in {
+  imports = [
+    inputs.disko.nixosModules.default
+  ];
+
   options = {
     my.disko = {
       enable = lib.my.mkEnableByDefaultOption "auto-partitioning";
