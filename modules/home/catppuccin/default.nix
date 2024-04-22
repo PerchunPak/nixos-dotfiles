@@ -20,25 +20,12 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    catppuccin.flavour = "mocha";
-
-    programs.bat.catppuccin.enable = true;
-    programs.fish.catppuccin.enable = true;
-
-    gtk.catppuccin = {
+    catppuccin = {
       enable = true;
-      inherit accent;
-      cursor = {
-        enable = true;
-        accent = "dark";
-      };
+      accent = "maroon";
+      flavour = "mocha";
     };
 
-    programs.kitty.catppuccin.enable = true;
-    programs.lazygit.catppuccin = {
-      enable = true;
-      inherit accent;
-    };
-    programs.neovim.catppuccin.enable = true;
+    gtk.catppuccin.cursor.accent = "dark";
   };
 }
