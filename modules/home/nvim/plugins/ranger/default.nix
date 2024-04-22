@@ -16,7 +16,7 @@
     [
       "n"
       "<leader>f"
-      "Ranger"
+      ":Ranger<CR>"
       {options.desc = "Open Ranger ([F]ile manager)";}
     ]
   ];
