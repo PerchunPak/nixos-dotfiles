@@ -48,12 +48,7 @@
         namespace = "my";
       };
 
-      channels-config = {
-        allowUnfree = true;
-        permittedInsecurePackages = [
-          "openssl-1.1.1w"
-        ];
-      };
+      channels-config.allowUnfree = true;
 
       overlays = with inputs; [
         nur.overlay
