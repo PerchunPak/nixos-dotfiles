@@ -37,7 +37,6 @@
     };
 
     catppuccin.url = "github:catppuccin/nix";
-    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs = inputs:
@@ -60,6 +59,8 @@
         nur.overlay
       ];
 
-      formatter = inputs.flake-utils.lib.eachDefaultSystemMap (system: inputs.nixpkgs.legacyPackages.${system}.alejandra);
+      outputs-builder = channels: {
+        formatter = channels.nixpkgs.alejandra;
+      };
     };
 }
