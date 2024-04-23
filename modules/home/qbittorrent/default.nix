@@ -1,9 +1,6 @@
+{ pkgs, config, ... }:
 {
-  pkgs,
-  config,
-  ...
-}: {
-  home.packages = [pkgs.qbittorrent];
+  home.packages = [ pkgs.qbittorrent ];
 
   my.persistence.directories = [
     "torrents"

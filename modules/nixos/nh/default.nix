@@ -1,8 +1,5 @@
+{ config, pkgs, ... }:
 {
-  config,
-  pkgs,
-  ...
-}: {
   programs.nh = {
     enable = true;
     flake = config.home-manager.users.perchun.home.homeDirectory + "/dotfiles";

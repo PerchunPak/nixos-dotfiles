@@ -3,13 +3,18 @@
   config,
   lib,
   ...
-}: let
+}:
+let
   cfg = config.my.nvidia;
-in {
+in
+{
   options = {
     my.nvidia = {
       enable = lib.mkEnableOption "Nvidia proprietary drivers";
-      package = lib.mkPackageOption pkgs ["linuxPackages_zen" "nvidia_x11"] {};
+      package = lib.mkPackageOption pkgs [
+        "linuxPackages_zen"
+        "nvidia_x11"
+      ] { };
     };
   };
 
@@ -22,7 +27,7 @@ in {
     };
 
     # Load nvidia driver for Xorg and Wayland
-    services.xserver.videoDrivers = ["nvidia"];
+    services.xserver.videoDrivers = [ "nvidia" ];
 
     hardware.nvidia = {
       # Modesetting is required.

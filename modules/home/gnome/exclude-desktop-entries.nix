@@ -1,15 +1,19 @@
-{lib, ...}: let
-  toProperAttrs = names:
-    builtins.listToAttrs
-    (lib.forEach names (name: {
-      inherit name;
-      value = {
+{ lib, ... }:
+let
+  toProperAttrs =
+    names:
+    builtins.listToAttrs (
+      lib.forEach names (name: {
         inherit name;
-        exec = "";
-        noDisplay = true;
-      };
-    }));
-in {
+        value = {
+          inherit name;
+          exec = "";
+          noDisplay = true;
+        };
+      })
+    );
+in
+{
   xdg.desktopEntries = toProperAttrs [
     "fish"
     "htop"

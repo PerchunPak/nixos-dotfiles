@@ -1,10 +1,8 @@
-{
-  lib,
-  config,
-  ...
-}: let
+{ lib, config, ... }:
+let
   cfg = config.my.user;
-in {
+in
+{
   options = {
     my.user = {
       enable = lib.my.mkEnableByDefaultOption "user configuration";
@@ -17,7 +15,11 @@ in {
         isNormalUser = true;
         description = "Perchun Pak";
         hashedPassword = "$y$j9T$K1EYVhXG6o2yQPH4IUDsw0$P8nQZaE554VdULdAdPmJ2Z9S/fwQ132V6oYiM.RGZWB";
-        extraGroups = ["wheel" "networkmanager" "docker"];
+        extraGroups = [
+          "wheel"
+          "networkmanager"
+          "docker"
+        ];
       };
     };
   };

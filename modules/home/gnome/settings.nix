@@ -1,4 +1,5 @@
-{lib, ...}: {
+{ lib, ... }:
+{
   dconf.settings = {
     "org/gnome/shell" = {
       favorite-apps = [
@@ -29,12 +30,12 @@
     "org/gnome/settings-daemon/plugins".media-keys = 2; # volume adjustment step
 
     "org/gnome/desktop/wm/keybindings" = {
-      show-desktop = ["<Super>d"];
-      switch-applications = [];
-      switch-applications-backward = [];
-      switch-windows = ["<Alt>Tab"];
-      switch-windows-backward = ["<Shift><Alt>Tab"];
-      switch-input-source = ["<Shift>Alt_L"];
+      show-desktop = [ "<Super>d" ];
+      switch-applications = [ ];
+      switch-applications-backward = [ ];
+      switch-windows = [ "<Alt>Tab" ];
+      switch-windows-backward = [ "<Shift><Alt>Tab" ];
+      switch-input-source = [ "<Shift>Alt_L" ];
     };
 
     ### Custom keybindings ###
@@ -61,7 +62,11 @@
       pomodoro-duration = 1800.0;
       short-break-duration = 420.0;
       hide-system-notifications = true;
-      enabled-plugins = ["sounds" "dark-theme" "notifications"];
+      enabled-plugins = [
+        "sounds"
+        "dark-theme"
+        "notifications"
+      ];
     };
     # goes with gnome-pomodoro settings
     "org/gnome/desktop/notifications".show-banners = true;

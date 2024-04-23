@@ -3,9 +3,11 @@
   config,
   pkgs,
   ...
-}: let
+}:
+let
   cfg = config.my.gaming.steam;
-in {
+in
+{
   options = {
     my.gaming.steam = {
       enable = lib.my.mkEnableByDefaultOption "Steam";
@@ -16,9 +18,7 @@ in {
     programs.steam = {
       enable = true;
       gamescopeSession.enable = true;
-      extraCompatPackages = with pkgs; [
-        proton-ge-bin
-      ];
+      extraCompatPackages = with pkgs; [ proton-ge-bin ];
     };
 
     programs.gamemode.enable = true;

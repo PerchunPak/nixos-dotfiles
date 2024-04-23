@@ -5,5 +5,5 @@
       gui.filterMode = "fuzzy";
     };
   };
-  my.persistence.files = [".config/lazygit/state.yml"];
+  my.persistence.files = [ ".config/lazygit/state.yml" ];
 }

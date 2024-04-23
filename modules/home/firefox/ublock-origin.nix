@@ -7,10 +7,13 @@
     type = "storage";
     data = {
       userSettings = [
-        ["popupPanelSections" 15]
+        [
+          "popupPanelSections"
+          15
+        ]
       ];
       toOverwrite = {
-        filters = ["vk.com"];
+        filters = [ "vk.com" ];
         filterLists = [
           "user-filters"
           "ublock-filters"

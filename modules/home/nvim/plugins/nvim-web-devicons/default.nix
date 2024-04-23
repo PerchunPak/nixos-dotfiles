@@ -1,9 +1,8 @@
 # Useful for getting pretty icons, but requires a Nerd Font.
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.nixvim = {
-    extraPlugins = with pkgs.vimPlugins; [
-      nvim-web-devicons
-    ];
+    extraPlugins = with pkgs.vimPlugins; [ nvim-web-devicons ];
 
     extraConfigLua = ''
       require('nvim-web-devicons').setup()

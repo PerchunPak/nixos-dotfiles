@@ -1,10 +1,8 @@
-{
-  lib,
-  config,
-  ...
-}: let
+{ lib, config, ... }:
+let
   cfg = config.my.sleep;
-in {
+in
+{
   options = {
     my.sleep = {
       disable = lib.mkEnableOption "disable sleep";

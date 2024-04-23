@@ -1,16 +1,12 @@
-{
-  lib,
-  config,
-  ...
-}: let
+{ lib, config, ... }:
+let
   cfg = config.my.zerotier;
-in {
+in
+{
   options = {
     my.zerotier = {
       enable = lib.my.mkEnableByDefaultOption "zerotier";
-      networks = lib.mkOption {
-        type = lib.types.listOf lib.types.str;
-      };
+      networks = lib.mkOption { type = lib.types.listOf lib.types.str; };
     };
   };
 
@@ -20,6 +16,6 @@ in {
       joinNetworks = cfg.networks;
     };
 
-    my.persistence.directories = ["/var/lib/zerotier-one"];
+    my.persistence.directories = [ "/var/lib/zerotier-one" ];
   };
 }

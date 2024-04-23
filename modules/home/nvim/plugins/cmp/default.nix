@@ -8,10 +8,10 @@
           completion.completeopt = "menu,menuone,noinsert";
         };
         sources = [
-          {name = "nvim_lsp";}
-          {name = "luasnip";}
-          {name = "path";}
-          {name = "fish";} # idk what it does, it is here because I use fish
+          { name = "nvim_lsp"; }
+          { name = "luasnip"; }
+          { name = "path"; }
+          { name = "fish"; } # idk what it does, it is here because I use fish
         ];
         # For an understanding of why these mappings were
         # chosen, you will need to read `:help ins-completion`

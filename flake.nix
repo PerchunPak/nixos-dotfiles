@@ -39,7 +39,8 @@
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = inputs:
+  outputs =
+    inputs:
     inputs.snowfall-lib.mkFlake {
       inherit inputs;
       src = ./.;
@@ -50,12 +51,8 @@
 
       channels-config.allowUnfree = true;
 
-      overlays = with inputs; [
-        nur.overlay
-      ];
+      overlays = with inputs; [ nur.overlay ];
 
-      outputs-builder = channels: {
-        formatter = channels.nixpkgs.alejandra;
-      };
+      outputs-builder = channels: { formatter = channels.nixpkgs.alejandra; };
     };
 }

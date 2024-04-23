@@ -1,7 +1,5 @@
 {
-  imports = [
-    ./keymaps.nix
-  ];
+  imports = [ ./keymaps.nix ];
 
   programs.nixvim = {
     plugins.lsp = {

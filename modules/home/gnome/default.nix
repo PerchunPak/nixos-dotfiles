@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     ./extensions.nix
     ./settings.nix
@@ -11,8 +12,8 @@
   home.file.".local/share/sounds/__custom/bell-window-system.ogg".source = "${pkgs.gnome.gnome-control-center}/share/sounds/gnome/default/alerts/hum.ogg";
 
   my.persistence = {
-    directories = [".local/share/keyrings"];
-    files = [".config/monitors.xml"];
+    directories = [ ".local/share/keyrings" ];
+    files = [ ".config/monitors.xml" ];
   };
 
   home.sessionVariables = {

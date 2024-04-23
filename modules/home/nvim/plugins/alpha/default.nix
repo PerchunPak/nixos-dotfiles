@@ -7,5 +7,5 @@
     };
   };
 
-  my.persistence.directories = [".local/state/nvim/shada"];
+  my.persistence.directories = [ ".local/state/nvim/shada" ];
 }

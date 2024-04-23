@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   extensions = with pkgs.gnomeExtensions; [
     blur-my-shell
     compiz-alike-magic-lamp-effect
@@ -12,7 +13,8 @@
     quick-lang-switch
     # keyboard-layout-groups # self-written extension; needs to be repackaged manually - will do later, it doesn't work anyway
   ];
-in {
+in
+{
   home.packages = extensions;
 
   dconf.settings = {
@@ -52,7 +54,10 @@ in {
       animate-appicon-hover-animation-zoom = "{'SIMPLE': 1.11, 'RIPPLE': 1.25, 'PLANK': 2.0}";
       appicon-margin = 8;
       appicon-padding = 6;
-      available-monitors = [0 1];
+      available-monitors = [
+        0
+        1
+      ];
       click-action = "MINIMIZE";
       desktop-line-use-custom-color = false;
       dot-position = "BOTTOM";

@@ -3,9 +3,11 @@
   lib,
   config,
   ...
-}: let
+}:
+let
   cfg = config.my.gnome;
-in {
+in
+{
   options = {
     my.gnome = {
       enable = lib.my.mkEnableByDefaultOption "GNOME";
@@ -28,7 +30,7 @@ in {
     };
 
     services.gnome.core-utilities.enable = false;
-    environment.gnome.excludePackages = [pkgs.gnome-tour];
+    environment.gnome.excludePackages = [ pkgs.gnome-tour ];
     environment.systemPackages = with pkgs; [
       gnome-text-editor
       gnome.gnome-calculator

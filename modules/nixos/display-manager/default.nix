@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   services.xserver.enable = true;
 
   # Configure keymap
@@ -32,5 +33,5 @@
 
   programs.xwayland.enable = true;
 
-  services.xserver.excludePackages = [pkgs.xterm];
+  services.xserver.excludePackages = [ pkgs.xterm ];
 }

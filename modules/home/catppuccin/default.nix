@@ -1,7 +1,6 @@
-{inputs, ...}: {
-  imports = [
-    inputs.catppuccin.homeManagerModules.catppuccin
-  ];
+{ inputs, ... }:
+{
+  imports = [ inputs.catppuccin.homeManagerModules.catppuccin ];
 
   catppuccin = {
     enable = true;

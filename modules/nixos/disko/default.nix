@@ -3,19 +3,17 @@
   config,
   lib,
   ...
-}: let
+}:
+let
   cfg = config.my.disko;
-in {
-  imports = [
-    inputs.disko.nixosModules.default
-  ];
+in
+{
+  imports = [ inputs.disko.nixosModules.default ];
 
   options = {
     my.disko = {
       enable = lib.my.mkEnableByDefaultOption "auto-partitioning";
-      device = lib.mkOption {
-        type = lib.types.str;
-      };
+      device = lib.mkOption { type = lib.types.str; };
     };
   };
 
@@ -37,8 +35,8 @@ in {
                 mountpoint = "/boot";
               };
             };
-            fedora_2 = {};
-            fedora_3 = {};
+            fedora_2 = { };
+            fedora_3 = { };
             swap = {
               size = "32G";
               content = {
@@ -69,7 +67,7 @@ in {
               size = "100%FREE";
               content = {
                 type = "btrfs";
-                extraArgs = ["-f"];
+                extraArgs = [ "-f" ];
 
                 subvolumes = {
                   "/root" = {
@@ -77,12 +75,18 @@ in {
                   };
 
                   "/persist" = {
-                    mountOptions = ["subvol=persist" "noatime"];
+                    mountOptions = [
+                      "subvol=persist"
+                      "noatime"
+                    ];
                     mountpoint = "/persist";
                   };
 
                   "/nix" = {
-                    mountOptions = ["subvol=nix" "noatime"];
+                    mountOptions = [
+                      "subvol=nix"
+                      "noatime"
+                    ];
                     mountpoint = "/nix";
                   };
                 };

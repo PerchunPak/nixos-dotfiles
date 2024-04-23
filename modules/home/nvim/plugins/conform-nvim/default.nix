@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.nixvim = {
     plugins.conform-nvim = {
       enable = true;
@@ -18,11 +19,17 @@
       '';
       # WARN: Do not forget to add these to `programs.nixvim.extraPackages`
       formattersByFt = {
-        nix = ["alejandra"];
-        lua = ["stylua"];
-        python = ["black" "isort"];
-        javascript = ["prettierd"];
-        "*" = ["codespell" "trim_whitespace"];
+        nix = [ "alejandra" ];
+        lua = [ "stylua" ];
+        python = [
+          "black"
+          "isort"
+        ];
+        javascript = [ "prettierd" ];
+        "*" = [
+          "codespell"
+          "trim_whitespace"
+        ];
       };
     };
 

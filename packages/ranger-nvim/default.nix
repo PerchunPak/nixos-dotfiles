@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 pkgs.vimUtils.buildVimPlugin {
   pname = "ranger.nvim";
   version = "2024-02-09";

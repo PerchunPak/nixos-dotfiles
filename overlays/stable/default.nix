@@ -1,3 +1,1 @@
-{channels, ...}: final: prev: {
-  stable = channels.nixpkgs-stable;
-}
+{ channels, ... }: final: prev: { stable = channels.nixpkgs-stable; }

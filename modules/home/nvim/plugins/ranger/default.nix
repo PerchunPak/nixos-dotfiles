@@ -1,8 +1,7 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.nixvim = {
-    extraPlugins = [
-      pkgs.my.ranger-nvim
-    ];
+    extraPlugins = [ pkgs.my.ranger-nvim ];
 
     extraConfigLua = ''
       require('ranger-nvim').setup({
@@ -17,7 +16,7 @@
       "n"
       "<leader>f"
       ":Ranger<CR>"
-      {options.desc = "Open Ranger ([F]ile manager)";}
+      { options.desc = "Open Ranger ([F]ile manager)"; }
     ]
   ];
 }

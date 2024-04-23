@@ -1,5 +1,6 @@
-{pkgs, ...}: {
-  home.packages = [pkgs.variety];
+{ pkgs, ... }:
+{
+  home.packages = [ pkgs.variety ];
 
   home.file.".config/autostart/variety.desktop".source = "${pkgs.variety}/share/applications/variety.desktop";
 
@@ -11,9 +12,7 @@
   };
 
   my.persistence = {
-    directories = [
-      ".config/variety/Downloaded"
-    ];
+    directories = [ ".config/variety/Downloaded" ];
     files = [
       ".config/variety/.last_change_time"
       ".config/variety/.version"

@@ -1,9 +1,11 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   pkg = pkgs.vesktop;
-in {
-  home.packages = [pkg];
+in
+{
+  home.packages = [ pkg ];
 
-  my.persistence.directories = [".config/vesktop"];
+  my.persistence.directories = [ ".config/vesktop" ];
 
   xdg.configFile = {
     "vesktop/settings" = {

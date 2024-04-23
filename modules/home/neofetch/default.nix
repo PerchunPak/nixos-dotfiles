@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.hyfetch = {
     enable = true;
     package = pkgs.hyfetch;
@@ -9,12 +10,12 @@
       lightness = 0.5;
       color_align = {
         mode = "horizontal";
-        custom_colors = [];
+        custom_colors = [ ];
         fore_back = null;
       };
       backend = "neofetch";
       distro = null;
-      pride_month_shown = [];
+      pride_month_shown = [ ];
       pride_month_disable = false;
     };
   };
@@ -27,5 +28,5 @@
   };
 
   # neofetch needs this to display GPU
-  home.packages = with pkgs; [pciutils];
+  home.packages = with pkgs; [ pciutils ];
 }

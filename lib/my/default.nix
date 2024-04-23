@@ -1,5 +1,7 @@
-{lib, ...}: {
-  mkEnableByDefaultOption = name:
+{ lib, ... }:
+{
+  mkEnableByDefaultOption =
+    name:
     (lib.mkEnableOption name)
     // {
       default = true;

@@ -1,11 +1,9 @@
 # Collection of various small independent plugins/modules
-{
-  inputs,
-  system,
-  ...
-}: let
+{ inputs, system, ... }:
+let
   nixvimHelpers = inputs.nixvim.lib.${system}.helpers;
-in {
+in
+{
   programs.nixvim = {
     plugins.mini = {
       enable = true;
@@ -24,7 +22,7 @@ in {
         # - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
         # - sd'   - [S]urround [D]elete [']quotes
         # - sr)'  - [S]urround [R]eplace [)] [']
-        surround = {};
+        surround = { };
         # Simple and easy statusline.
         #  You could remove this setup call if you don't like it,
         #  and try some other statusline plugin
@@ -41,9 +39,9 @@ in {
           };
           symbol = "▎";
         };
-        basics = {};
-        bracketed = {};
-        comment = {};
+        basics = { };
+        bracketed = { };
+        comment = { };
       };
     };
     extraConfigLua = ''
