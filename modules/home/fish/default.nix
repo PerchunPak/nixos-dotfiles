@@ -19,7 +19,7 @@
       docker-start = "sudo systemctl start docker";
       kssh = "kitten ssh";
       cop = "gh copilot suggest -t shell";
-      rebuild = "git add . && sudo true && nh os switch";
+      rebuild = "cd ~/dotfiles && git add . && sudo true && nh os switch";
       rebuildt = "rebuild -- --show-trace --option eval-cache false";
       mount-diskroot = "sudo mkdir /disk-root && sudo mount /dev/root_vg/root /disk-root";
       pystart = "source ~/dev/python-template/.venv/bin/activate.fish && cruft create ~/dev/python-template && deactivate";
