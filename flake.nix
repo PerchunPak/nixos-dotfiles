@@ -53,6 +53,6 @@
 
       overlays = with inputs; [ nur.overlay ];
 
-      outputs-builder = channels: { formatter = channels.nixpkgs.alejandra; };
+      outputs-builder = channels: { formatter = channels.nixpkgs.nixfmt-rfc-style; };
     };
 }

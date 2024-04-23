@@ -19,7 +19,7 @@
       '';
       # WARN: Do not forget to add these to `programs.nixvim.extraPackages`
       formattersByFt = {
-        nix = [ "alejandra" ];
+        nix = [ "nixfmt" ];
         lua = [ "stylua" ];
         python = [
           "black"
@@ -34,7 +34,7 @@
     };
 
     extraPackages = with pkgs; [
-      alejandra
+      nixfmt-rfc-style
       codespell
       prettierd
       black
