@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  osConfig,
+  lib,
+  ...
+}:
 let
   extensions = with pkgs.gnomeExtensions; [
     blur-my-shell
@@ -11,7 +16,6 @@ let
     burn-my-windows
     tiling-assistant
     quick-lang-switch
-    # keyboard-layout-groups # self-written extension; needs to be repackaged manually - will do later, it doesn't work anyway
   ];
 in
 {
@@ -30,9 +34,14 @@ in
       show-support-dialog = false;
       last-prefs-version = 39;
     };
-    "org/gnome/shell/extensions/caffeine" = {
-      show-notifications = false;
-    };
+    "org/gnome/shell/extensions/caffeine" =
+      {
+        show-notifications = false;
+      }
+      // (lib.mkIf osConfig.my.sleep.disable {
+        toggle-state = true;
+        user-enabled = true;
+      });
     "org/gnome/shell/extensions/ncom/github/hermes83/compiz-alike-magic-lamp-effect" = {
       duration = 350.0;
       x-tiles = 15.0;
