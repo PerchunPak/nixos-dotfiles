@@ -39,6 +39,7 @@ in
         show-notifications = false;
       }
       // (lib.mkIf osConfig.my.sleep.disable {
+        restore-state = true;
         toggle-state = true;
         user-enabled = true;
       });
