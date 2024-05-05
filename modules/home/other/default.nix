@@ -27,5 +27,7 @@
     mtr
     mpv
     onefetch
+    zip
+    unzip
   ];
 }
