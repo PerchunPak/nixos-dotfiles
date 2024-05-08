@@ -5,7 +5,10 @@
   programs.nixvim = {
     enable = true;
     enableMan = false;
-    clipboard.providers.wl-copy.enable = true;
+    clipboard.providers = {
+      wl-copy.enable = true;
+      xclip.enable = true;
+    };
 
     extraConfigLua = ''
       -- Highlight when yanking (copying) text
