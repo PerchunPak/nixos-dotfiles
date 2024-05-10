@@ -31,5 +31,6 @@
     unzip
     hexyl
     bintools
+    hashcat
   ];
 }
