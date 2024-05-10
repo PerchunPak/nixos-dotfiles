@@ -29,5 +29,6 @@
     onefetch
     zip
     unzip
+    hexyl
   ];
 }
