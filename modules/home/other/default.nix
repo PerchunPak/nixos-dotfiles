@@ -30,5 +30,6 @@
     zip
     unzip
     hexyl
+    bintools
   ];
 }
