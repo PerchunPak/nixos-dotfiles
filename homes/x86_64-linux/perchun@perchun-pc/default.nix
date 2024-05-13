@@ -7,6 +7,7 @@
 
   my = {
     gaming.additional-games = with pkgs; [ xonotic ];
+    persistence.directories = [ ".local/share/Celeste" ];
   };
 
   # `allowUnfree` for experimental nix commands
