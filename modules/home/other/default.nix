@@ -32,5 +32,6 @@
     hexyl
     bintools
     hashcat
+    pavucontrol
   ];
 }
