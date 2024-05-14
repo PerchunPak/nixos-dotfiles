@@ -23,7 +23,10 @@ in
     services.xserver = {
       enable = true;
       displayManager = {
-        gdm.enable = true;
+        gdm = {
+          enable = true;
+          wayland = false;
+        };
         defaultSession = "gnome";
       };
       desktopManager.gnome.enable = true;
