@@ -16,6 +16,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [ wineWowPackages.stable ] ++ cfg.additional-games;
+    home.packages = with pkgs; [ wineWowPackages.full ] ++ cfg.additional-games;
   };
 }
