@@ -33,5 +33,6 @@
     bintools
     hashcat
     pavucontrol
+    zed-editor
   ];
 }
