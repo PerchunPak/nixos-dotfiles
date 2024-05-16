@@ -3,9 +3,9 @@
   services.xserver.enable = true;
 
   # Configure keymap
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us,cz,ua,ru";
-    xkbVariant = ",qwerty,,";
+    variant = ",qwerty,,";
   };
 
   # Enable sound, these are settings from Gnome live ISO.
@@ -26,7 +26,7 @@
   # services.xserver.libinput.enable = true;
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin = {
+  services.displayManager.autoLogin = {
     enable = true;
     user = "perchun";
   };

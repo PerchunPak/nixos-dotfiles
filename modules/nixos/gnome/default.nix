@@ -20,16 +20,16 @@ in
     systemd.services."getty@tty1".enable = false;
     systemd.services."autovt@tty1".enable = false;
 
-    services.xserver = {
-      enable = true;
-      displayManager = {
-        gdm = {
+    services = {
+      displayManager.defaultSession = "gnome";
+      xserver = {
+        enable = true;
+        displayManager.gdm = {
           enable = true;
           wayland = false;
         };
-        defaultSession = "gnome";
+        desktopManager.gnome.enable = true;
       };
-      desktopManager.gnome.enable = true;
     };
 
     services.gnome.core-utilities.enable = false;
