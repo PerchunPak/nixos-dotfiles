@@ -8,11 +8,11 @@ TLDR: I can rebuild my system from scratch with a few commands on a new PC.
 I prefer to install NixOS from minimal installation ISO, though any should work as well.
 
 ```bash
-nix-shell -p git neovim
+nix-env -i git neovim
 git clone https://github.com/PerchunPak/nixos-dotfiles
 cd nixos-dotfiles
 # Format disk; also modify device name if needed
-sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko ./modules/nixos/disko.nix --arg device '"/dev/vda"'
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko ./systems/x86-64_linux/perchun-pc/disko.nix --arg device '"/dev/vda"'
 sudo nixos-generate-config --root /mnt
 sudo rm -rf /mnt/etc/nixos
 sudo cp -r ~/nixos-dotfiles /mnt/etc/nixos

@@ -1,13 +1,15 @@
 { ... }:
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    (import ./disko.nix { device = "/dev/nvme0n1"; })
+  ];
 
   networking.hostName = "perchun-pc";
 
   my = {
     nvidia.enable = true;
     zerotier.networks = [ "8850338390436420" ];
-    disko.device = "/dev/nvme0n1";
     sleep.disable = true;
   };
 
