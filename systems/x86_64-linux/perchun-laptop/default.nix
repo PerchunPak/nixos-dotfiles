@@ -8,7 +8,7 @@
   networking.hostName = "perchun-laptop";
 
   my = {
-    nvidia.enable = true;
+    nvidia.enable = false;
     zerotier.networks = [ "8850338390436420" ];
     # sleep.disable = true;
   };
