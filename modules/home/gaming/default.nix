@@ -11,7 +11,10 @@ in
   options = {
     my.gaming = {
       enable = lib.my.mkEnableByDefaultOption "Gaming";
-      additional-games = lib.mkOption { type = with lib.types; listOf package; };
+      additional-games = lib.mkOption {
+        type = with lib.types; listOf package;
+        default = [ ];
+      };
     };
   };
 
