@@ -24,6 +24,7 @@
       mount-diskroot = "sudo mkdir /disk-root && sudo mount /dev/root_vg/root /disk-root";
       pystart = "source ~/dev/python-template/.venv/bin/activate.fish && cruft create ~/dev/python-template && deactivate";
       "." = "ranger";
+      shell = "nix-shell --run 'fish' -p";
     };
 
     plugins = [
