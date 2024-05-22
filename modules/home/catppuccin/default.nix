@@ -5,7 +5,7 @@
   catppuccin = {
     enable = true;
     accent = "maroon";
-    flavour = "mocha";
+    flavor = "mocha";
   };
 
   gtk.catppuccin.cursor.accent = "dark";
