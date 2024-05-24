@@ -6,6 +6,7 @@
       options.programs.nix-ld.libraries.default
       ++ (with pkgs; [
         e2fsprogs
+        gcc
         libgcc
       ]);
   };
