@@ -26,6 +26,7 @@ in
   config = {
     home.persistence."/persist/home" = {
       directories = [
+        "ai"
         "dotfiles"
         "dev"
         "persistent"
