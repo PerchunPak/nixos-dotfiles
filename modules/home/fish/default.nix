@@ -13,9 +13,9 @@
 
     shellAliases = {
       v = "nvim";
-      ls = "${pkgs.eza}/bin/eza --icons";
-      la = "${pkgs.eza}/bin/eza --icons -la";
-      lt = "${pkgs.eza}/bin/eza --icons --tree";
+      ls = "${pkgs.eza}/bin/eza --icons --git";
+      la = "ls -la";
+      lt = "la --tree";
       docker-start = "sudo systemctl start docker";
       kssh = "kitten ssh";
       cop = "gh copilot suggest -t shell";
