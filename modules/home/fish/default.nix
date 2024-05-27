@@ -16,7 +16,6 @@
       ls = "${pkgs.eza}/bin/eza --icons --git";
       la = "ls -la";
       lt = "la --tree";
-      docker-start = "sudo systemctl start docker";
       kssh = "kitten ssh";
       cop = "gh copilot suggest -t shell";
       rebuild = "cd ~/dotfiles && git add . && sudo true && nh os switch";
