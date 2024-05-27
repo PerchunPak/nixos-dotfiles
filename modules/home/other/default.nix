@@ -31,7 +31,6 @@
     unzip
     hexyl
     bintools
-    hashcat
     pavucontrol
     zed-editor
   ];
