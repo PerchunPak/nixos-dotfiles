@@ -33,5 +33,6 @@
     bintools
     pavucontrol
     zed-editor
+    baobab # gnome disk usage analyzer
   ];
 }
