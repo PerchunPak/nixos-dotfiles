@@ -31,6 +31,7 @@ in
         "dev"
         "persistent"
         ".local/share/Steam"
+        ".cache/nix"
       ] ++ cfg.directories;
       files = cfg.files;
       allowOther = true;
