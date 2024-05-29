@@ -12,6 +12,7 @@
     nvidia.enable = true;
     zerotier.networks = [ "8850338390436420" ];
     sleep.disable = true;
+    gnome.wayland = false;
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

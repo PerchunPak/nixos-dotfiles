@@ -11,6 +11,11 @@ in
   options = {
     my.gnome = {
       enable = lib.my.mkEnableByDefaultOption "GNOME";
+
+      wayland = lib.mkOption {
+        type = lib.types.bool;
+        default = true;
+      };
     };
   };
 
@@ -26,7 +31,7 @@ in
         enable = true;
         displayManager.gdm = {
           enable = true;
-          wayland = false;
+          wayland = cfg.wayland;
         };
         desktopManager.gnome.enable = true;
       };

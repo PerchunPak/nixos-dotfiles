@@ -10,6 +10,7 @@
   my = {
     user.password = "$y$j9T$27S3SAmwSy9GYZyTvAVI//$kNaRPqAAe5two6jEJdvvg06zrEEJ66LSOh/wnWQtNmA";
     zerotier.networks = [ "8850338390436420" ];
+    gnome.wayland = true;
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
