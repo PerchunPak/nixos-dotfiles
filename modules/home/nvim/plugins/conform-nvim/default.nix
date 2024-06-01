@@ -25,7 +25,7 @@
           "black"
           "isort"
         ];
-        javascript = [ "prettierd" ];
+        javascript = [ "prettier" ];
         "*" = [
           "codespell"
           "trim_whitespace"
@@ -36,7 +36,7 @@
     extraPackages = with pkgs; [
       nixfmt-rfc-style
       codespell
-      prettierd
+      nodePackages.prettier
       black
       isort
       stylua
