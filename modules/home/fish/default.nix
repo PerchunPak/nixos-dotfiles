@@ -3,10 +3,6 @@
   programs.fish = {
     enable = true;
 
-    loginShellInit = ''
-      set -gx EDITOR nvim
-    '';
-
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
     '';

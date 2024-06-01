@@ -4,6 +4,7 @@
 
   programs.nixvim = {
     enable = true;
+    defaultEditor = true;
     enableMan = false;
     clipboard.providers = {
       wl-copy.enable = true;
