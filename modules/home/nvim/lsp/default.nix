@@ -8,6 +8,7 @@
         nil_ls.enable = true;
         yamlls.enable = true;
         typos-lsp.enable = true;
+        bashls.enable = true;
       };
     };
 
