@@ -32,6 +32,7 @@ in
         "persistent"
         ".local/share/Steam"
         ".cache/nix"
+        ".cache/huggingface"
       ] ++ cfg.directories;
       files = cfg.files;
       allowOther = true;
