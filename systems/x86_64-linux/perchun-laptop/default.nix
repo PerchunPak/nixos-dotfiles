@@ -12,7 +12,4 @@
     zerotier.networks = [ "8850338390436420" ];
     gnome.wayland = true;
   };
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.11";
 }
