@@ -4,7 +4,7 @@
     enable = true;
     flake = config.home-manager.users.perchun.home.homeDirectory + "/dotfiles";
     clean = {
-      enable = true;
+      enable = false;
       dates = "weekly";
       extraArgs = "--keep 10 --keep-since 1d";
     };
