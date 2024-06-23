@@ -7,4 +7,7 @@
     accent = "maroon";
     flavor = "mocha";
   };
+
+  gtk.catppuccin.cursor.accent = "dark";
+  gtk.catppuccin.icon.enable = false;
 }
