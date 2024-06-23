@@ -4,6 +4,7 @@
     todo-comments = {
       enable = true;
       highlight.pattern = ".*<(KEYWORDS)";
+      keymaps.todoTelescope.key = "<leader>st";
     };
   };
 }
