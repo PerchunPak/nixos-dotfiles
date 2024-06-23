@@ -92,7 +92,7 @@
       local builtin = require("telescope.builtin")
 
       vim.keymap.set("n", "<leader>/", function()
-        builtin.current_buffer_fuzzy_find({ previewer = false }))
+        builtin.current_buffer_fuzzy_find({ previewer = false })
       end, { desc = "[/] Fuzzily search in current file" })
 
       vim.keymap.set("n", "<leader>s/", function()
