@@ -5,7 +5,7 @@
     plugins.lsp = {
       enable = true;
       servers = {
-        nil_ls.enable = true;
+        nil-ls.enable = true;
         yamlls.enable = true;
         typos-lsp.enable = true;
         bashls.enable = true;
