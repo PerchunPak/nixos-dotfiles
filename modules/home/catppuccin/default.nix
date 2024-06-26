@@ -8,5 +8,6 @@
     flavor = "mocha";
   };
 
+  gtk.catppuccin.icon.enable = false;
   catppuccin.pointerCursor.accent = "dark";
 }
