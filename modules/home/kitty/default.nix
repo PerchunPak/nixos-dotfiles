@@ -24,4 +24,8 @@
       background_blur = 64;
     };
   };
+
+  home.file.".cache/kitty/main.json".text = ''
+    {"window-size": [2560, 1360]}
+  '';
 }
