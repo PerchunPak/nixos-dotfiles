@@ -6,6 +6,7 @@
       enable = true;
       servers = {
         nil-ls.enable = true;
+        nil-ls.settings.nix.flake.autoArchive = true;
         yamlls.enable = true;
         typos-lsp.enable = true;
         bashls.enable = true;
