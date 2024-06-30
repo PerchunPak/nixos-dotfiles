@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   gtk.enable = true;
+
   programs = {
     ripgrep.enable = true;
     bat.enable = true;
@@ -10,6 +11,7 @@
     jq.enable = true;
     ranger.enable = true;
   };
+
   home.packages = with pkgs; [
     fd
     eza

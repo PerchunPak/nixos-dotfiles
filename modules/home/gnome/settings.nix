@@ -37,6 +37,8 @@
       switch-input-source = [ "<Shift>Alt_L" ];
     };
 
+    "org/gnome/desktop/background".picture-uri-dark = "file:///home/perchun/.local/share/backgrounds/yae_miko.png";
+
     ### Custom keybindings ###
 
     "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
