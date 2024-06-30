@@ -6,6 +6,7 @@
 }:
 let
   cfg = config.my.gnome;
+  guiEnabled = config.my.gui.enable;
 in
 {
   options = {
@@ -19,7 +20,14 @@ in
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = {
+    assertions = [
+      (lib.mkIf cfg.enable {
+        assertion = guiEnabled;
+        message = "If you enable GNOME, you must enable gui as well";
+      })
+    ];
+
     # Workaround for crashing session on auto-login
     # see https://github.com/NixOS/nixpkgs/issues/103746
     systemd.services."getty@tty1".enable = false;
@@ -28,12 +36,12 @@ in
     services = {
       displayManager.defaultSession = "gnome";
       xserver = {
-        enable = true;
+        enable = cfg.enable;
         displayManager.gdm = {
-          enable = true;
-          wayland = cfg.wayland;
+          enable = cfg.enable;
+          wayland = cfg.wayland && cfg.enable;
         };
-        desktopManager.gnome.enable = true;
+        desktopManager.gnome.enable = cfg.enable;
       };
     };
 

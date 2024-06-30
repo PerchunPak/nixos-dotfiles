@@ -2,6 +2,7 @@
   pkgs,
   osConfig,
   lib,
+  nixosConfig,
   ...
 }:
 let
@@ -19,7 +20,7 @@ let
   ];
 in
 {
-  home.packages = extensions;
+  home.packages = lib.mkIf nixosConfig.my.gnome.enable extensions;
 
   dconf.settings = {
     "org/gnome/shell" = {
