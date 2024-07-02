@@ -20,6 +20,7 @@
       pystart = "source ~/dev/python-template/.venv/bin/activate.fish && cruft create ~/dev/python-template && deactivate";
       "." = "ranger";
       shell = "nix-shell --run 'fish' -p";
+      mtr = "mtr --order 'LSD   NBAW'";
     };
 
     plugins = [
