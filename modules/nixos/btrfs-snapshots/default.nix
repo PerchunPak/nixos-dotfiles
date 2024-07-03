@@ -51,4 +51,6 @@
         };
       }) variations
     );
+
+  my.persistence.directories = [ "/.btrfs" ];
 }
