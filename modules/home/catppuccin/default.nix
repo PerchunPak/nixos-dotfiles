@@ -11,4 +11,9 @@
 
   gtk.catppuccin.icon.enable = false;
   catppuccin.pointerCursor.accent = "dark";
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+  };
 }
