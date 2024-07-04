@@ -19,7 +19,7 @@
     mission-center
     ncdu
     tor-browser
-    stable.peazip # https://github.com/NixOS/nixpkgs/issues/305546
+    peazip
     gnome.pomodoro
     meld
     zoom-us
