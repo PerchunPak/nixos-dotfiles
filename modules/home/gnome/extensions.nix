@@ -60,7 +60,7 @@ in
       animate-appicon-hover-animation-convexity = "{'RIPPLE': 2.0, 'PLANK': 1.0, 'SIMPLE': 0.0}";
       animate-appicon-hover-animation-extent = "{'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}";
       animate-appicon-hover-animation-rotation = "{'SIMPLE': 0, 'RIPPLE': 10, 'PLANK': 0}";
-      animate-appicon-hover-animation-travel = "{'SIMPLE': 0.05, 'RIPPLE': 0.4, 'PLANK': 0.0}";
+      animate-appicon-hover-animation-travel = "{'SIMPLE': 0.12, 'RIPPLE': 0.4, 'PLANK': 0.0}";
       animate-appicon-hover-animation-type = "SIMPLE";
       animate-appicon-hover-animation-zoom = "{'SIMPLE': 1.11, 'RIPPLE': 1.25, 'PLANK': 2.0}";
       appicon-margin = 8;
