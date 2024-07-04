@@ -35,15 +35,15 @@ in
       show-support-dialog = false;
       last-prefs-version = 39;
     };
-    "org/gnome/shell/extensions/caffeine" =
-      {
-        show-notifications = false;
-      }
-      // (lib.mkIf osConfig.my.sleep.disable {
+    "org/gnome/shell/extensions/caffeine" = lib.mkMerge [
+      { show-notifications = false; }
+
+      (lib.mkIf osConfig.my.sleep.disable {
         restore-state = true;
         toggle-state = true;
         user-enabled = true;
-      });
+      })
+    ];
     "org/gnome/shell/extensions/ncom/github/hermes83/compiz-alike-magic-lamp-effect" = {
       duration = 350.0;
       x-tiles = 15.0;
