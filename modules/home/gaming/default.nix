@@ -18,7 +18,13 @@ in
     };
   };
 
-  config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [ wineWowPackages.full ] ++ cfg.additional-games;
-  };
+  config = lib.mkMerge [
+    {
+      # not settings this may delete my data, better to keep empty symlink
+      my.persistence.directories = [ ".factorio" ];
+    }
+    (lib.mkIf cfg.enable {
+      home.packages = with pkgs; [ wineWowPackages.full ] ++ cfg.additional-games;
+    })
+  ];
 }
