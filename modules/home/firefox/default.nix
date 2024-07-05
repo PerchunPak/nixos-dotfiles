@@ -66,8 +66,6 @@
   # Autostart firefox
   xdg.configFile."autostart/firefox.desktop".source = "${config.programs.firefox.package}/share/applications/firefox.desktop";
 
-  home.sessionVariables."MOZ_ENABLE_WAYLAND" = 0;
-
   my.persistence.directories = [
     ".mozilla"
     ".cache/mozilla"
