@@ -31,9 +31,6 @@
           toKeep = 3;
         }
       ];
-
-      all-subvolumes = # bash
-        "/ $(btrfs subvolume list -o / | cut -f 9- -d ' ' | grep -v '.btrfs/@snapshots' | sed 's/root//')";
     in
     builtins.listToAttrs (
       map (variation: {
@@ -45,7 +42,7 @@
             busybox
           ];
 
-          script = "btrfs-backup --label ${variation.name} --keep ${toString variation.toKeep} -- ${all-subvolumes}";
+          script = "btrfs-backup --label ${variation.name} --keep ${toString variation.toKeep} -- persist";
           serviceConfig.User = "root";
           startAt = if variation.systemdFormat != null then variation.systemdFormat else variation.name;
           onFailure = [ "btrfs-backup-on-failure.service" ];
