@@ -13,7 +13,6 @@
       la = "ls -la";
       lt = "la --tree";
       kssh = "kitten ssh";
-      cop = "gh copilot suggest -t shell";
 
       rebuild =
         (pkgs.writeShellScript "rebuild.sh" ''
