@@ -5,7 +5,6 @@
         enable = true;
         settings.plugins = {
           rope.enabled = true;
-          rope_autoimport.enabled = true;
           pylsp_mypy.enabled = true;
 
           mccabe.enabled = false; # complexity checking
