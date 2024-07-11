@@ -9,5 +9,6 @@
         handle_leading_whitespace = true;
       };
     };
+    cmp.settings.sources = [ { name = "otter"; } ];
   };
 }
