@@ -20,7 +20,7 @@
     ncdu
     tor-browser
     peazip
-    gnome.pomodoro
+    gnome-pomodoro
     meld
     zoom-us
     gnumake
