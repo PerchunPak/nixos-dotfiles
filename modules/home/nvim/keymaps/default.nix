@@ -85,6 +85,12 @@ in
         "<C-w><C-k>"
         { options.desc = "Move focus to the upper window"; }
       ]
+      [
+        "n"
+        "gY"
+        "gy$"
+        { options.desc = "Copy to system keyboard until the end of line"; }
+      ]
     ];
   };
 }
