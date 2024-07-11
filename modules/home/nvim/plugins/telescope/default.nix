@@ -23,10 +23,6 @@
           action = "keymaps";
           options.desc = "[S]earch [K]eymaps";
         };
-        "<leader>sf" = {
-          action = "find_files";
-          options.desc = "[S]earch [F]iles";
-        };
         "<leader>ss" = {
           action = "builtin";
           options.desc = "[S]earch [S]elect Telescope";
@@ -94,19 +90,36 @@
         };
       };
     };
-    extraConfigLua = ''
-      local builtin = require("telescope.builtin")
+    extraConfigLua = # lua
+      ''
+        local builtin = require("telescope.builtin")
 
-      vim.keymap.set("n", "<leader>/", function()
-        builtin.current_buffer_fuzzy_find({ previewer = false })
-      end, { desc = "[/] Fuzzily search in current file" })
+        vim.keymap.set("n", "<leader>/", function()
+          builtin.current_buffer_fuzzy_find({ previewer = false })
+        end, { desc = "[/] Fuzzily search in current file" })
 
-      vim.keymap.set("n", "<leader>s/", function()
-        builtin.live_grep({
-          grep_open_files = true,
-          prompt_title = "Live Grep in Open Files",
-        })
-      end, { desc = "[S]earch [/] in Open Files" })
-    '';
+        vim.keymap.set("n", "<leader>s/", function()
+          builtin.live_grep({
+            grep_open_files = true,
+            prompt_title = "Live Grep in Open Files",
+          })
+        end, { desc = "[S]earch [/] in Open Files" })
+
+        vim.keymap.set("n", "<leader>s/", function()
+          builtin.live_grep({
+            grep_open_files = true,
+            prompt_title = "Live Grep in Open Files",
+          })
+        end, { desc = "[S]earch [/] in Open Files" })
+
+        -- Firstly try searching in Git files, but if it crashes
+        -- (e.g. if it is not a Git repository), fallback to `find_files`
+        vim.keymap.set("n", "<leader>sf", function()
+          if pcall(builtin.git_files) then
+          else
+            builtin.find_files()
+          end
+        end, { desc = "[S]earch [F]iles" })
+      '';
   };
 }
