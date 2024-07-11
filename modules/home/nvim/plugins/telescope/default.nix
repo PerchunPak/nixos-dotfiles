@@ -7,6 +7,12 @@
         ui-select.enable = true;
       };
 
+      settings = {
+        pickers.find_files.hidden = true;
+        pickers.git_files.hidden = true;
+        pickers.live_grep.hidden = true;
+      };
+
       keymaps = {
         # See `:help telescope.builtin`
         "<leader>sh" = {
