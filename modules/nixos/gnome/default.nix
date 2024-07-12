@@ -51,9 +51,9 @@ in
       gnome-text-editor
       gnome.gnome-calculator
       loupe # image viewer
-      gnome.nautilus # file manager
+      nautilus # file manager
       snapshot # screenshot utility
-      gnome.totem # video player
+      totem # video player
     ];
 
     programs.dconf.enable = true;
