@@ -9,7 +9,15 @@
       "__GLX_VENDOR_LIBRARY_NAME,nvidia"
     ];
 
-    cursor.no_hardware_cursors = true;
+    exec-once = [
+      "waybar &"
+      "swaync &"
+      "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 &"
+      "nm-applet --indicator"
+      "blueman-applet"
+
+      "firefox"
+    ];
 
     "$mainMod" = "SUPER";
     "$terminal" = "kitty";
@@ -74,14 +82,6 @@
       "$mainMod, mouse:273, resizewindow"
     ];
 
-    exec-once = [
-      "waybar &"
-      "swaync &"
-      "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 &"
-
-      "firefox"
-    ];
-
     general = {
       gaps_out = 10;
       gaps_in = 5;
@@ -106,5 +106,7 @@
       "DP-1,2560x1440@164,1920x0,1"
       "HDMI-A-2,1920x1080@60,0x556,1"
     ];
+
+    cursor.no_hardware_cursors = true;
   };
 }
