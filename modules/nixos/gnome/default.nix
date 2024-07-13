@@ -34,9 +34,8 @@ in
     systemd.services."autovt@tty1".enable = false;
 
     services = {
-      displayManager.defaultSession = "gnome";
+      displayManager.defaultSession = lib.mkIf cfg.enable "gnome";
       xserver = {
-        enable = cfg.enable;
         displayManager.gdm = {
           enable = cfg.enable;
           wayland = cfg.wayland && cfg.enable;
@@ -52,7 +51,7 @@ in
       gnome.gnome-calculator
       loupe # image viewer
       nautilus # file manager
-      snapshot # screenshot utility
+      snapshot # camera utility
       totem # video player
     ];
 
