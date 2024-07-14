@@ -7,6 +7,14 @@ in
   options = {
     my.hyprland = {
       enable = lib.my.mkEnableByDefaultOption "Hyprland";
+
+      monitors = lib.mkOption {
+        type = lib.types.listOf lib.types.string;
+        description = ''
+          A list of monitors passed down to hyprland
+          https://wiki.hyprland.org/Configuring/Monitors/
+        '';
+      };
     };
   };
 

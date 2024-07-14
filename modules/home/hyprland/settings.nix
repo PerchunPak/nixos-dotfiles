@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, nixosConfig, ... }:
 {
   wayland.windowManager.hyprland.settings = {
     env = [
@@ -116,10 +116,7 @@
 
     gestures.workspace_swipe = true;
 
-    monitor = [
-      "DP-1,2560x1440@164,1920x0,1"
-      "HDMI-A-2,1920x1080@60,0x556,1"
-    ];
+    monitor = nixosConfig.my.hyprland.monitors;
 
     cursor.no_hardware_cursors = true;
   };

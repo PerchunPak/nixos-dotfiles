@@ -12,5 +12,9 @@
     nvidia.enable = true;
     zerotier.networks = [ "8850338390436420" ];
     gnome.wayland = false;
+    hyprland.monitors = [
+      "DP-1,2560x1440@164,1920x0,1"
+      "HDMI-A-2,1920x1080@60,0x556,1"
+    ];
   };
 }
