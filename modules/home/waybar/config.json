@@ -11,7 +11,6 @@
     "network",
     "bluetooth",
     "hyprland/language",
-    "keyboard-state",
     "clock",
     "tray",
     "custom/lock",
@@ -88,14 +87,6 @@
     "format-cs": "🇨🇿",
     "format-uk": "🇺🇦",
     "format-ru": "💩"
-  },
-  "keyboard-state": {
-    "format": "{icon}",
-    "capslock": true,
-    "format-icons": {
-      "locked": "󰌎",
-      "unlocked": ""
-    }
   },
   "network": {
     "interval": 10,
