@@ -15,10 +15,4 @@
     directories = [ ".local/share/keyrings" ];
     files = [ ".config/monitors.xml" ];
   };
-
-  home.sessionVariables = {
-    # Run Electron apps natively on Wayland
-    # See https://nixos.wiki/wiki/Wayland#Electron_and_Chromium
-    NIXOS_OZONE_WL = "1";
-  };
 }
