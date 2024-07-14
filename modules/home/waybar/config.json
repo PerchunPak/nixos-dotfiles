@@ -89,7 +89,7 @@
     "format-ru": "💩"
   },
   "network": {
-    "interval": 10,
+    "interval": 0.5,
     "format": "{ifname}",
     "format-wifi": "{icon} {signalStrength}%",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
