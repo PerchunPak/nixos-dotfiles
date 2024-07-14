@@ -6,7 +6,7 @@ in
 {
   options = {
     my.hyprland = {
-      enable = lib.mkEnableOption "Hyprland";
+      enable = lib.my.mkEnableByDefaultOption "Hyprland";
     };
   };
 

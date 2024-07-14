@@ -11,7 +11,7 @@ in
 {
   options = {
     my.gnome = {
-      enable = lib.my.mkEnableByDefaultOption "GNOME";
+      enable = lib.mkEnableOption "GNOME";
 
       wayland = lib.mkOption {
         type = lib.types.bool;

@@ -8,9 +8,9 @@
       my.gaming.steam.enable = lib.mkForce false;
     };
 
-    hyprland.configuration = {
-      my.gnome.enable = lib.mkForce false;
-      my.hyprland.enable = lib.mkForce true;
+    gnome.configuration = {
+      my.gnome.enable = lib.mkForce true;
+      my.hyprland.enable = lib.mkForce false;
     };
   };
 }
