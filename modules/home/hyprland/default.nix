@@ -5,7 +5,10 @@
   ...
 }:
 {
-  imports = [ ./settings.nix ];
+  imports = [
+    ./settings.nix
+    ./other-settings.nix
+  ];
 
   config = lib.mkIf nixosConfig.my.hyprland.enable {
     wayland.windowManager.hyprland = {

@@ -22,7 +22,7 @@
     "$mainMod" = "SUPER";
     "$terminal" = "kitty";
     "$fileManager" = "nautilus";
-    "$menu" = "wofi --show drun";
+    "$menu" = "rofi -show drun";
 
     bind = [
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
@@ -95,6 +95,13 @@
       dim_inactive = true;
       dim_strength = -0.2;
     };
+
+    windowrule = [
+      "float,^(Rofi)$"
+      "center 1,^(Rofi)$"
+      "pin,^(Rofi)$"
+      "stayfocused,^(Rofi)$"
+    ];
 
     misc = {
       force_default_wallpaper = -1;
