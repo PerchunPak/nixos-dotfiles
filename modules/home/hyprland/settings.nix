@@ -103,6 +103,12 @@
       "stayfocused,^(Rofi)$"
     ];
 
+    input = {
+      kb_layout = "us,cz,ua,ru";
+      kb_variant = ",qwerty,,";
+      kb_options = "grp:caps_toggle";
+    };
+
     misc = {
       force_default_wallpaper = -1;
       disable_hyprland_logo = false;
