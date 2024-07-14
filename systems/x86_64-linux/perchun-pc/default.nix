@@ -12,6 +12,5 @@
     nvidia.enable = true;
     zerotier.networks = [ "8850338390436420" ];
     gnome.wayland = false;
-    hyprland.enable = true;
   };
 }
