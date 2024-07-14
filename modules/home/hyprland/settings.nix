@@ -10,11 +10,7 @@
     ];
 
     exec-once = [
-      "waybar &"
-      "swaync &"
       "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 &"
-      "nm-applet --indicator"
-      "blueman-applet"
 
       "firefox"
     ];
