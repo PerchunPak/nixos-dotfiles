@@ -11,13 +11,14 @@
   ];
 
   config = lib.mkIf nixosConfig.my.hyprland.enable {
-    wayland.windowManager.hyprland = {
-      enable = true;
-    };
+    wayland.windowManager.hyprland.enable = true;
 
     programs = {
       waybar.enable = true;
-      rofi.enable = true;
+      rofi = {
+        enable = true;
+        package = pkgs.rofi-wayland;
+      };
     };
 
     services = {
