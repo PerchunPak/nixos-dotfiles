@@ -1,0 +1,143 @@
+@import "/nix/store/1c8qc6hm56hjk48smc5337d9mnxx188p-source/themes/mocha.css";
+
+* {
+  font-family: FantasqueSansMono Nerd Font;
+  font-size: 16px;
+  min-height: 0;
+}
+
+#waybar {
+  background: transparent;
+  color: @text;
+  margin: 5px 5px;
+}
+
+#privacy-item {
+  color: @surface0;
+  background-color: @maroon;
+  border-radius: 1rem;
+  padding: 0 0.5rem;
+  margin: 5px 0;
+  margin-left: 0.5rem;
+}
+
+#workspaces {
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @surface0;
+  margin-left: 1rem;
+}
+
+#workspaces button {
+  color: @lavender;
+  border-radius: 1rem;
+  padding: 0.4rem;
+}
+
+#workspaces button.active {
+  color: @sky;
+  border-radius: 1rem;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+  background-color: @surface0;
+  border-radius: 1rem;
+}
+
+#systemd-failed-units.degraded {
+  color: @surface0;
+  background-color: @maroon;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin: 5px 0;
+}
+
+#window {
+  background-color: @surface0;
+  border-radius: 1rem;
+  padding: 0 2rem;
+  margin: 5px 0;
+}
+
+#tray,
+#backlight,
+#clock,
+#battery,
+#power-profiles-daemon,
+#network,
+#bluetooth,
+#pulseaudio,
+#custom-lock,
+#custom-power {
+  background-color: @surface0;
+  padding: 0.5rem;
+  margin: 5px 0;
+}
+
+#language {
+  background-color: @surface0;
+  padding-left: 0.5rem;
+  padding-right: 0.25rem;
+  margin: 5px 0;
+}
+
+#keyboard-state {
+  background-color: @surface0;
+  padding-left: 0.25rem;
+  padding-right: 0.5rem;
+  margin: 5px 0;
+}
+
+#clock {
+  color: @blue;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 1rem;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#backlight, #battery {
+    border-radius: 0;
+}
+
+#pulseaudio {
+  color: @maroon;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 1rem;
+}
+
+#custom-music {
+  color: @mauve;
+  border-radius: 1rem;
+}
+
+#custom-lock {
+    border-radius: 1rem 0px 0px 1rem;
+    color: @lavender;
+}
+
+#custom-power {
+    margin-right: 1rem;
+    border-radius: 0px 1rem 1rem 0px;
+    color: @red;
+}
+
+#tray {
+  margin-right: 1rem;
+  border-radius: 1rem;
+}

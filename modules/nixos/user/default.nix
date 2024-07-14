@@ -20,6 +20,7 @@ in
           "wheel"
           "networkmanager"
           "docker"
+          "input"
         ];
       };
     };
