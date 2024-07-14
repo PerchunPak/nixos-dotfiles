@@ -1,5 +1,3 @@
-@import "/nix/store/1c8qc6hm56hjk48smc5337d9mnxx188p-source/themes/mocha.css";
-
 * {
   font-family: FantasqueSansMono Nerd Font;
   font-size: 16px;
@@ -12,20 +10,25 @@
   margin: 5px 5px;
 }
 
+#privacy {
+  margin: 5px 0;
+  margin-left: 1rem;
+}
+
 #privacy-item {
   color: @surface0;
   background-color: @maroon;
   border-radius: 1rem;
-  padding: 0 0.5rem;
-  margin: 5px 0;
-  margin-left: 0.5rem;
+  padding: 0 0.75rem;
+  margin: 0 0.25rem;
 }
 
 #workspaces {
   border-radius: 1rem;
-  margin: 5px;
-  background-color: @surface0;
+  margin: 5px 0;
+  padding: 0 0.5rem;
   margin-left: 1rem;
+  background-color: @surface0;
 }
 
 #workspaces button {
@@ -49,8 +52,8 @@
   color: @surface0;
   background-color: @maroon;
   border-radius: 1rem;
-  padding: 0.5rem;
-  margin: 5px 0;
+  padding: 0 1rem;
+  margin: 5px 1rem;
 }
 
 #window {
@@ -79,6 +82,7 @@
 #clock {
   color: @blue;
   border-radius: 0px 1rem 1rem 0px;
+  padding-right: 1rem;
   margin-right: 1rem;
 }
 
@@ -99,32 +103,30 @@
 }
 
 #backlight, #battery {
-    border-radius: 0;
+  border-radius: 0;
 }
 
 #pulseaudio {
   color: @maroon;
   border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
-}
-
-#custom-music {
-  color: @mauve;
-  border-radius: 1rem;
+  padding-left: 1rem;
 }
 
 #custom-lock {
-    border-radius: 1rem 0px 0px 1rem;
-    color: @lavender;
+  border-radius: 1rem 0px 0px 1rem;
+  color: @lavender;
+  padding-left: 1rem;
+  margin-left: 1rem;
 }
 
 #custom-power {
-    margin-right: 1rem;
-    border-radius: 0px 1rem 1rem 0px;
-    color: @red;
+  padding-right: 1rem;
+  margin-right: 1rem;
+  border-radius: 0px 1rem 1rem 0px;
+  color: @red;
 }
 
 #tray {
-  margin-right: 1rem;
+  padding: 0 1rem;
   border-radius: 1rem;
 }
