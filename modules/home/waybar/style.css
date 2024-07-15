@@ -42,6 +42,17 @@
   border-radius: 1rem;
 }
 
+@keyframes blinker {
+  50% {
+    opacity: 0.6;
+  }
+}
+
+#workspaces button.urgent {
+  color: @red;
+  animation: blinker 3s linear infinite;
+}
+
 #workspaces button:hover {
   color: @sapphire;
   background-color: @surface0;
