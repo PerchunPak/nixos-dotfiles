@@ -23,8 +23,6 @@
 
     services = {
       swaync.enable = true;
-      network-manager-applet.enable = true;
-      blueman-applet.enable = true;
     };
 
     home.packages = with pkgs; [ hyprshot ];
