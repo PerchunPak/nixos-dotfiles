@@ -12,8 +12,8 @@
     exec-once = [
       "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 &"
 
-      "firefox"
-      "vesktop"
+      "[workspace 1 silent] firefox"
+      "[workspace 3 silent] vesktop"
     ];
 
     "$mainMod" = "SUPER";
@@ -98,8 +98,6 @@
       "center 1,^(Rofi)$"
       "pin,^(Rofi)$"
       "stayfocused,^(Rofi)$"
-
-      "workspace 3,class:^(vesktop)"
     ];
 
     input = {
