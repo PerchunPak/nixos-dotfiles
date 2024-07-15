@@ -36,9 +36,6 @@ in
 
       services.blueman.enable = true;
 
-      xdg.portal.enable = true;
-      # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-
       services.displayManager.defaultSession = lib.mkDefault "hyprland";
     })
   ];
