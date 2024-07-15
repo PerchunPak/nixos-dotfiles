@@ -81,7 +81,8 @@
   "hyprland/window": {
     "format": "{}",
     "icon": true,
-    "separate-outputs": true
+    "separate-outputs": true,
+    "max-length": 70
   },
   "hyprland/language": {
     "format-en": "🇺🇸",
