@@ -63,6 +63,10 @@
   margin: 5px 0;
 }
 
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
 #tray,
 #backlight,
 #clock,
