@@ -70,12 +70,12 @@
     }
   },
   "hyprland/workspaces": {
-    "format": "{name} <big>{icon}</big>",
-    "format-icons": {
-      "1": "󰈹",
-      "3": "󰙯",
-      "default": "",
-      "special": "<span color='#f9e2af'></span>"
+    "format": "{name} <big>{windows}</big>",
+    "window-rewrite-default": "",
+    "window-rewrite": {
+      "class<firefox>": "󰈹",
+      "class<vesktop>": "󰙯",
+      "class<kitty>": ""
     }
   },
   "hyprland/window": {
