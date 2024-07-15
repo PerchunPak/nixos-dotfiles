@@ -25,6 +25,8 @@
     "variety/variety.conf".source = ./variety.conf;
   };
 
+  home.file."Pictures/.keep".text = "Variety needs this";
+
   my.persistence = {
     directories = [ ".config/variety" ];
   };
