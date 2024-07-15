@@ -32,18 +32,18 @@
       head -n 2 style.css1 | cat - style.css > tmp && cat tmp > style.css && rm tmp
 
       trap "$(cat <<-END
-        ${pkgs.toybox}/bin/killall waybar;
+        ${pkgs.toybox}/bin/killall waybar || true;
+        tail -n +3 style.css > tmp && cat tmp > style.css && rm tmp;
         rm style.css && mv style.css1 style.css;
         rm config && mv config1 config;
-        tail -n +3 style.css > tmp && cat tmp > style.css && rm tmp;
         cd -
       END
       )" EXIT
 
       while true; do
-        waybar &
+        waybar || true &
         ${pkgs.inotify-tools}/bin/inotifywait -e create,modify $HOME/.config/waybar/config $HOME/.config/waybar/style.css
-        ${pkgs.toybox}/bin/killall waybar
+        ${pkgs.toybox}/bin/killall waybar || true
       done
     '')
   ];
