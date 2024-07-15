@@ -25,6 +25,9 @@
       swaync.enable = true;
     };
 
-    home.packages = with pkgs; [ hyprshot ];
+    home.packages = with pkgs; [
+      hyprshot
+      swaybg
+    ];
   };
 }

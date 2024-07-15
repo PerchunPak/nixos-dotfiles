@@ -10,10 +10,12 @@
     ];
 
     exec-once = [
+      "swaybg &"
       "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 &"
       "nm-applet --indicator"
       "blueman-applet"
 
+      "variety &"
       "[workspace 1 silent] firefox"
       "[workspace 3 silent] vesktop"
     ];
