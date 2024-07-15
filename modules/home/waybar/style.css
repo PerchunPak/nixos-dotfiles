@@ -7,11 +7,10 @@
 #waybar {
   background: transparent;
   color: @text;
-  margin: 5px 5px;
 }
 
 #privacy {
-  margin: 5px 0;
+  margin-top: 10px;
   margin-left: 1rem;
 }
 
@@ -25,7 +24,7 @@
 
 #workspaces {
   border-radius: 1rem;
-  margin: 5px 0;
+  margin-top: 10px;
   padding: 0 0.5rem;
   margin-left: 1rem;
   background-color: @surface0;
@@ -64,14 +63,14 @@
   background-color: @maroon;
   border-radius: 1rem;
   padding: 0 1rem;
-  margin: 5px 1rem;
+  margin-top: 10px;
 }
 
 #window {
   background-color: @surface0;
   border-radius: 1rem;
   padding: 0 2rem;
-  margin: 5px 0;
+  margin-top: 10px;
 }
 
 window#waybar.empty #window {
@@ -91,7 +90,7 @@ window#waybar.empty #window {
 #custom-power {
   background-color: @surface0;
   padding: 0.5rem;
-  margin: 5px 0;
+  margin-top: 10px;
 }
 
 #clock {
