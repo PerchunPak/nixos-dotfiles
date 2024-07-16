@@ -103,6 +103,8 @@
       "center 1,^(Rofi)$"
       "pin,^(Rofi)$"
       "stayfocused,^(Rofi)$"
+
+      "workspace 4 silent,^(steam)"
     ];
 
     input = {
