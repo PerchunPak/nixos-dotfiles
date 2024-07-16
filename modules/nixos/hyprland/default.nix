@@ -9,7 +9,7 @@ in
       enable = lib.my.mkEnableByDefaultOption "Hyprland";
 
       monitors = lib.mkOption {
-        type = lib.types.listOf lib.types.string;
+        type = lib.types.listOf lib.types.str;
         description = ''
           A list of monitors passed down to hyprland
           https://wiki.hyprland.org/Configuring/Monitors/

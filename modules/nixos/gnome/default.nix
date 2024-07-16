@@ -48,7 +48,7 @@ in
     environment.gnome.excludePackages = [ pkgs.gnome-tour ];
     environment.systemPackages = with pkgs; [
       gnome-text-editor
-      gnome.gnome-calculator
+      gnome-calculator
       loupe # image viewer
       nautilus # file manager
       snapshot # camera utility

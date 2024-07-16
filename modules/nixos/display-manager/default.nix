@@ -37,8 +37,6 @@ in
       services.xserver.enable = true;
 
       # Enable sound, these are settings from Gnome live ISO.
-      # Enabling only pipewire results in crackling sound for me
-      sound.enable = false;
       hardware.pulseaudio.enable = false;
       security.rtkit.enable = true;
       services.pipewire = {
