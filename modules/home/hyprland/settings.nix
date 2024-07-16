@@ -36,6 +36,7 @@
       "$mainMod, P, pseudo, # dwindle"
       "$mainMod, J, togglesplit, # dwindle"
       "$mainMod, F, exec, firefox"
+      "$mainMod, ESCAPE, exec, missioncenter"
 
       # Move focus with mainMod + arrow keys
       "$mainMod, left, movefocus, l"
