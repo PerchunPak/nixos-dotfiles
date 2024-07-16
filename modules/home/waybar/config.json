@@ -75,7 +75,8 @@
     "window-rewrite": {
       "class<firefox>": "󰈹",
       "class<vesktop>": "󰙯",
-      "class<kitty>": ""
+      "class<kitty>": "",
+      "class<steam>": "󰓓"
     }
   },
   "hyprland/window": {

@@ -107,6 +107,12 @@
       "workspace 4 silent,^(steam)"
     ];
 
+    windowrulev2 = [
+      "float,class:(steam),title:(Friends List)"
+      "center,class:(steam),title:(Friends List)"
+      "workspace 4,class:(steam),title:(Friends List)"
+    ];
+
     input = {
       sensitivity = -0.85;
       kb_layout = "us,cz,ua,ru";
