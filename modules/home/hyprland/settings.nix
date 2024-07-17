@@ -117,7 +117,7 @@ in
     ];
 
     input = {
-      sensitivity = cfg.sensitivity;
+      sensitivity = -0.85;
       kb_layout = "us,cz,ua,ru";
       kb_variant = ",qwerty,,";
       kb_options = "grp:caps_toggle";
@@ -128,6 +128,13 @@ in
       force_default_wallpaper = -1;
       disable_hyprland_logo = false;
     };
+
+    device = [
+      {
+        name = "elan0515:00-04f3:3142-touchpad";
+        sensitivity = 0;
+      }
+    ];
 
     gestures.workspace_swipe = true;
 
