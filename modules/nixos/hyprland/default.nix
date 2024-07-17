@@ -15,6 +15,11 @@ in
           https://wiki.hyprland.org/Configuring/Monitors/
         '';
       };
+
+      mouse-sensitivity = lib.mkOption {
+        type = lib.types.number;
+        default = 0;
+      };
     };
   };
 

@@ -1,4 +1,7 @@
 { pkgs, nixosConfig, ... }:
+let
+  cfg = nixosConfig.my.hyprland;
+in
 {
   wayland.windowManager.hyprland.settings = {
     env = [
@@ -114,7 +117,7 @@
     ];
 
     input = {
-      sensitivity = -0.85;
+      sensitivity = cfg.sensitivity;
       kb_layout = "us,cz,ua,ru";
       kb_variant = ",qwerty,,";
       kb_options = "grp:caps_toggle";
@@ -128,7 +131,7 @@
 
     gestures.workspace_swipe = true;
 
-    monitor = nixosConfig.my.hyprland.monitors;
+    monitor = cfg.monitors;
 
     cursor.no_hardware_cursors = true;
   };
