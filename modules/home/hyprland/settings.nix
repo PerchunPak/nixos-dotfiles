@@ -138,6 +138,9 @@ in
 
     gestures.workspace_swipe = true;
 
+    bezier = [ "easeOutExpo,0.16,1,0.3,1" ];
+    animation = [ "workspaces,1,2,easeOutExpo,slide" ];
+
     monitor = cfg.monitors;
 
     cursor.no_hardware_cursors = true;
