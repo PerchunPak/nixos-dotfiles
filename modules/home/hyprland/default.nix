@@ -28,6 +28,7 @@
     home.packages = with pkgs; [
       hyprshot
       swaybg
+      networkmanagerapplet
     ];
   };
 }
