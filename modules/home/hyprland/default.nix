@@ -8,6 +8,8 @@
   imports = [
     ./settings.nix
     ./other-settings.nix
+
+    ./hyprlock.nix
   ];
 
   config = lib.mkIf nixosConfig.my.hyprland.enable {
@@ -19,6 +21,7 @@
         enable = true;
         package = pkgs.rofi-wayland;
       };
+      hyprlock.enable = true;
     };
 
     services = {

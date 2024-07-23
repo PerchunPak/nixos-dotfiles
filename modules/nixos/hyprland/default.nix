@@ -29,9 +29,12 @@ in
     }
 
     (lib.mkIf cfg.enable {
-      programs.hyprland = {
-        enable = true;
-        xwayland.enable = true;
+      programs = {
+        hyprland = {
+          enable = true;
+          xwayland.enable = true;
+        };
+        hyprlock.enable = true;
       };
 
       services.blueman.enable = true;
