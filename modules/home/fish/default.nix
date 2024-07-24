@@ -31,6 +31,19 @@
       "." = "ranger";
       shell = "nix-shell --run 'fish' -p";
       mtr = "mtr --order 'LSD   NBAW'";
+
+      modify =
+        (pkgs.writeShellScript "modify.sh" ''
+          set -ex
+          mv "$1" "$1"1
+          cat "$1"1 > "$1"
+        '').outPath;
+      modifyu =
+        (pkgs.writeShellScript "modify-undo.sh" ''
+          set -ex
+          mv "$1" "$1".modified
+          mv "$1"1 "$1"
+        '').outPath;
     };
 
     plugins = [
