@@ -20,7 +20,7 @@
       tab_separator = " ┇ ";
       tab_powerline_style = "slanted";
       tab_title_template = "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{index} {title}";
-      background_opacity = "0.90";
+      background_opacity = "0.70";
     };
   };
 
