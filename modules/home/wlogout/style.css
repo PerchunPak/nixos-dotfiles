@@ -1,0 +1,71 @@
+/* copied (and later modified) from https://github.com/mylinuxforwork/dotfiles */
+
+* {
+    font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    background-image: none;
+    transition: 20ms;
+    box-shadow: none;
+}
+
+window {
+    background-color: rgba(0, 0, 0, 0);
+    background-size: cover;
+}
+
+button {
+    color: @text;
+    font-size: 1.5rem;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+
+    border-style: solid;
+    background-color: rgba(12, 12, 12, 0.3);
+    border: 4px solid @overlay0;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:focus,
+button:active,
+button:hover {
+    background-color: alpha(@crust, 0.1);
+    border: 4px solid @mauve;
+}
+
+/* Buttons */
+
+#lock,
+#logout,
+#suspend,
+#hibernate,
+#shutdown,
+#reboot {
+    margin: 0.75rem;
+    border-radius: 1.5rem;
+}
+
+#lock {
+    background-image: image(url("icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("icons/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("icons/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("icons/reboot.png"));
+}

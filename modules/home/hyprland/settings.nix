@@ -117,6 +117,8 @@ in
       "workspace 4,class:(steam),title:(Friends List)"
     ];
 
+    layerrule = [ "blur, logout_dialog" ];
+
     input = {
       sensitivity = -0.85;
       kb_layout = "us,cz,ua,ru";

@@ -20,6 +20,7 @@
         package = pkgs.rofi-wayland;
       };
       hyprlock.enable = true;
+      wlogout.enable = true;
     };
 
     services = {
