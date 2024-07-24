@@ -41,6 +41,7 @@ in
       "$mainMod, F, exec, firefox"
       "$mainMod, ESCAPE, exec, missioncenter"
       "$mainMod, L, exec, hyprlock"
+      "$mainMod, K, exec, wlogout"
 
       # Move focus with mainMod + arrow keys
       "$mainMod, left, movefocus, l"

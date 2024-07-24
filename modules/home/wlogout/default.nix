@@ -7,37 +7,37 @@
       {
         label = "lock";
         action = "hyprlock";
-        text = "Lock";
+        text = "Lock [ L ]";
         keybind = "l";
       }
       {
         label = "hibernate";
         action = "systemctl hibernate";
-        text = "Hibernate";
+        text = "Hibernate [ H ]";
         keybind = "h";
       }
       {
         label = "logout";
-        action = "logout";
-        text = "Exit";
-        keybind = "e";
+        action = "loginctl terminate-user $USER";
+        text = "Logout [ O ]";
+        keybind = "o";
       }
       {
         label = "shutdown";
         action = "systemctl poweroff";
-        text = "Shutdown";
+        text = "Shutdown [ S ]";
         keybind = "s";
       }
       {
         label = "suspend";
-        action = "hyprlock; sleep 1 && systemctl suspend";
-        text = "Suspend";
+        action = "systemctl suspend && hyprlock";
+        text = "Suspend [ U ]";
         keybind = "u";
       }
       {
         label = "reboot";
         action = "systemctl reboot";
-        text = "Reboot";
+        text = "Reboot [ R ]";
         keybind = "r";
       }
     ];
