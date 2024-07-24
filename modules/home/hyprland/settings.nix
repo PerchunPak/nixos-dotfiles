@@ -100,6 +100,11 @@ in
 
       dim_inactive = true;
       dim_strength = -0.2;
+
+      blur = {
+        size = 2;
+        passes = 2;
+      };
     };
 
     windowrule = [
