@@ -24,7 +24,13 @@ in
       my.persistence.directories = [ ".factorio" ];
     }
     (lib.mkIf cfg.enable {
-      home.packages = with pkgs; [ wineWowPackages.full ] ++ cfg.additional-games;
+      home.packages =
+        with pkgs;
+        [
+          wineWowPackages.full
+          heroic
+        ]
+        ++ cfg.additional-games;
     })
   ];
 }
