@@ -42,6 +42,8 @@ in
       "$mainMod, ESCAPE, exec, missioncenter"
       "$mainMod, L, exec, hyprlock"
       "$mainMod, K, exec, wlogout"
+      "$mainMod, B, exec, variety --next"
+      "$mainMod SHIFT, B, exec, variety --previous"
 
       # Move focus with mainMod + arrow keys
       "$mainMod, left, movefocus, l"
