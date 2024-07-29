@@ -48,9 +48,8 @@ in
       # Currently alpha-quality/buggy, so false is currently the recommended setting.
       open = false;
 
-      # Enable the Nvidia settings menu,
-      # accessible via `nvidia-settings`.
-      nvidiaSettings = true;
+      # Enable the Nvidia settings menu, accessible via `nvidia-settings`.
+      nvidiaSettings = false;
 
       # Optionally, you may need to select the appropriate driver version for your specific GPU.
       package = cfg.package;
