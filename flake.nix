@@ -47,6 +47,9 @@
 
   outputs =
     inputs:
+    let
+      lib = inputs.nixpkgs.lib;
+    in
     inputs.snowfall-lib.mkFlake {
       inherit inputs;
       src = ./.;
@@ -55,7 +58,21 @@
         namespace = "my";
       };
 
-      channels-config.allowUnfree = true;
+      channels-config.allowUnfreePredicate =
+        pkg:
+        builtins.elem (lib.getName pkg) [
+          "nvidia-x11"
+          "steam"
+          "steam-original"
+          "steam-run"
+          "zerotierone"
+          "zoom"
+          # Firefox extensions
+          "enhancer-for-youtube"
+          "grammarly"
+          "languagetool"
+          "limit-limit-distracting-sites"
+        ];
 
       overlays = with inputs; [ nur.overlay ];
 
