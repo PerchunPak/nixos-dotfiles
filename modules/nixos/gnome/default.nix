@@ -33,18 +33,21 @@ in
     systemd.services."getty@tty1".enable = false;
     systemd.services."autovt@tty1".enable = false;
 
-    services = {
-      displayManager.defaultSession = lib.mkIf cfg.enable "gnome";
-      xserver = {
-        displayManager.gdm = {
-          enable = cfg.enable;
-          wayland = cfg.wayland && cfg.enable;
+    services = lib.mkMerge [
+      (lib.mkIf cfg.enable {
+        displayManager.defaultSession = "gnome";
+        xserver = {
+          displayManager.gdm = {
+            enable = true;
+            wayland = cfg.wayland;
+          };
+          desktopManager.gnome.enable = true;
         };
-        desktopManager.gnome.enable = cfg.enable;
-      };
-    };
+      })
 
-    services.gnome.core-utilities.enable = false;
+      { gnome.core-utilities.enable = false; }
+    ];
+
     environment.gnome.excludePackages = [ pkgs.gnome-tour ];
     environment.systemPackages = with pkgs; [
       gnome-text-editor
@@ -53,6 +56,8 @@ in
       nautilus # file manager
       snapshot # camera utility
       totem # video player
+      glib # gsettings
+      gsettings-desktop-schemas
     ];
 
     programs.dconf.enable = true;

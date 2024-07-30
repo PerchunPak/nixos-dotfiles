@@ -37,9 +37,16 @@ in
         hyprlock.enable = true;
       };
 
-      services.blueman.enable = true;
+      services = {
+        blueman.enable = true;
 
-      services.displayManager.defaultSession = lib.mkDefault "hyprland";
+        displayManager.defaultSession = lib.mkDefault "hyprland";
+        xserver.displayManager = {
+          lightdm.enable = false;
+          gdm.enable = true;
+          gdm.wayland = true;
+        };
+      };
     })
   ];
 }
