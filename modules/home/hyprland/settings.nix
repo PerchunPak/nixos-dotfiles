@@ -20,7 +20,7 @@ in
 
       "variety &"
       "[workspace 1 silent] firefox"
-      "[workspace 3 silent] vesktop"
+      "vesktop"
     ];
 
     "$mainMod" = "SUPER";
@@ -116,6 +116,7 @@ in
       "pin,^(Rofi)$"
       "stayfocused,^(Rofi)$"
 
+      "workspace 3 silent,^(vesktop)"
       "workspace 4 silent,^(steam)"
     ];
 
