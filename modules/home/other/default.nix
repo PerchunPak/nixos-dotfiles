@@ -16,6 +16,7 @@
     htop.enable = true;
     jq.enable = true;
     ranger.enable = true;
+    btop.enable = true;
   };
 
   home.packages = with pkgs; [
