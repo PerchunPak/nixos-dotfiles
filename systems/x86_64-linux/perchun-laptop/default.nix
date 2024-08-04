@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -13,4 +13,6 @@
     gnome.wayland = true;
     hyprland.monitors = [ "eDP-1,1920x1080@144,0x0,1" ];
   };
+
+  programs.nh.clean.enable = lib.mkForce false;
 }
