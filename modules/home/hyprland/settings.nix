@@ -38,7 +38,7 @@ in
       "$mainMod, R, exec, $menu"
       "$mainMod, P, pseudo, # dwindle"
       "$mainMod, J, togglesplit, # dwindle"
-      "$mainMod, F, exec, firefox"
+      "$mainMod, F, fullscreen"
       "$mainMod, ESCAPE, exec, missioncenter"
       "$mainMod, L, exec, hyprlock"
       "$mainMod, K, exec, wlogout"
