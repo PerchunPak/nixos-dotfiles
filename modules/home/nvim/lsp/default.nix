@@ -5,8 +5,8 @@
     plugins.lsp = {
       enable = true;
       servers = {
-        nil-ls.enable = true;
-        nil-ls.settings.nix.flake.autoArchive = true;
+        nixd.enable = true;
+        nixd.settings.formatting.command = [ "nixfmt" ];
         yamlls.enable = true;
         typos-lsp.enable = true;
         bashls.enable = true;

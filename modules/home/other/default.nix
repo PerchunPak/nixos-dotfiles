@@ -42,5 +42,6 @@
     bintools
     pavucontrol
     baobab # gnome disk usage analyzer
+    nixfmt-rfc-style
   ];
 }
