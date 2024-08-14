@@ -42,6 +42,11 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -73,7 +78,10 @@
           "limit-limit-distracting-sites"
         ];
 
-      overlays = with inputs; [ nur.overlay ];
+      overlays = with inputs; [
+        nur.overlay
+        lix-module.overlays.default
+      ];
 
       systems.modules.nixos = with inputs; [ disko.nixosModules.default ];
 
