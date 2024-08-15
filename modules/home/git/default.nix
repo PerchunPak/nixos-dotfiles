@@ -7,6 +7,7 @@
       key = "313F67D1EAB770F9";
       signByDefault = true;
     };
+    delta.enable = true; # syntax highlighting in diff
     extraConfig = {
       init.defaultBranch = "main";
       credential.helper = "store";
