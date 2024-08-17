@@ -21,6 +21,7 @@ in
           "networkmanager"
           "docker"
           "input"
+          "video"
         ];
       };
     };
