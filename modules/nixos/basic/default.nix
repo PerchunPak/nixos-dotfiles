@@ -22,13 +22,8 @@
     device = "nodev";
     efiSupport = true;
     useOSProber = true;
-    extraConfig = ''
-      GRUB_CMDLINE_LINUX_DEFAULT="nvidia-drm.modeset=1"
-    '';
   };
   boot.loader.efi.canTouchEfiVariables = true;
-
-  programs.nix-ld.enable = true;
 
   networking.networkmanager.enable = true;
 
