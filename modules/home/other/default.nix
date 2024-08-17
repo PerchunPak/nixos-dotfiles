@@ -22,7 +22,6 @@
   home.packages = with pkgs; [
     fd
     eza
-    tldr
     mission-center
     ncdu
     tor-browser
