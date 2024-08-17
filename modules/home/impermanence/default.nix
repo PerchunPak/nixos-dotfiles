@@ -33,6 +33,7 @@ in
         ".local/share/Steam"
         ".cache/nix"
         ".cache/huggingface"
+        ".local/state/wireplumber"
       ] ++ cfg.directories;
       files = cfg.files;
       allowOther = true;
