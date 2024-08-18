@@ -14,25 +14,25 @@ require('nixCatsUtils.lazyCat').setup(pluginList, nixLazyPath, {
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
 
-  require 'kickstart/plugins/gitsigns',
+  require 'plugins/gitsigns',
 
-  require 'kickstart/plugins/which-key',
+  require 'plugins/which-key',
 
-  require 'kickstart/plugins/telescope',
+  require 'plugins/telescope',
 
-  require 'kickstart/plugins/lspconfig',
+  require 'plugins/lspconfig',
 
-  require 'kickstart/plugins/conform',
+  require 'plugins/conform',
 
-  require 'kickstart/plugins/cmp',
+  require 'plugins/cmp',
 
-  require 'kickstart/plugins/tokyonight',
+  require 'plugins/tokyonight',
 
-  require 'kickstart/plugins/todo-comments',
+  require 'plugins/todo-comments',
 
-  require 'kickstart/plugins/mini',
+  require 'plugins/mini',
 
-  require 'kickstart/plugins/treesitter',
+  require 'plugins/treesitter',
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
@@ -43,11 +43,11 @@ require('nixCatsUtils.lazyCat').setup(pluginList, nixLazyPath, {
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
+  -- require 'plugins.debug',
+  -- require 'plugins.indent_line',
+  -- require 'plugins.lint',
+  -- require 'plugins.autopairs',
+  -- require 'plugins.neo-tree',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
