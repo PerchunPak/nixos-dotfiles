@@ -1,6 +1,6 @@
 -- nixCats: this is where we define some arguments for the lazy wrapper.
-local pluginList = nil
-local nixLazyPath = nil
+pluginList = nil
+nixLazyPath = nil
 if require('nixCatsUtils').isNixCats then
   local allPlugins = require('nixCats').pawsible.allPlugins
   -- it is called pluginList because we only need to pass in the names
@@ -25,7 +25,7 @@ if require('nixCatsUtils').isNixCats then
   nixLazyPath = allPlugins.start[ [[lazy.nvim]] ]
 end
 -- nixCats: You might want to move the lazy-lock.json file
-local function getlockfilepath()
+function getlockfilepath()
   if
     require('nixCatsUtils').isNixCats
     and type(require('nixCats').settings.unwrappedCfgPath) == 'string'
