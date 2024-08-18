@@ -30,6 +30,11 @@
       url = "github:nix-community/impermanence";
     };
 
+    nixCats = {
+      url = "github:BirdeeHub/nixCats-nvim?dir=nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     catppuccin.url = "github:catppuccin/nix";
 
     nix-index-database = {
