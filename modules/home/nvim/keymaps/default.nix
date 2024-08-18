@@ -41,7 +41,7 @@ in
       # is not what someone will guess without a bit more experience.
       [
         "t"
-        "<Esc><Esc>"
+        "<F1>"
         "<C-\\><C-n>"
         { options.desc = "Exit terminal mode"; }
       ]
