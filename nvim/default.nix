@@ -60,8 +60,45 @@ let
         general = with pkgs; [ ];
       };
 
-      startupPlugins = {
-        general = [ ];
+      startupPlugins = with pkgs.vimPlugins; {
+        general = [
+          vim-sleuth
+          lazy-nvim
+          comment-nvim
+          gitsigns-nvim
+          which-key-nvim
+          telescope-nvim
+          telescope-fzf-native-nvim
+          telescope-ui-select-nvim
+          nvim-web-devicons
+          plenary-nvim
+          nvim-lspconfig
+          lazydev-nvim
+          fidget-nvim
+          conform-nvim
+          nvim-cmp
+          luasnip
+          cmp_luasnip
+          cmp-nvim-lsp
+          cmp-path
+          tokyonight-nvim
+          todo-comments-nvim
+          mini-nvim
+          nvim-treesitter.withAllGrammars
+
+          # kickstart-debug
+          nvim-dap
+          nvim-dap-ui
+          nvim-dap-go
+          nvim-nio
+
+          # kickstart-indent_line
+          indent-blankline-nvim
+          # kickstart-lint
+          nvim-lint
+          # kickstart-autopairs
+          nvim-autopairs
+        ];
       };
 
       environmentVariables = { };
@@ -99,7 +136,7 @@ let
           withNodeJs = false;
           withPerl = false;
 
-          wrapRc = false;
+          wrapRc = true;
 
           configDirName = "nixCats"; # TODO: Remove, for now it is only for testing
         };

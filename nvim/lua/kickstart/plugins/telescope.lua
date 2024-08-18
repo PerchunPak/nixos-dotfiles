@@ -17,13 +17,19 @@ return {
 
         -- `build` is used to run some command when the plugin is installed/updated.
         -- This is only run then, not every time Neovim starts up.
-        build = 'make',
+        --
+        -- nixCats: use lazyAdd to only run build steps if nix wasn't involved.
+        -- because nix already did this.
+        build = require('nixCatsUtils').lazyAdd 'make',
 
         -- `cond` is a condition used to determine whether this plugin should be
         -- installed and loaded.
-        cond = function()
+        --
+        -- nixCats: use lazyAdd to only add this if nix wasn't involved.
+        -- because nix built it already, so who cares if we have make in the path.
+        cond = require('nixCatsUtils').lazyAdd(function()
           return vim.fn.executable 'make' == 1
-        end,
+        end),
       },
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
@@ -75,24 +81,76 @@ return {
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
-      vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-      vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-      vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
-      vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
-      vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-      vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
-      vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-      vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-      vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-      vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set(
+        'n',
+        '<leader>sh',
+        builtin.help_tags,
+        { desc = '[S]earch [H]elp' }
+      )
+      vim.keymap.set(
+        'n',
+        '<leader>sk',
+        builtin.keymaps,
+        { desc = '[S]earch [K]eymaps' }
+      )
+      vim.keymap.set(
+        'n',
+        '<leader>sf',
+        builtin.find_files,
+        { desc = '[S]earch [F]iles' }
+      )
+      vim.keymap.set(
+        'n',
+        '<leader>ss',
+        builtin.builtin,
+        { desc = '[S]earch [S]elect Telescope' }
+      )
+      vim.keymap.set(
+        'n',
+        '<leader>sw',
+        builtin.grep_string,
+        { desc = '[S]earch current [W]ord' }
+      )
+      vim.keymap.set(
+        'n',
+        '<leader>sg',
+        builtin.live_grep,
+        { desc = '[S]earch by [G]rep' }
+      )
+      vim.keymap.set(
+        'n',
+        '<leader>sd',
+        builtin.diagnostics,
+        { desc = '[S]earch [D]iagnostics' }
+      )
+      vim.keymap.set(
+        'n',
+        '<leader>sr',
+        builtin.resume,
+        { desc = '[S]earch [R]esume' }
+      )
+      vim.keymap.set(
+        'n',
+        '<leader>s.',
+        builtin.oldfiles,
+        { desc = '[S]earch Recent Files ("." for repeat)' }
+      )
+      vim.keymap.set(
+        'n',
+        '<leader><leader>',
+        builtin.buffers,
+        { desc = '[ ] Find existing buffers' }
+      )
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
-        builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-          winblend = 10,
-          previewer = false,
-        })
+        builtin.current_buffer_fuzzy_find(
+          require('telescope.themes').get_dropdown {
+            winblend = 10,
+            previewer = false,
+          }
+        )
       end, { desc = '[/] Fuzzily search in current buffer' })
 
       -- It's also possible to pass additional configuration options.
