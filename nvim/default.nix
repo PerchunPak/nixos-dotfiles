@@ -1,14 +1,7 @@
 # Copyright (c) 2023 BirdeeHub
 # Licensed under the MIT license
 /*
-  # paste the inputs you don't have in this set into your main system flake.nix
-  # (lazy.nvim wrapper only works on unstable)
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixCats.url = "github:BirdeeHub/nixCats-nvim?dir=nix";
-  };
-
-  Then call this file with:
+  Call this file with:
   myNixCats = import ./path/to/this/dir { inherit inputs; };
   And the new variable myNixCats will contain all outputs of the normal flake format.
   You could put myNixCats.packages.${pkgs.system}.thepackagename in your packages list.
@@ -63,11 +56,6 @@ let
       ...
     }@packageDef:
     {
-
-      propagatedBuildInputs = {
-        general = with pkgs; [ ];
-      };
-
       lspsAndRuntimeDeps = {
         general = with pkgs; [ ];
       };
@@ -76,29 +64,7 @@ let
         general = [ ];
       };
 
-      optionalPlugins = {
-        gitPlugins = with pkgs.neovimPlugins; [ ];
-        general = with pkgs.vimPlugins; [ ];
-      };
-
-      # shared libraries to be added to LD_LIBRARY_PATH
-      # variable available to nvim runtime
-      sharedLibraries = {
-        general = with pkgs; [
-          # libgit2
-        ];
-      };
-
-      environmentVariables = {
-        test = {
-          CATTESTVAR = "It worked!";
-        };
-      };
-
-      extraWrapperArgs = {
-        # https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/setup-hooks/make-wrapper.sh
-        test = [ ''--set CATTESTVAR2 "It worked again!"'' ];
-      };
+      environmentVariables = { };
 
       # lists of the functions you would have passed to
       # python.withPackages or lua.withPackages
@@ -124,10 +90,10 @@ let
         # they contain a settings set defined above
         # see :help nixCats.flake.outputs.settings
         settings = {
-          wrapRc = true;
+          wrapRc = false;
           # IMPORTANT:
           # your alias may not conflict with your other packages.
-          aliases = [ "vim" ];
+          aliases = [ "v" ];
           # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
         };
         # and a set of categories that you want
@@ -164,33 +130,14 @@ forEachSystem (
         ;
     } categoryDefinitions packageDefinitions;
     defaultPackage = nixCatsBuilder defaultPackageName;
-    # this is just for using utils such as pkgs.mkShell
-    # The one used to build neovim is resolved inside the builder
-    # and is passed to our categoryDefinitions and packageDefinitions
-    pkgs = import nixpkgs { inherit system; };
   in
   {
     # this will make a package out of each of the packageDefinitions defined above
     # and set the default package to the one passed in here.
     packages = utils.mkAllWithDefault defaultPackage;
-
-    # choose your package for devShell
-    # and add whatever else you want in it.
-    devShells = {
-      default = pkgs.mkShell {
-        name = defaultPackageName;
-        packages = [ defaultPackage ];
-        inputsFrom = [ ];
-        shellHook = '''';
-      };
-    };
-
   }
 )
 // {
-
-  # these outputs will be NOT wrapped with ${system}
-
   # this will make an overlay out of each of the packageDefinitions defined above
   # and set the default overlay to the one named here.
   overlays = utils.makeOverlays luaPath {
