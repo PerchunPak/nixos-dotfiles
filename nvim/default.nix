@@ -57,7 +57,23 @@ let
     }@packageDef:
     {
       lspsAndRuntimeDeps = {
-        general = with pkgs; [ ];
+        general = with pkgs; [
+          universal-ctags
+          ripgrep
+          fd
+          stdenv.cc.cc
+          nix-doc
+          lua-language-server
+          nixd
+          stylua
+          wl-clipboard
+
+          # debug
+          delve
+
+          # lint
+          markdownlint-cli
+        ];
       };
 
       startupPlugins = with pkgs.vimPlugins; {
@@ -132,7 +148,7 @@ let
           aliases = [ "v" ];
 
           withRuby = false;
-          withPython = true;
+          withPython3 = true;
           withNodeJs = false;
           withPerl = false;
 
