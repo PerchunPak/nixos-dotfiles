@@ -25,6 +25,7 @@
 
     services = {
       swaync.enable = true;
+      hypridle.enable = true;
     };
 
     home.packages = with pkgs; [
