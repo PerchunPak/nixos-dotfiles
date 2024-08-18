@@ -30,11 +30,6 @@
       url = "github:nix-community/impermanence";
     };
 
-    nixCats = {
-      url = "github:BirdeeHub/nixCats-nvim?dir=nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     catppuccin.url = "github:catppuccin/nix";
 
     nix-index-database = {
@@ -45,6 +40,17 @@
     lix-module = {
       url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Neovim
+    nixCats = {
+      url = "github:BirdeeHub/nixCats-nvim?dir=nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    plugins-luvit-meta = {
+      url = "github:Bilal2453/luvit-meta";
+      flake = false;
     };
   };
 
@@ -84,6 +90,9 @@
 
       systems.modules.nixos = with inputs; [ disko.nixosModules.default ];
 
-      outputs-builder = channels: { formatter = channels.nixpkgs.nixfmt-rfc-style; };
+      outputs-builder = channels: {
+        formatter = channels.nixpkgs.nixfmt-rfc-style;
+        nixCats = import ./nvim { inherit inputs; };
+      };
     };
 }

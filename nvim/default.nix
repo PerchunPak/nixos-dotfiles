@@ -76,46 +76,51 @@ let
         ];
       };
 
-      startupPlugins = with pkgs.vimPlugins; {
-        general = [
-          vim-sleuth
-          lazy-nvim
-          comment-nvim
-          gitsigns-nvim
-          which-key-nvim
-          telescope-nvim
-          telescope-fzf-native-nvim
-          telescope-ui-select-nvim
-          nvim-web-devicons
-          plenary-nvim
-          nvim-lspconfig
-          lazydev-nvim
-          fidget-nvim
-          conform-nvim
-          nvim-cmp
-          luasnip
-          cmp_luasnip
-          cmp-nvim-lsp
-          cmp-path
-          tokyonight-nvim
-          todo-comments-nvim
-          mini-nvim
-          nvim-treesitter.withAllGrammars
+      startupPlugins =
+        with pkgs.vimPlugins;
+        # these are custom plugins, defined as inputs in flake and prefixed with `plugins-`
+        with pkgs.neovimPlugins;
+        {
+          general = [
+            vim-sleuth
+            lazy-nvim
+            luvit-meta
+            comment-nvim
+            gitsigns-nvim
+            which-key-nvim
+            telescope-nvim
+            telescope-fzf-native-nvim
+            telescope-ui-select-nvim
+            nvim-web-devicons
+            plenary-nvim
+            nvim-lspconfig
+            lazydev-nvim
+            fidget-nvim
+            conform-nvim
+            nvim-cmp
+            luasnip
+            cmp_luasnip
+            cmp-nvim-lsp
+            cmp-path
+            tokyonight-nvim
+            todo-comments-nvim
+            mini-nvim
+            nvim-treesitter.withAllGrammars
 
-          # kickstart-debug
-          nvim-dap
-          nvim-dap-ui
-          nvim-dap-go
-          nvim-nio
+            # kickstart-debug
+            nvim-dap
+            nvim-dap-ui
+            nvim-dap-go
+            nvim-nio
 
-          # kickstart-indent_line
-          indent-blankline-nvim
-          # kickstart-lint
-          nvim-lint
-          # kickstart-autopairs
-          nvim-autopairs
-        ];
-      };
+            # kickstart-indent_line
+            indent-blankline-nvim
+            # kickstart-lint
+            nvim-lint
+            # kickstart-autopairs
+            nvim-autopairs
+          ];
+        };
 
       environmentVariables = { };
 
