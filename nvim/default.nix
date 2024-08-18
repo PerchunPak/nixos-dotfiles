@@ -90,11 +90,18 @@ let
         # they contain a settings set defined above
         # see :help nixCats.flake.outputs.settings
         settings = {
-          wrapRc = false;
           # IMPORTANT:
           # your alias may not conflict with your other packages.
           aliases = [ "v" ];
-          # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+
+          withRuby = false;
+          withPython = true;
+          withNodeJs = false;
+          withPerl = false;
+
+          wrapRc = false;
+
+          configDirName = "nixCats"; # TODO: Remove, for now it is only for testing
         };
         # and a set of categories that you want
         # (and other information to pass to lua)
