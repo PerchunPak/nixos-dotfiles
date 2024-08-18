@@ -105,6 +105,7 @@ let
             tokyonight-nvim
             todo-comments-nvim
             mini-nvim
+            catppuccin-nvim
             nvim-treesitter.withAllGrammars
 
             # kickstart-debug
