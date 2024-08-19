@@ -32,8 +32,23 @@ return {
         return '%2l:%-2v'
       end
 
-      -- ... and there is more!
-      --  Check out: https://github.com/echasnovski/mini.nvim
+      require('mini.indentscope').setup {
+        draw = {
+          delay = 0,
+          animation = function()
+            return 0
+          end,
+          priority = 2,
+        },
+        options = {
+          try_as_border = true,
+          border = 'top',
+        },
+        symbol = '▎',
+      }
+
+      require('mini.basics').setup()
+      require('mini.bracketed').setup()
     end,
   },
 }

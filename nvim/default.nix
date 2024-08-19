@@ -63,17 +63,23 @@ let
           ripgrep
           fd
           stdenv.cc.cc
-          nix-doc
-          lua-language-server
-          nixd
-          stylua
           wl-clipboard
 
-          # debug
-          delve
+          # language servers
+          bash-language-server
+          lua-language-server
+          nixd
+          typos-lsp
+          yaml-language-server
 
-          # lint
-          markdownlint-cli
+          # formatting
+          nixfmt-rfc-style
+          codespell
+          nodePackages.prettier
+          black
+          isort
+          stylua
+          gawk # trim_whitespace
         ];
       };
 
@@ -114,7 +120,7 @@ let
             # kickstart-debug
             nvim-dap
             nvim-dap-ui
-            nvim-dap-go
+            nvim-dap-python
             nvim-nio
 
             # kickstart-indent_line
@@ -135,12 +141,13 @@ let
       # in your lua config via
       # vim.g.python3_host_prog
       # or run from nvim terminal via :!<packagename>-python3
+      # @python
       extraPython3Packages = {
-        test = (_: [ ]);
+        general = (pyPkgs: with pyPkgs; [ debugpy ]);
       };
       # populates $LUA_PATH and $LUA_CPATH
       extraLuaPackages = {
-        test = [ (_: [ ]) ];
+        general = [ (_: [ ]) ];
       };
 
     };

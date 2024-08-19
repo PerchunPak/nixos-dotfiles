@@ -258,6 +258,20 @@ return {
         -- tsserver = {},
         --
 
+        yamlls = {},
+        typos_lsp = {},
+        bashls = {},
+        nixd = {
+          settings = {
+            nixd = {
+              formatting = {
+                command = {
+                  'nixfmt',
+                },
+              },
+            },
+          },
+        },
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
