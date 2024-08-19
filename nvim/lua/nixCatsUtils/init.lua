@@ -12,16 +12,18 @@ M.isNixCats = vim.g[ [[nixCats-special-rtp-entry-nixCats]] ] ~= nil
 ---defaults to true if non_nix_value is not provided or is not a boolean.
 ---@param v nixCatsSetupOpts
 function M.setup(v)
-    if not M.isNixCats then
-        local nixCats_default_value
-        if type(v) == "table" and type(v.non_nix_value) == "boolean" then
-            nixCats_default_value = v.non_nix_value
-        else
-            nixCats_default_value = true
-        end
-        -- if not in nix, just make it return a boolean
-        require('_G').nixCats = function(_) return nixCats_default_value end
+  if not M.isNixCats then
+    local nixCats_default_value
+    if type(v) == 'table' and type(v.non_nix_value) == 'boolean' then
+      nixCats_default_value = v.non_nix_value
+    else
+      nixCats_default_value = true
     end
+    -- if not in nix, just make it return a boolean
+    require('_G').nixCats = function(_)
+      return nixCats_default_value
+    end
+  end
 end
 
 ---allows you to guarantee a boolean is returned, and also declare a different
@@ -69,6 +71,6 @@ end
 ---Useful for things such as vim-startuptime which must reference the wrapper's actual path
 ---If not using nix, this will simply return vim.v.progpath
 ---@type string
-M.packageBinPath = os.getenv('NVIM_WRAPPER_PATH_NIX') or vim.v.progpath
+M.packageBinPath = os.getenv 'NVIM_WRAPPER_PATH_NIX' or vim.v.progpath
 
 return M

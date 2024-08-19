@@ -26,9 +26,8 @@ end
 ---@param lazySpecs any
 ---@param lazyCFG table
 function M.setup(pluginTable, nixLazyPath, lazySpecs, lazyCFG)
-
   local function regularLazyDownload()
-    local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+    local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
     if not vim.loop.fs_stat(lazypath) then
       vim.fn.system {
         'git',
@@ -50,7 +49,7 @@ function M.setup(pluginTable, nixLazyPath, lazySpecs, lazyCFG)
     lazypath = regularLazyDownload()
     vim.opt.rtp:prepend(lazypath)
   else
-  -- Else, its nix, so we wrap lazy with a few extra config options
+    -- Else, its nix, so we wrap lazy with a few extra config options
 
     lazypath = nixLazyPath
     -- and also we probably dont have to download lazy either
@@ -59,13 +58,15 @@ function M.setup(pluginTable, nixLazyPath, lazySpecs, lazyCFG)
     end
 
     -- If you wanted to know where nixCats puts everything in its final form to be included:
-    local myNeovimPackages = vim.g[ [[nixCats-special-rtp-entry-vimPackDir]] ] .. "/pack/myNeovimPackages"
+    local myNeovimPackages = vim.g[ [[nixCats-special-rtp-entry-vimPackDir]] ]
+      .. '/pack/myNeovimPackages'
     local grammarDir = require('nixCats').pawsible.allPlugins.ts_grammar_plugin
-    local nixCatsConfigDir = require('nixCats').get([[nixCats_store_config_location]])
+    local nixCatsConfigDir =
+      require('nixCats').get [[nixCats_store_config_location]]
 
     local oldPath
     local lazypatterns
-    if type(lazyCFG) == "table" and type(lazyCFG.dev) == "table" then
+    if type(lazyCFG) == 'table' and type(lazyCFG.dev) == 'table' then
       if type(lazyCFG.dev.patterns) ~= 'table' then
         lazypatterns = M.getTableNamesOrListValues(pluginTable)
       else
@@ -85,40 +86,49 @@ function M.setup(pluginTable, nixLazyPath, lazySpecs, lazyCFG)
       dev = {
         path = function(plugin)
           local path = nil
-          if type(oldPath) == "string" and vim.fn.isdirectory(oldPath .. "/" .. plugin.name) == 1 then
-            path = oldPath .. "/" .. plugin.name
-          elseif type(oldPath) == "function" then
+          if
+            type(oldPath) == 'string'
+            and vim.fn.isdirectory(oldPath .. '/' .. plugin.name) == 1
+          then
+            path = oldPath .. '/' .. plugin.name
+          elseif type(oldPath) == 'function' then
             path = oldPath(plugin)
-            if type(path) ~= "string" then
+            if type(path) ~= 'string' then
               path = nil
             end
           end
           if path == nil then
-            if vim.fn.isdirectory(myNeovimPackages .. "/start/" .. plugin.name) == 1 then
-              path = myNeovimPackages .. "/start/" .. plugin.name
-            elseif vim.fn.isdirectory(myNeovimPackages .. "/opt/" .. plugin.name) == 1 then
-              path = myNeovimPackages .. "/opt/" .. plugin.name
+            if
+              vim.fn.isdirectory(myNeovimPackages .. '/start/' .. plugin.name)
+              == 1
+            then
+              path = myNeovimPackages .. '/start/' .. plugin.name
+            elseif
+              vim.fn.isdirectory(myNeovimPackages .. '/opt/' .. plugin.name)
+              == 1
+            then
+              path = myNeovimPackages .. '/opt/' .. plugin.name
             else
-              path = "~/projects/" .. plugin.name
+              path = '~/projects/' .. plugin.name
             end
           end
           return path
         end,
         patterns = lazypatterns or M.getTableNamesOrListValues(pluginTable),
-      }
+      },
     }
-    lazyCFG = vim.tbl_extend("force", lazyCFG or {}, newLazyOpts)
+    lazyCFG = vim.tbl_extend('force', lazyCFG or {}, newLazyOpts)
 
     -- do the reset we disabled without removing important stuff
     vim.opt.rtp = {
       nixCatsConfigDir,
       nixCatsPath,
       grammarDir,
-      vim.fn.stdpath("data") .. "/site",
+      vim.fn.stdpath 'data' .. '/site',
       lazypath,
       vim.env.VIMRUNTIME,
-      vim.fn.fnamemodify(vim.v.progpath, ":p:h:h") .. "/lib/nvim",
-      nixCatsConfigDir .. "/after",
+      vim.fn.fnamemodify(vim.v.progpath, ':p:h:h') .. '/lib/nvim',
+      nixCatsConfigDir .. '/after',
     }
   end
 
