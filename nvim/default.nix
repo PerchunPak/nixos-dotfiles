@@ -175,21 +175,24 @@ let
 
           wrapRc = true;
         };
-        # and a set of categories that you want
-        # (and other information to pass to lua)
-        categories = {
-          general = true;
-          test = true;
-          example = {
-            youCan = "add more than just booleans";
-            toThisSet = [
-              "and the contents of this categories set"
-              "will be accessible to your lua with"
-              "nixCats('path.to.value')"
-              "see :help nixCats"
-            ];
-          };
+        categories.general = true;
+      };
+    # nvim which loads configuration from ~/.config/nvim, instead
+    # of the store
+    testNvim =
+      { pkgs, ... }:
+      {
+        settings = {
+          aliases = [ "tnvim" ];
+
+          withRuby = false;
+          withPython3 = true;
+          withNodeJs = false;
+          withPerl = false;
+
+          wrapRc = false;
         };
+        categories.general = true;
       };
   };
   # In this section, the main thing you will need to do is change the default package name

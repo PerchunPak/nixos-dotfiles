@@ -1,11 +1,13 @@
-{ inputs, ... }:
+{ inputs, system, ... }:
 let
-  nixCats = (import ../../../nvim { inherit inputs; });
+  nixCats = import ../../../nvim { inherit inputs; };
 in
 {
-  imports = [ nixCats.homeModule ];
+  home.packages = builtins.attrValues nixCats.packages.${system};
 
-  nixCats.enable = true;
+  systemd.user.tmpfiles.rules = [
+    "L /home/perchun/.config/nvim - - - - /home/perchun/dotfiles/nvim"
+  ];
 
   my.persistence.directories = [
     ".local/state/nvim/undo"
