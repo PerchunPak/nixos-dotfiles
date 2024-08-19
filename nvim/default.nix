@@ -56,6 +56,7 @@ let
       ...
     }@packageDef:
     {
+      # @dependencies
       lspsAndRuntimeDeps = {
         general = with pkgs; [
           universal-ctags
@@ -76,6 +77,7 @@ let
         ];
       };
 
+      # @plugins
       startupPlugins =
         with pkgs.vimPlugins;
         # these are custom plugins, defined as inputs in flake and prefixed with `plugins-`
@@ -99,6 +101,7 @@ let
             conform-nvim
             nvim-cmp
             luasnip
+            friendly-snippets
             cmp_luasnip
             cmp-nvim-lsp
             cmp-path
