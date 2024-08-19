@@ -357,6 +357,22 @@
         "type": "github"
       }
     },
+    "plugins-ranger-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1707517578,
+        "narHash": "sha256-8vsSMRRfz6Nj0YIpjGdSwg+iq8Qa7yGbhOmDfWLOgB0=",
+        "owner": "kelly-lin",
+        "repo": "ranger.nvim",
+        "rev": "d3b032feee6b3b0cf923222f260523e2bd7f3ad3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kelly-lin",
+        "repo": "ranger.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -371,6 +387,7 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "nur": "nur",
         "plugins-luvit-meta": "plugins-luvit-meta",
+        "plugins-ranger-nvim": "plugins-ranger-nvim",
         "snowfall-lib": "snowfall-lib"
       }
     },

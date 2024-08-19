@@ -52,6 +52,10 @@
       url = "github:Bilal2453/luvit-meta";
       flake = false;
     };
+    plugins-ranger-nvim = {
+      url = "github:kelly-lin/ranger.nvim";
+      flake = false;
+    };
   };
 
   outputs =

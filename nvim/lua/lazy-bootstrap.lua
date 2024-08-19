@@ -14,7 +14,8 @@ if require('nixCatsUtils').isNixCats then
   -- because the names are slightly different from the url.
   -- when that happens, add them to the list, then also specify the new name in the lazySpec
   pluginList[ [[LuaSnip]] ] = ''
-  pluginList[ [[nvim]] ] = ''
+  pluginList[ [[nvim]] ] = '' -- catppuccin
+  pluginList[ [[ranger.nvim]] ] = ''
   -- alternatively you can do it all in the plugins spec instead of modifying this list.
   -- just set the name and then add `dev = require('nixCatsUtils').lazyAdd(false, true)` to the spec
 

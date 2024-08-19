@@ -113,6 +113,7 @@ let
             nvim-web-devicons
             otter-nvim
             plenary-nvim
+            ranger-nvim
             telescope-fzf-native-nvim
             telescope-nvim
             telescope-ui-select-nvim
