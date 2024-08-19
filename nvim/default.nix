@@ -90,6 +90,7 @@ let
         with pkgs.neovimPlugins;
         {
           general = [
+            alpha-nvim
             vim-sleuth
             lazy-nvim
             luvit-meta
@@ -103,18 +104,22 @@ let
             plenary-nvim
             nvim-lspconfig
             lazydev-nvim
+            lazygit-nvim
             fidget-nvim
+            vim-fugitive
             conform-nvim
             nvim-cmp
             luasnip
+            toggleterm-nvim
             friendly-snippets
             cmp_luasnip
             cmp-nvim-lsp
             cmp-path
-            tokyonight-nvim
             todo-comments-nvim
             mini-nvim
             catppuccin-nvim
+            otter-nvim
+            undotree
             nvim-treesitter.withAllGrammars
 
             # kickstart-debug
