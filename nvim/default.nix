@@ -162,7 +162,11 @@ let
         settings = {
           # IMPORTANT:
           # your alias may not conflict with your other packages.
-          aliases = [ "v" ];
+          aliases = [
+            "v"
+            "vim"
+            "nvim"
+          ];
 
           withRuby = false;
           withPython3 = true;
@@ -170,8 +174,6 @@ let
           withPerl = false;
 
           wrapRc = true;
-
-          configDirName = "nixCats"; # TODO: Remove, for now it is only for testing
         };
         # and a set of categories that you want
         # (and other information to pass to lua)
