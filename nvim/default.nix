@@ -91,49 +91,44 @@ let
         {
           general = [
             alpha-nvim
-            vim-sleuth
-            lazy-nvim
-            luvit-meta
-            comment-nvim
-            gitsigns-nvim
-            which-key-nvim
-            telescope-nvim
-            telescope-fzf-native-nvim
-            telescope-ui-select-nvim
-            nvim-web-devicons
-            plenary-nvim
-            nvim-lspconfig
-            lazydev-nvim
-            lazygit-nvim
-            fidget-nvim
-            vim-fugitive
-            conform-nvim
-            nvim-cmp
-            luasnip
-            toggleterm-nvim
-            friendly-snippets
-            cmp_luasnip
+            catppuccin-nvim
             cmp-nvim-lsp
             cmp-path
-            todo-comments-nvim
+            cmp_luasnip
+            comment-nvim
+            conform-nvim
+            fidget-nvim
+            friendly-snippets
+            gitsigns-nvim
+            indent-blankline-nvim
+            lazy-nvim
+            lazydev-nvim
+            lazygit-nvim
+            luasnip
+            luvit-meta
             mini-nvim
-            catppuccin-nvim
+            nvim-autopairs
+            nvim-cmp
+            nvim-lspconfig
+            nvim-web-devicons
             otter-nvim
+            plenary-nvim
+            telescope-fzf-native-nvim
+            telescope-nvim
+            telescope-ui-select-nvim
+            todo-comments-nvim
+            toggleterm-nvim
             undotree
+            vim-fugitive
+            vim-sleuth
+            which-key-nvim
             nvim-treesitter.withAllGrammars
 
-            # kickstart-debug
+            # debug
             nvim-dap
             nvim-dap-ui
-            nvim-dap-python
             nvim-nio
-
-            # kickstart-indent_line
-            indent-blankline-nvim
-            # kickstart-lint
-            nvim-lint
-            # kickstart-autopairs
-            nvim-autopairs
+            nvim-dap-python
           ];
         };
 
