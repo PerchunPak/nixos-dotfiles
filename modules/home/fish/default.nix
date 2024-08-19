@@ -8,7 +8,6 @@
     '';
 
     shellAliases = {
-      v = "nvim";
       ls = "${pkgs.eza}/bin/eza --icons --git";
       la = "ls -la";
       lt = "la --tree";

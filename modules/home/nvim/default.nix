@@ -1,27 +1,16 @@
-{ inputs, ... }:
+{ inputs, system, ... }:
+let
+  nixCats = import ../../../nvim { inherit inputs; };
+in
 {
-  imports = [ inputs.nixvim.homeManagerModules.nixvim ];
+  home.packages = builtins.attrValues nixCats.packages.${system};
 
-  programs.nixvim = {
-    enable = true;
-    defaultEditor = true;
-    enableMan = false;
-    clipboard.providers = {
-      wl-copy.enable = true;
-      xclip.enable = true;
-    };
+  systemd.user.tmpfiles.rules = [
+    "L /home/perchun/.config/nvim - - - - /home/perchun/dotfiles/nvim"
+  ];
 
-    extraConfigLua = ''
-      -- Highlight when yanking (copying) text
-      --  Try it with `yap` in normal mode
-      --  See `:help vim.highlight.on_yank()`
-      vim.api.nvim_create_autocmd("TextYankPost", {
-        desc = "Highlight when yanking (copying) text",
-        group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-        callback = function()
-          vim.highlight.on_yank()
-        end,
-      })
-    '';
-  };
+  my.persistence.directories = [
+    ".local/state/nvim/undo"
+    ".local/state/nvim/shada"
+  ];
 }
