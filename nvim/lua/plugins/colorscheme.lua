@@ -14,6 +14,9 @@ return {
       }
 
       vim.cmd.colorscheme 'catppuccin'
+
+      -- my customizations to the theme
+      vim.api.nvim_set_hl(0, 'cursorline', { bg = nil })
     end,
   },
 }
