@@ -1,6 +1,7 @@
 result-*
 result
 repl-result-*
+nvim/lazy-lock.json
 
 # Created by https://www.toptal.com/developers/gitignore/api/linux,macos,vim
 # Edit at https://www.toptal.com/developers/gitignore?templates=linux,macos,vim
