@@ -8,14 +8,18 @@ return {
     name = 'catppuccin-nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
+      local flavour = 'mocha'
       require('catppuccin').setup {
-        flavour = 'mocha',
+        flavour = flavour,
         transparent_background = true,
+        custom_highlights = function(c)
+          return {
+            NormalFloat = { bg = c.base },
+          }
+        end,
       }
 
       vim.cmd.colorscheme 'catppuccin'
-
-      -- my customizations to the theme
       vim.api.nvim_set_hl(0, 'cursorline', { bg = nil })
     end,
   },
