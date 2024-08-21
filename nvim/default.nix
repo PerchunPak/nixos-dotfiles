@@ -58,29 +58,38 @@ let
     {
       # @dependencies
       lspsAndRuntimeDeps = {
-        general = with pkgs; [
-          universal-ctags
-          ripgrep
-          fd
-          stdenv.cc.cc
-          wl-clipboard
+        general =
+          with pkgs;
+          [
+            universal-ctags
+            ripgrep
+            fd
+            stdenv.cc.cc
+            wl-clipboard
 
-          # language servers
-          bash-language-server
-          lua-language-server
-          nixd
-          typos-lsp
-          yaml-language-server
+            # language servers
+            basedpyright
+            bash-language-server
+            lua-language-server
+            nixd
+            typos-lsp
+            yaml-language-server
 
-          # formatting
-          nixfmt-rfc-style
-          codespell
-          nodePackages.prettier
-          black
-          isort
-          stylua
-          gawk # trim_whitespace
-        ];
+            # formatting
+            nixfmt-rfc-style
+            codespell
+            nodePackages.prettier
+            black
+            isort
+            stylua
+            gawk # trim_whitespace
+          ]
+          ++ (with python3Packages; [
+            debugpy
+            python-lsp-server
+            pylsp-mypy
+            pylsp-rope
+          ]);
       };
 
       # @plugins
@@ -142,9 +151,8 @@ let
       # in your lua config via
       # vim.g.python3_host_prog
       # or run from nvim terminal via :!<packagename>-python3
-      # @python
       extraPython3Packages = {
-        general = (pyPkgs: with pyPkgs; [ debugpy ]);
+        general = [ (_: [ ]) ];
       };
       # populates $LUA_PATH and $LUA_CPATH
       extraLuaPackages = {
