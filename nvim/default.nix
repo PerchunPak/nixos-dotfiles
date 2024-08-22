@@ -104,7 +104,6 @@ let
             cmp-nvim-lsp
             cmp-path
             cmp_luasnip
-            comment-nvim
             conform-nvim
             fidget-nvim
             friendly-snippets
