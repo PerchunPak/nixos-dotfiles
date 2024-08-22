@@ -157,5 +157,10 @@ in
     monitor = cfg.monitors;
 
     cursor.no_hardware_cursors = true;
+
+    # enable back when firefox will fix itself
+    # v130 should have fix for it, will release at September 3rd
+    # https://bugzilla.mozilla.org/show_bug.cgi?id=1898476
+    render.explicit_sync = false;
   };
 }
