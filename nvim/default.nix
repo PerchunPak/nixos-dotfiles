@@ -71,6 +71,7 @@ let
             basedpyright
             bash-language-server
             lua-language-server
+            marksman
             nixd
             typos-lsp
             yaml-language-server
