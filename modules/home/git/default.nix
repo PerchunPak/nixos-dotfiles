@@ -8,6 +8,10 @@
       signByDefault = true;
     };
     delta.enable = true; # syntax highlighting in diff
+    maintenance = {
+      enable = true;
+      repositories = [ "/home/perchun/dev/nixpkgs/review" ];
+    };
     extraConfig = {
       init.defaultBranch = "main";
       credential.helper = "store";
