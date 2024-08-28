@@ -31,7 +31,7 @@
     zoom-us
     gnumake
     dig
-    gnome.gnome-clocks
+    gnome-clocks
     mtr
     mpv
     onefetch
