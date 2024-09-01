@@ -40,6 +40,11 @@ return {
       { '<F1>', dap.step_into, desc = 'Debug: Step Into' },
       { '<F2>', dap.step_over, desc = 'Debug: Step Over' },
       { '<F3>', dap.step_out, desc = 'Debug: Step Out' },
+      {
+        '<F11>',
+        dap.disconnect { terminateDebuggee = true },
+        desc = 'Debug: Stop',
+      },
       { '<leader>b', dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
       {
         '<leader>B',
@@ -104,7 +109,7 @@ return {
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
     -- Install python specific config
-    require('dap-python').setup(vim.g.python3_host_prog)
+    require('dap-python').setup 'python'
     require('dap-python').test_runner = 'pytest'
   end,
 }
