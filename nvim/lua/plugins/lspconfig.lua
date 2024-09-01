@@ -259,6 +259,7 @@ return {
         --
         -- @servers
 
+        gleam = {},
         marksman = {},
         pylsp = {
           settings = {
