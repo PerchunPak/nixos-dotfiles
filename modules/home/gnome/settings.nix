@@ -44,11 +44,6 @@
       "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
     ];
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      name = "Mission Center";
-      command = "missioncenter";
-      binding = "<Shift><Control>Escape";
-    };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       name = "Kitty";
       command = "kitty";

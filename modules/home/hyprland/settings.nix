@@ -39,7 +39,6 @@ in
       "$mainMod, P, pseudo, # dwindle"
       "$mainMod, J, togglesplit, # dwindle"
       "$mainMod, F, fullscreen"
-      "$mainMod, ESCAPE, exec, missioncenter"
       "$mainMod, L, exec, hyprlock"
       "$mainMod, K, exec, wlogout"
       "$mainMod, B, exec, variety --next"
