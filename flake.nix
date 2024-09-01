@@ -71,21 +71,31 @@
         namespace = "my";
       };
 
-      channels-config.allowUnfreePredicate =
-        pkg:
-        builtins.elem (lib.getName pkg) [
-          "nvidia-x11"
-          "steam"
-          "steam-original"
-          "steam-run"
-          "zerotierone"
-          "zoom"
-          # Firefox extensions
-          "enhancer-for-youtube"
-          "grammarly"
-          "languagetool"
-          "limit-limit-distracting-sites"
-        ];
+      channels-config = {
+        cudaSupport = true;
+        allowUnfreePredicate =
+          pkg:
+          builtins.elem (lib.getName pkg) [
+            "nvidia-x11"
+            "steam"
+            "steam-original"
+            "steam-run"
+            "zerotierone"
+            "zoom"
+            # Firefox extensions
+            "enhancer-for-youtube"
+            "grammarly"
+            "languagetool"
+            "limit-limit-distracting-sites"
+            # cuda
+            "cuda_cccl"
+            "cuda_cudart"
+            "cuda_nvcc"
+            "libcublas"
+            "libcufft"
+            "libnpp"
+          ];
+      };
 
       overlays = with inputs; [
         nur.overlay
