@@ -32,7 +32,7 @@ in
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
       "$mainMod, Q, exec, $terminal"
       "$mainMod, C, killactive,"
-      "$mainMod, M, exit,"
+      "$mainMod, M, exec, hyprctl dispatch dpms on"
       "$mainMod, E, exec, $fileManager"
       "$mainMod, V, togglefloating,"
       "$mainMod, R, exec, $menu"
