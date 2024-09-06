@@ -10,6 +10,7 @@
     "power-profiles-daemon",
     "network",
     "bluetooth",
+    "idle_inhibitor",
     "hyprland/language",
     "clock",
     "tray",
@@ -92,6 +93,15 @@
     "format-cs": "🇨🇿",
     "format-uk": "🇺🇦",
     "format-ru": "💩"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰒳",
+      "deactivated": "󰒲"
+    },
+    "tooltip-format-activated": "Sleep deactivated",
+    "tooltip-format-deactivated": "Sleep is on"
   },
   "network": {
     "interval": 0.5,

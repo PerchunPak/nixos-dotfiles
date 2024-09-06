@@ -84,6 +84,7 @@ window#waybar.empty #window {
 #power-profiles-daemon,
 #network,
 #bluetooth,
+#idle_inhibitor,
 #language,
 #pulseaudio,
 #custom-lock,
@@ -98,6 +99,12 @@ window#waybar.empty #window {
   border-radius: 0px 1rem 1rem 0px;
   padding-right: 1rem;
   margin-right: 1rem;
+}
+
+#idle_inhibitor {
+  font-size: 24px;
+  padding: 0 0.5rem;
+  color: @blue;
 }
 
 #battery {
