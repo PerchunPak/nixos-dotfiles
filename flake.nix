@@ -47,15 +47,6 @@
       url = "github:BirdeeHub/nixCats-nvim?dir=nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    plugins-luvit-meta = {
-      url = "github:Bilal2453/luvit-meta";
-      flake = false;
-    };
-    plugins-ranger-nvim = {
-      url = "github:kelly-lin/ranger.nvim";
-      flake = false;
-    };
   };
 
   outputs =
