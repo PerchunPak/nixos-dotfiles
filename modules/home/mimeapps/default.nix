@@ -1,5 +1,5 @@
 {
-  # dumped from gnome by setting all these options in gui
+  # dumped from gnome by setting all these options in gui via GNOME
   # and then just `cat ~/.config/mimeapps.list`
   xdg.mimeApps = {
     enable = true;
