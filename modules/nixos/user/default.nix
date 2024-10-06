@@ -25,5 +25,7 @@ in
         ];
       };
     };
+
+    nix.settings.trusted-users = [ "@wheel" ];
   };
 }
