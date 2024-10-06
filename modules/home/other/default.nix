@@ -44,5 +44,6 @@
     wl-clipboard
     gleam
     erlang
+    nixpkgs-review
   ];
 }
