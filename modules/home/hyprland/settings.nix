@@ -83,6 +83,11 @@ in
       "$mainMod, mouse_up, workspace, e-1"
 
       ", PRINT, exec, hyprshot --mode region --clipboard-only --silent"
+
+      # fn keys
+      ", code:121, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      ", code:122, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ", code:123, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
     ];
 
     # Move/resize windows with mainMod + LMB/RMB and dragging
