@@ -45,5 +45,6 @@
     gleam
     erlang
     nixpkgs-review
+    _7zz-rar
   ];
 }
