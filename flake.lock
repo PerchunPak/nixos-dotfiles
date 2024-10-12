@@ -225,11 +225,11 @@
     "lix": {
       "flake": false,
       "locked": {
-        "lastModified": 1727712632,
-        "narHash": "sha256-7kaZRZCWG8PmxwIDTVKjJo3VtAGDun7mqfAMlucQbdQ=",
-        "rev": "a16ceb9411c57993d811c6bebb517742fe3d34e3",
+        "lastModified": 1728506278,
+        "narHash": "sha256-ZAPqzjR86En31Yfau0auQmkDuyzr2QfD8yW+7205e8A=",
+        "rev": "9865ebaaa618d82a7b7fdccc636cbaa7dfa42427",
         "type": "tarball",
-        "url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/a16ceb9411c57993d811c6bebb517742fe3d34e3.tar.gz?rev=a16ceb9411c57993d811c6bebb517742fe3d34e3"
+        "url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/9865ebaaa618d82a7b7fdccc636cbaa7dfa42427.tar.gz?rev=9865ebaaa618d82a7b7fdccc636cbaa7dfa42427"
       },
       "original": {
         "type": "tarball",
@@ -240,7 +240,9 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "flakey-profile": "flakey-profile",
-        "lix": "lix",
+        "lix": [
+          "lix"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -348,6 +350,7 @@
         "disko": "disko",
         "home-manager": "home-manager_2",
         "impermanence": "impermanence",
+        "lix": "lix",
         "lix-module": "lix-module",
         "nix-index-database": "nix-index-database",
         "nixCats": "nixCats",
