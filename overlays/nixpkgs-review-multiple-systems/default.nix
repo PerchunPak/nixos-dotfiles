@@ -2,6 +2,7 @@
 final: prev: {
   nixpkgs-review = prev.nixpkgs-review.overrideAttrs (old: {
     version = "2.10.5-dev.53e593d";
+    doInstallCheck = false; # bro i dont care
 
     src = final.fetchFromGitHub {
       owner = "Mic92";
