@@ -34,6 +34,7 @@ in
         ".cache/nix"
         ".cache/huggingface"
         ".local/state/wireplumber"
+        ".local/share/flatpak"
       ] ++ cfg.directories;
       files = cfg.files;
       allowOther = true;

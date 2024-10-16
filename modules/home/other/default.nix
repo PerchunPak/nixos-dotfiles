@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, nixosConfig, ... }:
 {
   home.sessionVariables = {
     # Run Electron apps natively on Wayland
@@ -19,32 +19,35 @@
     btop.enable = true;
   };
 
-  home.packages = with pkgs; [
-    fd
-    eza
-    ncdu
-    tor-browser
-    peazip
-    gnome-pomodoro
-    meld
-    zoom-us
-    gnumake
-    dig
-    gnome-clocks
-    mtr
-    mpv
-    onefetch
-    zip
-    unzip
-    hexyl
-    bintools
-    pavucontrol
-    baobab # gnome disk usage analyzer
-    nixfmt-rfc-style
-    wl-clipboard
-    gleam
-    erlang
-    nixpkgs-review
-    _7zz-rar
-  ];
+  home.packages =
+    with pkgs;
+    [
+      fd
+      eza
+      ncdu
+      tor-browser
+      peazip
+      gnome-pomodoro
+      meld
+      zoom-us
+      gnumake
+      dig
+      gnome-clocks
+      mtr
+      mpv
+      onefetch
+      zip
+      unzip
+      hexyl
+      bintools
+      pavucontrol
+      baobab # gnome disk usage analyzer
+      nixfmt-rfc-style
+      wl-clipboard
+      gleam
+      erlang
+      nixpkgs-review
+      _7zz-rar
+    ]
+    ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
 }
