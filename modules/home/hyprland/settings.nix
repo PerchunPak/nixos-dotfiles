@@ -1,4 +1,9 @@
-{ pkgs, nixosConfig, ... }:
+{
+  pkgs,
+  nixosConfig,
+  lib,
+  ...
+}:
 let
   cfg = nixosConfig.my.hyprland;
 in
@@ -18,10 +23,9 @@ in
       "nm-applet --indicator"
       "blueman-applet"
 
-      "variety &"
       "[workspace 1 silent] firefox"
       "vesktop"
-    ];
+    ] ++ (lib.lists.optional (!nixosConfig.my.economInternetTraffic) "variety &");
 
     "$mainMod" = "SUPER";
     "$terminal" = "kitty";

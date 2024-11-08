@@ -13,6 +13,7 @@
     zerotier.networks = [ "8850338390436420" ];
     hyprland.monitors = [ "eDP-1,1920x1080@144,0x0,1" ];
     flatpak.enable = true;
+    economInternetTraffic = true;
   };
 
   programs.nh.clean.enable = lib.mkForce false;

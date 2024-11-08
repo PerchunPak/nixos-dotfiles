@@ -1,3 +1,4 @@
+{ nixosConfig, lib, ... }:
 {
   programs.git = {
     enable = true;
@@ -9,7 +10,7 @@
     };
     delta.enable = true; # syntax highlighting in diff
     maintenance = {
-      enable = true;
+      enable = !nixosConfig.my.economInternetTraffic;
       repositories = [ "/home/perchun/dev/nixpkgs/review" ];
     };
     extraConfig = {
