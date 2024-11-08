@@ -19,8 +19,12 @@
               mountpoint = "/boot";
             };
           };
-          fedora_2 = { };
-          fedora_3 = { };
+          fedora_2 = {
+            type = "8300";
+          };
+          fedora_3 = {
+            type = "8300";
+          };
           swap = {
             size = "32G";
             content = {

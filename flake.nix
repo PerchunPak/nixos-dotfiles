@@ -49,7 +49,7 @@
 
     # Neovim
     nixCats = {
-      url = "github:BirdeeHub/nixCats-nvim?dir=nix";
+      url = "github:BirdeeHub/nixCats-nvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -77,6 +77,7 @@
             "steam"
             "steam-original"
             "steam-run"
+            "steam-unwrapped"
             "zerotierone"
             "zoom"
             # Firefox extensions
