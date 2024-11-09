@@ -30,6 +30,16 @@
       "." = "ranger";
       shell = "nix-shell --run 'fish' -p";
       mtr = "mtr --order 'LSD   NBAW'";
+      gh = "GITHUB_TOKEN=`rbw get 'GitHub CLI token'` gh";
+      nixpkgs-review = "GITHUB_TOKEN=`rbw get 'GitHub CLI token'` nixpkgs-review";
+      nreview =
+        (pkgs.writeShellScript "nreview.sh" ''
+          set -ex
+          trap 'cd -' EXIT
+
+          cd ~/dev/nixpkgs/master
+          GITHUB_TOKEN=`rbw get 'GitHub CLI token'` nixpkgs-review $@
+        '').outPath;
 
       modify =
         (pkgs.writeShellScript "modify.sh" ''
