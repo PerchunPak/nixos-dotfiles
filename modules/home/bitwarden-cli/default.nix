@@ -8,4 +8,9 @@
       pinentry = pkgs.pinentry-rofi;
     };
   };
+
+  my.persistence.directories = [
+    ".local/share/rbw"
+    ".cache/rbw"
+  ];
 }
