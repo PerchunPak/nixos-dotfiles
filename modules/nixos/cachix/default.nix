@@ -1,8 +1,9 @@
-{ ... }:
+{ lib, ... }:
 {
   nix.settings = {
     # Add cache for nix-community packages
-    substituters = [
+    substituters = lib.mkForce [
+      "https://nixos-cache-proxy.cofob.dev"
       "https://nix-community.cachix.org"
     ];
 
