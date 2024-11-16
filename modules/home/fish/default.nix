@@ -27,7 +27,6 @@
       rebuildt = "rebuild -- --show-trace --option eval-cache false";
       mount-diskroot = "sudo mkdir /disk-root && sudo mount /dev/root_vg/root /disk-root";
       pystart = "source ~/dev/python-template/.venv/bin/activate.fish && cruft create ~/dev/python-template && deactivate";
-      "." = "ranger";
       shell = "nix-shell --run 'fish' -p";
       mtr = "mtr --order 'LSD   NBAW'";
       gh = "GITHUB_TOKEN=(rbw get 'GitHub CLI token') ${pkgs.gh}/bin/gh";

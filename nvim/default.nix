@@ -120,10 +120,11 @@ let
             nvim-autopairs
             nvim-cmp
             nvim-lspconfig
+            nvim-treesitter.withAllGrammars
             nvim-web-devicons
+            oil-nvim
             otter-nvim
             plenary-nvim
-            ranger-nvim
             telescope-fzf-native-nvim
             telescope-nvim
             telescope-ui-select-nvim
@@ -133,7 +134,6 @@ let
             vim-fugitive
             vim-sleuth
             which-key-nvim
-            nvim-treesitter.withAllGrammars
 
             # debug
             nvim-dap

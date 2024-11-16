@@ -15,7 +15,6 @@
     obs-studio.enable = true;
     htop.enable = true;
     jq.enable = true;
-    ranger.enable = true;
     btop.enable = true;
   };
 
