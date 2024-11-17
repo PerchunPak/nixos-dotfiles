@@ -18,4 +18,6 @@ in
     };
     "autostart/vesktop.desktop".source = "${pkg}/share/applications/vesktop.desktop";
   };
+
+  services.arrpc.enable = true;
 }
