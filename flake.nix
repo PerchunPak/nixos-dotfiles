@@ -2,7 +2,7 @@
   description = "My NixOS system";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
     home-manager = {
@@ -15,7 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur.url = "github:nix-community/NUR";
+    nur.url = "github:nix-community/NUR?rev=83139931be39e5cb4deb85f3a86ff17d04a12928";
 
     agenix = {
       url = "github:ryantm/agenix";

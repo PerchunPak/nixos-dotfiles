@@ -67,11 +67,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1731895210,
-        "narHash": "sha256-z76Q/OXLxO/RxMII3fIt/TG665DANiE2lVvnolK2lXk=",
+        "lastModified": 1732030699,
+        "narHash": "sha256-SBosboLvLqDv+7mNgRTIYDQbHE61rDDkXTJWiRX3PPo=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "639d1520df9417ca2761536c3072688569e83c80",
+        "rev": "da52cf40206d7d1a419d07640eb47b2fb9ac2c21",
         "type": "github"
       },
       "original": {
@@ -194,11 +194,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1731968878,
-        "narHash": "sha256-+hTCwETOE9N8voTAaF+IzdUZz28Ws3LDpH90FWADrEE=",
+        "lastModified": 1732025103,
+        "narHash": "sha256-qjEI64RKvDxRyEarY0jTzrZMa8ebezh2DEZmJJrpVdo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a42fa14b53ceab66274a21da480c9f8e06204173",
+        "rev": "a46e702093a5c46e192243edbd977d5749e7f294",
         "type": "github"
       },
       "original": {
@@ -281,11 +281,11 @@
     },
     "nixCats": {
       "locked": {
-        "lastModified": 1732007505,
-        "narHash": "sha256-WQ+d3/L8aSz4A97Gl45afyLrRp+G2cED8M44CrYMGjI=",
+        "lastModified": 1732013614,
+        "narHash": "sha256-7lcv4elkzHXtsOjadBvTgnklPLM2J2AxbOv7prgmCl8=",
         "owner": "BirdeeHub",
         "repo": "nixCats-nvim",
-        "rev": "6d760a8b46159e3254a9bab29a1449c0bf3d4eea",
+        "rev": "e4840fae1364491d89c9c3922c852432ad6577eb",
         "type": "github"
       },
       "original": {
@@ -296,16 +296,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1731139594,
-        "narHash": "sha256-IigrKK3vYRpUu+HEjPL/phrfh7Ox881er1UEsZvw9Q4=",
+        "lastModified": 1732007104,
+        "narHash": "sha256-qaWPxgLAvtIHTDcm0qJuc+WNYjcy4ZKigOyn2ag4ihM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "76612b17c0ce71689921ca12d9ffdc9c23ce40b2",
+        "rev": "0705964c881cea8896474610188905ba41b59b08",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "76612b17c0ce",
+        "ref": "nixos-unstable-small",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -338,6 +338,7 @@
       "original": {
         "owner": "nix-community",
         "repo": "NUR",
+        "rev": "83139931be39e5cb4deb85f3a86ff17d04a12928",
         "type": "github"
       }
     },
