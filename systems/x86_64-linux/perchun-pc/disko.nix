@@ -1,5 +1,6 @@
 {
   device ? throw "Set this to your disk device, e.g. /dev/sda",
+  ...
 }:
 {
   disko.devices = {
@@ -11,25 +12,12 @@
         partitions = {
           esp = {
             name = "ESP";
-            size = "500M";
+            size = "2G";
             type = "EF00";
             content = {
               type = "filesystem";
               format = "vfat";
               mountpoint = "/boot";
-            };
-          };
-          fedora_2 = {
-            type = "8300";
-          };
-          fedora_3 = {
-            type = "8300";
-          };
-          swap = {
-            size = "32G";
-            content = {
-              type = "swap";
-              resumeDevice = true;
             };
           };
           luks = {
@@ -42,6 +30,13 @@
                 type = "lvm_pv";
                 vg = "root_vg";
               };
+            };
+          };
+          swap = {
+            size = "100G";
+            content = {
+              type = "swap";
+              resumeDevice = true;
             };
           };
         };
