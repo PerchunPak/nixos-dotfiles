@@ -15,7 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur.url = "github:nix-community/NUR?rev=83139931be39e5cb4deb85f3a86ff17d04a12928";
+    nur.url = "github:nix-community/NUR";
 
     agenix = {
       url = "github:ryantm/agenix";
