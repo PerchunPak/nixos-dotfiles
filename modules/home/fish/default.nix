@@ -33,11 +33,13 @@
       nixpkgs-review = "GITHUB_TOKEN=(rbw get 'GitHub CLI token') ${pkgs.nixpkgs-review}/bin/nixpkgs-review";
       nreview =
         (pkgs.writeShellScript "nreview.sh" ''
-          set -ex
-          trap 'cd -' EXIT
+          set -e
+          export GITHUB_TOKEN=$(rbw get 'GitHub CLI token')
+          set -x
 
+          trap 'cd -' EXIT
           cd ~/dev/nixpkgs/master
-          GITHUB_TOKEN=$(rbw get 'GitHub CLI token') nixpkgs-review $@
+          nixpkgs-review $@
         '').outPath;
 
       modify =
