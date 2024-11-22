@@ -2,7 +2,7 @@ name: update-flake-lock
 on:
   workflow_dispatch:
   schedule:
-    - cron: '43 8 */3 * *' # https://crontab.guru/#0_10_*/3_*_*
+    - cron: '43 */12 * * *' # https://crontab.guru/#43_*/12_*_*_*
 
 jobs:
   lockfile:
@@ -14,5 +14,13 @@ jobs:
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v1
 
+      - name: Check if nixpkgs got updated
+        id: check
+        continue-on-error: true
+        run: |
+          nix flake update nixpkgs
+          ! git diff --exit-code
+
       - name: Update flake.lock
+        if: steps.check.outputs.exit_code == 0
         uses: DeterminateSystems/update-flake-lock@v23
