@@ -22,5 +22,5 @@ jobs:
           ! git diff --exit-code
 
       - name: Update flake.lock
-        if: steps.check.outputs.exit_code == 0
+        if: steps.check.outcome == 'success'
         uses: DeterminateSystems/update-flake-lock@v23
