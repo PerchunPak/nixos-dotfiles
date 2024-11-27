@@ -19,7 +19,7 @@ jobs:
         continue-on-error: true
         run: |
           nix flake update nixpkgs
-          ! git diff --exit-code
+          ! git diff --exit-code && git restore flake.lock
 
       - name: Update flake.lock
         if: steps.check.outcome == 'success'
