@@ -87,9 +87,6 @@ let
           ]
           ++ (with python3Packages; [
             debugpy
-            python-lsp-server
-            pylsp-mypy
-            pylsp-rope
           ]);
       };
 
@@ -152,7 +149,15 @@ let
       # vim.g.python3_host_prog
       # or run from nvim terminal via :!<packagename>-python3
       extraPython3Packages = {
-        general = [ (_: [ ]) ];
+        general = [
+          (
+            pyPkgs: with pyPkgs; [
+              python-lsp-server
+              pylsp-mypy
+              python-lsp-ruff
+            ]
+          )
+        ];
       };
       # populates $LUA_PATH and $LUA_CPATH
       extraLuaPackages = {
