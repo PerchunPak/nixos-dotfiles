@@ -90,7 +90,6 @@ let
             codespell
             nodePackages.prettier
             black
-            isort
             stylua
             gawk # trim_whitespace
           ]
