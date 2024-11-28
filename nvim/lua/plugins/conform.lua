@@ -33,7 +33,7 @@ return {
       formatters_by_ft = {
         nix = { 'nixfmt' },
         lua = { 'stylua' },
-        python = { 'isort', 'black' },
+        python = { 'isort', 'ruff_format' },
         javascript = { 'prettier' },
         ['*'] = { 'codespell', 'trim_whitespace' },
         -- Conform can also run multiple formatters sequentially
