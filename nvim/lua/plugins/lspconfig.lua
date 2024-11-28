@@ -271,11 +271,6 @@ return {
                   fuzzy = true,
                   eager = true,
                 },
-                pylsp_mypy = {
-                  enabled = true,
-                  -- dmypy = true, -- improves responsiveness
-                  strict = true,
-                },
                 ruff = {
                   enabled = true,
                   -- copied from https://github.com/py-mine/mcstatus/blob/master/pyproject.toml
@@ -321,7 +316,15 @@ return {
             },
           },
         },
-        -- basedpyright = {},
+        basedpyright = {
+          settings = {
+            basedpyright = {
+              analysis = {
+                diagnosticMode = 'workspace',
+              },
+            },
+          },
+        },
         bashls = {},
         typos_lsp = {},
         yamlls = {},

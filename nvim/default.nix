@@ -11,7 +11,7 @@
 
   The following is just the outputs function from the flake template.
 */
-{ inputs, ... }@attrs:
+{ inputs, ... }:
 let
   inherit (inputs) nixpkgs; # <-- nixpkgs = inputs.nixpkgsSomething;
   inherit (inputs.nixCats) utils;
@@ -38,6 +38,15 @@ let
           [
             (utils.standardPluginOverlay inputs)
             # add any flake overlays here.
+            (final: prev: {
+              basedpyright = prev.basedpyright.overrideAttrs (oa: rec {
+                version = "1.22.0";
+                src = oa.src.override {
+                  rev = "refs/tags/v${version}";
+                  hash = "sha256-/I8KCQnjFbE64h2rQuLV31IsVTQhuDxiobQwtx0HRPM=";
+                };
+              });
+            })
           ];
       in
       {
@@ -87,6 +96,7 @@ let
           ]
           ++ (with python3Packages; [
             debugpy
+            basedpyright
           ]);
       };
 
@@ -153,7 +163,6 @@ let
           (
             pyPkgs: with pyPkgs; [
               python-lsp-server
-              pylsp-mypy
               python-lsp-ruff
             ]
           )
