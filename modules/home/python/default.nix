@@ -24,5 +24,6 @@
   my.persistence.directories = [
     ".local/share/pypoetry"
     ".cache/pypoetry"
+    ".cache/pre-commit"
   ];
 }
