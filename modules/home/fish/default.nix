@@ -54,6 +54,14 @@
           mv "$1" "$1".modified
           mv "$1"1 "$1"
         '').outPath;
+
+      list-generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
+      rollback =
+        (pkgs.writeShellScript "rollback.sh" ''
+          set -ex
+          sudo nix-env --switch-generation "$1" -p /nix/var/nix/profiles/system
+          sudo /nix/var/nix/profiles/system/bin/switch-to-configuration switch
+        '').outPath;
     };
 
     plugins = [
