@@ -5,7 +5,7 @@
     python312Packages.black
     python312Packages.ipython
     ruff
-    pkgs.my.cruft
+    cruft
   ];
 
   programs = {
