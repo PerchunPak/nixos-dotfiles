@@ -44,7 +44,7 @@
       nixfmt-rfc-style
       wl-clipboard
       gleam
-      erlang
+      erlang_27
       nixpkgs-review
       _7zz-rar
     ]
