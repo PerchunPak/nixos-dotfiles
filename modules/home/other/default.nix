@@ -43,6 +43,8 @@
       baobab # gnome disk usage analyzer
       nixfmt-rfc-style
       wl-clipboard
+      gleam
+      erlang
       nixpkgs-review
       _7zz-rar
     ]

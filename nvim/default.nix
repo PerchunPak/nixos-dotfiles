@@ -79,6 +79,7 @@ let
             # language servers
             basedpyright
             bash-language-server
+            gleam
             lua-language-server
             marksman
             nixd

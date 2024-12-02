@@ -259,6 +259,7 @@ return {
         --
         -- @servers
 
+        gleam = {},
         marksman = {},
         pylsp = {
           cmd = { vim.g.python3_host_prog, '-m', 'pylsp' },
