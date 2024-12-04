@@ -3,9 +3,11 @@
   programs.fish = {
     enable = true;
 
-    interactiveShellInit = ''
-      set fish_greeting # Disable greeting
-    '';
+    interactiveShellInit = # fish
+      ''
+        set fish_greeting # Disable greeting
+        fish_vi_key_bindings # Vim mode
+      '';
 
     shellAliases = {
       ls = "${pkgs.eza}/bin/eza --icons --git";
