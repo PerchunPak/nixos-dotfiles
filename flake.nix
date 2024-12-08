@@ -99,7 +99,7 @@
       };
 
       overlays = with inputs; [
-        nur.overlay
+        nur.overlays.default
         lix-module.overlays.default
       ];
 
