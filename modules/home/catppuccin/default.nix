@@ -13,7 +13,6 @@
   catppuccin.pointerCursor.accent = "dark";
 
   home.pointerCursor = {
-    gtk.enable = true;
-    x11.enable = true;
+    hyprcursor.enable = true;
   };
 }
