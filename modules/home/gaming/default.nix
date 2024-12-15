@@ -24,6 +24,7 @@ in
       my.persistence.directories = [
         ".factorio"
         ".config/heroic"
+        ".config/unity3d"
       ];
     }
     (lib.mkIf cfg.enable {
