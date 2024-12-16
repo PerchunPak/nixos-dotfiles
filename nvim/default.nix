@@ -39,13 +39,6 @@ let
             (utils.standardPluginOverlay inputs)
             # add any flake overlays here.
             (final: prev: {
-              basedpyright = prev.basedpyright.overrideAttrs (oa: rec {
-                version = "1.22.0";
-                src = oa.src.override {
-                  rev = "refs/tags/v${version}";
-                  hash = "sha256-/I8KCQnjFbE64h2rQuLV31IsVTQhuDxiobQwtx0HRPM=";
-                };
-              });
               gleam = prev.gleam.overrideAttrs (oa: {
                 patches = (oa.patches or [ ]) ++ [
                   (final.fetchpatch {
