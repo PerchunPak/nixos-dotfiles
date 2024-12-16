@@ -13,14 +13,15 @@
       perchun = {
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           bitwarden
-          ublock-origin
-          sponsorblock
-          limit-limit-distracting-sites
-          grammarly
-          languagetool
           disable-javascript
           enhancer-for-youtube
+          grammarly
+          languagetool
+          limit-limit-distracting-sites
           simple-tab-groups
+          sponsorblock
+          stylus
+          ublock-origin
 
           # was removed from store
           # see https://github.com/vladikoff/netflix-1080p-firefox/issues/63
@@ -64,7 +65,8 @@
   };
 
   # Autostart firefox
-  xdg.configFile."autostart/firefox.desktop".source = "${config.programs.firefox.package}/share/applications/firefox.desktop";
+  xdg.configFile."autostart/firefox.desktop".source =
+    "${config.programs.firefox.package}/share/applications/firefox.desktop";
 
   my.persistence.directories = [
     ".mozilla"
