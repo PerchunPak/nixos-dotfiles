@@ -1,7 +1,5 @@
 # Nushell Config File
 #
-# version = "0.100.1"
-#
 # A `config.nu` file is used to override default Nushell settings,
 # define (or import) custom commands, or run any other startup tasks.
 # See https://www.nushell.sh/book/configuration.html
@@ -61,21 +59,21 @@ $env.config.history.sync_on_enter = true
 # Note: Older history items (from before the current shell was started) are
 # always shown.
 # This setting only applies to SQLite-backed history
-$env.config.history.isolation = true
+$env.config.history.isolation = false
 
 # ----------------------
 # Miscellaneous Settings
 # ----------------------
 
 # show_banner (bool): Enable or disable the welcome banner at startup
-$env.config.show_banner = true
+$env.config.show_banner = false
 
 # rm.always_trash (bool):
 # true: rm behaves as if the --trash/-t option is specified
 # false: rm behaves as if the --permanent/-p option is specified (default)
 # Explicitly calling `rm` with `--trash` or `--permanent` always override this setting
 # Note that this feature is dependent on the host OS trashcan support.
-$env.config.rm.always_trash = false
+$env.config.rm.always_trash = true
 
 # recursion_limit (int): how many times a command can call itself recursively
 # before an error will be generated.
@@ -86,14 +84,14 @@ $env.config.recursion_limit = 50
 # ---------------------------
 
 # edit_mode (string) "vi" or "emacs" sets the editing behavior of Reedline
-$env.config.edit_mode = "emacs"
+$env.config.edit_mode = "vi"
 
 # Command that will be used to edit the current line buffer with Ctrl+O.
 # If unset, uses $env.VISUAL and then $env.EDITOR
 #
 # Tip: Set to "editor" to use the default editor on Unix platforms using
 #      the Alternatives system or equivalent
-$env.config.buffer_editor = "editor"
+$env.config.buffer_editor = "nvim"
 
 # cursor_shape_* (string)
 # -----------------------
@@ -101,8 +99,8 @@ $env.config.buffer_editor = "editor"
 # "block", "underscore", "line", "blink_block", "blink_underscore", "blink_line", or "inherit"
 # "inherit" skips setting cursor shape and uses the current terminal setting.
 $env.config.cursor_shape.emacs = "inherit"         # Cursor shape in emacs mode
-$env.config.cursor_shape.vi_insert = "block"       # Cursor shape in vi-insert mode
-$env.config.cursor_shape.vi_normal = "underscore"  # Cursor shape in normal vi mode
+$env.config.cursor_shape.vi_insert = "blink_line"  # Cursor shape in vi-insert mode
+$env.config.cursor_shape.vi_normal = "blink_block" # Cursor shape in normal vi mode
 
 # --------------------
 # Completions Behavior
@@ -111,7 +109,7 @@ $env.config.cursor_shape.vi_normal = "underscore"  # Cursor shape in normal vi m
 # Apply to the Nushell completion system
 
 # algorithm (string): Either "prefix" or "fuzzy"
-$env.config.completions.algorithm = "prefix"
+$env.config.completions.algorithm = "fuzzy"
 
 # sort (string): One of "smart" or "alphabetical"
 # In "smart" mode sort order is based on the "algorithm" setting.
@@ -145,7 +143,7 @@ $env.config.completions.use_ls_colors = true
 # completions.external.*: Settings related to completing external commands
 # and additional completers
 
-# external.exnable (bool)
+# external.enable (bool)
 # true: search for external commands on the Path
 # false: disabling might be desired for performance if your path includes
 #        directories on a slower filesystem
@@ -186,7 +184,7 @@ $env.config.completions.external.completer = {|spans|
 # A keyboard enhancement protocol supported by the Kitty Terminal. Additional keybindings are
 # available when using this protocol in a supported terminal. For example, without this protocol,
 # Ctrl+I is interpreted as the Tab Key. With this protocol, Ctrl+I and Tab can be mapped separately.
-$env.config.use_kitty_protocol = false
+$env.config.use_kitty_protocol = true
 
 # osc2 (bool):
 # When true, the current directory and running command are shown in the terminal tab/window title.
@@ -206,7 +204,7 @@ $env.config.shell_integration.osc9_9 = false
 # osc8 (bool):
 # When true, the `ls` command will generate clickable links that can be launched in another
 # application by the terminal.
-# Note: This setting replaces the now deprecated `ls.show_clickable_links`
+# Note: This setting replaces the now deprecated `ls.clickable_links`
 $env.config.shell_integration.osc8 = true
 
 # Deprecated
@@ -287,7 +285,7 @@ $env.config.footer_mode = 25
 # "rounded", "thin", "with_love", "psql", "markdown", "dots", "restructured", "ascii_rounded",
 # or "basic_compact"
 # Can be overridden by passing a table to `| table --theme/-t`
-$env.config.table.mode = "default"
+$env.config.table.mode = "compact"
 
 # index_mode (string) - One of:
 # "never": never show the index column in a table or list
@@ -317,16 +315,11 @@ $env.config.table.trim = {
   methodology: "wrapping"
   wrapping_try_keep_words: true
 }
-# or
-$env.config.table.trim = {
-  methodology: "truncating"
-  truncating_suffix: "..."
-}
 
 # header_on_separator (bool):
 # true: Displays the column headers as part of the top (or bottom) border of the table
 # false: Displays the column header in its own row with a separator below.
-$env.config.table.header_on_separator = false
+$env.config.table.header_on_separator = true
 
 # abbreviated_row_count (int or nothing):
 # If set to an int, all tables will be abbreviated to only show the first <n> and last <n> rows
@@ -338,7 +331,7 @@ $env.config.table.abbreviated_row_count
 # true: If a nested table is long enough on its own to display a footer (per `footer_mode` above),
 #       then also display the footer for the parent table
 # false: Always apply `footer_mode` rules to the parent table
-$env.config.table.footer_inheritance = false
+$env.config.table.footer_inheritance = true
 
 # ----------------
 # Datetime Display
@@ -462,24 +455,24 @@ $env.config.keybindings ++= [
 # Simple example - Add a new Help menu to the list (note that a similar menu is already
 # defined internally):
 $env.config.menus ++= [
-    {
-        name: help_menu
-        only_buffer_difference: true
-        marker: "? "
-        type: {
-            layout: description
-            columns: 4
-            col_width: 20     # Optional value. If missing all the screen width is used to calculate column width
-            col_padding: 2
-            selection_rows: 4
-            description_rows: 10
-        }
-        style: {
-            text: green
-            selected_text: green_reverse
-            description_text: yellow
-        }
-    }
+    #{
+    #    name: help_menu
+    #    only_buffer_difference: true
+    #    marker: "? "
+    #    type: {
+    #        layout: description
+    #        columns: 4
+    #        col_width: 20     # Optional value. If missing all the screen width is used to calculate column width
+    #        col_padding: 2
+    #        selection_rows: 4
+    #        description_rows: 10
+    #    }
+    #    style: {
+    #        text: green
+    #        selected_text: green_reverse
+    #        description_text: yellow
+    #    }
+    #}
 ]
 
 
@@ -530,8 +523,8 @@ $env.config.highlight_resolved_externals = true
 # Note that this is usually set through a theme provided by a record in a custom command. For
 # instance, the standard library contains two "starter" theme commands: "dark-theme" and
 # "light-theme". For example:
-use std/config dark-theme
-$env.config.color_config = (dark-theme)
+#use std/config dark-theme
+#$env.config.color_config = (dark-theme)
 
 # Or, individual color settings can be configured or overridden.
 #
@@ -552,10 +545,9 @@ $env.config.color_config = (dark-theme)
 # foreground, background, and cursor colors are not handled by Nushell, but can be used by
 # custom-commands such as `theme` from the nu_scripts repository. That `theme` command can be
 # used to set the terminal foreground, background, and cursor colors.
-# TODO: cannot find column
-# $env.config.color_config.foreground
-# $env.config.color_config.background
-# $env.config.color_config.cursor
+#$env.config.color_config.foreground
+#$env.config.color_config.background
+#$env.config.color_config.cursor
 
 # -------------------------------------------------------------------------------------------------
 # shape_: Applies syntax highlighting based on the "shape" (inferred or declared type) of an
@@ -706,31 +698,31 @@ $env.config.color_config.shape_flag
 # Simple examples:
 
 # bool: A boolean value
-$env.config.color_config.bool = {||
-  if $in {
-    {
-      bg: 'light_green'
-      fg: 'white'
-      attr: 'b'
-    }
-  } else {
-    {
-      bg: 'yellow'
-      fg: 'black'
-      attr: 'b'
-    }
-  }
-}
+# $env.config.color_config.bool = {||
+#   if $in {
+#     {
+#       bg: 'light_green'
+#       fg: 'white'
+#       attr: 'b'
+#     }
+#   } else {
+#     {
+#       bg: 'yellow'
+#       fg: 'black'
+#       attr: 'b'
+#     }
+#   }
+# }
 
 # int: An integer value
-$env.config.color_config.int = {||
-  if $in == 42 { 'green' } else { 'red' }
-}
+# $env.config.color_config.int = {||
+#   if $in == 42 { 'green' } else { 'red' }
+# }
 
 # Additional type values (without examples):
 $env.config.color_config.string      # String
 $env.config.color_config.float       # Float value
-# TODO: https://github.com/nushell/nushell/issues/14600
+# https://github.com/nushell/nushell/issues/14600
 #$env.config.color_config.glob       # Glob value (must be declared)
 $env.config.color_config.binary      # Binary value
 $env.config.color_config.nothing     # Not used, since a null is not displayed
@@ -776,17 +768,17 @@ $env.config.color_config.leading_trailing_space_bg = { bg: 'red' }
 # Configure the UI colors of the `explore` command
 # Allowed values are the same as for the `color_config` options above.
 # Example:
-$env.config.explore = {
-    status_bar_background: { fg: "#1D1F21", bg: "#C4C9C6" },
-    command_bar_text: { fg: "#C4C9C6" },
-    highlight: { fg: "black", bg: "yellow" },
-    status: {
-        error: { fg: "white", bg: "red" },
-        warn: {}
-        info: {}
-    },
-    selected_cell: { bg: light_blue },
-}
+# $env.config.explore = {
+#     status_bar_background: { fg: "#1D1F21", bg: "#C4C9C6" },
+#     command_bar_text: { fg: "#C4C9C6" },
+#     highlight: { fg: "black", bg: "yellow" },
+#     status: {
+#         error: { fg: "white", bg: "red" },
+#         warn: {}
+#         info: {}
+#     },
+#     selected_cell: { bg: light_blue },
+# }
 
 # ---------------------------------------------------------------------------------------
 # Environment Variables
@@ -795,56 +787,56 @@ $env.config.explore = {
 # In addition to the $env.config record, a number of other environment variables
 # also affect Nushell's behavior:
 
-# PROMPT_*
-# --------
-# Prompt configuration
-# PROMPT_ variables accept either a string or a closure that returns a string
-
-# PROMPT_COMMAND
-# --------------
-# Defines the primary prompt. Note that the PROMPT_INDICATOR (below) is appended to this value.
-# Simple example - Static string:
-$env.PROMPT_COMMAND = "Nushell"
-# Simple example - Dynamic closure displaying the path:
-$env.PROMPT_COMMAND = {|| pwd}
-
-# PROMPT_COMMAND_RIGHT
-# --------------------
-# Defines a prompt which will appear right-aligned in the terminal
-$env.PROMPT_COMMAND_RIGHT = {|| date now | format date "%d-%a %r" }
-
-# PROMPT_INDICATOR*
-# -----------------
-# The prompt indicators are environmental variables that represent
-# the state of the prompt. The specified character(s) will appear
-# immediately following the PROMPT_COMMAND
-
-# When in Emacs mode (default):
-$env.PROMPT_INDICATOR = "> "
-
-# When in normal vi mode:
-$env.PROMPT_INDICATOR_VI_NORMAL = "> "
-# When in vi insert-mode:
-$env.PROMPT_INDICATOR_VI_INSERT = ": "
-
-# When a commandline extends across multiple lines:
-$env.PROMPT_MULTILINE_INDICATOR = "::: "
-
-# TRANSIENT_PROMPT_*
-# ------------------
-# Allows a different prompt to be shown after a command has been executed.  This
-# can be useful if you have a 2-line prompt. Instead of each previously-entered
-# command taking up at least 2 lines, the transient prompt can condense it to a
-# shorter version. The following example shows a rocket emoji before each
-# previously-entered command:
-$env.TRANSIENT_PROMPT_COMMAND = "🚀 "
-$env.TRANSIENT_PROMPT_INDICATOR = ""
-$env.TRANSIENT_PROMPT_INDICATOR_VI_INSERT = ""
-$env.TRANSIENT_PROMPT_INDICATOR_VI_NORMAL = ""
-# Tip: Removing the transient multiline indicator and right-prompt can simplify
-#      copying from the terminal
-$env.TRANSIENT_PROMPT_MULTILINE_INDICATOR = ""
-$env.TRANSIENT_PROMPT_COMMAND_RIGHT = ""
+# # PROMPT_*
+# # --------
+# # Prompt configuration
+# # PROMPT_ variables accept either a string or a closure that returns a string
+#
+# # PROMPT_COMMAND
+# # --------------
+# # Defines the primary prompt. Note that the PROMPT_INDICATOR (below) is appended to this value.
+# # Simple example - Static string:
+# #$env.PROMPT_COMMAND = "Nushell"
+# # Simple example - Dynamic closure displaying the path:
+# $env.PROMPT_COMMAND = {|| pwd}
+#
+# # PROMPT_COMMAND_RIGHT
+# # --------------------
+# # Defines a prompt which will appear right-aligned in the terminal
+# #$env.PROMPT_COMMAND_RIGHT = {|| date now | format date "%d-%a %r" }
+#
+# # PROMPT_INDICATOR*
+# # -----------------
+# # The prompt indicators are environmental variables that represent
+# # the state of the prompt. The specified character(s) will appear
+# # immediately following the PROMPT_COMMAND
+#
+# # When in Emacs mode (default):
+# # $env.PROMPT_INDICATOR = "> "
+#
+# # When in normal vi mode:
+# $env.PROMPT_INDICATOR_VI_NORMAL = "❮ "
+# # When in vi insert-mode:
+# $env.PROMPT_INDICATOR_VI_INSERT = "❯ "
+#
+# # When a commandline extends across multiple lines:
+# $env.PROMPT_MULTILINE_INDICATOR = "❯❯❯ "
+#
+# # TRANSIENT_PROMPT_*
+# # ------------------
+# # Allows a different prompt to be shown after a command has been executed.  This
+# # can be useful if you have a 2-line prompt. Instead of each previously-entered
+# # command taking up at least 2 lines, the transient prompt can condense it to a
+# # shorter version. The following example shows a rocket emoji before each
+# # previously-entered command:
+# $env.TRANSIENT_PROMPT_COMMAND = "🚀 "
+# $env.TRANSIENT_PROMPT_INDICATOR = ""
+# $env.TRANSIENT_PROMPT_INDICATOR_VI_INSERT = ""
+# $env.TRANSIENT_PROMPT_INDICATOR_VI_NORMAL = ""
+# # Tip: Removing the transient multiline indicator and right-prompt can simplify
+# #      copying from the terminal
+# $env.TRANSIENT_PROMPT_MULTILINE_INDICATOR = ""
+# $env.TRANSIENT_PROMPT_COMMAND_RIGHT = ""
 
 # ENV_CONVERSIONS
 # ---------------
@@ -864,14 +856,12 @@ $env.TRANSIENT_PROMPT_COMMAND_RIGHT = ""
 # By default, the internal conversion looks something like the following, so there
 # is no need to add this in your actual env.nu:
 $env.ENV_CONVERSIONS = {
-    "Path": {
-        from_string: { |s| $s | split row (char esep) | path expand --no-symlink }
-        to_string: { |v| $v | path expand --no-symlink | str join (char esep) }
-    }
-}
+    # "Path": {
+    #     from_string: { |s| $s | split row (char esep) | path expand --no-symlink }
+    #     to_string: { |v| $v | path expand --no-symlink | str join (char esep) }
+    # }
 
-# Here's an example converts the XDG_DATA_DIRS variable to and from a list:
-$env.ENV_CONVERSIONS = $env.ENV_CONVERSIONS | merge {
+    # Here's an example converts the XDG_DATA_DIRS variable to and from a list:
     "XDG_DATA_DIRS": {
         from_string: { |s| $s | split row (char esep) | path expand --no-symlink }
         to_string: { |v| $v | path expand --no-symlink | str join (char esep) }
@@ -893,10 +883,10 @@ const NU_LIB_DIRS = [
     ($nu.data-dir | path join 'completions') # default home for nushell completions
 ]
 # You can replace (override) or append to this list by shadowing the constant
-const NU_LIB_DIRS = $NU_LIB_DIRS ++ [($nu.default-config-dir | path join 'modules')]
+const NU_LIB_DIRS = $NU_LIB_DIRS ++ [($nu.data-dir | path join 'nu_scripts')]
 
-# An environment variable version of this also exists. It is searched after the constant.
-$env.NU_LIB_DIRS ++= [ ($nu.data-dir | path join "nu_scripts") ]
+# # An environment variable version of this also exists. It is searched after the constant.
+# $env.NU_LIB_DIRS ++= [ ($nu.data-dir | path join "nu_scripts") ]
 
 # NU_PLUGIN_DIRS
 # --------------
@@ -905,10 +895,10 @@ $env.NU_LIB_DIRS ++= [ ($nu.data-dir | path join "nu_scripts") ]
 # By default, the `plugins` subdirectory of the default configuration
 # directory is included:
 const NU_PLUGIN_DIRS = [
-    ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
+    # ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
 ]
 # You can replace (override) or append to this list by shadowing the constant
-const NU_PLUGIN_DIRS = $NU_PLUGIN_DIRS ++ [($nu.default-config-dir | path join 'plugins')]
+# const NU_PLUGIN_DIRS = $NU_PLUGIN_DIRS ++ [($nu.default-config-dir | path join 'plugins')]
 
 # As with NU_LIB_DIRS, an $env.NU_PLUGIN_DIRS is searched after the constant version
 
@@ -916,16 +906,16 @@ const NU_PLUGIN_DIRS = $NU_PLUGIN_DIRS ++ [($nu.default-config-dir | path join '
 # Because of the previous ENV_CONVERSIONS (performed internally
 # before your config.nu loads), the path variable is a list that can
 # be appended to using, for example:
-$env.PATH ++ [ "~/.local/bin" ]
+# $env.PATH ++ [ "~/.local/bin" ]
 
 # Or prepend using
-$env.PATH = [ "~/.local/bin" ] ++ $env.PATH
+# $env.PATH = [ "~/.local/bin" ] ++ $env.PATH
 
 # The `path add` function from the Standard Library also provides
 # a convenience method for prepending to the path:
 use std/util "path add"
-path add "~/.local/bin"
-path add ($env.HOME | path join ".cargo/bin")
+# path add "~/.local/bin"
+# path add ($env.HOME | path join ".cargo/bin")
 
 # You can remove duplicate directories from the path using:
 $env.PATH = ($env.PATH | uniq)
