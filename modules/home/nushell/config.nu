@@ -59,7 +59,7 @@ $env.config.history.sync_on_enter = true
 # Note: Older history items (from before the current shell was started) are
 # always shown.
 # This setting only applies to SQLite-backed history
-$env.config.history.isolation = false
+$env.config.history.isolation = true
 
 # ----------------------
 # Miscellaneous Settings
@@ -405,9 +405,9 @@ $env.config.hooks.env_change = {
   PWD: [{|before, after| null }]
 }
 # Before Nushell output is displayed in the terminal
-$env.config.hooks.display_output = ""
+$env.config.hooks.display_output = "if (term size).columns >= 100 { table -e } else { table }"
 # When a command is not found
-$env.config.hooks.command_not_found = []
+$env.config.hooks.command_not_found = [{ null }]
 
 # -----------
 # Keybindings
@@ -418,27 +418,27 @@ $env.config.hooks.command_not_found = []
 #
 # Example - Add a new Alt+. keybinding to insert the last token used on the previous commandline
 $env.config.keybindings ++= [
-  {
-    name: insert_last_token
-    modifier: alt
-    keycode: char_.
-    mode: [emacs vi_normal vi_insert]
-    event: [
-      { edit: InsertString, value: "!$" }
-      { send: Enter }
-    ]
-  }
+  # {
+  #   name: insert_last_token
+  #   modifier: alt
+  #   keycode: char_.
+  #   mode: [emacs vi_normal vi_insert]
+  #   event: [
+  #     { edit: InsertString, value: "!$" }
+  #     { send: Enter }
+  #   ]
+  # }
 ]
 
 # Example: Override the F1 keybinding with a user-defined help menu (see "Menus" below):
 $env.config.keybindings ++= [
-  {
-    name: help_menu
-    modifier: none
-    keycode: f1
-    mode: [emacs, vi_insert, vi_normal]
-    event: { send: menu name: help_menu }
-  }
+  # {
+  #   name: help_menu
+  #   modifier: none
+  #   keycode: f1
+  #   mode: [emacs, vi_insert, vi_normal]
+  #   event: { send: menu name: help_menu }
+  # }
 ]
 
 # -----
@@ -507,6 +507,8 @@ $env.config.plugin_gc.plugins = {
 # Use and/or contribute to the theme collection at
 # https://github.com/nushell/nu_scripts/tree/main/themes
 
+source nu_scripts/themes/nu-themes/catppuccin-mocha.nu
+
 # Values:
 
 # highlight_resolved_externals (bool):
@@ -565,7 +567,7 @@ $env.config.color_config.shape_string_interpolation
 
 # shape_raw_string: a raw string literal. E.g., r#'This is a raw string'#. This style applies
 # to the entire raw string.
-$env.config.color_config.shape_raw_string
+#$env.config.color_config.shape_raw_string
 
 # shape_record: A record-literal. This style applies to the brackets around the record. The keys
 # and values will be styled according to their individual shapes.
@@ -620,18 +622,18 @@ $env.config.color_config.shape_directory
 $env.config.color_config.shape_globpattern
 
 # shape_glob_interpolation: Deprecated
-$env.config.color_config.shape_glob_interpolation
+#$env.config.color_config.shape_glob_interpolation
 
 # shape_garbage: When an argument is of the wrong type or cannot otherwise be parsed.
 # E.g., `ls {a: 5}` - A record argument to `ls` is 'garbage'. Also applied in real-time when
 # an expression is not (yet) properly closed.
-$env.config.color_config.shape_garbage
+# $env.config.color_config.shape_garbage
 
 # shape_variable: The *use* of a variable. E.g., `$env` or `$a`.
 $env.config.color_config.shape_variable
 
 # shape_vardecl: The *declaration* of a variable. E.g. the "a" in `let a = 5`.
-$env.config.color_config.shape_vardecl
+#$env.config.color_config.shape_vardecl
 
 # shape_matching_brackets: When the cursor is positioned on an opening or closing bracket (e.g,
 # braces, curly braces, or parenthesis), and there is a matching opening/closing bracket, both will
@@ -652,7 +654,7 @@ $env.config.color_config.shape_external
 # shape_external_resolved: Requires "highlight_resolved_externals" (above) to be enabled.
 # When a token matches the "external" requirement (above) and is also a *confirmed* external
 # command, this style will be applied.
-$env.config.color_config.shape_external_resolved
+#$env.config.color_config.shape_external_resolved
 
 # shape_externalarg: Arguments to an external command (whether resolved or not)
 $env.config.color_config.shape_externalarg
@@ -669,10 +671,10 @@ $env.config.color_config.shape_block
 $env.config.color_config.shape_signature
 
 # shape_keyword: Not current used
-$env.config.color_config.shape_keyword
+#$env.config.color_config.shape_keyword
 
 # shape_closure: Styles the brackets and arguments of a closure.
-$env.config.color_config.shape_closure
+#$env.config.color_config.shape_closure
 
 # shape_direction: The redirection symbols such as `o>`, `error>`, `e>|`, etc.
 $env.config.color_config.shape_redirection
@@ -871,37 +873,6 @@ $env.ENV_CONVERSIONS = {
 # Other common directory-lists for conversion: TERMINFO_DIRS.
 # Note that other variable conversions take place after `config.nu` is loaded.
 
-# NU_LIB_DIRS
-# -----------
-# Directories in this constant are searched by the
-# `use` and `source` commands.
-#
-# By default, the `scripts` subdirectory of the default configuration
-# directory is included:
-const NU_LIB_DIRS = [
-    ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
-    ($nu.data-dir | path join 'completions') # default home for nushell completions
-]
-# You can replace (override) or append to this list by shadowing the constant
-const NU_LIB_DIRS = $NU_LIB_DIRS ++ [($nu.data-dir | path join 'nu_scripts')]
-
-# # An environment variable version of this also exists. It is searched after the constant.
-# $env.NU_LIB_DIRS ++= [ ($nu.data-dir | path join "nu_scripts") ]
-
-# NU_PLUGIN_DIRS
-# --------------
-# Directories to search for plugin binaries when calling add.
-
-# By default, the `plugins` subdirectory of the default configuration
-# directory is included:
-const NU_PLUGIN_DIRS = [
-    # ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
-]
-# You can replace (override) or append to this list by shadowing the constant
-# const NU_PLUGIN_DIRS = $NU_PLUGIN_DIRS ++ [($nu.default-config-dir | path join 'plugins')]
-
-# As with NU_LIB_DIRS, an $env.NU_PLUGIN_DIRS is searched after the constant version
-
 # Appending to the OS path is a common configuration task.
 # Because of the previous ENV_CONVERSIONS (performed internally
 # before your config.nu loads), the path variable is a list that can
@@ -919,3 +890,29 @@ use std/util "path add"
 
 # You can remove duplicate directories from the path using:
 $env.PATH = ($env.PATH | uniq)
+
+
+
+def mount-diskroot [] {
+  sudo mkdir /disk-root; sudo mount /dev/root_vg/root /disk-root
+}
+
+def pystart [...rest] {
+  overlay use ~/dev/python-template/.venv/bin/activate.nu
+  cruft create ~/dev/python-template ...$rest
+  deactivate
+}
+
+def gh --wrapped [...rest] {
+  $env.GITHUB_TOKEN = (rbw get 'GitHub CLI token') or ''
+  ^gh ...$rest
+}
+
+def nixpkgs-review --wrapped [...rest] {
+  $env.GITHUB_TOKEN = (rbw get 'GitHub CLI token') or ''
+  ^nixpkgs-review ...$rest
+}
+
+def list-generations [] {
+  sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
+}

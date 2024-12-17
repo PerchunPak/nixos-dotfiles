@@ -1,7 +1,4 @@
 { pkgs, ... }:
-let
-  nu-scripts = "${pkgs.nu_scripts}/share/nu_scripts";
-in
 {
   programs.nushell = {
     enable = true;
@@ -10,7 +7,36 @@ in
     extraEnv =
       # nu
       ''
-        source ${nu-scripts}/themes/nu-themes/catppuccin-mocha.nu
+        # NU_LIB_DIRS
+        # -----------
+        # Directories in this constant are searched by the
+        # `use` and `source` commands.
+        #
+        # By default, the `scripts` subdirectory of the default configuration
+        # directory is included:
+        const NU_LIB_DIRS = [
+            ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
+            ($nu.data-dir | path join 'completions') # default home for nushell completions
+        ]
+        # You can replace (override) or append to this list by shadowing the constant
+        const NU_LIB_DIRS = $NU_LIB_DIRS ++ [($nu.data-dir | path join 'nu_scripts')]
+
+        # # An environment variable version of this also exists. It is searched after the constant.
+        # $env.NU_LIB_DIRS ++= [ ($nu.data-dir | path join "nu_scripts") ]
+
+        # NU_PLUGIN_DIRS
+        # --------------
+        # Directories to search for plugin binaries when calling add.
+
+        # By default, the `plugins` subdirectory of the default configuration
+        # directory is included:
+        const NU_PLUGIN_DIRS = [
+            # ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
+        ]
+        # You can replace (override) or append to this list by shadowing the constant
+        # const NU_PLUGIN_DIRS = $NU_PLUGIN_DIRS ++ [($nu.default-config-dir | path join 'plugins')]
+
+        # As with NU_LIB_DIRS, an $env.NU_PLUGIN_DIRS is searched after the constant version
       '';
 
     shellAliases = {
@@ -28,12 +54,8 @@ in
         '').outPath;
 
       rebuildt = "rebuild -- --show-trace --option eval-cache false";
-      mount-diskroot = "sudo mkdir /disk-root; sudo mount /dev/root_vg/root /disk-root";
-      # pystart = "source ~/dev/python-template/.venv/bin/activate.fish; cruft create ~/dev/python-template; deactivate";
       shell = "nix-shell --run 'fish' -p";
       mtr = "mtr --order 'LSD   NBAW'";
-      # gh = "GITHUB_TOKEN=$(rbw get 'GitHub CLI token') ${pkgs.gh}/bin/gh";
-      # nixpkgs-review = "GITHUB_TOKEN=(rbw get 'GitHub CLI token') ${pkgs.nixpkgs-review}/bin/nixpkgs-review";
       nreview =
         (pkgs.writeShellScript "nreview.sh" ''
           set -e
@@ -58,7 +80,6 @@ in
           mv "$1"1 "$1"
         '').outPath;
 
-      list-generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
       rollback =
         (pkgs.writeShellScript "rollback.sh" ''
           set -ex
@@ -67,4 +88,6 @@ in
         '').outPath;
     };
   };
+
+  home.file.".local/share/nushell/nu_scripts".source = "${pkgs.nu_scripts}/share";
 }

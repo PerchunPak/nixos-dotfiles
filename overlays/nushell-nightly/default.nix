@@ -6,8 +6,8 @@ final: prev: {
     src = final.fetchFromGitHub {
       owner = "nushell";
       repo = "nushell";
-      rev = "3760910f0bbf58e25787ee685046cd2837924882";
-      hash = "sha256-R8mfQlcVmNJBCmFvviuGmw6CGggwSKbd6l5GNZ1ptnM=";
+      rev = "6367fb6e9eb9af58e794e95f6c73854b00144bf8";
+      hash = "sha256-1Wuwb990mu2PLLDYProLnvao1dORV4O2Fsylp9jubgY=";
     };
 
     cargoDeps = final.rustPlatform.fetchCargoVendor {
