@@ -8,12 +8,12 @@
 
     listener = [
       {
-        timeout = 8 * 60;
+        timeout = 5 * 60;
         on-timeout = "light -S 10";
         on-resume = "light -I";
       }
       {
-        timeout = 10 * 60;
+        timeout = 8 * 60;
         on-timeout = "hyprctl dispatch dpms off";
         on-resume = "hyprctl dispatch dpms on";
       }
