@@ -48,39 +48,6 @@ let
                   })
                 ];
               });
-
-              nushell = prev.nushell.overrideAttrs rec {
-                version = "0.101.0-unstable";
-
-                src = final.fetchFromGitHub {
-                  owner = "nushell";
-                  repo = "nushell";
-                  rev = "3760910f0bbf58e25787ee685046cd2837924882";
-                  hash = "sha256-R8mfQlcVmNJBCmFvviuGmw6CGggwSKbd6l5GNZ1ptnM=";
-                };
-
-                cargoDeps = final.rustPlatform.fetchCargoVendor {
-                  inherit src;
-                  hash = "sha256-fGCJ54YHu2g2aE03UBREvE7+/Tl374MbCwDQk5iayvI=";
-                };
-              };
-
-              vimPlugins = prev.vimPlugins // {
-                nvim-treesitter = prev.vimPlugins.nvim-treesitter // {
-                  generatedGrammars = prev.vimPlugins.nvim-treesitter.generatedGrammars // {
-                    nu = prev.vimPlugins.nvim-treesitter.generatedGrammars.nu.overrideAttrs {
-                      installQueries = true;
-
-                      src = final.fetchFromGitHub {
-                        owner = "nushell";
-                        repo = "tree-sitter-nu";
-                        rev = "e36dde8d98549da7c9ef9e8f8698a3e77d4015ac";
-                        hash = "";
-                      };
-                    };
-                  };
-                };
-              };
             })
           ];
       in
@@ -118,7 +85,6 @@ let
             lua-language-server
             marksman
             nixd
-            nushell
             typos-lsp
             yaml-language-server
 

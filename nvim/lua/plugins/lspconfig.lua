@@ -349,7 +349,6 @@ return {
             },
           },
         },
-        nushell = {},
       }
 
       -- NOTE: nixCats: if nix, use lspconfig instead of mason

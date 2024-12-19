@@ -33,7 +33,7 @@
       url = "github:nix-community/impermanence";
     };
 
-    catppuccin.url = "github:catppuccin/nix?ref=pull/405/head";
+    catppuccin.url = "github:catppuccin/nix";
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
