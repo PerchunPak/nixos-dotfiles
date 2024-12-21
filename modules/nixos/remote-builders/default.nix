@@ -16,7 +16,7 @@
           hostName = "darwin-build-box.nix-community.org";
           sshUser = "perchun";
           sshKey = "/home/perchun/.ssh/id_ed25519";
-          publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUZ6OEZYU1ZFZGY4RnZETWZib3hoQjVWalNlN3kyV2dTYTA5cTFMNHQwOTkgCg";
+          publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSURadytaazZkS2lpWFZ4MlpsbzY3YjZ1UTNvK0JoUG45VVU5QkM2U0lnWjQK";
           maxJobs = 32;
           systems = [
             "aarch64-darwin"
