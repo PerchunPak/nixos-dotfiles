@@ -14,6 +14,7 @@
         {
           # Darwin build box
           hostName = "darwin-build-box.nix-community.org";
+          protocol = "ssh-ng";
           sshUser = "perchun";
           sshKey = "/home/perchun/.ssh/id_ed25519";
           publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSURadytaazZkS2lpWFZ4MlpsbzY3YjZ1UTNvK0JoUG45VVU5QkM2U0lnWjQK";
