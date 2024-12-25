@@ -15,7 +15,9 @@
   };
 
   home.pointerCursor = {
+    size = 32;
     gtk.enable = true;
     x11.enable = true;
+    hyprcursor.enable = true;
   };
 }

@@ -29,6 +29,7 @@
     };
 
     home.packages = with pkgs; [
+      hyprcursor
       hyprshot
       swaybg
       networkmanagerapplet
