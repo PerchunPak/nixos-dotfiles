@@ -80,4 +80,26 @@ vim.keymap.set(
   { desc = 'Open [U]ndo tree' }
 )
 
+vim.keymap.set('n', '<leader>st', function()
+  local keywords = require('todo-comments.config').keywords
+
+  local aslist = {}
+  local n = 0
+  for _, v in pairs(keywords) do
+    if v ~= 'NOTE' then
+      n = n + 1
+      aslist[n] = v
+    end
+  end
+
+  vim.cmd.TodoTelescope { 'keywords=' .. table.concat(aslist, ',') }
+end, { desc = 'Search [T]odos' })
+
+vim.keymap.set(
+  'n',
+  '<leader>sT',
+  vim.cmd.TodoTelescope,
+  { desc = 'Search all [T]odos' }
+)
+
 -- vim: ts=2 sts=2 sw=2 et
