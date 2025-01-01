@@ -126,6 +126,7 @@ in
 
       "workspace 3 silent,^(vesktop)"
       "workspace 4 silent,^(steam)"
+      "workspace 4 silent,^(heroic)"
       "workspace 4 silent,^(Minecraft)"
     ];
 

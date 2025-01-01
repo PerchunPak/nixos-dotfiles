@@ -79,7 +79,8 @@
       "class<firefox>": "󰈹",
       "class<vesktop>": "󰙯",
       "class<kitty>": "",
-      "class<steam>": "󰓓"
+      "class<steam>": "󰓓",
+      "class<heroic>": "󰊗"
     }
   },
   "hyprland/window": {
