@@ -1,6 +1,18 @@
 -- [[ Configure and install plugins ]]
 
-require('nixCatsUtils.lazyCat').setup(pluginList, nixLazyPath, 'plugins', {
+-- NOTE: nixCats: You might want to move the lazy-lock.json file
+local function getlockfilepath()
+  if
+    require('nixCatsUtils').isNixCats
+    and type(require('nixCats').settings.unwrappedCfgPath) == 'string'
+  then
+    return require('nixCats').settings.unwrappedCfgPath .. '/lazy-lock.json'
+  else
+    return vim.fn.stdpath 'config' .. '/lazy-lock.json'
+  end
+end
+
+require('nixCatsUtils.lazyCat').setup(nixLazyPath, 'plugins', {
   lockfile = getlockfilepath(),
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
