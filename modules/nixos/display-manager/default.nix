@@ -37,7 +37,7 @@ in
       services.xserver.enable = true;
 
       # Enable sound, these are settings from Gnome live ISO.
-      hardware.pulseaudio.enable = false;
+      services.pulseaudio.enable = false;
       security.rtkit.enable = true;
       services.pipewire = {
         enable = true;
