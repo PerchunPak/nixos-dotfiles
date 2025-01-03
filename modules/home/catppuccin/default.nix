@@ -12,6 +12,7 @@
       accent = "dark";
     };
     gtk.icon.enable = false;
+    wlogout.enable = false; # i like my config more
   };
 
   home.pointerCursor = {

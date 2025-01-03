@@ -43,7 +43,7 @@
     ];
 
     style =
-      "@import \"${config.catppuccin.sources.waybar}/themes/${config.catppuccin.flavor}.css\";\n\n"
+      "@import \"${config.catppuccin.sources.waybar}/${config.catppuccin.flavor}.css\";\n\n"
       + (builtins.readFile ./style.css);
   };
 }
