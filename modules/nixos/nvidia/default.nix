@@ -13,7 +13,8 @@ in
       enable = lib.mkEnableOption "Nvidia proprietary drivers";
       package = lib.mkPackageOption pkgs [
         "linuxPackages_zen"
-        "nvidia_x11"
+        "nvidiaPackages"
+        "latest"
       ] { };
     };
   };
