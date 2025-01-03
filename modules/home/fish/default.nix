@@ -41,7 +41,7 @@
 
           trap 'cd -' EXIT
           cd ~/dev/nixpkgs/master
-          nixpkgs-review $@
+          nixpkgs-review pr --no-shell --systems "$@"
         '').outPath;
 
       modify =
