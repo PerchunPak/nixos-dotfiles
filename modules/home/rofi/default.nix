@@ -4,7 +4,7 @@
     enable = true;
     package = pkgs.rofi-wayland;
     extraConfig = {
-      modi = "drun,ssh,drun";
+      modi = "drun,ssh,run";
       display-drun = "   Apps ";
       display-run = "   Run ";
       display-ssh = " 󰌘 Ssh ";
