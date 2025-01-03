@@ -7,7 +7,6 @@
 {
   imports = [
     ./settings.nix
-    ./other-settings.nix
   ];
 
   config = lib.mkIf nixosConfig.my.hyprland.enable {
@@ -15,10 +14,6 @@
 
     programs = {
       waybar.enable = true;
-      rofi = {
-        enable = true;
-        package = pkgs.rofi-wayland;
-      };
       hyprlock.enable = true;
       wlogout.enable = true;
     };
