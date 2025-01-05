@@ -18,7 +18,7 @@
           sshUser = "perchun";
           sshKey = "/home/perchun/.ssh/id_ed25519";
           publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUtNSGhsY243ZlVwVXVpT0ZlSWhEcUJ6Qk5Gc2JOcXErTnB6dUdYM2U2enYgCg";
-          maxJobs = 32;
+          maxJobs = 8;
           systems = [
             "aarch64-darwin"
             "x86_64-darwin"
