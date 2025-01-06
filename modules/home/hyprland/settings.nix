@@ -44,7 +44,7 @@ in
       "$mainMod, J, togglesplit, # dwindle"
       "$mainMod, F, fullscreen"
       "$mainMod, L, exec, hyprlock"
-      "$mainMod, K, exec, wlogout"
+      "$mainMod, K, exec, flock -n /var/lock/wlogout.lock wlogout"
       "$mainMod, B, exec, variety --next"
       "$mainMod SHIFT, B, exec, variety --previous"
 
