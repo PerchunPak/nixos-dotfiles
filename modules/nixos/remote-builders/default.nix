@@ -12,20 +12,32 @@
 
       buildMachines = [
         {
-          # Darwin build box
           hostName = "darwin-build-box.nix-community.org";
           protocol = "ssh-ng";
           sshUser = "perchun";
           sshKey = "/home/perchun/.ssh/id_ed25519";
           publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUtNSGhsY243ZlVwVXVpT0ZlSWhEcUJ6Qk5Gc2JOcXErTnB6dUdYM2U2enYgCg";
-          maxJobs = 8;
+          maxJobs = 8; # 10 cores
           systems = [
             "aarch64-darwin"
             "x86_64-darwin"
           ];
+          supportedFeatures = [ "big-parallel" ];
+        }
+        {
+          hostName = "aarch64-build-box.nix-community.org";
+          protocol = "ssh-ng";
+          sshUser = "perchun";
+          sshKey = "/home/perchun/.ssh/id_ed25519";
+          publicHostKey = "YWFyY2g2NC1idWlsZC1ib3gubml4LWNvbW11bml0eS5vcmcgc3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUc5dXlmaHlsaStCUnRrNjR5K25pcXRiK3NLcXVSR0daODdmNFlSYzhFRTEK";
+          maxJobs = 40; # 80 cores
+          systems = [ "aarch64-linux" ];
           supportedFeatures = [
-            "apple-virt"
+            "uid-range"
+            "benchmark"
             "big-parallel"
+            "nixos-test"
+            "gccarch-armv8-a"
           ];
         }
       ];
