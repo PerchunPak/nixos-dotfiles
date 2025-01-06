@@ -2,10 +2,15 @@
   pkgs,
   nixosConfig,
   lib,
+  writeShellScript,
   ...
 }:
 let
   cfg = nixosConfig.my.hyprland;
+
+  wlogout-script = writeShellScript "wlogout-script" ''
+    flock -n "/var/run/user/(id -u)/wlogout.lock" wlogout
+  '';
 in
 {
   wayland.windowManager.hyprland.settings = {
@@ -44,7 +49,7 @@ in
       "$mainMod, J, togglesplit, # dwindle"
       "$mainMod, F, fullscreen"
       "$mainMod, L, exec, hyprlock"
-      "$mainMod, K, exec, flock -n /var/lock/wlogout.lock wlogout"
+      "$mainMod, K, exec, ${wlogout-script}"
       "$mainMod, B, exec, variety --next"
       "$mainMod SHIFT, B, exec, variety --previous"
 
