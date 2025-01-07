@@ -2,14 +2,13 @@
   pkgs,
   nixosConfig,
   lib,
-  writeShellScript,
   ...
 }:
 let
   cfg = nixosConfig.my.hyprland;
 
-  wlogout-script = writeShellScript "wlogout-script" ''
-    flock -n "/var/run/user/(id -u)/wlogout.lock" wlogout
+  wlogout-script = pkgs.writeShellScript "wlogout-script" ''
+    flock -n "/var/run/user/$(id -u)/wlogout.lock" wlogout
   '';
 in
 {
