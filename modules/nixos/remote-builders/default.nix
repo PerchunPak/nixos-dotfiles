@@ -29,7 +29,7 @@
           protocol = "ssh-ng";
           sshUser = "perchun";
           sshKey = "/home/perchun/.ssh/id_ed25519";
-          publicHostKey = "YWFyY2g2NC1idWlsZC1ib3gubml4LWNvbW11bml0eS5vcmcgc3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUc5dXlmaHlsaStCUnRrNjR5K25pcXRiK3NLcXVSR0daODdmNFlSYzhFRTEK";
+          publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUc5dXlmaHlsaStCUnRrNjR5K25pcXRiK3NLcXVSR0daODdmNFlSYzhFRTEK";
           maxJobs = 40; # 80 cores
           systems = [ "aarch64-linux" ];
           supportedFeatures = [
