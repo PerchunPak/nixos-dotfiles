@@ -365,6 +365,7 @@ return {
             },
           },
         },
+        rust_analyzer = {},
       }
 
       -- NOTE: nixCats: if nix, use lspconfig instead of mason

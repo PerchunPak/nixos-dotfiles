@@ -48,6 +48,8 @@
       rebar3
       nixpkgs-review
       _7zz-rar
+      rustc
+      cargo
     ]
     ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
 }

@@ -76,6 +76,7 @@ let
             lua-language-server
             marksman
             nixd
+            rust-analyzer
             typos-lsp
             yaml-language-server
 
@@ -85,6 +86,7 @@ let
             gawk # trim_whitespace
             nixfmt-rfc-style
             nodePackages.prettier
+            rustfmt
             stylua
           ]
           ++ (with python3Packages; [

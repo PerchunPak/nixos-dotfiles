@@ -41,6 +41,7 @@ return {
         lua = { 'stylua' },
         python = { 'ruff_fix', 'ruff_format', 'ruff_organize_imports' },
         javascript = { 'prettier' },
+        rust = { 'rustfmt' },
         ['*'] = { 'codespell', 'trim_whitespace' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
