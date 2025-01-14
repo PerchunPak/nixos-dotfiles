@@ -110,6 +110,7 @@ let
             cmp_luasnip
             conform-nvim
             fidget-nvim
+            flash-nvim
             friendly-snippets
             gitsigns-nvim
             indent-blankline-nvim
