@@ -77,6 +77,7 @@ let
             marksman
             nixd
             rust-analyzer
+            typescript-language-server
             typos-lsp
             yaml-language-server
 
