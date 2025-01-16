@@ -25,7 +25,6 @@
       eza
       ncdu
       tor-browser
-      peazip
       gnome-pomodoro
       meld
       zoom-us
