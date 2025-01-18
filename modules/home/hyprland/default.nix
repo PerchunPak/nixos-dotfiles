@@ -19,7 +19,6 @@
     };
 
     services = {
-      swaync.enable = true;
       hypridle.enable = true;
     };
 
@@ -27,7 +26,6 @@
       hyprcursor
       hyprshot
       swaybg
-      networkmanagerapplet
     ];
   };
 }

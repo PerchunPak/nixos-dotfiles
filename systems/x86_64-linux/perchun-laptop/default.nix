@@ -17,4 +17,5 @@
   };
 
   programs.nh.clean.enable = lib.mkForce false;
+  services.power-profiles-daemon.enable = true;
 }

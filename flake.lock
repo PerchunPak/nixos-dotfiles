@@ -564,7 +564,8 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable_2",
         "nur": "nur",
-        "snowfall-lib": "snowfall-lib"
+        "snowfall-lib": "snowfall-lib",
+        "storage": "storage"
       }
     },
     "snowfall-lib": {
@@ -586,6 +587,22 @@
       "original": {
         "owner": "snowfallorg",
         "repo": "lib",
+        "type": "github"
+      }
+    },
+    "storage": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1737111571,
+        "narHash": "sha256-tGisSvMIvZS4z4Rg+wBrJxD+z2+Uu9aNPa48kX4sHiI=",
+        "owner": "PerchunPak",
+        "repo": "storage",
+        "rev": "53e7014d960bbe605faa9cd421b4a7897974b66c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "PerchunPak",
+        "repo": "storage",
         "type": "github"
       }
     },

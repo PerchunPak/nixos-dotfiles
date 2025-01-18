@@ -5,6 +5,12 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
+    # my icons and other binary files I need
+    storage = {
+      url = "github:PerchunPak/storage";
+      flake = false;
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

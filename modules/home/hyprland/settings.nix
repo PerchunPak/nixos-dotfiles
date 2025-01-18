@@ -50,6 +50,7 @@ in
       "$mainMod, L, exec, hyprlock"
       "$mainMod, K, exec, ${wlogout-script}"
       "$mainMod, B, exec, variety --next"
+      "$mainMod, S, exec, hyprpanel toggleWindow settings-dialog"
       "$mainMod SHIFT, B, exec, variety --previous"
 
       # Move focus with mainMod + arrow keys

@@ -128,6 +128,7 @@ let
             oil-nvim
             otter-nvim
             plenary-nvim
+            snacks-nvim
             telescope-fzf-native-nvim
             telescope-nvim
             telescope-ui-select-nvim
