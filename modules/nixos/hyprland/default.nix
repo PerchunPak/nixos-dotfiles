@@ -38,8 +38,6 @@ in
       };
 
       services = {
-        blueman.enable = true;
-
         displayManager.defaultSession = lib.mkDefault "hyprland";
         xserver.displayManager = {
           lightdm.enable = false;
