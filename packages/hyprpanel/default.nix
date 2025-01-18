@@ -36,7 +36,10 @@ my.ags_2.bundle {
     hash = "sha256-YAT1VozLQ29V56EvEzJQswBOCLZDqn/gTU05mf+UFts=";
   };
 
-  patches = [ ./app-icons-and-workspace-numbers.patch ];
+  patches = [
+    ./app-icons-and-workspace-numbers.patch
+    ./lang-flags-instead-of-names.patch
+  ];
 
   # keep in sync with https://github.com/Jas-SinghFSU/HyprPanel/blob/master/flake.nix#L28
   dependencies =

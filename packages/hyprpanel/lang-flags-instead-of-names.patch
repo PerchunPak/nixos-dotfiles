@@ -1,0 +1,31 @@
+diff --git a/src/components/bar/modules/kblayout/index.tsx b/src/components/bar/modules/kblayout/index.tsx
+index b9b4ddb..96d8c29 100644
+--- a/src/components/bar/modules/kblayout/index.tsx
++++ b/src/components/bar/modules/kblayout/index.tsx
+@@ -11,10 +11,25 @@ import { Astal } from 'astal/gtk3';
+ const { label, labelType, icon, leftClick, rightClick, middleClick, scrollUp, scrollDown } =
+     options.bar.customModules.kbLayout;
+ 
++function replaceLangWithIcon(lang: String): String {
++    switch (lang) {
++        case "US":
++            return "🇺🇸";
++        case "CZ (Qwerty)":
++            return "🇨🇿"
++        case "UA":
++            return "🇺🇦"
++        case "RU":
++            return "💩"
++        default:
++            return lang;
++    }
++}
++
+ function setLabel(self: Astal.Label): void {
+     try {
+         const devices = hyprlandService.message('j/devices');
+-        self.label = getKeyboardLayout(devices, labelType.get());
++        self.label = replaceLangWithIcon(getKeyboardLayout(devices, labelType.get()));
+     } catch (error) {
+         console.error(error);
+     }
