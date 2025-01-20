@@ -64,6 +64,7 @@ my.ags_2.bundle {
       libgtop
       libnotify
       networkmanager
+      python3Packages.dbus-python
       python3Packages.gpustat
       wireplumber
       wl-clipboard
