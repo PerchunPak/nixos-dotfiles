@@ -22,6 +22,7 @@
           simple-tab-groups
           sponsorblock
           stylus
+          ublacklist
           ublock-origin
 
           # was removed from store
