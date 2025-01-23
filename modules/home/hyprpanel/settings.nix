@@ -81,6 +81,7 @@
           right = [
             "volume"
             "network"
+            "hypridle"
             "bluetooth"
             # "battery" # TODO disable if there is no battery
             "systray"
