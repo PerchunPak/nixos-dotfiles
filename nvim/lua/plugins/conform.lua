@@ -70,6 +70,17 @@ return {
       end, {
         desc = 'Re-enable autoformat-on-save',
       })
+
+      require('conform').formatters.codespell = {
+        prepend_args = {
+          '-L',
+          -- codespell please stop bullying me 😭
+          -- https://github.com/NixOS/nixpkgs/pull/376366#discussion_r1928723734
+          'evesdropper,'
+            -- rust
+            .. 'crate,',
+        },
+      }
     end,
   },
 }
