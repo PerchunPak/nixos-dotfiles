@@ -2,8 +2,13 @@
   pkgs,
   lib,
   config,
+  system,
+  inputs,
   ...
 }:
+let
+  rycee-nur = import "${inputs.rycee-nur}" { inherit pkgs; };
+in
 {
   imports = [ ./ublock-origin.nix ];
 
@@ -11,7 +16,7 @@
     enable = true;
     profiles = {
       perchun = {
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        extensions = with rycee-nur.firefox-addons; [
           bitwarden
           darkreader
           disable-javascript
@@ -58,7 +63,7 @@
       };
       stuff = {
         id = 1;
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        extensions = with rycee-nur.firefox-addons; [
           bitwarden
           ublock-origin
         ];

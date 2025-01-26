@@ -21,9 +21,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
+    rycee-nur = {
+      url = "gitlab:rycee/nur-expressions";
+      flake = false;
     };
 
     agenix = {
@@ -105,7 +105,6 @@
       };
 
       overlays = with inputs; [
-        nur.overlays.default
         lix-module.overlays.default
       ];
 
