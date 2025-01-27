@@ -36,11 +36,14 @@ return {
           lsp_fallback = lsp_format_opt,
         }
       end,
+      format_after_save = {
+        lsp_format = 'prefer',
+      },
       formatters_by_ft = {
         nix = { 'nixfmt' },
         lua = { 'stylua' },
         python = { 'ruff_fix', 'ruff_format', 'ruff_organize_imports' },
-        javascript = { 'prettier' },
+        javascript = { 'prettierd', 'prettier', stop_after_first = true },
         rust = { 'rustfmt' },
         ['*'] = { 'codespell', 'trim_whitespace' },
         -- Conform can also run multiple formatters sequentially

@@ -88,7 +88,7 @@ let
             codespell
             gawk # trim_whitespace
             nixfmt-rfc-style
-            nodePackages.prettier
+            prettierd
             rustfmt
             stylua
           ]
