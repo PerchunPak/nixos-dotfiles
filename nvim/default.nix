@@ -77,6 +77,8 @@ let
             marksman
             nixd
             rust-analyzer
+            svelte-language-server
+            tailwindcss-language-server
             typescript-language-server
             typos-lsp
             yaml-language-server

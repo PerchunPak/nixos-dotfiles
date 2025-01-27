@@ -276,6 +276,8 @@ return {
         -- @servers @lsps
 
         ts_ls = {},
+        svelte = {},
+        tailwindcss = {},
         gleam = {},
         marksman = {},
         pylsp = {
