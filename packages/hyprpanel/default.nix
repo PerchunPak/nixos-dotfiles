@@ -6,6 +6,7 @@
   astal,
   bluez,
   bluez-tools,
+  brightnessctl,
   btop,
   dart-sass,
   fetchFromGitHub,
@@ -58,6 +59,7 @@ my.ags_2.bundle {
 
       bluez
       bluez-tools
+      brightnessctl
       btop
       dart-sass
       hyprpicker
