@@ -35,6 +35,7 @@ in
         ".cache/huggingface"
         ".local/state/wireplumber"
         ".local/share/flatpak"
+        ".config/asciinema"
       ] ++ cfg.directories;
       files = cfg.files;
       allowOther = true;
