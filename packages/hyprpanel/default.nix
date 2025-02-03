@@ -25,7 +25,7 @@
 }:
 my.ags_2.bundle {
   pname = "hyprpanel";
-  version = "unstable-2025-01-16";
+  version = "unstable-2025-01-25";
 
   __structuredAttrs = true;
   strictDeps = true;
@@ -33,8 +33,8 @@ my.ags_2.bundle {
   src = fetchFromGitHub {
     owner = "Jas-SinghFSU";
     repo = "HyprPanel";
-    rev = "88609f7e4c244326face34cb992a79053f2c7810";
-    hash = "sha256-YAT1VozLQ29V56EvEzJQswBOCLZDqn/gTU05mf+UFts=";
+    rev = "74065af3d2aa576e8b183d720033c3eece3deb70";
+    hash = "sha256-sVy0QU4fpZsUWj5B8t6jUNZHzVLC22+HYqcFG9pKPik=";
   };
 
   patches = [
