@@ -49,6 +49,7 @@
       _7zz-rar
       rustc
       cargo
+      watchman
     ]
     ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
 }
