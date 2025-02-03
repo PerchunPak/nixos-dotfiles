@@ -1,4 +1,4 @@
-{ nixosConfig, lib, ... }:
+{ nixosConfig, ... }:
 {
   programs.git = {
     enable = true;
