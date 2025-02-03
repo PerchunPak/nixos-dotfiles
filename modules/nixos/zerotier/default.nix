@@ -5,7 +5,7 @@ in
 {
   options = {
     my.zerotier = {
-      enable = lib.my.mkEnableByDefaultOption "zerotier";
+      enable = lib.my.mkEnableOption "zerotier";
       networks = lib.mkOption { type = lib.types.listOf lib.types.str; };
     };
   };
