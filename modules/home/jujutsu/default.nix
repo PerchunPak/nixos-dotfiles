@@ -11,6 +11,11 @@ in
 
       core.fsmonitor = "watchman";
       core.watchman.register_snapshot_trigger = true;
+
+      signing = {
+        "sign-all" = true;
+        key = git.signing.key;
+      };
     };
   };
 }
