@@ -15,6 +15,7 @@ in
       signing = {
         "sign-all" = true;
         key = git.signing.key;
+        backend = "gpg";
       };
     };
   };
