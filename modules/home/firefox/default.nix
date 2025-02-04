@@ -27,6 +27,7 @@ in
           stylus
           ublacklist
           ublock-origin
+          vimium
         ];
 
         settings = {
