@@ -1,5 +1,10 @@
-{ nixosConfig, ... }:
+{ pkgs, nixosConfig, ... }:
 {
+  home.packages = with pkgs; [
+    git-extras
+    git-revise
+  ];
+
   programs.git = {
     enable = true;
     userName = "PerchunPak";
@@ -22,6 +27,10 @@
         "ssh://git@github.com/" = {
           insteadOf = [ "https://github.com/" ];
         };
+      };
+
+      git-extras = {
+        get.clone-path = "~/dev";
       };
     };
   };
