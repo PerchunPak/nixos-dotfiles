@@ -65,6 +65,13 @@
           sudo nix-env --switch-generation "$1" -p /nix/var/nix/profiles/system
           sudo /nix/var/nix/profiles/system/bin/switch-to-configuration switch
         '').outPath;
+
+      ght = # GitHub Token
+        (pkgs.writeShellScript "ght.sh" ''
+          set -e
+          export GITHUB_TOKEN=$(rbw get 'GitHub CLI token')
+          exec $@
+        '').outPath;
     };
 
     plugins = [
