@@ -5,7 +5,9 @@
   buildGoModule,
   callPackage,
   dart-sass,
+  symlinkJoin,
   fetchFromGitHub,
+  fetchpatch2,
   gjs,
   glib,
   gobject-introspection,
@@ -15,29 +17,9 @@
   nodejs,
   stdenv,
   wrapGAppsHook3,
-  writers,
 
   extraPackages ? [ ],
 }:
-let
-  datadirs =
-    writers.writeNu "datadirs"
-      # nu
-      ''
-        $env.XDG_DATA_DIRS
-        | split row ":"
-        | filter { $"($in)/gir-1.0" | path exists }
-        | str join ":"
-      '';
-
-  bins = [
-    gjs
-    nodejs
-    dart-sass
-    blueprint-compiler
-    astal.io
-  ];
-in
 buildGoModule rec {
   pname = "ags";
   version = "2.2.1";
@@ -48,6 +30,14 @@ buildGoModule rec {
     tag = "v${version}";
     hash = "sha256-snHhAgcH8hACWZFaAqHr5uXH412UrAuA603OK02MxN8=";
   };
+
+  patches = [
+    # refactor for better nix support
+    (fetchpatch2 {
+      url = "https://github.com/Aylur/ags/commit/17df94c576d0023185770f901186db427f2ec0a2.diff?full_index=1";
+      hash = "sha256-tcoifkYmXjV+ZbeAFRHuk8cVmxWMrS64syvQMGGKAVA=";
+    })
+  ];
 
   vendorHash = "sha256-Pw6UNT5YkDVz4HcH7b5LfOg+K3ohrBGPGB9wYGAQ9F4=";
   proxyVendor = true;
@@ -70,14 +60,37 @@ buildGoModule rec {
     astal.io
     astal.astal3
     astal.astal4
+    gobject-introspection # needed for type generation
   ];
 
-  preFixup = ''
-    gappsWrapperArgs+=(
-      --prefix NIX_GI_DIRS : "$(${datadirs})"
-      --prefix PATH : "${lib.makeBinPath (bins ++ extraPackages)}"
-    )
-  '';
+  preFixup =
+    let
+      # git files are usually in `dev` output.
+      # `propagatedBuildInputs` are also available in the gjs runtime
+      # so we also want to generate types for these.
+      depsOf = pkg: [ (pkg.dev or pkg) ] ++ (map depsOf (pkg.propagatedBuildInputs or [ ]));
+      girDirs = symlinkJoin {
+        name = "gir-dirs";
+        paths = lib.flatten (map depsOf buildInputs);
+      };
+    in
+    ''
+      gappsWrapperArgs+=(
+        --prefix EXTRA_GIR_DIRS : "${girDirs}/share/gir-1.0"
+        --prefix PATH : "${
+          lib.makeBinPath (
+            [
+              gjs
+              nodejs
+              dart-sass
+              blueprint-compiler
+              astal.io
+            ]
+            ++ extraPackages
+          )
+        }"
+      )
+    '';
 
   postInstall =
     lib.optionalString (stdenv.buildPlatform.canExecute stdenv.hostPlatform)
@@ -96,7 +109,7 @@ buildGoModule rec {
   };
 
   meta = {
-    description = "Scaffolding CLI for Astal+TypeScript";
+    description = "Scaffolding CLI for Astal widget system";
     homepage = "https://github.com/Aylur/ags";
     changelog = "https://github.com/Aylur/ags/releases/tag/v${version}";
     license = lib.licenses.gpl3Plus;
