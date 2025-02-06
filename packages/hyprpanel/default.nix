@@ -10,13 +10,22 @@
   btop,
   dart-sass,
   fetchFromGitHub,
+  glib,
+  gnome-bluetooth,
   gpu-screen-recorder,
   gpustat,
+  grimblast,
+  gvfs,
   hyprpicker,
   libgtop,
   libnotify,
+  matugen,
   networkmanager,
+  python3,
   python3Packages,
+  pywal,
+  swww,
+  upower,
   wireplumber,
   wl-clipboard,
   writeShellScript,
@@ -43,36 +52,53 @@ my.ags_2.bundle {
   ];
 
   # keep in sync with https://github.com/Jas-SinghFSU/HyprPanel/blob/master/flake.nix#L28
-  dependencies =
-    [
-      astal.apps
-      astal.battery
-      astal.bluetooth
-      my.astal-cava # doesn't compile without it
-      astal.hyprland
-      astal.mpris
-      astal.network
-      astal.notifd
-      astal.powerprofiles
-      my.astal-tray
-      astal.wireplumber
+  dependencies = [
+    astal.apps
+    astal.battery
+    astal.bluetooth
+    my.astal-cava # doesn't compile without it
+    astal.hyprland
+    astal.mpris
+    astal.network
+    astal.notifd
+    astal.powerprofiles
+    my.astal-tray
+    astal.wireplumber
 
-      bluez
-      bluez-tools
-      brightnessctl
-      btop
-      dart-sass
-      hyprpicker
-      libgtop
-      libnotify
-      networkmanager
-      python3Packages.dbus-python
-      python3Packages.gpustat
-      wireplumber
-      wl-clipboard
-    ]
-    ++ (lib.optionals (system == "x86_64-linux") [ gpu-screen-recorder ])
-    ++ lib.optional enableCuda gpustat;
+    bluez
+    bluez-tools
+    brightnessctl
+    btop
+    dart-sass
+    glib
+    gnome-bluetooth
+    grimblast
+    gvfs
+    hyprpicker
+    hyprpicker
+    libgtop
+    libnotify
+    matugen
+    networkmanager
+    networkmanager
+    python3Packages.dbus-python
+    python3Packages.gpustat
+    pywal
+    swww
+    upower
+    wireplumber
+    wireplumber
+    wl-clipboard
+    (python3.withPackages (
+      ps:
+      with ps;
+      [
+        dbus-python
+        pygobject3
+      ]
+      ++ lib.optional enableCuda gpustat
+    ))
+  ] ++ (lib.optionals (system == "x86_64-linux") [ gpu-screen-recorder ]);
 
   # NOTE: no update script as dependencies must be kept in sync with upstream
   # and it is problematic to do it in an update script. I don't have push
