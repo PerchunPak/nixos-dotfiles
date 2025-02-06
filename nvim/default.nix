@@ -124,6 +124,7 @@ let
             mini-nvim
             nvim-autopairs
             nvim-cmp
+            nvim-dbee
             nvim-lspconfig
             nvim-treesitter.withAllGrammars
             nvim-web-devicons
