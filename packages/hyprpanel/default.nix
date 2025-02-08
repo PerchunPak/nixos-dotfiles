@@ -3,6 +3,7 @@
   system,
   my,
   config,
+  ags,
   astal,
   bluez,
   bluez-tools,
@@ -10,6 +11,7 @@
   btop,
   dart-sass,
   fetchFromGitHub,
+  fetchpatch2,
   glib,
   gnome-bluetooth,
   gpu-screen-recorder,
@@ -32,7 +34,7 @@
 
   enableCuda ? config.cudaSupport,
 }:
-my.ags_2.bundle {
+ags.bundle {
   pname = "hyprpanel";
   version = "unstable-2025-01-25";
 
