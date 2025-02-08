@@ -4,7 +4,7 @@
 
   home.packages = with pkgs; [
     nodejs
-    corepack
+    pnpm
   ];
 
   my.persistence.directories = [ ".local/share/pnpm" ];
