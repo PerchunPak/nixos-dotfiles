@@ -40,7 +40,7 @@
     };
 
     catppuccin = {
-      url = "github:catppuccin/nix?ref=pull/469/head";
+      url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
