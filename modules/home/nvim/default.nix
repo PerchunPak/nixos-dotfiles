@@ -10,7 +10,8 @@ in
   ];
 
   my.persistence.directories = [
-    ".local/state/nvim/undo"
+    ".local/state/nvim/dbee"
     ".local/state/nvim/shada"
+    ".local/state/nvim/undo"
   ];
 }
