@@ -1,6 +1,14 @@
-{ inputs, system, ... }:
+{
+  inputs,
+  pkgs,
+  system,
+  ...
+}:
 let
-  nixCats = import ../../../nvim { inherit inputs; };
+  nixCats = import ../../../nvim {
+    inherit inputs;
+    origPkgs = pkgs;
+  };
 in
 {
   home.packages = builtins.attrValues nixCats.packages.${system};

@@ -112,7 +112,10 @@
 
       outputs-builder = channels: {
         formatter = channels.nixpkgs.nixfmt-rfc-style;
-        nixCats = import ./nvim { inherit inputs; };
+        nixCats = import ./nvim {
+          inherit inputs;
+          origPkgs = channels.nixpkgs;
+        };
       };
     };
 }
