@@ -22,6 +22,9 @@ in
     # Enable OpenGL
     hardware.graphics.enable = true;
 
+    # Virtualization
+    hardware.nvidia-container-toolkit.enable = true;
+
     # Load nvidia driver for Xorg and Wayland
     services.xserver.videoDrivers = [ "nvidia" ];
 
