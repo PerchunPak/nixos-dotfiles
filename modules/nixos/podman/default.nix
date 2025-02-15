@@ -22,6 +22,8 @@ in
       defaultNetwork.settings.dns_enabled = true;
     };
 
+    virtualisation.containers.registries.search = lib.mkForce [ "docker.io" ];
+
     environment.systemPackages = [ pkgs.podman-compose ];
     my.persistence.directories = [ "/var/lib/containers" ];
   };
