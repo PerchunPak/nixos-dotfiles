@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   config,
   inputs,
   ...
@@ -22,6 +21,7 @@ in
           enhancer-for-youtube
           grammarly
           languagetool
+          refined-github
           simple-tab-groups
           sponsorblock
           stylus
