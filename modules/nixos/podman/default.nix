@@ -23,5 +23,6 @@ in
     };
 
     environment.systemPackages = [ pkgs.podman-compose ];
+    my.persistence.directories = [ "/var/lib/containers" ];
   };
 }
