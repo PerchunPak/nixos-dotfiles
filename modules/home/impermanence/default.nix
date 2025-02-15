@@ -36,7 +36,6 @@ in
         ".local/state/wireplumber"
         ".local/share/flatpak"
         ".config/asciinema"
-        ".local/share/containers"
       ] ++ cfg.directories;
       files = cfg.files;
       allowOther = true;

@@ -19,7 +19,7 @@ in
         extraGroups = [
           "wheel"
           "networkmanager"
-          "podman"
+          "docker"
           "input"
           "video"
         ] ++ lib.optional config.my.vm.enable "libvirtd";
