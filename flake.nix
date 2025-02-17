@@ -61,6 +61,11 @@
 
     # Neovim
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
+
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      flake = false;
+    };
   };
 
   outputs =

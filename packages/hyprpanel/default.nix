@@ -1,8 +1,10 @@
 {
-  lib,
-  system,
-  my,
   config,
+  inputs,
+  lib,
+  my,
+  system,
+
   ags,
   astal,
   bluez,
@@ -10,7 +12,6 @@
   brightnessctl,
   btop,
   dart-sass,
-  fetchFromGitHub,
   fetchpatch2,
   glib,
   gnome-bluetooth,
@@ -41,21 +42,11 @@ ags.bundle {
   __structuredAttrs = true;
   strictDeps = true;
 
-  src = fetchFromGitHub {
-    owner = "Jas-SinghFSU";
-    repo = "HyprPanel";
-    rev = "74065af3d2aa576e8b183d720033c3eece3deb70";
-    hash = "sha256-sVy0QU4fpZsUWj5B8t6jUNZHzVLC22+HYqcFG9pKPik=";
-  };
+  src = inputs.hyprpanel;
 
   patches = [
     ./app-icons-and-workspace-numbers.patch
     ./lang-flags-instead-of-names.patch
-    # https://github.com/Jas-SinghFSU/HyprPanel/pull/732
-    (fetchpatch2 {
-      url = "https://github.com/Jas-SinghFSU/HyprPanel/commit/4319b2ce6fb660e0b2ad519b9c8abd5438a4c58a.diff?full_index=1";
-      hash = "sha256-GHyhMtbsjPzR7VQmQFtSW61Gb7aj1aGvKt5YFgaML3o=";
-    })
   ];
 
   # keep in sync with https://github.com/Jas-SinghFSU/HyprPanel/blob/master/flake.nix#L28

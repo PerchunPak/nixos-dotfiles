@@ -212,6 +212,22 @@
         "type": "github"
       }
     },
+    "hyprpanel": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1739770912,
+        "narHash": "sha256-OQS2yhBYJZPvxkPGEx9FqT+voXTDm0UJDknCBBWgroo=",
+        "owner": "Jas-SinghFSU",
+        "repo": "HyprPanel",
+        "rev": "9b342341fe17e4fb2c4cad9e3379a814a6a73097",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Jas-SinghFSU",
+        "repo": "HyprPanel",
+        "type": "github"
+      }
+    },
     "impermanence": {
       "locked": {
         "lastModified": 1737831083,
@@ -337,6 +353,7 @@
         "catppuccin": "catppuccin",
         "disko": "disko",
         "home-manager": "home-manager_2",
+        "hyprpanel": "hyprpanel",
         "impermanence": "impermanence",
         "lix": "lix",
         "lix-module": "lix-module",
