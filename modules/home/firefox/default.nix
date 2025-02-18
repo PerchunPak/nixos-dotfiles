@@ -14,7 +14,7 @@ in
     enable = true;
     profiles = {
       perchun = {
-        extensions = with rycee-nur.firefox-addons; [
+        extensions.packages = with rycee-nur.firefox-addons; [
           bitwarden
           darkreader
           disable-javascript
@@ -31,22 +31,15 @@ in
         ];
 
         settings = {
+          "browser.download.lastDir" = "/home/perchun/Downloads";
           "browser.sessionstore.max_resumed_crashes" = -1;
         };
       };
-      stuff = {
+      stuff = config.programs.firefox.profiles.perchun // {
         id = 1;
-        extensions = with rycee-nur.firefox-addons; [
-          bitwarden
-          ublock-origin
-        ];
       };
     };
   };
-
-  # Autostart firefox
-  xdg.configFile."autostart/firefox.desktop".source =
-    "${config.programs.firefox.package}/share/applications/firefox.desktop";
 
   my.persistence.directories = [
     ".mozilla"
