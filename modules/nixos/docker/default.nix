@@ -12,11 +12,8 @@ in
   config = lib.mkIf cfg.enable {
     virtualisation.docker = {
       enable = true;
+      autoPrune.enable = true;
       storageDriver = "btrfs";
-      rootless = {
-        enable = true;
-        setSocketVariable = true;
-      };
       daemon.settings.data-root = "/persist/system/docker";
       enableOnBoot = false;
     };
