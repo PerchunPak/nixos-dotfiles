@@ -36,6 +36,11 @@ in
     (lib.mkIf cfg.enable {
       services.xserver.enable = true;
 
+      services.displayManager.sddm = {
+        enable = true;
+        package = pkgs.kdePackages.sddm;
+      };
+
       # Enable sound, these are settings from Gnome live ISO.
       services.pulseaudio.enable = false;
       security.rtkit.enable = true;

@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   cfg = config.my.hyprland;
   guiEnabled = config.my.gui.enable;
@@ -33,18 +38,12 @@ in
         hyprland = {
           enable = true;
           xwayland.enable = true;
+          withUWSM = true;
         };
         hyprlock.enable = true;
       };
 
-      services = {
-        displayManager.defaultSession = lib.mkDefault "hyprland";
-        xserver.displayManager = {
-          lightdm.enable = false;
-          gdm.enable = true;
-          gdm.wayland = true;
-        };
-      };
+      services.displayManager.defaultSession = "hyprland-uwsm";
     })
   ];
 }

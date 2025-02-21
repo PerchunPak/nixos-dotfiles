@@ -13,21 +13,11 @@ let
 in
 {
   wayland.windowManager.hyprland.settings = {
-    env = [
-      # Nvidia
-      "LIBVA_DRIVER_NAME,nvidia"
-      "XDG_SESSION_TYPE,wayland"
-      "GBM_BACKEND,nvidia-drm"
-      "__GLX_VENDOR_LIBRARY_NAME,nvidia"
-    ];
-
     exec-once = [
-      "swaybg &"
-      "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 &"
-
-      "[workspace 1 silent] firefox"
-      "vesktop"
-    ] ++ (lib.lists.optional (!nixosConfig.my.economInternetTraffic) "variety &");
+      "uwsm app -s b -- swaybg"
+      "[workspace 1 silent] uwsm app -- firefox"
+      "uwsm app -- vesktop"
+    ] ++ (lib.lists.optional (!nixosConfig.my.economInternetTraffic) "uwsm app -s b -- variety");
 
     "$mainMod" = "SUPER";
     "$terminal" = "kitty";
@@ -172,4 +162,12 @@ in
 
     cursor.no_hardware_cursors = true;
   };
+
+  # env variables should be specified here
+  xdg.configFile."uwsm/env".text = ''
+    export LIBVA_DRIVER_NAME=nvidia"
+    export XDG_SESSION_TYPE=wayland"
+    export GBM_BACKEND=nvidia-drm"
+    export __GLX_VENDOR_LIBRARY_NAME=nvidia"
+  '';
 }

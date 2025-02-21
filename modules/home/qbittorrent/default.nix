@@ -12,9 +12,6 @@
     recursive = true;
   };
 
-  # Add program to autostart
-  home.file.".config/autostart/org.qbittorrent.qBittorrent.desktop".source = "${pkgs.qbittorrent}/share/applications/org.qbittorrent.qBittorrent.desktop";
-
   # Copy configuration file, if it doesn't exists yet
   # (qBittorrent writes to its config file)
   my.setup-stuff.qbittorrent-config.command = ''

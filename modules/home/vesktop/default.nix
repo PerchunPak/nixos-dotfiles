@@ -16,7 +16,6 @@ in
       source = ./themes;
       recursive = true;
     };
-    "autostart/vesktop.desktop".source = "${pkg}/share/applications/vesktop.desktop";
   };
 
   services.arrpc.enable = true;

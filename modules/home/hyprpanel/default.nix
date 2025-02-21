@@ -56,8 +56,8 @@ in
       Unit = {
         Description = "Bar/Panel for Hyprland with extensive customizability";
         Documentation = "https://hyprpanel.com/getting_started/hyprpanel.html";
-        PartOf = [ "hyprland-session.target" ];
-        After = [ "hyprland-session.target" ];
+        PartOf = [ "graphical-session.target" ];
+        After = [ "graphical-session.target" ];
         ConditionEnvironment = "WAYLAND_DISPLAY";
         X-Restart-Triggers = lib.optional (cfg.settings != { }) "${config.xdg.configFile.hyprpanel.source}";
       };
@@ -70,7 +70,7 @@ in
       };
 
       Install = {
-        WantedBy = [ "hyprland-session.target" ];
+        WantedBy = [ "graphical-session.target" ];
       };
     };
   };
