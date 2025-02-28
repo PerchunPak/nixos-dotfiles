@@ -4,9 +4,9 @@
 local function getlockfilepath()
   if
     require('nixCatsUtils').isNixCats
-    and type(require('nixCats').settings.unwrappedCfgPath) == 'string'
+    and type(nixCats.settings.unwrappedCfgPath) == 'string'
   then
-    return require('nixCats').settings.unwrappedCfgPath .. '/lazy-lock.json'
+    return nixCats.settings.unwrappedCfgPath .. '/lazy-lock.json'
   else
     return vim.fn.stdpath 'config' .. '/lazy-lock.json'
   end

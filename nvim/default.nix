@@ -86,6 +86,7 @@ let
             alpha-nvim
             catppuccin-nvim
             cmp-nvim-lsp
+            cmp-nvim-lsp-signature-help
             cmp-path
             cmp_luasnip
             conform-nvim
@@ -240,6 +241,7 @@ forEachSystem (
       extra_pkg_config
       nixpkgs
       ;
+    moduleNamespace = [ defaultPackageName ];
   };
   # and the same for home manager
   homeModule = utils.mkHomeModules {
@@ -252,6 +254,7 @@ forEachSystem (
       extra_pkg_config
       nixpkgs
       ;
+    moduleNamespace = [ defaultPackageName ];
   };
   inherit utils;
   inherit (utils) templates;
