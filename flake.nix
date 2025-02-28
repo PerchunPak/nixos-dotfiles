@@ -93,7 +93,6 @@
             "steam-run"
             "steam-unwrapped"
             "zerotierone"
-            "zoom"
             # Firefox extensions
             "enhancer-for-youtube"
             "grammarly"

@@ -27,7 +27,6 @@
       tor-browser
       gnome-pomodoro
       meld
-      zoom-us
       gnumake
       dig
       gnome-clocks
