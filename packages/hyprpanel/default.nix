@@ -12,10 +12,8 @@
   brightnessctl,
   btop,
   dart-sass,
-  fetchpatch2,
   glib,
   gnome-bluetooth,
-  gpu-screen-recorder,
   gpustat,
   grimblast,
   gvfs,
@@ -29,6 +27,7 @@
   pywal,
   swww,
   upower,
+  wf-recorder,
   wireplumber,
   wl-clipboard,
   writeShellScript,
@@ -84,6 +83,7 @@ ags.bundle {
     pywal
     swww
     upower
+    wf-recorder
     wireplumber
     wireplumber
     wl-clipboard
@@ -96,7 +96,7 @@ ags.bundle {
       ]
       ++ lib.optional enableCuda gpustat
     ))
-  ] ++ (lib.optionals (system == "x86_64-linux") [ gpu-screen-recorder ]);
+  ];
 
   # NOTE: no update script as dependencies must be kept in sync with upstream
   # and it is problematic to do it in an update script. I don't have push

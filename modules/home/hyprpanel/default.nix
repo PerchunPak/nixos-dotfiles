@@ -39,10 +39,9 @@ in
 
     programs.hyprpanel.settings = lib.mkIf config.services.hypridle.enable {
       # fix hypridle module if user uses systemd service
-      "bar.customModules.hypridle.startCommand" = lib.mkDefault "systemctl --user start hypridle.service";
-      "bar.customModules.hypridle.stopCommand" = lib.mkDefault "systemctl --user stop hypridle.service";
-      "bar.customModules.hypridle.isActiveCommand" =
-        lib.mkDefault "systemctl --user status hypridle.service | grep -q 'Active: active (running)' && echo 'yes' || echo 'no'";
+      bar.customModules.hypridle.startCommand = lib.mkDefault "systemctl --user start hypridle.service";
+      bar.customModules.hypridle.stopCommand = lib.mkDefault "systemctl --user stop hypridle.service";
+      bar.customModules.hypridle.isActiveCommand = lib.mkDefault "systemctl --user status hypridle.service | grep -q 'Active: active (running)' && echo 'yes' || echo 'no'";
     };
 
     xdg.configFile.hyprpanel = lib.mkIf (cfg.settings != { }) {
