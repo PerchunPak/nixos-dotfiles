@@ -1,0 +1,13 @@
+diff --git a/data/scripts/set_wallpaper b/data/scripts/set_wallpaper
+index 089a6d6..5f25837 100755
+--- a/data/scripts/set_wallpaper
++++ b/data/scripts/set_wallpaper
+@@ -233,7 +233,7 @@ elif [ "$DE" == "fluxbox" ]; then
+     mkdir -p ~/.fluxbox
+     echo '$''full ''$'"full|$WP||:0.0" >~/.fluxbox/lastwallpaper
+ 
+-elif [ "$DE" == "sway" ]; then
++elif true; then
+     # If swaybg is available, use it as prevents system freeze.
+     # See https://github.com/swaywm/sway/issues/5606
+     if command -v "swaybg" >/dev/null 2>&1; then

@@ -1,0 +1,13 @@
+diff --git a/data/scripts/set_wallpaper b/data/scripts/set_wallpaper
+index 089a6d6..6f14710 100755
+--- a/data/scripts/set_wallpaper
++++ b/data/scripts/set_wallpaper
+@@ -33,6 +33,8 @@
+ # In the end put the path to the actual final wallpaper image file in the WP variable.
+ # The default is to simply set WP=$1.
+ WP=$1
++rm ~/.background-image
++ln -s "$WP" ~/.background-image
+ 
+ detect_desktop() {
+     if [ -n "$XDG_CURRENT_DESKTOP" ]; then
