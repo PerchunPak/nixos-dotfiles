@@ -12,7 +12,7 @@
         partitions = {
           esp = {
             name = "ESP";
-            size = "1G";
+            size = "2G";
             type = "EF00";
             content = {
               type = "filesystem";
@@ -20,17 +20,8 @@
               mountpoint = "/boot";
             };
           };
-          swap = {
-            start = "500G";
-            end = "520G";
-            content = {
-              type = "swap";
-              resumeDevice = true;
-            };
-          };
           luks = {
-            start = "521G";
-            end = "1590000000";
+            size = "100%";
             content = {
               type = "luks";
               name = "encrypted";
@@ -39,6 +30,13 @@
                 type = "lvm_pv";
                 vg = "root_vg";
               };
+            };
+          };
+          swap = {
+            size = "100G";
+            content = {
+              type = "swap";
+              resumeDevice = true;
             };
           };
         };
