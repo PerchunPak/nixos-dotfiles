@@ -15,11 +15,4 @@
   };
 
   services.power-profiles-daemon.enable = true;
-
-  hardware.nvidia.prime = {
-    offload.enable = true;
-
-    amdgpuBusId = "PCI:1:0:0";
-    nvidiaBusId = "PCI:5:0:0";
-  };
 }
