@@ -1,8 +1,13 @@
 { pkgs, ... }:
 {
+  catppuccin.rofi.enable = false;
+
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
+    theme = { 
+      "@theme" = "${./theme.rasi}";
+    };
     extraConfig = {
       modi = "drun,ssh,run";
       display-drun = "   Apps ";
