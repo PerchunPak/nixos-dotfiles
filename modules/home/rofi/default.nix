@@ -5,7 +5,7 @@
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
-    theme = { 
+    theme = {
       "@theme" = "${./theme.rasi}";
     };
     extraConfig = {
