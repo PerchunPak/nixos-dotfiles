@@ -25,20 +25,15 @@
       eza
       ncdu
       tor-browser
-      gnome-pomodoro
       meld
       gnumake
       dig
-      gnome-clocks
       mtr
       mpv
-      onefetch
       zip
       unzip
-      hexyl
       bintools
       pavucontrol
-      baobab # gnome disk usage analyzer
       nixfmt-rfc-style
       wl-clipboard
       gleam
@@ -48,7 +43,6 @@
       _7zz-rar
       rustc
       cargo
-      watchman
     ]
     ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
 }
