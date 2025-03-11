@@ -1,15 +1,8 @@
+{ lib, ... }:
 {
-  lib,
-  config,
-  inputs,
-  ...
-}:
-let
-  cfg = config.my.persistence;
-in
-{
-  imports = [ inputs.impermanence.nixosModules.home-manager.impermanence ];
-
+  # impermanence HM module uses bindfs, which has absurd performance cost
+  # instead, we read these options from nixos impermanence module, and apply
+  # them there. this has improved my performance 31 times better
   options = {
     my.persistence = {
       directories = lib.mkOption {
@@ -20,26 +13,6 @@ in
         type = lib.types.listOf lib.types.str;
         default = [ ];
       };
-    };
-  };
-
-  config = {
-    home.persistence."/persist/home" = {
-      directories = [
-        "ai"
-        "dotfiles"
-        "dev"
-        "persistent"
-        ".local/share/Steam"
-        ".cache/nix"
-        ".cache/huggingface"
-        ".local/state/wireplumber"
-        ".local/share/flatpak"
-        ".config/asciinema"
-        ".local/share/docker"
-      ] ++ cfg.directories;
-      files = cfg.files;
-      allowOther = true;
     };
   };
 }
