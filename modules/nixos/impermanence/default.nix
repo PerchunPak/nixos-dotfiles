@@ -53,6 +53,21 @@ in
           umount /btrfs_tmp
         '';
 
+    # Ensure that all files are properly chowned
+    # https://github.com/Misterio77/nix-config/blob/61aa0ab5e26c528eb6be98dee1a8b9061003bf2e/hosts/common/global/optin-persistence.nix#L29-L38
+    system.activationScripts.persistent-dirs.text =
+      let
+        mkHomePersist =
+          user:
+          lib.optionalString user.createHome ''
+            mkdir -p /persist/${user.home}
+            chown ${user.name}:${user.group} /persist/${user.home}
+            chmod ${user.homeMode} /persist/${user.home}
+          '';
+        users = lib.attrValues config.users.users;
+      in
+      lib.concatLines (map mkHomePersist users);
+
     fileSystems."/persist".neededForBoot = true;
     environment.persistence."/persist/system" = {
       hideMounts = true;

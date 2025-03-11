@@ -16,6 +16,7 @@ in
         isNormalUser = true;
         description = "Perchun Pak";
         hashedPassword = cfg.password;
+        createHome = true;
         extraGroups = [
           "wheel"
           "networkmanager"
