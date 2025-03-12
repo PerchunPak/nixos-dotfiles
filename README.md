@@ -17,7 +17,7 @@ sudo nixos-generate-config --root /mnt
 sudo rm -rf /mnt/etc/nixos
 sudo cp -r ~/nixos-dotfiles /mnt/etc/nixos
 sudo mkdir -p /mnt/persist/home /mnt/persist/system
-sudo chown 1000:100 /mnt/persist/home
+sudo chown 1000:100 /mnt/persist/system/home/perchun
 sudo nixos-install --root /mnt --flake /mnt/etc/nixos#perchun-pc
 reboot
 # Done!
