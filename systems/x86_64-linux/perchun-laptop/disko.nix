@@ -20,8 +20,15 @@
               mountpoint = "/boot";
             };
           };
+          swap = {
+            size = "20G";
+            content = {
+              type = "swap";
+              resumeDevice = true;
+            };
+          };
           luks = {
-            size = "100%";
+	    size = "1400G";
             content = {
               type = "luks";
               name = "encrypted";
@@ -30,13 +37,6 @@
                 type = "lvm_pv";
                 vg = "root_vg";
               };
-            };
-          };
-          swap = {
-            size = "100G";
-            content = {
-              type = "swap";
-              resumeDevice = true;
             };
           };
         };
