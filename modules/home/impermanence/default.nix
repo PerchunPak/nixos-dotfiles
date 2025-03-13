@@ -20,7 +20,7 @@
     my.persistence = {
       directories = [
         ".cache/huggingface"
-        ".cache/nix"
+        # ".cache/nix" # https://github.com/nix-community/comma/issues/95
         ".config/asciinema"
         ".local/share/Steam"
         ".local/share/docker"
