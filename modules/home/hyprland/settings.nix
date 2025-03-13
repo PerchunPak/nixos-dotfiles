@@ -15,7 +15,7 @@ in
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "uwsm app -s b -- swaybg"
-      "[workspace 1 silent] uwsm app -- firefox"
+      "[workspace 1 silent] uwsm app -- floorp"
       "uwsm app -- vesktop"
     ] ++ (lib.lists.optional (!nixosConfig.my.economInternetTraffic) "uwsm app -s b -- variety");
 

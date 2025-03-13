@@ -71,10 +71,15 @@
       "video/x-theora" = "org.gnome.Totem.desktop";
       "video/x-theora+ogg" = "org.gnome.Totem.desktop";
       "video/x-totem-stream" = "org.gnome.Totem.desktop";
-      "x-scheme-handler/http" = "firefox.desktop";
-      "application/xhtml+xml" = "firefox.desktop";
-      "text/html" = "firefox.desktop";
-      "x-scheme-handler/https" = "firefox.desktop";
+      "application/xhtml+xml" = "floorp.desktop";
+      "text/html" = "floorp.desktop";
+      "x-scheme-handler/http" = "floorp.desktop";
+      "x-scheme-handler/https" = "floorp.desktop";
+      "application/x-extension-htm" = "floorp.desktop";
+      "application/x-extension-html" = "floorp.desktop";
+      "application/x-extension-shtml" = "floorp.desktop";
+      "application/x-extension-xhtml" = "floorp.desktop";
+      "application/x-extension-xht" = "floorp.desktop";
     };
     associations.added = {
       "image/png" = [ "org.gnome.Loupe.desktop" ];
@@ -142,10 +147,15 @@
       "video/x-theora" = [ "org.gnome.Totem.desktop" ];
       "video/x-theora+ogg" = [ "org.gnome.Totem.desktop" ];
       "video/x-totem-stream" = [ "org.gnome.Totem.desktop" ];
-      "x-scheme-handler/http" = [ "firefox.desktop" ];
-      "application/xhtml+xml" = [ "firefox.desktop" ];
-      "text/html" = [ "firefox.desktop" ];
-      "x-scheme-handler/https" = [ "firefox.desktop" ];
+      "application/xhtml+xml" = [ "floorp.desktop" ];
+      "text/html" = [ "floorp.desktop" ];
+      "x-scheme-handler/http" = [ "floorp.desktop" ];
+      "x-scheme-handler/https" = [ "floorp.desktop" ];
+      "application/x-extension-htm" = "floorp.desktop";
+      "application/x-extension-html" = "floorp.desktop";
+      "application/x-extension-shtml" = "floorp.desktop";
+      "application/x-extension-xhtml" = "floorp.desktop";
+      "application/x-extension-xht" = "floorp.desktop";
     };
   };
 }
