@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }:
 let
@@ -145,4 +146,7 @@ in
     ".floorp"
     ".cache/floorp"
   ];
+
+  home.file.".floorp/perchun/search.json.mozlz4".force = lib.mkForce true;
+  home.file.".floorp/stuff/search.json.mozlz4".force = lib.mkForce true;
 }
