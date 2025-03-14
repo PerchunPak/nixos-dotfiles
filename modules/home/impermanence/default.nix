@@ -26,6 +26,7 @@
         ".local/share/docker"
         ".local/share/flatpak"
         ".local/state/wireplumber"
+        ".steam"
         "ai"
         "dev"
         "dotfiles"
