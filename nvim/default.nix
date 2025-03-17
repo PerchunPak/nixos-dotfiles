@@ -41,10 +41,11 @@ let
         general =
           with pkgs;
           [
-            universal-ctags
-            ripgrep
             fd
+            pandoc
+            ripgrep
             stdenv.cc.cc
+            universal-ctags
             wl-clipboard
 
             # language servers
@@ -90,6 +91,7 @@ let
             cmp-path
             cmp_luasnip
             conform-nvim
+            devdocs-nvim
             fidget-nvim
             flash-nvim
             friendly-snippets
