@@ -25,6 +25,7 @@ in
         ".factorio"
         ".config/heroic"
         ".config/unity3d"
+        "Zomboid"
       ];
     }
     (lib.mkIf cfg.enable {
