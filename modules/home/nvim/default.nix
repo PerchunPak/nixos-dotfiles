@@ -21,5 +21,6 @@ in
     ".local/state/nvim/dbee"
     ".local/state/nvim/shada"
     ".local/state/nvim/undo"
+    ".local/share/nvim/devdocs"
   ];
 }
