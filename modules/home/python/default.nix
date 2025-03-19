@@ -29,6 +29,7 @@
 
   my.persistence.directories = [
     ".local/share/pypoetry"
+    ".local/share/uv"
     ".cache/pypoetry"
     ".cache/pre-commit"
     ".cache/uv"
