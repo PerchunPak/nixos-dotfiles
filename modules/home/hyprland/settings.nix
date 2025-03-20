@@ -38,7 +38,7 @@ in
       "$mainMod, L, exec, hyprlock"
       "$mainMod, K, exec, ${wlogout-script}"
       "$mainMod, G, exec, hyprpanel toggleWindow settings-dialog"
-      "$mainMod, O, exec, bash -c 'pgrep vesktop -f | head -n 2 | tail -n 1 | xargs kill'"
+      "$mainMod, O, exec, bash -c 'pgrep vesktop -f | xargs kill'"
       "$mainMod, B, exec, variety --next"
       "$mainMod SHIFT, B, exec, variety --previous"
 
