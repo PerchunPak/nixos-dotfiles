@@ -171,7 +171,7 @@
             "enabled": false
         },
         "GameActivityToggle": {
-            "enabled": false,
+            "enabled": true,
             "oldIcon": false
         },
         "GifPaste": {
@@ -184,14 +184,15 @@
             "enabled": false
         },
         "IgnoreActivities": {
-            "enabled": true,
+            "enabled": false,
             "listMode": 1,
             "idsList": "",
             "ignorePlaying": false,
             "ignoreStreaming": false,
             "ignoreListening": false,
             "ignoreWatching": false,
-            "ignoreCompeting": false
+            "ignoreCompeting": false,
+            "ignoredActivities": []
         },
         "ImageZoom": {
             "enabled": true,
@@ -462,7 +463,8 @@
             "enabled": false
         },
         "SortFriendRequests": {
-            "enabled": true
+            "enabled": true,
+            "showDates": false
         },
         "SpotifyControls": {
             "enabled": false
@@ -769,7 +771,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1742639197219
+        "settingsSyncVersion": 1742639992581
     },
     "eagerPatches": false
 }
