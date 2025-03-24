@@ -8,12 +8,15 @@ let
   rycee-nur = import "${inputs.rycee-nur}" { inherit pkgs; };
 
   profile = {
-    bookmarks = [
-      {
-        name = "NixOS repo";
-        url = "https://github.com/NixOS/nixpkgs";
-      }
-    ];
+    bookmarks = {
+      force = true;
+      settings = [
+        {
+          name = "NixOS repo";
+          url = "https://github.com/NixOS/nixpkgs";
+        }
+      ];
+    };
 
     extensions = {
       force = true;
@@ -95,7 +98,7 @@ let
     };
 
     search = {
-      default = "Google";
+      default = "google";
 
       engines = {
         "Nix Packages" = {
