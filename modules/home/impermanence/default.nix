@@ -21,6 +21,7 @@
       directories = [
         ".cache/huggingface"
         # ".cache/nix" # https://github.com/nix-community/comma/issues/95
+        ".config/Signal"
         ".config/asciinema"
         ".local/share/Steam"
         ".local/share/docker"

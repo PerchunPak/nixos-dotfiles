@@ -43,6 +43,7 @@
       _7zz-rar
       rustc
       cargo
+      signal-desktop
     ]
     ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
 }
