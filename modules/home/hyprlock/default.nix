@@ -1,20 +1,7 @@
-{ config, ... }:
-let
-  ctpConfig = config.catppuccin;
-in
 {
+  catppuccin.hyprlock.useDefaultConfig = false;
+
   programs.hyprlock.settings = {
-    source = [
-      # colors
-      "${ctpConfig.sources.hyprland}/themes/${ctpConfig.flavor}.conf"
-
-      # accent values
-      (builtins.toFile "hyprlock-${ctpConfig.accent}.conf" ''
-        $accent=''$${ctpConfig.accent}
-        $accentAlpha=''$${ctpConfig.accent}Alpha
-      '')
-    ];
-
     general.disable_loading_bar = true;
 
     background = {
