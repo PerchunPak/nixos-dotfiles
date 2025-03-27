@@ -113,15 +113,10 @@ in
     };
 
     windowrule = [
-      "float,^(Rofi)$"
-      "center 1,^(Rofi)$"
-      "pin,^(Rofi)$"
-      "stayfocused,^(Rofi)$"
-
-      "workspace 3 silent,^(vesktop)"
-      "workspace 4 silent,^(steam)"
-      "workspace 4 silent,^(heroic)"
-      "workspace 4 silent,^(Minecraft)"
+      "workspace 3 silent,class:^(vesktop)"
+      "workspace 4 silent,class:^(steam)"
+      "workspace 4 silent,class:^(heroic)"
+      "workspace 4 silent,class:^(Minecraft)"
     ];
 
     windowrulev2 = [
