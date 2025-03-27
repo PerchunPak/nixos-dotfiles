@@ -79,6 +79,18 @@
         halign = "center";
         valign = "center";
       }
+
+      # Layout
+      {
+        monitor = "";
+        text = "Layout: $LAYOUT";
+        color = "$text";
+        font_size = 15;
+        font_family = "$font";
+        position = "15, -15";
+        halign = "left";
+        valign = "top";
+      }
     ];
   };
 }
