@@ -53,7 +53,7 @@ ags.bundle {
     astal.apps
     astal.battery
     astal.bluetooth
-    my.astal-cava # doesn't compile without it
+    astal.cava
     astal.hyprland
     astal.mpris
     astal.network
