@@ -36,7 +36,7 @@
 }:
 ags.bundle {
   pname = "hyprpanel";
-  version = "unstable-2025-01-25";
+  version = "unstable-${inputs.hyprpanel.lastModifiedDate}";
 
   __structuredAttrs = true;
   strictDeps = true;
