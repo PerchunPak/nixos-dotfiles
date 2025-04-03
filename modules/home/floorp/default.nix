@@ -95,6 +95,7 @@ let
       "extensions.webextensions.ExtensionStorageIDB.enabled" = false;
       "browser.download.lastDir" = "/home/perchun/Downloads";
       "browser.sessionstore.max_resumed_crashes" = -1;
+      "mousewheel.default.delta_multiplier_y" = 100;
     };
 
     search = {
