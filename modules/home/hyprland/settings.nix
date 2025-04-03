@@ -39,6 +39,7 @@ in
       "$mainMod, K, exec, ${wlogout-script}"
       "$mainMod, G, exec, hyprpanel toggleWindow settings-dialog"
       "$mainMod, O, exec, bash -c 'pgrep vesktop -f | xargs kill'"
+      "$mainMod, W, exec, cliphistory"
       "$mainMod, B, exec, variety --next"
       "$mainMod SHIFT, B, exec, variety --previous"
 
