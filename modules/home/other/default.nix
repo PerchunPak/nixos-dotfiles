@@ -44,6 +44,8 @@
       rustc
       cargo
       signal-desktop
+      wget
+      gparted
     ]
     ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
 }
