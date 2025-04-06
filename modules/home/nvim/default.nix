@@ -9,9 +9,14 @@ let
     inherit inputs;
     origPkgs = pkgs;
   };
+
+  nixCats_2 = import ../../../nvim2 {
+    inherit pkgs;
+    nixCats = inputs.nixCats;
+  };
 in
 {
-  home.packages = builtins.attrValues nixCats.packages.${system};
+  home.packages = (builtins.attrValues nixCats.packages.${system}) ++ [ nixCats_2 ];
 
   systemd.user.tmpfiles.rules = [
     "L /home/perchun/.config/nvim - - - - /home/perchun/dotfiles/nvim"
