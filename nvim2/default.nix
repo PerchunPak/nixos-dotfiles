@@ -149,6 +149,16 @@ let
         # anything else to pass and grab in lua with `nixCats.extra`
         extra = { };
       };
+
+    testNvim =
+      { pkgs, ... }:
+      {
+        settings = {
+          aliases = [ "tv2" ];
+          wrapRc = false;
+        };
+        categories.general = true;
+      };
   };
 
   # We will build the one named nvim here and export that one.
@@ -156,8 +166,11 @@ let
   # using package.override { name = "aDifferentPackage"; }
   defaultPackageName = "nvim2";
 
-  # return our package!
+  nixCatsBuilder = utils.baseBuilder luaPath {
+    inherit pkgs;
+  } categoryDefinitions packageDefinitions;
+  defaultPackage = nixCatsBuilder defaultPackageName;
 in
-utils.baseBuilder luaPath {
-  inherit pkgs;
-} categoryDefinitions packageDefinitions defaultPackageName
+# this will make a package out of each of the packageDefinitions defined above
+# and set the default package to the one passed in here.
+utils.mkAllPackages defaultPackage
