@@ -2,6 +2,9 @@ require('lze').load {
   'lazydev.nvim',
   cmd = { 'LazyDev' },
   ft = 'lua',
+  on_require = {
+    'lazydev.integrations.blink',
+  },
   after = function()
     require('lazydev').setup {
       library = {

@@ -56,6 +56,7 @@ let
         general = with pkgs.vimPlugins; [
           lze
           lzextras
+          friendly-snippets
         ];
       };
 
@@ -63,11 +64,12 @@ let
       # use with packadd and an autocommand in config to achieve lazy loading
       optionalPlugins = {
         general = with pkgs.vimPlugins; [
+          blink-cmp
           catppuccin-nvim
-          nvim-lspconfig
-          nvim-treesitter.withAllGrammars
           lazydev-nvim
           luvit-meta
+          nvim-lspconfig
+          nvim-treesitter.withAllGrammars
         ];
       };
 
