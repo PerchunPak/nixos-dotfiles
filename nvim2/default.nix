@@ -72,6 +72,7 @@ let
           nvim-lspconfig
           nvim-treesitter.withAllGrammars
           snacks-nvim
+          which-key-nvim
         ];
       };
 
