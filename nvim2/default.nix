@@ -67,6 +67,7 @@ let
         general = with pkgs.vimPlugins; [
           blink-cmp
           catppuccin-nvim
+          conform-nvim
           lazydev-nvim
           luvit-meta
           nvim-lspconfig
