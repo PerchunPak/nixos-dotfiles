@@ -66,6 +66,8 @@ let
           catppuccin-nvim
           nvim-lspconfig
           nvim-treesitter.withAllGrammars
+          lazydev-nvim
+          luvit-meta
         ];
       };
 
