@@ -1,4 +1,4 @@
-require('lze').load {
+return {
   'nixd',
   lsp = {
     filetypes = { 'nix' },

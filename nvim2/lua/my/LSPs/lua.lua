@@ -1,4 +1,4 @@
-require('lze').load {
+return {
   'lua_ls',
   lsp = {
     filetypes = { 'lua' },

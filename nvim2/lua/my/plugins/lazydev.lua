@@ -1,4 +1,4 @@
-require('lze').load {
+return {
   'lazydev.nvim',
   cmd = { 'LazyDev' },
   ft = 'lua',

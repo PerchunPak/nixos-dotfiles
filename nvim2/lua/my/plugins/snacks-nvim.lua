@@ -1,4 +1,4 @@
-require('lze').load {
+return {
   'snacks.nvim',
   priority = 999,
   lazy = false,

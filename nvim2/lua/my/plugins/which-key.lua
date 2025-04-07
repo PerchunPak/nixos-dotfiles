@@ -1,4 +1,4 @@
-require('lze').load {
+return {
   'which-key.nvim',
   event = 'VimEnter',
   keys = {

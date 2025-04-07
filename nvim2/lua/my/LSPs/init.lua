@@ -4,7 +4,7 @@ local function get_capabilities(server_name)
   return capabilities
 end
 
-require('lze').load {
+return {
   {
     'nvim-lspconfig',
     on_require = { 'lspconfig' },
@@ -24,8 +24,8 @@ require('lze').load {
   { 'ts_ls', lsp = {} },
   { 'typos_lsp', lsp = {} },
   { 'yamlls', lsp = {} },
-}
 
-require 'my.LSPs.lua'
-require 'my.LSPs.nix'
-require 'my.LSPs.python'
+  { import = 'my.LSPs.lua' },
+  { import = 'my.LSPs.nix' },
+  { import = 'my.LSPs.python' },
+}

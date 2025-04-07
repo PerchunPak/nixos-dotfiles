@@ -1,6 +1,8 @@
-require 'my.plugins.blink-cmp'
-require 'my.plugins.catppuccin'
-require 'my.plugins.lazydev'
-require 'my.plugins.snacks-nvim'
-require 'my.plugins.treesitter'
-require 'my.plugins.which-key'
+return {
+  { import = 'my.plugins.blink-cmp' },
+  { import = 'my.plugins.catppuccin' },
+  { import = 'my.plugins.lazydev' },
+  { import = 'my.plugins.snacks-nvim' },
+  { import = 'my.plugins.treesitter' },
+  { import = 'my.plugins.which-key' },
+}
