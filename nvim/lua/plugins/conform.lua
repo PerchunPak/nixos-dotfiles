@@ -36,9 +36,6 @@ return {
           lsp_fallback = lsp_format_opt,
         }
       end,
-      format_after_save = {
-        lsp_format = 'prefer',
-      },
       formatters_by_ft = {
         nix = { 'nixfmt' },
         lua = { 'stylua' },
