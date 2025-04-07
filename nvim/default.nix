@@ -138,7 +138,7 @@ let
   packageDefinitions = {
     # These are the names of your packages
     # you can include as many as you wish.
-    nvim2 =
+    neovim =
       {
         pkgs,
         name,
@@ -155,7 +155,7 @@ let
           configDirName = "nvim2";
           # IMPORTANT:
           # your aliases may not conflict with your other packages.
-          aliases = [ "v2" ];
+          aliases = [ "v" ];
           # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
         };
         # and a set of categories that you want
@@ -178,10 +178,7 @@ let
       };
   };
 
-  # We will build the one named nvim here and export that one.
-  # you can change which package from packageDefinitions is built later
-  # using package.override { name = "aDifferentPackage"; }
-  defaultPackageName = "nvim2";
+  defaultPackageName = "nvim";
 
   nixCatsBuilder = utils.baseBuilder luaPath {
     inherit pkgs;

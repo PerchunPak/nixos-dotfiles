@@ -1,12 +1,8 @@
 {
   inputs,
   pkgs,
-  system,
 }:
-let
-  nixCats = import ../../nvim {
-    inherit inputs;
-    origPkgs = pkgs;
-  };
-in
-nixCats.packages.${system}.default
+(import ../../nvim {
+  inherit pkgs;
+  nixCats = inputs.nixCats;
+}).neovim
