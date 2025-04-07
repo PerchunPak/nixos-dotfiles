@@ -29,6 +29,7 @@ let
       lspsAndRuntimeDeps = {
         general = with pkgs; [
           fd
+          imagemagick
           pandoc
           ripgrep
           stdenv.cc.cc
@@ -70,6 +71,7 @@ let
           luvit-meta
           nvim-lspconfig
           nvim-treesitter.withAllGrammars
+          snacks-nvim
         ];
       };
 
