@@ -32,13 +32,18 @@ let
 
       # This is for plugins that will load at startup without using packadd:
       startupPlugins = {
-        general = with pkgs.vimPlugins; [ ];
+        general = with pkgs.vimPlugins; [
+          lze
+          lzextras
+        ];
       };
 
       # not loaded automatically at startup.
       # use with packadd and an autocommand in config to achieve lazy loading
       optionalPlugins = {
-        general = with pkgs.vimPlugins; [ ];
+        general = with pkgs.vimPlugins; [
+          catppuccin-nvim
+        ];
       };
 
       # shared libraries to be added to LD_LIBRARY_PATH
