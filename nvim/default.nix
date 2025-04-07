@@ -140,16 +140,15 @@ let
       # in your lua config via
       # vim.g.python3_host_prog
       # or run from nvim terminal via :!<packagename>-python3
-      extraPython3Packages = {
-        general = [
-          (
-            pyPkgs: with pyPkgs; [
-              python-lsp-server
-              python-lsp-ruff
-            ]
-          )
-        ];
+      python3.libraries = {
+        general = (
+          pyPkgs: with pyPkgs; [
+            python-lsp-server
+            python-lsp-ruff
+          ]
+        );
       };
+
       # populates $LUA_PATH and $LUA_CPATH
       extraLuaPackages = {
         general = [ (_: [ ]) ];
@@ -171,11 +170,6 @@ let
             "vim"
             "nvim"
           ];
-
-          withRuby = false;
-          withPython3 = true;
-          withNodeJs = false;
-          withPerl = false;
 
           wrapRc = true;
         };
