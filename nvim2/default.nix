@@ -27,7 +27,28 @@ let
       # at RUN TIME for plugins. Will be available to PATH within neovim terminal
       # this includes LSPs
       lspsAndRuntimeDeps = {
-        general = with pkgs; [ ];
+        general = with pkgs; [
+          fd
+          pandoc
+          ripgrep
+          stdenv.cc.cc
+          universal-ctags
+          wl-clipboard
+
+          # language servers
+          basedpyright
+          bash-language-server
+          gleam
+          lua-language-server
+          marksman
+          nixd
+          rust-analyzer
+          svelte-language-server
+          tailwindcss-language-server
+          typescript-language-server
+          typos-lsp
+          yaml-language-server
+        ];
       };
 
       # This is for plugins that will load at startup without using packadd:
@@ -43,6 +64,8 @@ let
       optionalPlugins = {
         general = with pkgs.vimPlugins; [
           catppuccin-nvim
+          nvim-lspconfig
+          nvim-treesitter.withAllGrammars
         ];
       };
 
@@ -69,7 +92,12 @@ let
       # vim.g.python3_host_prog
       # or run from nvim terminal via :!<packagename>-python3
       python3.libraries = {
-        test = (_: [ ]);
+        general = (
+          pyPkgs: with pyPkgs; [
+            python-lsp-server
+            python-lsp-ruff
+          ]
+        );
       };
       # populates $LUA_PATH and $LUA_CPATH
       extraLuaPackages = {
