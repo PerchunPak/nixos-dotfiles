@@ -19,7 +19,7 @@ in
   home.packages = (builtins.attrValues nixCats.packages.${system}) ++ [ nixCats_2.nvim2 ];
 
   systemd.user.tmpfiles.rules = [
-    "L /home/perchun/.config/nvim - - - - /home/perchun/dotfiles/nvim"
+    "L /home/perchun/.config/nvim - - - - /home/perchun/dotfiles/nvim2"
   ];
 
   my.persistence.directories = [

@@ -68,12 +68,28 @@ let
           blink-cmp
           catppuccin-nvim
           conform-nvim
+          flash-nvim
+          gitsigns-nvim
+          indent-blankline-nvim
           lazydev-nvim
           luvit-meta
+          mini-nvim
           nvim-lspconfig
           nvim-treesitter.withAllGrammars
+          nvim-web-devicons
+          oil-nvim
+          otter-nvim
           snacks-nvim
+          todo-comments-nvim
+          toggleterm-nvim
+          undotree
+          vim-sleuth
           which-key-nvim
+
+          # debug
+          nvim-dap
+          nvim-dap-ui
+          nvim-dap-python
         ];
       };
 
