@@ -34,6 +34,9 @@ return {
       notifier = {},
       statuscolumn = {},
       toggle = {},
+      explorer = {},
+      input = {},
+      picker = {},
     }
 
     vim.api.nvim_create_autocmd('User', {
