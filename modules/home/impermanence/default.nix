@@ -20,9 +20,10 @@
     my.persistence = {
       directories = [
         ".cache/huggingface"
-        # ".cache/nix" # https://github.com/nix-community/comma/issues/95
         ".config/Signal"
         ".config/asciinema"
+        ".eclipse"
+        ".local/share/DBeaverData"
         ".local/share/Steam"
         ".local/share/docker"
         ".local/share/flatpak"
@@ -32,6 +33,7 @@
         "dev"
         "dotfiles"
         "persistent"
+        # ".cache/nix" # https://github.com/nix-community/comma/issues/95
       ];
     };
   };

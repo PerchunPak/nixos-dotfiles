@@ -46,6 +46,7 @@
       signal-desktop
       wget
       gparted
+      dbeaver-bin
     ]
     ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
 }
