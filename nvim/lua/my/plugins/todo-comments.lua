@@ -9,7 +9,6 @@ return {
   end,
   keys = {
     {
-      'n',
       '<leader>ft',
       function()
         local keywords = require('todo-comments.config').keywords
@@ -25,13 +24,12 @@ return {
 
         vim.cmd.TodoTelescope { 'keywords=' .. table.concat(aslist, ',') }
       end,
-      { desc = 'Search [T]odos' },
+      desc = 'Search [T]odos',
     },
-  },
-  {
-    'n',
-    '<leader>fT',
-    vim.cmd.TodoTelescope,
-    { desc = 'Search all [T]odos' },
+    {
+      '<leader>fT',
+      vim.cmd.TodoTelescope,
+      desc = 'Search all [T]odos',
+    },
   },
 }
