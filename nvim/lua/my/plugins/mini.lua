@@ -3,6 +3,7 @@ return {
   lazy = false,
   after = function()
     require('mini.ai').setup { n_lines = 500 }
+    require('mini.basics').setup {}
     require('mini.comment').setup {}
     require('mini.cursorword').setup {}
     require('mini.icons').setup {}
