@@ -49,6 +49,15 @@ let
           typescript-language-server
           typos-lsp
           yaml-language-server
+
+          # formatting
+          black
+          codespell
+          gawk # trim_whitespace
+          nixfmt-rfc-style
+          prettierd
+          rustfmt
+          stylua
         ];
       };
 
