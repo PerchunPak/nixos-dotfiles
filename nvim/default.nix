@@ -85,7 +85,6 @@ let
           mini-nvim
           nvim-lspconfig
           nvim-treesitter.withAllGrammars
-          nvim-web-devicons
           oil-nvim
           otter-nvim
           snacks-nvim

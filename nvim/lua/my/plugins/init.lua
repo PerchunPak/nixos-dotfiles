@@ -3,6 +3,7 @@ return {
   { import = 'my.plugins.treesitter' },
   { import = 'my.plugins.snacks-nvim' },
   { import = 'my.plugins.blink-cmp' },
+  { import = 'my.plugins.mini' },
   { 'plenary.nvim', lazy = false },
 
   { import = 'my.plugins.conform' },
