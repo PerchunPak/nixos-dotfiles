@@ -168,6 +168,7 @@ let
             "v"
           ];
           # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+          hosts.python3.enable = true;
         };
         # and a set of categories that you want
         categories = {
