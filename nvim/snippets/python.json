@@ -1,0 +1,13 @@
+{
+  "#!/uv": {
+    "body": [
+      "#!/usr/bin/env -S uv run --script",
+      "# /// script",
+      "# requires-python = \"$1\"",
+      "# dependencies = [",
+      "#   \"$2\",",
+      "# ]",
+      "# ///"
+    ]
+  }
+}
