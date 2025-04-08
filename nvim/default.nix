@@ -187,6 +187,7 @@ let
           wrapRc = false;
         };
         categories.general = true;
+        hosts.python3.enable = true;
       };
   };
 
