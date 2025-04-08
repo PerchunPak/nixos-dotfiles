@@ -109,7 +109,7 @@ return {
     { "<leader>sM",      function() Snacks.picker.man() end,                                     desc = "Man Pages" },
     { "<leader>sp",      function() Snacks.picker.lazy() end,                                    desc = "Search for Plugin Spec" },
     { "<leader>sq",      function() Snacks.picker.qflist() end,                                  desc = "Quickfix List" },
-    { "<leader>sR",      function() Snacks.picker.resume() end,                                  desc = "Resume" },
+    { "<leader>sr",      function() Snacks.picker.resume() end,                                  desc = "Resume" },
     { "<leader>su",      function() Snacks.picker.undo() end,                                    desc = "Undo History" },
     -- LSP
     { "gd",              function() Snacks.picker.lsp_definitions() end,                         desc = "Goto Definition" },
