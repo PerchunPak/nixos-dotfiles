@@ -161,10 +161,13 @@ let
           suffix-path = true;
           suffix-LD = true;
           wrapRc = true;
-          configDirName = "nvim2";
+          configDirName = "nvim";
           # IMPORTANT:
           # your aliases may not conflict with your other packages.
-          aliases = [ "v" ];
+          aliases = [
+            "nvim"
+            "v"
+          ];
           # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
         };
         # and a set of categories that you want
