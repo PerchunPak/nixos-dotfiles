@@ -125,7 +125,7 @@ return {
     { "<leader>.",       function() Snacks.scratch() end,                                        desc = "Toggle Scratch Buffer" },
     { "<leader>S",       function() Snacks.scratch.select() end,                                 desc = "Select Scratch Buffer" },
     { "<leader>n",       function() Snacks.notifier.show_history() end,                          desc = "Notification History" },
-    { "<leader>bd",      function() Snacks.bufdelete() end,                                      desc = "Delete Buffer" },
+    { "<leader>bD",      function() Snacks.bufdelete() end,                                      desc = "Delete Buffer" },
     { "<leader>cR",      function() Snacks.rename.rename_file() end,                             desc = "Rename File" },
     { "<leader>o",       function() Snacks.gitbrowse() end,                                      desc = "Git Browse",               mode = { "n", "v" } },
     { "<leader>g",       function() Snacks.lazygit() end,                                        desc = "Lazygit" },

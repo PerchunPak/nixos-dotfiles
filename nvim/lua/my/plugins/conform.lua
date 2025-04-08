@@ -4,12 +4,37 @@ return {
   cmd = { 'ConformInfo' },
   keys = {
     {
-      '<leader>bf',
+      '<leader>bb',
       function()
         require('conform').format { async = true, lsp_format = 'fallback' }
       end,
       mode = '',
       desc = 'Buffer [F]ormat',
+    },
+    {
+      '<leader>bf',
+      function()
+        vim.g.disable_autoformat = true
+      end,
+      mode = 'n',
+      desc = 'Disable auto-format',
+    },
+    {
+      '<leader>bd',
+      function()
+        vim.b.disable_autoformat = true
+      end,
+      mode = 'n',
+      desc = 'Disable auto-format for this buffer',
+    },
+    {
+      '<leader>bF',
+      function()
+        vim.b.disable_autoformat = false
+        vim.g.disable_autoformat = false
+      end,
+      mode = 'n',
+      desc = 'Enable auto-format',
     },
   },
   after = function()
@@ -52,26 +77,6 @@ return {
         ['*'] = { 'codespell', 'trim_whitespace' },
       },
     }
-
-    -- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
-    vim.api.nvim_create_user_command('FormatDisable', function(args)
-      if args.bang then
-        -- FormatDisable! will disable formatting just for this buffer
-        vim.b.disable_autoformat = true
-      else
-        vim.g.disable_autoformat = true
-      end
-    end, {
-      desc = 'Disable autoformat-on-save',
-      bang = true,
-    })
-
-    vim.api.nvim_create_user_command('FormatEnable', function()
-      vim.b.disable_autoformat = false
-      vim.g.disable_autoformat = false
-    end, {
-      desc = 'Re-enable autoformat-on-save',
-    })
 
     require('conform').formatters.codespell = {
       prepend_args = {
