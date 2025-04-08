@@ -17,7 +17,6 @@ return {
     after = function()
       local dap = require 'dap'
       local dapui = require 'dapui'
-      vim.print 'lox'
 
       -- Dap UI setup
       -- For more information, see |:help nvim-dap-ui|
