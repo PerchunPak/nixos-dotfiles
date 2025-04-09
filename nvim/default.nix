@@ -37,6 +37,7 @@ let
           wl-clipboard
 
           # language servers
+          astro-language-server
           basedpyright
           bash-language-server
           gleam
