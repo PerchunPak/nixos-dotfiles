@@ -15,13 +15,11 @@ return {
     end,
   },
 
+  -- :help lspconfig-all
   { 'bashls', lsp = {} },
   { 'gleam', lsp = {} },
   { 'marksman', lsp = {} },
   { 'rust_analyzer', lsp = {} },
-  { 'svelte', lsp = {} },
-  { 'tailwindcss', lsp = {} },
-  { 'ts_ls', lsp = {} },
   { 'typos_lsp', lsp = {} },
   { 'yamlls', lsp = {} },
 
