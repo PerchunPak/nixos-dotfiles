@@ -15,6 +15,7 @@ return {
   { import = 'my.plugins.otter' },
   { import = 'my.plugins.todo-comments' },
   { import = 'my.plugins.toggleterm' },
-  { import = 'my.plugins.which-key' },
   { import = 'my.plugins.undotree' },
+  { import = 'my.plugins.which-key' },
+  { 'vim-sleuth', event = 'DeferredUIEnter' },
 }
