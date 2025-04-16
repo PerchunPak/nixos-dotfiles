@@ -13,6 +13,22 @@ return {
         capabilities = get_capabilities(plugin.name),
       }, plugin.lsp or {}))
     end,
+    keys = {
+      {
+        '<leader>ca',
+        function()
+          vim.lsp.buf.rename()
+        end,
+        desc = 'Code Actions',
+      },
+      {
+        '<leader>cr',
+        function()
+          vim.lsp.buf.code_action()
+        end,
+        desc = 'Rename variable',
+      },
+    },
   },
 
   -- :help lspconfig-all
