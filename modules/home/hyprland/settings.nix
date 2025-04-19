@@ -17,6 +17,7 @@ in
       "uwsm app -s b -- swaybg"
       "[workspace 1 silent] uwsm app -- floorp"
       "uwsm app -- vesktop"
+      "[workspace special:btop silent] uwsm app -- kitty btop"
     ] ++ (lib.lists.optional (!nixosConfig.my.economInternetTraffic) "uwsm app -s b -- variety");
 
     "$mainMod" = "SUPER";
@@ -74,8 +75,9 @@ in
       "$mainMod SHIFT, 0, movetoworkspace, 10"
 
       # Example special workspace (scratchpad)
-      "$mainMod, S, togglespecialworkspace, magic"
-      "$mainMod SHIFT, S, movetoworkspace, special:magic"
+      "$mainMod, S, togglespecialworkspace"
+      "$mainMod SHIFT, S, movetoworkspace, special"
+      "$mainMod, N, togglespecialworkspace, btop"
 
       # Scroll through existing workspaces with mainMod + scroll
       "$mainMod, mouse_down, workspace, e+1"

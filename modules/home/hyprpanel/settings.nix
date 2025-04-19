@@ -37,6 +37,7 @@
       bar.workspaces.show_icons = false;
       bar.workspaces.show_numbered = false;
       bar.workspaces.workspaces = 1;
+      bar.workspaces.ignored = "^-.+$";
       menus.clock.time.military = true;
       # please don't hack me (1)
       menus.clock.weather.key = "629e10ff3d954b6481a105403251701";
