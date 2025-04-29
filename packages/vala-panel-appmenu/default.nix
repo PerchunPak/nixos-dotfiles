@@ -35,13 +35,13 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "vala-panel-appmenu";
-  version = "24.05";
+  version = "25.04";
 
   src = fetchFromGitLab {
     owner = "vala-panel-project";
     repo = "vala-panel-appmenu";
     tag = finalAttrs.version;
-    hash = "sha256-8GWauw7r3zKhvGF2TNOI8GDVctUFDhtG/Vy1cNUpsVo=";
+    hash = "sha256-v5J3nwViNiSKRPdJr+lhNUdKaPG82fShPDlnmix5tlY=";
     fetchSubmodules = true;
   };
 
