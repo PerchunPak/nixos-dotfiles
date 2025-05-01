@@ -10,7 +10,7 @@
   fetchFromGitLab,
   glib,
   gobject-introspection,
-  gtk2,
+  gtk3,
   jdk,
   libdbusmenu,
   libwnck,
@@ -58,7 +58,7 @@ stdenv.mkDerivation (finalAttrs: {
 
       glib
       gobject-introspection
-      gtk2
+      gtk3
       libwnck
       pkg-config
       vala
@@ -85,6 +85,7 @@ stdenv.mkDerivation (finalAttrs: {
     (lib.mesonEnable "mate" enableMate)
     (lib.mesonEnable "jayatana" enableJayatana)
     (lib.mesonEnable "appmenu-gtk-module" true)
+    (lib.mesonOption "appmenu-gtk-module:gtk" "3")
   ];
 
   passthru = {
