@@ -13,6 +13,7 @@
     };
     gtk.icon.enable = false;
     wlogout.enable = false; # i like my config more
+    mako.enable = false; # why is this even active
   };
 
   home.pointerCursor = {
