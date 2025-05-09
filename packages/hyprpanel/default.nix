@@ -14,6 +14,7 @@
   dart-sass,
   glib,
   gnome-bluetooth,
+  gpu-screen-recorder,
   gpustat,
   grimblast,
   gvfs,
@@ -23,11 +24,10 @@
   matugen,
   networkmanager,
   python3,
-  python3Packages,
   pywal,
+  stdenv,
   swww,
   upower,
-  wf-recorder,
   wireplumber,
   wl-clipboard,
   writeShellScript,
@@ -72,19 +72,13 @@ ags.bundle {
     grimblast
     gvfs
     hyprpicker
-    hyprpicker
     libgtop
     libnotify
     matugen
     networkmanager
-    networkmanager
-    python3Packages.dbus-python
-    python3Packages.gpustat
     pywal
     swww
     upower
-    wf-recorder
-    wireplumber
     wireplumber
     wl-clipboard
     (python3.withPackages (
@@ -96,7 +90,7 @@ ags.bundle {
       ]
       ++ lib.optional enableCuda gpustat
     ))
-  ];
+  ] ++ (lib.optionals (stdenv.hostPlatform.system == "x86_64-linux") [ gpu-screen-recorder ]);
 
   # NOTE: no update script as dependencies must be kept in sync with upstream
   # and it is problematic to do it in an update script. I don't have push
