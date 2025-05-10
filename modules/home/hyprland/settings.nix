@@ -83,7 +83,7 @@ in
       "$mainMod, mouse_down, workspace, e+1"
       "$mainMod, mouse_up, workspace, e-1"
 
-      ", PRINT, exec, hyprshot --mode region --clipboard-only --silent"
+      ", PRINT, exec, hyprshot --mode region --clipboard-only --silent --freeze"
 
       # fn keys
       ", code:121, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
