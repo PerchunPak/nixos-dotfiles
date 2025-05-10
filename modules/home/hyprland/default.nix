@@ -23,6 +23,7 @@
 
     services = {
       hypridle.enable = true;
+      hyprpolkitagent.enable = true;
     };
 
     home.packages = with pkgs; [
