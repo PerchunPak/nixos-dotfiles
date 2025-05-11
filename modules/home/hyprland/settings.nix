@@ -106,10 +106,15 @@ in
     ];
 
     windowrulev2 = [
+      # Steam
       "float,class:(steam),title:(Friends List)"
       "size 383 691,class:(steam),title:(Friends List)"
       "center,class:(steam),title:(Friends List)"
       "workspace 4,class:(steam),title:(Friends List)"
+      # Calculator
+      "float,class:(org.gnome.Calculator)"
+      "size 383 691,class:(org.gnome.Calculator)"
+      "center,class:(org.gnome.Calculator)"
     ];
 
     layerrule = [ "blur, logout_dialog" ];
