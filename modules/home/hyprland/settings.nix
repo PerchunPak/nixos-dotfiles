@@ -50,7 +50,6 @@ in
       "SUPER, W, workspace, 6"
       "SUPER, E, workspace, 7"
       "SUPER, R, workspace, 8"
-      "SUPER, T, workspace, 9"
 
       "SUPER SHIFT, 1, movetoworkspace, 1"
       "SUPER SHIFT, 2, movetoworkspace, 2"
@@ -60,7 +59,6 @@ in
       "SUPER SHIFT, W, movetoworkspace, 6"
       "SUPER SHIFT, E, movetoworkspace, 7"
       "SUPER SHIFT, R, movetoworkspace, 8"
-      "SUPER SHIFT, T, movetoworkspace, 9"
 
       "SUPER, S, togglespecialworkspace"
       "SUPER SHIFT, S, movetoworkspace, special"
