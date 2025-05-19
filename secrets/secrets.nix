@@ -4,7 +4,7 @@ in
 {
   "aws-dev.age".publicKeys = [ perchun ];
   "aws-perchun.age".publicKeys = [ perchun ];
-  "aws-fish.age".publicKeys = [ perchun ];
+  "aws-work-cmd.age".publicKeys = [ perchun ];
   "gpg-key.age".publicKeys = [ perchun ];
   "ssh-config.age".publicKeys = [ perchun ];
 }

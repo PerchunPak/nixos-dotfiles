@@ -7,7 +7,7 @@
 {
   age.secrets.aws-dev.file = lib.my.toSecretFile "aws-dev";
   age.secrets.aws-perchun.file = lib.my.toSecretFile "aws-perchun";
-  age.secrets.aws-fish.file = lib.my.toSecretFile "aws-fish";
+  age.secrets.aws-work-cmd.file = lib.my.toSecretFile "aws-work-cmd";
 
   programs.awscli = {
     enable = true;
@@ -26,7 +26,7 @@
 
   home.packages = with pkgs; [
     (writeShellScriptBin "aws-work" ''
-      fish ${config.age.secrets.aws-fish.path}
+      fish ${config.age.secrets.aws-work-cmd.path}
     '')
 
     ssm-session-manager-plugin
