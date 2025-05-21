@@ -145,6 +145,8 @@ in
     monitor = cfg.monitors;
 
     cursor.no_hardware_cursors = true;
+
+    ecosystem.no_update_news = true;
   };
 
   # env variables should be specified here
