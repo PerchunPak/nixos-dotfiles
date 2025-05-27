@@ -16,10 +16,12 @@
   gpu-screen-recorder,
   gpustat,
   grimblast,
+  gtksourceview3,
   gvfs,
   hyprpicker,
   libgtop,
   libnotify,
+  libsoup_3,
   matugen,
   networkmanager,
   python3,
@@ -69,10 +71,12 @@ ags.bundle {
     glib
     gnome-bluetooth
     grimblast
+    gtksourceview3
     gvfs
     hyprpicker
     libgtop
     libnotify
+    libsoup_3
     matugen
     networkmanager
     pywal
