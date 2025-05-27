@@ -1,8 +1,8 @@
-diff --git a/src/components/bar/modules/workspaces/helpers/utils.ts b/src/components/bar/modules/workspaces/helpers/utils.ts
-index 5d2c033..3ce3647 100644
---- a/src/components/bar/modules/workspaces/helpers/utils.ts
-+++ b/src/components/bar/modules/workspaces/helpers/utils.ts
-@@ -251,7 +251,7 @@ export const renderLabel = (
+diff --git a/src/components/bar/modules/workspaces/helpers/index.ts b/src/components/bar/modules/workspaces/helpers/index.ts
+index 807dfdd..a119036 100644
+--- a/src/components/bar/modules/workspaces/helpers/index.ts
++++ b/src/components/bar/modules/workspaces/helpers/index.ts
+@@ -255,7 +255,7 @@ export const renderLabel = (
      monitor: number,
  ): string => {
      if (showAppIcons) {

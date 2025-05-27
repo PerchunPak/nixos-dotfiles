@@ -3,7 +3,6 @@
   inputs,
   lib,
   my,
-  system,
 
   ags,
   astal,
