@@ -19,7 +19,27 @@ in
     settings = lib.mkOption {
       type = jsonFormat.type;
       default = { };
-      example = lib.literalExpression ''''; # TODO
+      example = lib.literalExpression ''
+        bar.battery.label = true;
+        bar.bluetooth.label = false;
+        bar.clock.format = "%H:%M:%S";
+        bar.layouts = {
+          "*" = {
+            left = [
+              "dashboard"
+              "workspaces"
+              "media"
+            ];
+            middle = [ "windowtitle" ];
+            right = [
+              "volume"
+              "network"
+              "bluetooth"
+              "notifications"
+            ];
+          };
+        };
+      '';
       description = ''
         Configuration written to
         {file}`$XDG_CONFIG_HOME/hyprpanel/config.json`.
@@ -32,9 +52,34 @@ in
     systemd.enable = (lib.mkEnableOption "HyprPanel systemd integration") // {
       default = true;
     };
+
+    dontAssertNotificationDaemons = lib.mkOption {
+      default = true;
+      example = false;
+      description = ''
+        Whether to check for other notification daemons.
+
+        You might want to set this to false, because hyprpanel's notification
+        daemon is buggy and you may prefer something else.
+      '';
+      type = lib.types.bool;
+    };
   };
 
   config = lib.mkIf cfg.enable {
+    assertions = [
+      {
+        assertion = cfg.dontAssertNotificationDaemons && !config.services.swaync.enable;
+        message = ''
+          Only one notification daemon can be enabled at once. You have enabled
+          swaync and hyprpanel at once.
+
+          If you dont want to use hyprpanel's notification daemon, set
+          `programs.hyprpanel.dontAssertNotificationDaemons` to true.
+        '';
+      }
+    ];
+
     home.packages = [ cfg.package ];
 
     programs.hyprpanel.settings = lib.mkIf config.services.hypridle.enable {
