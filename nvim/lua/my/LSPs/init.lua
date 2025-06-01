@@ -17,14 +17,14 @@ return {
       {
         '<leader>ca',
         function()
-          vim.lsp.buf.rename()
+          vim.lsp.buf.code_action()
         end,
         desc = 'Code Actions',
       },
       {
         '<leader>cr',
         function()
-          vim.lsp.buf.code_action()
+          vim.lsp.buf.rename()
         end,
         desc = 'Rename variable',
       },
