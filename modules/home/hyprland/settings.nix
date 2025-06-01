@@ -101,6 +101,9 @@ in
       "workspace 4 silent,class:^(steam)"
       "workspace 4 silent,class:^(heroic)"
       "workspace 4 silent,class:^(Minecraft)"
+
+      # Deny stealing focus for DBeaver, this is really annoying
+      "noinitialfocus,class:^(DBeaver)"
     ];
 
     windowrulev2 = [
