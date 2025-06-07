@@ -15,7 +15,6 @@
     obs-studio.enable = true;
     htop.enable = true;
     jq.enable = true;
-    btop.enable = true;
   };
 
   home.packages =
