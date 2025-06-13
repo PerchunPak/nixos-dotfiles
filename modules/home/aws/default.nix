@@ -5,7 +5,7 @@
   ...
 }:
 {
-  age.secrets.aws-dev.file = lib.my.toSecretFile "aws-dev";
+  age.secrets.aws-default.file = lib.my.toSecretFile "aws-default";
   age.secrets.aws-perchun.file = lib.my.toSecretFile "aws-perchun";
   age.secrets.aws-work-cmd.file = lib.my.toSecretFile "aws-work-cmd";
   age.secrets.aws-start-db.file = lib.my.toSecretFile "aws-start-db";
@@ -14,14 +14,15 @@
   programs.awscli = {
     enable = true;
     credentials = {
-      dev = {
-        "credential_process" = "bash -c 'cat ${config.age.secrets.aws-dev.path}'";
+      default = {
+        "credential_process" = "bash -c 'cat ${config.age.secrets.aws-default.path}'";
       };
       perchun = {
         "credential_process" = "bash -c 'cat ${config.age.secrets.aws-perchun.path}'";
       };
     };
     settings = {
+      "profile default".region = "eu-central-1";
       "profile perchun".region = "eu-central-1";
     };
   };
