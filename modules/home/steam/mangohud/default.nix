@@ -5,6 +5,8 @@
       enable = true;
       settings = {
         fps_limit = 60;
+        vram = true;
+        ram = true;
       };
     };
   };
