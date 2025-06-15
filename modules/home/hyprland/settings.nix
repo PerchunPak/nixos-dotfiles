@@ -107,11 +107,11 @@ in
     ];
 
     windowrulev2 = [
-      # Steam
-      "float,class:(steam),title:(Friends List)"
-      "size 383 691,class:(steam),title:(Friends List)"
-      "center,class:(steam),title:(Friends List)"
-      "workspace 4,class:(steam),title:(Friends List)"
+      # Steam Friends List
+      "float,class:(steam),title:(Список друзів)"
+      "size 383 691,class:(steam),title:(Список друзів)"
+      "center,class:(steam),title:(Список друзів)"
+      "workspace 4,class:(steam),title:(Список друзів)"
       # Calculator
       "float,class:(org.gnome.Calculator)"
       "size 383 691,class:(org.gnome.Calculator)"
