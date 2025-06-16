@@ -8,7 +8,7 @@
   my = {
     # gaming.additional-games = with pkgs; [ xonotic ];
     # persistence.directories = [ ".local/share/Celeste" ];
-    setup-stuff.backlight.command = "${lib.getExe pkgs.brightnessctl} s 30%";
+    setup-stuff.backlight.command = "${lib.getExe pkgs.brightnessctl} s 50%";
   };
 
   # `allowUnfree` for experimental nix commands
