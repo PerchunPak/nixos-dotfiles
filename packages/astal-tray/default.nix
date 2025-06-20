@@ -7,7 +7,7 @@ astal.buildAstalModule {
   name = "tray";
   buildInputs = [
     json-glib
-    my.vala-panel-appmenu
+    my.appmenu-glib-translator
   ];
   meta.description = "Astal module for StatusNotifierItem";
 }
