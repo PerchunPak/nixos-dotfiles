@@ -40,8 +40,6 @@ stdenv.mkDerivation (finalAttrs: {
     gtk3
   ];
 
-  mesonAutoFeatures = "auto";
-
   meta = {
     description = "GTK Module than strips menus from all GTK programs, converts to MenuModel and sends to AppMenu";
     homepage = "https://gitlab.com/vala-panel-project/vala-panel-appmenu/-/tree/${finalAttrs.version}/subprojects/appmenu-gtk-module";
