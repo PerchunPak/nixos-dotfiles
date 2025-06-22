@@ -12,6 +12,7 @@
   btop,
   dart-sass,
   glib,
+  glib-networking,
   gnome-bluetooth,
   gpu-screen-recorder,
   gpustat,
@@ -24,6 +25,7 @@
   libsoup_3,
   matugen,
   networkmanager,
+  nix-update-script,
   python3,
   pywal,
   stdenv,
@@ -49,7 +51,7 @@ ags.bundle {
     ./lang-flags-instead-of-names.patch
   ];
 
-  # keep in sync with https://github.com/Jas-SinghFSU/HyprPanel/blob/master/flake.nix#L28
+  # keep in sync with https://github.com/Jas-SinghFSU/HyprPanel/blob/master/flake.nix#L42
   dependencies = [
     astal.apps
     astal.battery
@@ -95,13 +97,12 @@ ags.bundle {
     ))
   ] ++ (lib.optionals (stdenv.hostPlatform.system == "x86_64-linux") [ gpu-screen-recorder ]);
 
-  # NOTE: no update script as dependencies must be kept in sync with upstream
-  # and it is problematic to do it in an update script. I don't have push
-  # access to r-ryantm's repo, so I will just do updates manually
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
   postFixup =
     let
       script = writeShellScript "hyprpanel" ''
+        export GIO_EXTRA_MODULES='${glib-networking}/lib/gio/modules'
         if [ "$#" -eq 0 ]; then
           exec @out@/bin/.hyprpanel
         else
