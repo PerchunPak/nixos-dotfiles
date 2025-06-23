@@ -2,7 +2,6 @@
   config,
   inputs,
   lib,
-  my,
 
   ags,
   astal,
@@ -62,7 +61,7 @@ ags.bundle {
     astal.network
     astal.notifd
     astal.powerprofiles
-    my.astal-tray
+    astal.tray
     astal.wireplumber
 
     bluez
