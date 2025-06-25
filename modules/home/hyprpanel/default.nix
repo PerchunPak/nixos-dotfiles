@@ -1,120 +1,101 @@
+{ inputs, ... }:
 {
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-let
-  cfg = config.programs.hyprpanel;
-  jsonFormat = pkgs.formats.json { };
-in
-{
-  imports = [ ./settings.nix ];
+  programs.hyprpanel = {
+    enable = true;
 
-  options.programs.hyprpanel = {
-    enable = lib.mkEnableOption "HyprPanel";
+    settings = {
+      bar.autoHide = "never";
+      bar.battery.hideLabelWhenFull = true;
+      bar.battery.label = true;
+      bar.bluetooth.label = false;
+      bar.clock.format = "%H:%M:%S";
+      bar.clock.icon = "";
+      bar.clock.showTime = true;
+      bar.customModules.hypridle.label = false;
+      bar.customModules.kbLayout.labelType = "code";
+      bar.customModules.updates.pollingInterval = 1440000;
+      bar.launcher.autoDetectIcon = true;
+      bar.media.show_active_only = true;
+      bar.media.show_label = true;
+      bar.media.truncation = false;
+      bar.network.label = false;
+      bar.network.showWifiInfo = true;
+      bar.network.truncation = false;
+      bar.notifications.hideCountWhenZero = true;
+      bar.notifications.show_total = false;
+      bar.windowtitle.custom_title = true;
+      bar.windowtitle.title_map = [ ];
+      bar.workspaces.applicationIconMap = {
+        "class:vesktop$" = "";
+      };
+      bar.workspaces.applicationIconOncePerWorkspace = false;
+      bar.workspaces.monitorSpecific = false;
+      bar.workspaces.numbered_active_indicator = "underline";
+      bar.workspaces.scroll_speed = 5;
+      bar.workspaces.showApplicationIcons = true;
+      bar.workspaces.showWsIcons = true;
+      bar.workspaces.show_icons = false;
+      bar.workspaces.show_numbered = false;
+      bar.workspaces.workspaces = 1;
+      bar.workspaces.ignored = "^-.+$";
+      menus.clock.time.military = true;
+      # please don't hack me (1)
+      menus.clock.weather.key = "629e10ff3d954b6481a105403251701";
+      menus.clock.weather.location = "Prague";
+      menus.clock.weather.unit = "metric";
+      menus.dashboard.controls.enabled = true;
+      menus.dashboard.directories.enabled = false;
+      menus.dashboard.powermenu.avatar.image = "${inputs.storage}/avatars/white.png";
+      menus.dashboard.powermenu.confirmation = true;
+      menus.dashboard.shortcuts.enabled = false;
+      menus.dashboard.stats.enable_gpu = true;
+      menus.media.displayTime = true;
+      menus.media.displayTimeTooltip = true;
+      menus.power.lowBatteryNotification = true;
+      menus.power.showLabel = true;
+      menus.transition = "crossfade";
+      menus.volume.raiseMaximumVolume = false;
+      notifications.clearDelay = 0;
+      notifications.showActionsOnHover = true;
+      theme.bar.border.location = "none";
+      theme.bar.buttons.battery.enableBorder = false;
+      theme.bar.buttons.clock.enableBorder = false;
+      theme.bar.buttons.dashboard.enableBorder = false;
+      theme.bar.buttons.enableBorders = false;
+      theme.bar.buttons.modules.cava.enableBorder = false;
+      theme.bar.buttons.network.enableBorder = false;
+      theme.bar.buttons.systray.enableBorder = false;
+      theme.bar.buttons.volume.enableBorder = false;
+      theme.bar.buttons.windowtitle.enableBorder = false;
+      theme.bar.buttons.workspaces.enableBorder = false;
+      theme.bar.buttons.workspaces.smartHighlight = true;
+      theme.bar.floating = true;
+      theme.font.weight = 400;
+      theme.osd.enable = true;
+      theme.osd.muted_zero = false;
+      theme.osd.orientation = "vertical";
+      wallpaper.enable = false;
 
-    package = lib.mkPackageOption pkgs.my "hyprpanel" { };
-
-    settings = lib.mkOption {
-      type = jsonFormat.type;
-      default = { };
-      example = lib.literalExpression ''
-        bar.battery.label = true;
-        bar.bluetooth.label = false;
-        bar.clock.format = "%H:%M:%S";
-        bar.layouts = {
-          "*" = {
-            left = [
-              "dashboard"
-              "workspaces"
-              "media"
-            ];
-            middle = [ "windowtitle" ];
-            right = [
-              "volume"
-              "network"
-              "bluetooth"
-              "notifications"
-            ];
-          };
+      bar.layouts = {
+        "*" = {
+          left = [
+            "dashboard"
+            "workspaces"
+            "media"
+          ];
+          middle = [ "windowtitle" ];
+          right = [
+            "volume"
+            "network"
+            "hypridle"
+            "bluetooth"
+            "battery"
+            "systray"
+            "clock"
+            "kbinput"
+            "notifications"
+          ];
         };
-      '';
-      description = ''
-        Configuration written to
-        {file}`$XDG_CONFIG_HOME/hyprpanel/config.json`.
-
-        See <https://hyprpanel.com/configuration/settings.html#home-manager-module>
-        for the full list of options.
-      '';
-    };
-
-    systemd.enable = (lib.mkEnableOption "HyprPanel systemd integration") // {
-      default = true;
-    };
-
-    dontAssertNotificationDaemons = lib.mkOption {
-      default = true;
-      example = false;
-      description = ''
-        Whether to check for other notification daemons.
-
-        You might want to set this to false, because hyprpanel's notification
-        daemon is buggy and you may prefer something else.
-      '';
-      type = lib.types.bool;
-    };
-  };
-
-  config = lib.mkIf cfg.enable {
-    assertions = [
-      {
-        assertion = cfg.dontAssertNotificationDaemons && !config.services.swaync.enable;
-        message = ''
-          Only one notification daemon can be enabled at once. You have enabled
-          swaync and hyprpanel at once.
-
-          If you dont want to use hyprpanel's notification daemon, set
-          `programs.hyprpanel.dontAssertNotificationDaemons` to true.
-        '';
-      }
-    ];
-
-    home.packages = [ cfg.package ];
-
-    programs.hyprpanel.settings = lib.mkIf config.services.hypridle.enable {
-      # fix hypridle module if user uses systemd service
-      bar.customModules.hypridle.startCommand = lib.mkDefault "systemctl --user start hypridle.service";
-      bar.customModules.hypridle.stopCommand = lib.mkDefault "systemctl --user stop hypridle.service";
-      bar.customModules.hypridle.isActiveCommand = lib.mkDefault "systemctl --user status hypridle.service | grep -q 'Active: active (running)' && echo 'yes' || echo 'no'";
-    };
-
-    xdg.configFile.hyprpanel = lib.mkIf (cfg.settings != { }) {
-      target = "hyprpanel/config.json";
-      source = jsonFormat.generate "hyprpanel-config" cfg.settings;
-      # hyprpanel replaces it with the same file, but without new line in the end
-      force = true;
-    };
-
-    systemd.user.services.hyprpanel = lib.mkIf cfg.systemd.enable {
-      Unit = {
-        Description = "Bar/Panel for Hyprland with extensive customizability";
-        Documentation = "https://hyprpanel.com/getting_started/hyprpanel.html";
-        PartOf = [ "graphical-session.target" ];
-        After = [ "graphical-session.target" ];
-        ConditionEnvironment = "WAYLAND_DISPLAY";
-        X-Restart-Triggers = lib.optional (cfg.settings != { }) "${config.xdg.configFile.hyprpanel.source}";
-      };
-
-      Service = {
-        ExecStart = "${cfg.package}/bin/hyprpanel";
-        ExecReload = "${pkgs.coreutils}/bin/kill -SIGUSR2 $MAINPID";
-        Restart = "on-failure";
-        KillMode = "mixed";
-      };
-
-      Install = {
-        WantedBy = [ "graphical-session.target" ];
       };
     };
   };
