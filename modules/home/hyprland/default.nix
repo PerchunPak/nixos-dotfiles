@@ -16,7 +16,6 @@
     };
 
     programs = {
-      waybar.enable = true;
       hyprlock.enable = true;
       wlogout.enable = true;
     };
