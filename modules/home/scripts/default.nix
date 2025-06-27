@@ -16,7 +16,7 @@
 
       trap 'cd -' EXIT
       cd ~/dev/nixpkgs/master
-      ght nixpkgs-review pr --no-shell --print-result --systems "$@"
+      ght nixpkgs-review pr --no-shell --systems "$@"
     '')
 
     (pkgs.writeShellScriptBin "modify" ''
