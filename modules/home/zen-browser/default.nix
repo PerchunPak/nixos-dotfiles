@@ -97,6 +97,7 @@ let
       "browser.download.lastDir" = "/home/perchun/Downloads";
       "browser.sessionstore.max_resumed_crashes" = -1;
       "mousewheel.default.delta_multiplier_y" = 100;
+      "browser.sessionstore.restore_on_demand" = false;
     };
 
     search = {
