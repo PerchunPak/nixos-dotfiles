@@ -98,6 +98,7 @@ let
       "browser.sessionstore.max_resumed_crashes" = -1;
       "mousewheel.default.delta_multiplier_y" = 100;
       "browser.sessionstore.restore_on_demand" = false;
+      "zen.view.experimental-no-window-controls" = true;
     };
 
     search = {
