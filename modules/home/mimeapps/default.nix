@@ -71,15 +71,14 @@
       "video/x-theora" = "org.gnome.Totem.desktop";
       "video/x-theora+ogg" = "org.gnome.Totem.desktop";
       "video/x-totem-stream" = "org.gnome.Totem.desktop";
-      "application/xhtml+xml" = "floorp.desktop";
-      "text/html" = "floorp.desktop";
-      "x-scheme-handler/http" = "floorp.desktop";
-      "x-scheme-handler/https" = "floorp.desktop";
-      "application/x-extension-htm" = "floorp.desktop";
-      "application/x-extension-html" = "floorp.desktop";
-      "application/x-extension-shtml" = "floorp.desktop";
-      "application/x-extension-xhtml" = "floorp.desktop";
-      "application/x-extension-xht" = "floorp.desktop";
+      "application/x-extension-htm" = "zen-beta.desktop";
+      "application/x-extension-html" = "zen-beta.desktop";
+      "application/x-extension-shtml" = "zen-beta.desktop";
+      "application/x-extension-xht" = "zen-beta.desktop";
+      "application/x-extension-xhtml" = "zen-beta.desktop";
+      "x-scheme-handler/http" = "zen-beta.desktop";
+      "x-scheme-handler/https" = "zen-beta.desktop";
+      "x-scheme-handler/chrome" = "zen-beta.desktop";
     };
     associations.added = {
       "image/png" = [ "org.gnome.Loupe.desktop" ];
@@ -147,15 +146,14 @@
       "video/x-theora" = [ "org.gnome.Totem.desktop" ];
       "video/x-theora+ogg" = [ "org.gnome.Totem.desktop" ];
       "video/x-totem-stream" = [ "org.gnome.Totem.desktop" ];
-      "application/xhtml+xml" = [ "floorp.desktop" ];
-      "text/html" = [ "floorp.desktop" ];
-      "x-scheme-handler/http" = [ "floorp.desktop" ];
-      "x-scheme-handler/https" = [ "floorp.desktop" ];
-      "application/x-extension-htm" = "floorp.desktop";
-      "application/x-extension-html" = "floorp.desktop";
-      "application/x-extension-shtml" = "floorp.desktop";
-      "application/x-extension-xhtml" = "floorp.desktop";
-      "application/x-extension-xht" = "floorp.desktop";
+      "application/x-extension-htm" = [ "zen-beta.desktop" ];
+      "application/x-extension-html" = [ "zen-beta.desktop" ];
+      "application/x-extension-shtml" = [ "zen-beta.desktop" ];
+      "application/x-extension-xht" = [ "zen-beta.desktop" ];
+      "application/x-extension-xhtml" = [ "zen-beta.desktop" ];
+      "application/xhtml+xml" = [ "zen-beta.desktop" ];
+      "text/html" = [ "zen-beta.desktop" ];
+      "x-scheme-handler/chrome" = [ "zen-beta.desktop" ];
     };
   };
 }
