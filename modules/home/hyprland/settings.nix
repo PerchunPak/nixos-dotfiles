@@ -15,7 +15,7 @@ in
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "uwsm app -s b -- swaybg"
-      "[workspace 1 silent] uwsm app -- floorp"
+      "uwsm app -- zen"
       "uwsm app -- vesktop"
       "[workspace special:btop silent] uwsm app -- kitty btop"
     ] ++ (lib.lists.optional (!nixosConfig.my.economInternetTraffic) "uwsm app -s b -- variety");
@@ -97,6 +97,7 @@ in
     };
 
     windowrule = [
+      "workspace 1 silent,class:^(zen-beta)"
       "workspace 3 silent,class:^(vesktop)"
       "workspace 4 silent,class:^(steam)"
       "workspace 4 silent,class:^(heroic)"
