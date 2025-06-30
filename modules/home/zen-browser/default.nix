@@ -25,6 +25,7 @@ let
         darkreader
         disable-javascript
         enhancer-for-youtube
+        free-map-genie
         grammarly
         languagetool
         refined-github
