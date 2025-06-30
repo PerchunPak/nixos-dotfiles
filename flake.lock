@@ -346,7 +346,8 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "rycee-nur": "rycee-nur",
         "snowfall-lib": "snowfall-lib",
-        "storage": "storage"
+        "storage": "storage",
+        "zen-browser": "zen-browser"
       }
     },
     "rycee-nur": {
@@ -445,6 +446,29 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1751224527,
+        "narHash": "sha256-Mihe18dBS7y13//qPn2LVnSMZdZXI1vvnpKpRCmJcfw=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "ee2ecf872fe6b7aa14ec90796ba610eeafdd17da",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }
