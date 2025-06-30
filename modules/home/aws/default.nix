@@ -7,9 +7,8 @@
 {
   age.secrets.aws-dev.file = lib.my.toSecretFile "aws-dev";
   age.secrets.aws-perchun.file = lib.my.toSecretFile "aws-perchun";
-  age.secrets.aws-work-cmd.file = lib.my.toSecretFile "aws-work-cmd";
-  age.secrets.aws-start-db.file = lib.my.toSecretFile "aws-start-db";
-  age.secrets.aws-stop-db.file = lib.my.toSecretFile "aws-stop-db";
+  age.secrets.aws-work-start.file = lib.my.toSecretFile "aws-work-start";
+  age.secrets.aws-work-stop.file = lib.my.toSecretFile "aws-work-stop";
 
   programs.awscli = {
     enable = true;
@@ -33,14 +32,11 @@
   '';
 
   home.packages = with pkgs; [
-    (writeShellScriptBin "aws-work" ''
-      fish ${config.age.secrets.aws-work-cmd.path}
+    (writeShellScriptBin "work-start" ''
+      bash ${config.age.secrets.aws-work-start.path}
     '')
-    (writeShellScriptBin "work-db" ''
-      bash ${config.age.secrets.aws-start-db.path}
-    '')
-    (writeShellScriptBin "work-db-stop" ''
-      bash ${config.age.secrets.aws-stop-db.path}
+    (writeShellScriptBin "work-stop" ''
+      bash ${config.age.secrets.aws-work-stop.path}
     '')
 
     ssm-session-manager-plugin

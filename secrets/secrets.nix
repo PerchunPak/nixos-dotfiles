@@ -4,9 +4,8 @@ in
 {
   "aws-dev.age".publicKeys = [ perchun ];
   "aws-perchun.age".publicKeys = [ perchun ];
-  "aws-work-cmd.age".publicKeys = [ perchun ];
-  "aws-start-db.age".publicKeys = [ perchun ];
-  "aws-stop-db.age".publicKeys = [ perchun ];
+  "aws-work-start.age".publicKeys = [ perchun ];
+  "aws-work-stop.age".publicKeys = [ perchun ];
   "gpg-key.age".publicKeys = [ perchun ];
   "ssh-config.age".publicKeys = [ perchun ];
 }
