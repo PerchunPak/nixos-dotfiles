@@ -9,7 +9,7 @@ return {
     require('mini.icons').setup {}
     require('mini.move').setup {}
     require('mini.pairs').setup {}
-    require('mini.surround').setup()
+    require('mini.surround').setup {}
 
     -- Simple and easy statusline.
     --  You could remove this setup call if you don't like it,
