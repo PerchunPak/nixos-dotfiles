@@ -46,6 +46,7 @@
       wget
       gparted
       dbeaver-bin
+      btdu # ncdu for btrfs
     ]
     ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
 }
