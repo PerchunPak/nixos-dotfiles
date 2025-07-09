@@ -8,6 +8,7 @@
     theme = {
       "@theme" = "${./theme.rasi}";
     };
+    plugins = [ pkgs.rofi-calc ];
     extraConfig = {
       modi = "drun,ssh,run";
       display-drun = "   Apps ";

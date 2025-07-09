@@ -10,6 +10,18 @@ let
   wlogout-script = pkgs.writeShellScript "wlogout-script" ''
     flock -n "/var/run/user/$(id -u)/wlogout.lock" wlogout
   '';
+  rofi-calc-script = pkgs.writeShellScript "rofi-calc-script" ''
+    output=$(rofi -show calc -modi calc -no-show-match -no-sort)
+    if [[ -n "$output" ]]; then
+      output=$(echo -n "$output" | tr ';' '\n')
+      if [[ $output != *$'\n'* ]]; then
+        output=$(echo -n "$output" | sed '1 s/.* = //')
+      fi
+      echo -n "$output" \
+      | sed 's/approx\. //' \
+      | wl-copy
+    fi
+  '';
 in
 {
   wayland.windowManager.hyprland.settings = {
@@ -25,8 +37,9 @@ in
       "SUPER, C, killactive,"
       "SUPER, M, exec, hyprctl dispatch dpms on"
       "SUPER, ., exec, nautilus"
-      "SUPER, V, togglefloating,"
+      "SUPER, G, togglefloating,"
       "SUPER, D, exec, rofi -show drun"
+      "SUPER, V, exec, ${rofi-calc-script}"
       "SUPER, F, fullscreen"
       "SUPER, L, exec, hyprlock"
       "SUPER, K, exec, ${wlogout-script}"
