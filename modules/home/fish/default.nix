@@ -8,6 +8,8 @@
         set fish_greeting # Disable greeting
         fish_vi_key_bindings # Vim mode
         set PATH "./node_modules/.bin:$PATH"
+
+        ${builtins.readFile ./venv.fish}
       '';
 
     shellAliases = {
