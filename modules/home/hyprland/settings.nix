@@ -11,6 +11,9 @@ let
     flock -n "/var/run/user/$(id -u)/wlogout.lock" wlogout
   '';
   rofi-calc = "rofi -show calc -modi calc -no-show-match -no-sort";
+  rofi-calc-with-copy = pkgs.writeShellScript "rofi-calc-with-copy" ''
+    ${rofi-calc} | wl-copy
+  '';
   rofi-calc-script = pkgs.writeShellScript "rofi-calc-script" ''
     output=$(${rofi-calc})
     if [[ -n "$output" ]]; then
@@ -41,7 +44,7 @@ in
       "SUPER, G, togglefloating,"
       "SUPER, D, exec, rofi -show drun"
       "SUPER, V, exec, ${rofi-calc-script}"
-      "SUPER SHIFT, V, exec, ${rofi-calc}"
+      "SUPER SHIFT, V, exec, ${rofi-calc-with-copy}"
       "SUPER, F, fullscreen"
       "SUPER, L, exec, hyprlock"
       "SUPER, K, exec, ${wlogout-script}"
