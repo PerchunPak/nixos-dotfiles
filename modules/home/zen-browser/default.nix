@@ -22,6 +22,7 @@ let
       force = true;
       packages = with rycee-nur.firefox-addons; [
         bitwarden
+        catppuccin-mocha-mauve
         darkreader
         disable-javascript
         enhancer-for-youtube
