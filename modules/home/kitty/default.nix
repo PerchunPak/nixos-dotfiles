@@ -25,8 +25,8 @@
 
     keybindings =
       let
-        increase-font-size = "change_font_size all +0.1";
-        decrease-font-size = "change_font_size all -0.1";
+        increase-font-size = "change_font_size all +1.0";
+        decrease-font-size = "change_font_size all -1.0";
       in
       {
         "ctrl+shift+equal" = increase-font-size;
