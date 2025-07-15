@@ -192,7 +192,7 @@ let
       };
   };
 
-  defaultPackageName = "nvim";
+  defaultPackageName = "neovim";
 
   nixCatsBuilder = utils.baseBuilder luaPath {
     inherit pkgs;
