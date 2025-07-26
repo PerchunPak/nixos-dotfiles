@@ -77,7 +77,8 @@ in
         "/var/lib/nixos"
         "/var/lib/systemd/coredump"
         "/etc/NetworkManager/system-connections"
-      ] ++ cfg.directories;
+      ]
+      ++ cfg.directories;
       files = [ "/etc/machine-id" ] ++ cfg.files;
 
       users = builtins.listToAttrs (

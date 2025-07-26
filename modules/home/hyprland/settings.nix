@@ -34,7 +34,8 @@ in
       "uwsm app -- zen"
       "uwsm app -- vesktop"
       "[workspace special:btop silent] uwsm app -- kitty btop"
-    ] ++ (lib.lists.optional (!nixosConfig.my.economInternetTraffic) "uwsm app -s b -- variety");
+    ]
+    ++ (lib.lists.optional (!nixosConfig.my.economInternetTraffic) "uwsm app -s b -- variety");
 
     bind = [
       "SUPER, A, exec, kitty"

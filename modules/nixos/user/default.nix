@@ -23,7 +23,8 @@ in
           "docker"
           "input"
           "video"
-        ] ++ lib.optional config.my.vm.enable "libvirtd";
+        ]
+        ++ lib.optional config.my.vm.enable "libvirtd";
       };
     };
 
