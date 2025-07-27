@@ -19,7 +19,10 @@ jobs:
           name: perchunpak
           signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
 
-      - run: |
+      - name: Disable AppArmor
+        run: |
+          # || true because https://bugs.launchpad.net/ubuntu/+source/apparmor/+bug/2093797
+          sudo aa-teardown || true
           sudo systemctl stop apparmor
 
       - run: nix build .#long-builds-to-cache
