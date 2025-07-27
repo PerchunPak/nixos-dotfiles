@@ -24,3 +24,5 @@ jobs:
       - name: Update flake.lock
         if: steps.check.outcome == 'success'
         uses: DeterminateSystems/update-flake-lock@v23
+        with:
+          token: ${{ secrets.FLAKE_LOCK_UPDATE_TOKEN }}
