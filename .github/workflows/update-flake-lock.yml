@@ -4,9 +4,6 @@ on:
   schedule:
     - cron: '43 */12 * * *' # https://crontab.guru/#43_*/12_*_*_*
 
-permissions:
-  actions: write
-
 jobs:
   lockfile:
     runs-on: ubuntu-latest
@@ -27,5 +24,3 @@ jobs:
       - name: Update flake.lock
         if: steps.check.outcome == 'success'
         uses: DeterminateSystems/update-flake-lock@v23
-        with:
-          token: ${{ secrets.WORKFLOW_TOKEN }}
