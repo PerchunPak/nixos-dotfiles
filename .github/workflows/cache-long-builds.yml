@@ -20,7 +20,7 @@ jobs:
           signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
 
       - run: |
-          echo 0 > /selinux/enforce
+          sudo systemctl stop apparmor
 
       - run: nix build .#long-builds-to-cache
 
