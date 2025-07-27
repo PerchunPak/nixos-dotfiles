@@ -19,6 +19,11 @@ jobs:
           name: perchunpak
           signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
 
+      - run: |
+          sestatus
+          setenforce 0
+          sestatus
+
       - run: nix build .#long-builds-to-cache
 
       - run: nix log /nix/store/ml7m3gw0rah4li64wz52mkc7b8s23gqg-lix-2.94.0-dev-pre20250724-e88a85b.drv
