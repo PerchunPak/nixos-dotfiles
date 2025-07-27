@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '43 */12 * * *' # https://crontab.guru/#43_*/12_*_*_*
 
+permissions:
+  actions: write
+
 jobs:
   lockfile:
     runs-on: ubuntu-latest
