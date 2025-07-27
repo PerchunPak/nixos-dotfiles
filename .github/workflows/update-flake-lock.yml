@@ -28,4 +28,4 @@ jobs:
         if: steps.check.outcome == 'success'
         uses: DeterminateSystems/update-flake-lock@v23
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.WORKFLOW_TOKEN }}
