@@ -20,9 +20,7 @@ jobs:
           signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
 
       - run: |
-          sestatus
-          setenforce 0
-          sestatus
+          echo 0 > /selinux/enforce
 
       - run: nix build .#long-builds-to-cache
 
