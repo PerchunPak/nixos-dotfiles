@@ -26,3 +26,7 @@ jobs:
         uses: DeterminateSystems/update-flake-lock@v23
         with:
           token: ${{ secrets.FLAKE_LOCK_UPDATE_TOKEN }}
+          git-author-name: PerchunPak
+          git-author-email: git@perchun.it
+          git-committer-name: PerchunPak
+          git-committer-email: git@perchun.it
