@@ -20,6 +20,7 @@
     my.persistence = {
       directories = [
         ".cache/huggingface"
+        ".cache/nix"
         ".config/Signal"
         ".config/asciinema"
         ".eclipse"
@@ -33,7 +34,6 @@
         "dev"
         "dotfiles"
         "persistent"
-        # ".cache/nix" # https://github.com/nix-community/comma/issues/95
       ];
     };
   };
