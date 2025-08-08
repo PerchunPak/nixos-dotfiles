@@ -1,6 +1,7 @@
 return {
   { import = 'my.plugins.catppuccin' },
   { import = 'my.plugins.treesitter' },
+  { import = 'my.plugins.treesitter-context' },
   { import = 'my.plugins.snacks-nvim' },
   { import = 'my.plugins.blink-cmp' },
   { import = 'my.plugins.mini' },

@@ -85,6 +85,7 @@ let
           luvit-meta
           mini-nvim
           nvim-lspconfig
+          nvim-treesitter-context
           nvim-treesitter.withAllGrammars
           oil-nvim
           otter-nvim
