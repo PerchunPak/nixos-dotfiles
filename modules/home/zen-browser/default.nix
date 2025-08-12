@@ -6,6 +6,35 @@
 }:
 let
   rycee-nur = import "${inputs.rycee-nur}" { inherit pkgs; };
+  enhancer-for-youtube =
+    (rycee-nur.firefox-addons.buildFirefoxXpiAddon {
+      pname = "enhancer-for-youtube";
+      version = "2.0.130.1";
+      addonId = "enhancerforyoutube@maximerf.addons.mozilla.org";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4393561/enhancer_for_youtube-2.0.130.1.xpi";
+      sha256 = "6d84dcba9b197840f485d66d3fd435279d6e1bcd2155d28389999e87ea01312c";
+      meta = with lib; {
+        homepage = "https://www.mrfdev.com/enhancer-for-youtube";
+        description = "Take control of YouTube and boost your user experience!";
+        license = {
+          shortName = "enhancer-for-youtube";
+          fullName = "Custom License for Enhancer for YouTube™";
+          url = "https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube/license/";
+          free = false;
+        };
+        mozPermissions = [
+          "cookies"
+          "storage"
+          "*://www.youtube.com/*"
+          "*://www.youtube.com/embed/*"
+          "*://www.youtube.com/live_chat*"
+          "*://www.youtube.com/pop-up-player/*"
+          "*://www.youtube.com/shorts/*"
+        ];
+        platforms = platforms.all;
+      };
+    }).overrideAttrs
+      { src = "${inputs.storage}/firefox/enhancer_for_youtube-2.0.130.1.xpi"; };
 
   profile = {
     bookmarks = {

@@ -391,11 +391,11 @@
     "storage": {
       "flake": false,
       "locked": {
-        "lastModified": 1737111571,
-        "narHash": "sha256-tGisSvMIvZS4z4Rg+wBrJxD+z2+Uu9aNPa48kX4sHiI=",
+        "lastModified": 1754993661,
+        "narHash": "sha256-LxKjbrOC46ul9T9Nm4o9Fl3Y29MUYKBGdDsWPS/TU4Y=",
         "owner": "PerchunPak",
         "repo": "storage",
-        "rev": "53e7014d960bbe605faa9cd421b4a7897974b66c",
+        "rev": "ae69d69b3323ea56b86c7ec2c07f3ece677dfb20",
         "type": "github"
       },
       "original": {
