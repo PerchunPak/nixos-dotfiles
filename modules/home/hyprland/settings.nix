@@ -10,6 +10,7 @@ let
   wlogout-script = pkgs.writeShellScript "wlogout-script" ''
     flock -n "/var/run/user/$(id -u)/wlogout.lock" wlogout
   '';
+
   rofi-calc = "rofi -show calc -modi calc -no-show-match -no-sort";
   rofi-calc-with-copy = pkgs.writeShellScript "rofi-calc-with-copy" ''
     ${rofi-calc} | wl-copy
@@ -25,6 +26,27 @@ let
       | sed 's/approx\. //' \
       | wl-copy
     fi
+  '';
+
+  autoclicker-script = pkgs.writeShellScript "autoclicker" ''
+    pid_file="/var/run/user/$(id -u)/autoclicker-pid"
+    pid="$(cat $pid_file || true)"
+    if [ -f $pid_file ] && [ -d "/proc/$pid" ]; then
+      kill $pid
+      rm $pid_file
+    else
+      rm $pid_file || true
+      (
+        YDOTOOL_BUTTON_LEFT=0xc0
+        while true; do
+            ${lib.getExe pkgs.ydotool} click $YDOTOOL_BUTTON_LEFT >>/dev/null
+        done
+      ) &
+      pid=$!
+      printf $pid > $pid_file
+      disown
+    fi
+    exit 0
   '';
 in
 {
@@ -52,6 +74,7 @@ in
       "SUPER, X, exec, cliphistory"
       "SUPER, B, exec, variety --next"
       "SUPER, P, pin"
+      "SUPER, F8, exec, ${autoclicker-script}"
       "SUPER, F9, exec, hyprpanel toggleWindow settings-dialog"
       "SUPER, F10, exec, bash -c 'pgrep vesktop -f | xargs kill'"
       "SUPER SHIFT, B, exec, variety --previous"
