@@ -7,6 +7,7 @@
 
   my = {
     gaming.additional-games = with pkgs; [ xonotic ];
+    gaming.satisfactory.enable = true;
     persistence.directories = [ ".local/share/Celeste" ];
   };
 
