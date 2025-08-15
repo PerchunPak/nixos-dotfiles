@@ -22,6 +22,8 @@ in
     my.persistence.directories = [
       ".cache/SatisfactoryModManager"
       ".local/share/SatisfactoryModManager"
+      # server
+      ".config/Epic/FactoryGame"
     ];
   };
 }
