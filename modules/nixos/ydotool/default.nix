@@ -15,5 +15,7 @@ in
 
   config = lib.mkIf cfg.enable {
     programs.ydotool.enable = true;
+
+    users.users.perchun.extraGroups = [ "ydotool" ];
   };
 }
