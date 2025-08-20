@@ -28,5 +28,15 @@ jobs:
 
       - run: nix build .#long-builds-to-cache
 
-      - run: nix log .#pkgs.x86_64-linux.nixpkgs.lix
+      - name: Retrieve PR number
         if: always()
+        run: |
+          echo "PR_NUMBER=$(gh pr view update_flake_lock_action --json number --jq '.number')" >> $GITHUB_OUTPUT
+        id: pr_number
+
+      - name: Comment PR
+        if: always()
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          message: Packages were cached!
+          pr-number: ${{ steps.pr_number.outputs.PR_NUMBER }}
