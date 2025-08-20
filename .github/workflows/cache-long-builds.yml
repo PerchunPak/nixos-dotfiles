@@ -31,6 +31,7 @@ jobs:
       - name: Retrieve PR number
         if: always()
         run: |
+          export GITHUB_TOKEN="${{ secrets.GITHUB_TOKEN }}"
           PR_NUMBER=$(gh pr view update_flake_lock_action --json number --jq '.number')
           echo $PR_NUMBER
           echo "PR_NUMBER=$PR_NUMBER" >> $GITHUB_OUTPUT
