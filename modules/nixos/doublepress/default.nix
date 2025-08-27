@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  services.logind.powerKey = "ignore";
+  services.logind.settings.Login.HandlePowerKey = "ignore";
 
   services.acpid.handlers = {
     doublepress = {
