@@ -23,6 +23,7 @@
       credential.helper = "store";
       push.autoSetupRemote = true;
       pull.rebase = true;
+      branch.sort = "-committerdate";
       url = {
         "ssh://git@github.com/" = {
           insteadOf = [ "https://github.com/" ];
