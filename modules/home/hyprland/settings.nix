@@ -107,7 +107,7 @@ in
       "SUPER SHIFT, S, movetoworkspace, special"
       "SUPER, N, togglespecialworkspace, btop"
 
-      ", PRINT, exec, hyprshot --mode region --clipboard-only --silent --freeze"
+      ", PRINT, exec, screenshot.sh"
 
       # fn keys
       ", code:121, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
@@ -162,7 +162,11 @@ in
       "center,class:(org.gnome.Calculator)"
     ];
 
-    layerrule = [ "blur, logout_dialog" ];
+    layerrule = [
+      "blur, logout_dialog"
+      "noanim, hyprpicker"
+      "noanim, selection"
+    ];
 
     input = {
       sensitivity = -0.85;
