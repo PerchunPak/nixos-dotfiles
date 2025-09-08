@@ -9,6 +9,7 @@
         save-after-copy = true;
         actions-on-right-click = [ "save-to-file" ];
         disable-notifications = true;
+        copy-command = "wl-copy";
       };
       font.family = "MesloLGS NF Regular";
       color-palette = {
@@ -50,6 +51,10 @@
     grimblast
 
     (pkgs.writeShellScriptBin "screenshot.sh" ''
+      ${lib.getExe grimblast} --freeze save area - \
+      | wl-copy
+    '')
+    (pkgs.writeShellScriptBin "screenshot-edit.sh" ''
       ${lib.getExe grimblast} --freeze save area - \
       | ${lib.getExe satty} --filename - --fullscreen
     '')

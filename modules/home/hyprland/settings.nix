@@ -108,6 +108,7 @@ in
       "SUPER, N, togglespecialworkspace, btop"
 
       ", PRINT, exec, screenshot.sh"
+      "SHIFT, PRINT, exec, screenshot-edit.sh"
 
       # fn keys
       ", code:121, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
