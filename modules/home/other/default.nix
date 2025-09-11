@@ -47,6 +47,7 @@
       gparted
       dbeaver-bin
       btdu # ncdu for btrfs
+      cargo-expand
     ]
     ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
 }
