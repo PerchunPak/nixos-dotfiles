@@ -143,6 +143,7 @@ in
     windowrule = [
       "workspace 1 silent,class:^(zen-beta)"
       "workspace 3 silent,class:^(vesktop)"
+      "workspace 4 silent,title:^(Steam)" # the dialog that updates steam on startup
       "workspace 4 silent,class:^(steam)"
       "workspace 4 silent,class:^(heroic)"
       "workspace 4 silent,class:^(Minecraft)"
