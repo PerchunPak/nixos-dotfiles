@@ -190,7 +190,7 @@ in
       }
     ];
 
-    gestures.workspace_swipe = true;
+    gesture = [ "3, horizontal, workspace" ];
 
     bezier = [ "easeOutExpo,0.16,1,0.3,1" ];
     animation = [ "workspaces,1,2,easeOutExpo,slide" ];
