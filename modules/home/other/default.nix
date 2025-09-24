@@ -48,6 +48,7 @@
       dbeaver-bin
       btdu # ncdu for btrfs
       cargo-expand
+      tabiew
     ]
     ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
 }
