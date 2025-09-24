@@ -1,10 +1,10 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    python312
-    python312Packages.pip
-    python312Packages.black
-    python312Packages.ipython
+    python313
+    python313Packages.pip
+    python313Packages.black
+    python313Packages.ipython
     uv
     ruff
     cruft
