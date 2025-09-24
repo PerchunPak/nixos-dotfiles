@@ -13,6 +13,7 @@ return {
   { import = 'my.plugins.gitsigns' },
   { import = 'my.plugins.lazydev' },
   { import = 'my.plugins.oil' },
+  { import = 'my.plugins.oil-git' },
   { import = 'my.plugins.otter' },
   { import = 'my.plugins.todo-comments' },
   { import = 'my.plugins.toggleterm' },

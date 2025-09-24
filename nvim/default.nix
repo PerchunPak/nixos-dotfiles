@@ -87,6 +87,7 @@ let
           nvim-lspconfig
           nvim-treesitter-context
           nvim-treesitter.withAllGrammars
+          oil-git-nvim
           oil-nvim
           otter-nvim
           snacks-nvim
