@@ -32,6 +32,7 @@
           insteadOf = [ "https://gitlab.com/" ];
         };
       };
+      tag.gpgSign = false;
 
       git-extras = {
         get.clone-path = "~/dev";
