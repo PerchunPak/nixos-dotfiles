@@ -17,8 +17,7 @@ in
   };
 
   config = lib.mkIf cfg.minecraft.enable {
-    # stable because https://github.com/NixOS/nixpkgs/issues/437439
-    home.packages = with pkgs; [ stable.satisfactorymodmanager ];
+    home.packages = with pkgs; [ satisfactorymodmanager ];
 
     my.persistence.directories = [
       ".cache/SatisfactoryModManager"
