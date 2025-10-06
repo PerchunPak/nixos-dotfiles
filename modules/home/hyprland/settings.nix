@@ -74,7 +74,7 @@ in
       "SUPER, X, exec, cliphistory"
       "SUPER, B, exec, variety --next"
       "SUPER, P, pin"
-      "SUPER, F8, exec, ${autoclicker-script}"
+      "ALT, F8, exec, ${autoclicker-script}"
       "SUPER, F9, exec, hyprpanel toggleWindow settings-dialog"
       "SUPER, F10, exec, bash -c 'pgrep vesktop -f | xargs kill'"
       "SUPER SHIFT, B, exec, variety --previous"
