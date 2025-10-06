@@ -14,6 +14,7 @@
     gtk.icon.enable = false;
     wlogout.enable = false; # i like my config more
     mako.enable = false; # why is this even active
+    eza.enable = false; # imo original colors are better
   };
 
   home.pointerCursor = {
