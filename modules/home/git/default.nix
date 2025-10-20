@@ -7,18 +7,20 @@
 
   programs.git = {
     enable = true;
-    userName = "PerchunPak";
-    userEmail = "git@perchun.it";
     signing = {
       key = "313F67D1EAB770F9";
       signByDefault = true;
     };
-    delta.enable = true; # syntax highlighting in diff
     maintenance = {
       enable = !nixosConfig.my.economInternetTraffic;
       repositories = [ "/home/perchun/dev/nixpkgs/review" ];
     };
-    extraConfig = {
+    settings = {
+      user = {
+        name = "PerchunPak";
+        email = "git@perchun.it";
+      };
+
       init.defaultBranch = "main";
       credential.helper = "store";
       push.autoSetupRemote = true;
@@ -38,5 +40,10 @@
         get.clone-path = "~/dev";
       };
     };
+  };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
   };
 }
