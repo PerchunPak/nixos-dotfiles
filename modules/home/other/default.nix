@@ -6,6 +6,11 @@
     NIXOS_OZONE_WL = "1";
   };
 
+  home.file = {
+    ".config/qalculate/.keep".text = "";
+    "Downloads/.keep".text = "";
+  };
+
   gtk.enable = true;
 
   programs = {
