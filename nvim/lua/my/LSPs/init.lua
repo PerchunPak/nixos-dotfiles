@@ -9,7 +9,7 @@ return {
     'nvim-lspconfig',
     on_require = { 'lspconfig' },
     lsp = function(plugin)
-      require('lspconfig')[plugin.name].setup(vim.tbl_extend('force', {
+      vim.lsp.config(plugin.name).setup(vim.tbl_extend('force', {
         capabilities = get_capabilities(plugin.name),
       }, plugin.lsp or {}))
     end,
