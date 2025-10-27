@@ -1,17 +1,10 @@
-local function get_capabilities(server_name)
-  local capabilities = require('blink.cmp').get_lsp_capabilities({}, true)
-  capabilities.textDocument.completion.completionItem.snippetSupport = true
-  return capabilities
-end
-
 return {
   {
     'nvim-lspconfig',
     on_require = { 'lspconfig' },
     lsp = function(plugin)
-      vim.lsp.config(plugin.name).setup(vim.tbl_extend('force', {
-        capabilities = get_capabilities(plugin.name),
-      }, plugin.lsp or {}))
+      vim.lsp.config(plugin.name, plugin.lsp or {})
+      vim.lsp.enable(plugin.name)
     end,
     keys = {
       {
