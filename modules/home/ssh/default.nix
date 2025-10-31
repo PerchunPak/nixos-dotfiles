@@ -10,9 +10,5 @@
     includes = [ (lib.removePrefix ".ssh/" config.age.secrets.ssh-config.path) ];
 
     enableDefaultConfig = false;
-    matchBlocks."*" = {
-      serverAliveInterval = 15;
-      controlMaster = "yes";
-    };
   };
 }
