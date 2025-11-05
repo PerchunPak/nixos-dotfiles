@@ -8,9 +8,11 @@ in
 {
   home.packages = (builtins.attrValues nixCats);
 
-  systemd.user.tmpfiles.settings = [
-    "L /home/perchun/.config/nvim - - - - /home/perchun/dotfiles/nvim"
-  ];
+  systemd.user.tmpfiles.settings = {
+    nvim-config.rules."/home/perchun/.config/nvim".L = {
+      argument = "/home/perchun/dotfiles/nvim";
+    };
+  };
 
   my.persistence.directories = [
     ".local/state/nvim/dbee"
