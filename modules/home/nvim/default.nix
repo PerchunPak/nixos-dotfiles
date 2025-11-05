@@ -8,7 +8,7 @@ in
 {
   home.packages = (builtins.attrValues nixCats);
 
-  systemd.user.tmpfiles.rules = [
+  systemd.user.tmpfiles.settings = [
     "L /home/perchun/.config/nvim - - - - /home/perchun/dotfiles/nvim"
   ];
 
