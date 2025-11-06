@@ -26,7 +26,7 @@
       bar.windowtitle.custom_title = true;
       bar.windowtitle.title_map = [ ];
       bar.workspaces.applicationIconMap = {
-        "class:vesktop$" = "";
+        "class:legcord$" = "";
       };
       bar.workspaces.applicationIconOncePerWorkspace = false;
       bar.workspaces.monitorSpecific = false;

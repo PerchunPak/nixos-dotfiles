@@ -54,7 +54,7 @@ in
     exec-once = [
       "uwsm app -s b -- swaybg"
       "uwsm app -- zen"
-      "uwsm app -- vesktop"
+      "uwsm app -- legcord"
       "[workspace special:btop silent] uwsm app -- kitty btop"
     ]
     ++ (lib.lists.optional (!nixosConfig.my.economInternetTraffic) "uwsm app -s b -- variety");
@@ -76,7 +76,7 @@ in
       "SUPER, P, pin"
       "ALT, F8, exec, ${autoclicker-script}"
       "SUPER, F9, exec, hyprpanel toggleWindow settings-dialog"
-      "SUPER, F10, exec, bash -c 'pgrep vesktop -f | xargs kill'"
+      "SUPER, F10, exec, bash -c 'pgrep legcord -f | xargs kill'"
       "SUPER SHIFT, B, exec, variety --previous"
 
       # Move focus with mainMod + arrow keys
@@ -142,7 +142,7 @@ in
 
     windowrule = [
       "workspace 1 silent,class:^(zen-beta)"
-      "workspace 3 silent,class:^(vesktop)"
+      "workspace 3 silent,class:^(legcord)"
       "workspace 4 silent,title:^(Steam)" # the dialog that updates steam on startup
       "workspace 4 silent,class:^(steam)"
       "workspace 4 silent,class:^(heroic)"
