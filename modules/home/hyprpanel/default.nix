@@ -25,9 +25,7 @@
       bar.notifications.show_total = false;
       bar.windowtitle.custom_title = true;
       bar.windowtitle.title_map = [ ];
-      bar.workspaces.applicationIconMap = {
-        "class:legcord$" = "";
-      };
+      bar.workspaces.applicationIconMap = { };
       bar.workspaces.applicationIconOncePerWorkspace = false;
       bar.workspaces.monitorSpecific = false;
       bar.workspaces.numbered_active_indicator = "underline";
