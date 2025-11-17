@@ -54,6 +54,7 @@
       btdu # ncdu for btrfs
       cargo-expand
       tabiew
+      libnotify
     ]
     ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
 }
