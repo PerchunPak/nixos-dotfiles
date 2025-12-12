@@ -172,7 +172,7 @@ in
     ];
 
     input = {
-      sensitivity = -0.85;
+      sensitivity = -0.88;
       kb_layout = "us,cz,ua,ru";
       kb_variant = ",qwerty,,";
       kb_options = "grp:caps_toggle";
