@@ -9,6 +9,7 @@ pkgs.buildEnv {
     ++ (with inputs.catppuccin.packages.${pkgs.system}; [
       whiskers
       cursors
-    ]);
+    ])
+    ++ (with inputs.nix-index-database.packages.x86_64-linux; [ comma-with-db ]);
   ignoreCollisions = true;
 }
