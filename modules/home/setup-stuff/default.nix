@@ -37,6 +37,7 @@ in
             RestartSec = 5;
             Restart = "on-failure";
             ExecStart = command;
+            RemainAfterExit = true;
           };
         };
       }
