@@ -103,6 +103,9 @@ in
       "SUPER SHIFT, E, movetoworkspace, 7"
       "SUPER SHIFT, R, movetoworkspace, 8"
 
+      "ALT SUPER, E, movecurrentworkspacetomonitor, l"
+      "ALT SUPER, Q, movecurrentworkspacetomonitor, r"
+
       "SUPER, S, togglespecialworkspace"
       "SUPER SHIFT, S, movetoworkspace, special"
       "SUPER, N, togglespecialworkspace, btop"
