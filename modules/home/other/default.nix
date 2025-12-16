@@ -22,6 +22,10 @@
     jq.enable = true;
   };
 
+  my.persistence.directories = [
+    ".config/hcloud"
+  ];
+
   home.packages =
     with pkgs;
     [
@@ -55,6 +59,7 @@
       cargo-expand
       tabiew
       libnotify
+      hcloud
     ]
     ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
 }
