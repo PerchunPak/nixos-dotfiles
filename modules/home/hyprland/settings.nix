@@ -63,7 +63,7 @@ in
       "SUPER, A, exec, kitty"
       "SUPER, C, killactive,"
       "SUPER, M, exec, hyprctl dispatch dpms on"
-      "SUPER, ., exec, nautilus"
+      "SUPER, ., exec, cosmic-files"
       "SUPER, G, togglefloating,"
       "SUPER, D, exec, rofi -show drun"
       "SUPER, V, exec, ${rofi-calc-script}"

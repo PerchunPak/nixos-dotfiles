@@ -60,6 +60,7 @@
       tabiew
       libnotify
       hcloud
+      cosmic-files
     ]
     ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
 }
