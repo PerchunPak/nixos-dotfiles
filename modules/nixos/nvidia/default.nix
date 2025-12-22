@@ -25,17 +25,19 @@ in
     # Load nvidia driver for Xorg and Wayland
     services.xserver.videoDrivers = [ "nvidia" ];
 
-    boot.kernelParams = [
-      "nvidia"
-      "nvidia_modeset"
-      "nvidia_uvm"
-      "nvidia_drm"
-    ];
-    boot.blacklistedKernelModules = [ "nova_core" ];
+    boot = {
+      kernelParams = [
+        "nvidia"
+        "nvidia_modeset"
+        "nvidia_uvm"
+        "nvidia_drm"
+      ];
+      blacklistedKernelModules = [ "nova_core" ];
 
-    boot.loader.grub.extraConfig = ''
-      GRUB_CMDLINE_LINUX_DEFAULT="nvidia-drm.modeset=1"
-    '';
+      loader.grub.extraConfig = ''
+        GRUB_CMDLINE_LINUX_DEFAULT="nvidia-drm.modeset=1"
+      '';
+    };
 
     hardware.nvidia = {
       # Modesetting is required.
