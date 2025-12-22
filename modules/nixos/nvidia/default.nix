@@ -31,6 +31,7 @@ in
       "nvidia_uvm"
       "nvidia_drm"
     ];
+    boot.blacklistedKernelModules = [ "nova_core" ];
 
     boot.loader.grub.extraConfig = ''
       GRUB_CMDLINE_LINUX_DEFAULT="nvidia-drm.modeset=1"
