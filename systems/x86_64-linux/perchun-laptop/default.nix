@@ -9,7 +9,7 @@
 
   my = {
     vm.enable = true;
-    user.password = "$y$j9T$1YPlnzEYbO2DKNH315Rx80$0Pz6NUYqmHGYMJ9KB0pEJ9Ph3hvWrRP8XV3HOap0q/1";
+    user.password = "$y$j9T$yfBs4FZDXyK/iBDi9UTo51$ydnsektCwQhSR72L.9OEOyV1cJdREhnlZ5/DHCdC1a5";
     nvidia.enable = true;
     hyprland.monitors = [
       "eDP-1,1920x1080@144,0x0,1"
