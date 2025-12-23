@@ -43,6 +43,10 @@
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ctp-trippy = {
+      url = "github:PerchunPak/ctp-trippy";
+      flake = false;
+    };
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
