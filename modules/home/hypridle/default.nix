@@ -1,3 +1,7 @@
+{ pkgs, lib, ... }:
+let
+  light = lib.getExe pkgs.light;
+in
 {
   services.hypridle.settings = {
     general = {
@@ -9,8 +13,8 @@
     listener = [
       {
         timeout = 5 * 60;
-        on-timeout = "light -S 10";
-        on-resume = "light -I";
+        on-timeout = "${light} -O && ${light} -S 10";
+        on-resume = "${light} -I";
       }
       {
         timeout = 8 * 60;
