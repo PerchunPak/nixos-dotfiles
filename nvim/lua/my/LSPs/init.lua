@@ -27,6 +27,7 @@ return {
   -- :help lspconfig-all
   { 'bashls', lsp = {} },
   { 'gleam', lsp = {} },
+  { 'graphql', lsp = {} },
   { 'marksman', lsp = {} },
   { 'rust_analyzer', lsp = {} },
   { 'typos_lsp', lsp = {} },

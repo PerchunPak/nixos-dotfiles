@@ -41,6 +41,7 @@ let
           basedpyright
           bash-language-server
           gleam
+          graphql-language-service-cli
           lua-language-server
           marksman
           nixd
@@ -81,6 +82,7 @@ let
           flash-nvim
           gitsigns-nvim
           indent-blankline-nvim
+          kulala-nvim
           lazydev-nvim
           luvit-meta
           mini-nvim

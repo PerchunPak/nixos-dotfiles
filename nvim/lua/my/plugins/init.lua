@@ -11,6 +11,7 @@ return {
   { import = 'my.plugins.debug' },
   { import = 'my.plugins.flash' },
   { import = 'my.plugins.gitsigns' },
+  { import = 'my.plugins.kulala' },
   { import = 'my.plugins.lazydev' },
   { import = 'my.plugins.oil' },
   { import = 'my.plugins.otter' },
