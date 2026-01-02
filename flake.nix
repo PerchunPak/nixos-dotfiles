@@ -12,7 +12,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:PerchunPak/home-manager?rev=hyprconf-str-in-lists";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

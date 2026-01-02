@@ -144,34 +144,39 @@ in
     };
 
     windowrule = [
-      "workspace 1 silent,class:^(zen-beta)"
-      "workspace 3 silent,class:^(legcord)"
-      "workspace 4 silent,title:^(Steam)" # the dialog that updates steam on startup
-      "workspace 4 silent,class:^(steam)"
-      "workspace 4 silent,class:^(heroic)"
-      "workspace 4 silent,class:^(Minecraft)"
-      "workspace 5 silent,class:^(DBeaver)"
+      "match:class ^zen-beta$, workspace 1 silent"
+      "match:class ^legcord$, workspace 3 silent"
+      "match:title ^Steam$, workspace 4 silent" # the dialog that updates steam on startup
+      "match:class ^steam$, workspace 4 silent"
+      "match:class ^heroic$, workspace 4 silent"
+      "match:class ^Minecraft$, workspace 4 silent"
+      "match:class ^DBeaver$, workspace 5 silent, no_initial_focus on"
 
-      # Deny stealing focus for DBeaver, this is really annoying
-      "noinitialfocus,class:^(DBeaver)"
-    ];
-
-    windowrulev2 = [
       # Steam Friends List
-      "float,class:(steam),title:(Список друзів)"
-      "size 383 691,class:(steam),title:(Список друзів)"
-      "center,class:(steam),title:(Список друзів)"
-      "workspace 4,class:(steam),title:(Список друзів)"
-      # Calculator
-      "float,class:(org.gnome.Calculator)"
-      "size 383 691,class:(org.gnome.Calculator)"
-      "center,class:(org.gnome.Calculator)"
+      {
+        name = "Steam Friends List";
+        "match:class" = "^steam$";
+        "match:title" = "^Список друзів$";
+
+        workspace = 4;
+        float = "";
+        center = "";
+        size = "383, 691";
+      }
+      {
+        name = "Calculator";
+        "match:class" = "^org.gnome.Calculator$";
+
+        float = "";
+        center = "";
+        size = "383, 691";
+      }
     ];
 
     layerrule = [
-      "blur, logout_dialog"
-      "noanim, hyprpicker"
-      "noanim, selection"
+      "match:namespace logout_dialog, blur on"
+      "match:namespace hyprpicker, no_anim on"
+      "match:namespace selection, no_anim on"
     ];
 
     input = {
