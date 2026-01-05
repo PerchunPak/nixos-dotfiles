@@ -215,16 +215,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1767345399,
-        "narHash": "sha256-5k07cAPVcMWx2P0zSfBQ9KqpMA6La1rz4dy/pl9GzDw=",
-        "owner": "PerchunPak",
+        "lastModified": 1767619743,
+        "narHash": "sha256-N0kK1JqxIjFl7hPAfhkW6C9AO7feYJUWLPyqJO2VuQQ=",
+        "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "10e0c8b5ec6f1efeb7c78811ae308310211ff6cd",
+        "rev": "a65c04965c841eb01ba401f5162f12bc8d52014f",
         "type": "github"
       },
       "original": {
-        "owner": "PerchunPak",
-        "ref": "hyprconf-str-in-lists",
+        "owner": "nix-community",
         "repo": "home-manager",
         "type": "github"
       }
