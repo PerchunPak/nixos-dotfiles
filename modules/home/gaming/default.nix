@@ -20,7 +20,6 @@ in
 
   config = lib.mkIf cfg.enable {
     my.persistence.directories = [
-      ".factorio"
       ".config/heroic"
       ".config/unity3d"
       ".factorio"
