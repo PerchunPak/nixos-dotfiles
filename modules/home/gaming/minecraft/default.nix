@@ -16,15 +16,9 @@ in
     };
   };
 
-  config = lib.mkMerge [
-    {
-      # not settings this may delete my data, better to keep empty symlink
-      my.persistence.directories = [ ".local/share/PrismLauncher" ];
-    }
-    (lib.mkIf cfg.minecraft.enable {
-      home.packages = with pkgs; [ prismlauncher ];
-
-      programs.java.enable = true;
-    })
-  ];
+  config = lib.mkIf cfg.minecraft.enable {
+    home.packages = with pkgs; [ prismlauncher ];
+    my.persistence.directories = [ ".local/share/PrismLauncher" ];
+    programs.java.enable = true;
+  };
 }
