@@ -120,7 +120,7 @@
       systems.modules.nixos = with inputs; [ disko.nixosModules.default ];
 
       outputs-builder = channels: {
-        formatter = channels.nixpkgs.nixfmt-rfc-style;
+        formatter = channels.nixpkgs.nixfmt;
         nixCats = import ./nvim {
           inherit inputs;
           origPkgs = channels.nixpkgs;

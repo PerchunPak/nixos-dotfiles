@@ -56,7 +56,7 @@ let
           black
           codespell
           gawk # trim_whitespace
-          nixfmt-rfc-style
+          nixfmt
           prettierd
           rustfmt
           stylua

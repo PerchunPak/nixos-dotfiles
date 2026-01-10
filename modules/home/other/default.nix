@@ -42,7 +42,7 @@
       unzip
       bintools
       pavucontrol
-      nixfmt-rfc-style
+      nixfmt
       wl-clipboard
       gleam
       erlang_27
