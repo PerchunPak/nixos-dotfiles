@@ -1,29 +1,19 @@
 {
   inputs,
+  pkgs,
   lib,
   config,
   ...
 }:
 let
   cfg = config.my.persistence;
-  cfgHm = user: config.home-manager.users.${user}.my.persistence;
-  hmUsers = builtins.attrNames config.home-manager.users;
+  impermanenceOptions = lib.my.getImpermanenceOptions { inherit pkgs inputs config; };
 in
 {
-  imports = [ inputs.impermanence.nixosModules.impermanence ];
-
-  options = {
-    my.persistence = {
-      directories = lib.mkOption {
-        type = lib.types.listOf lib.types.str;
-        default = [ ];
-      };
-      files = lib.mkOption {
-        type = lib.types.listOf lib.types.str;
-        default = [ ];
-      };
-    };
-  };
+  imports = [
+    inputs.impermanence.nixosModules.impermanence
+    (lib.modules.mkAliasOptionModule [ "my" "persistence" ] [ "environment" "persistence" "/persist" ])
+  ];
 
   config = {
     boot.initrd.postDeviceCommands =
@@ -77,16 +67,8 @@ in
         "/var/lib/nixos"
         "/var/lib/systemd/coredump"
         "/etc/NetworkManager/system-connections"
-      ]
-      ++ cfg.directories;
-      files = [ "/etc/machine-id" ] ++ cfg.files;
-
-      users = builtins.listToAttrs (
-        lib.forEach hmUsers (user: {
-          name = user;
-          value = cfgHm user;
-        })
-      );
+      ];
+      files = [ "/etc/machine-id" ];
     };
 
     security.sudo.extraConfig = ''
