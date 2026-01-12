@@ -48,11 +48,11 @@
     "ctp-trippy": {
       "flake": false,
       "locked": {
-        "lastModified": 1766519304,
-        "narHash": "sha256-7vza+crso+41PO35IgN+BIQd5TtnJtme5PHdeHJfT0c=",
+        "lastModified": 1768224646,
+        "narHash": "sha256-Y0kQ3K7TQG84xthLcZHn+BFtLtsi4G4uKYPEcRe9iPA=",
         "owner": "PerchunPak",
         "repo": "ctp-trippy",
-        "rev": "a8aa68541474474b0d8e89480b45078870ea8778",
+        "rev": "6381b6b91447a6443737d982329e21b257e93660",
         "type": "github"
       },
       "original": {

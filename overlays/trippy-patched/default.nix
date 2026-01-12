@@ -5,8 +5,8 @@ final: prev: {
     src = final.fetchFromGitHub {
       owner = "PerchunPak";
       repo = "trippy";
-      rev = "f5ba014f149d5fa0e662cc0834266fc285134a85";
-      hash = "sha256-ah2MHIep7/ogVByaDGZIz63xnkmnF0MdkqU+ya3vcok=";
+      rev = "dd1c1bee58c6e5afec2d56bed7085097fd504a6f";
+      hash = "sha256-VnixlsNiSLk55gIlGBBu0A58ZJ/wsAXKbeZHZL6jCWw=";
     };
     cargoDeps = final.rustPlatform.fetchCargoVendor {
       inherit src;
