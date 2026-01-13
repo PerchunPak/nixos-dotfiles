@@ -43,7 +43,7 @@ in
         hyprlock.enable = true;
       };
 
-      services.displayManager.defaultSession = "hyprland";
+      services.displayManager.defaultSession = "hyprland-uwsm";
     })
   ];
 }
