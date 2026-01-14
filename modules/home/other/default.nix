@@ -20,6 +20,7 @@
     obs-studio.enable = true;
     htop.enable = true;
     jq.enable = true;
+    eza.enable = true;
   };
 
   my.persistence.directories = [
@@ -30,7 +31,6 @@
     with pkgs;
     [
       fd
-      eza
       ncdu
       tor-browser
       meld
