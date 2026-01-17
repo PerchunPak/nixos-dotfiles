@@ -12,7 +12,7 @@
 
   programs = {
     poetry = {
-      enable = true;
+      enable = false;
       settings = {
         # use python 3.12 instead of what nixos installs poetry with (3.11)
         #
