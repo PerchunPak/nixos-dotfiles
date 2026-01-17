@@ -17,9 +17,11 @@
     };
 
     snowfall-lib = {
-      url = "github:snowfallorg/lib";
+      url = "github:snowfallorg/lib?rev=e66423e29b722122f878cd4f332ed656fdb3dec4";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils-plus.follows = "flake-utils-plus";
     };
+    flake-utils-plus.url = "github:gytis-ivaskevicius/flake-utils-plus?rev=14d3fa54bbb4d61ce0128793a529e57bf70ac182";
 
     rycee-nur = {
       url = "gitlab:rycee/nur-expressions";
@@ -115,6 +117,16 @@
             "libnpp"
           ];
       };
+
+      channels.nixpkgs.patches = [
+        # (
+        #   pkgs:
+        #   pkgs.fetchpatch {
+        #     url = "https://github.com/NixOS/nixpkgs/pull/481145.diff?full_index=1";
+        #     hash = "sha256-N/uyTaIiD4E9kXhaJWi8+piHW/7kvL+yyeOPL98BagQ=";
+        #   }
+        # )
+      ];
 
       overlays = with inputs; [
         lix-module.overlays.default
