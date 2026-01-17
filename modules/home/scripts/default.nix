@@ -3,9 +3,9 @@
   home.packages = [
     (pkgs.writeShellScriptBin "rebuild" ''
       set -ex
-      trap 'cd -' EXIT
+      trap 'popd' EXIT
 
-      cd ~/dotfiles
+      pushd ~/dotfiles
       git add .
       sudo true
       nh os switch "$@"
