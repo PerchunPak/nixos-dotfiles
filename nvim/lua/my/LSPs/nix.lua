@@ -5,9 +5,7 @@ return {
     settings = {
       nixd = {
         nixpkgs = {
-          -- in the extras set of your package definition:
-          -- nixdExtras.nixpkgs = ''import ${pkgs.path} {}''
-          expr = nixCats.extra 'nixdExtras.nixpkgs',
+          expr = require 'nix-info' 'nixpkgs-path',
         },
         options = {
           nixos = {

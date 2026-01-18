@@ -9,10 +9,10 @@ return {
           ignoreComments = true,
         },
         signatureHelp = { enabled = true },
-        diagnostics = {
-          globals = { 'nixCats', 'vim' },
-          disable = { 'missing-fields' },
-        },
+        -- diagnostics = {
+        --   globals = { 'vim' },
+        --   disable = { 'missing-fields' },
+        -- },
         telemetry = { enabled = false },
       },
     },

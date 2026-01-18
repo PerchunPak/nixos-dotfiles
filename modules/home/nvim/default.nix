@@ -1,15 +1,22 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 let
-  nixCats = import ../../../nvim {
+  module = lib.modules.importApply ../../../nvim inputs;
+  wrapper = inputs.wrappers.lib.evalModule module;
+  nvim = wrapper.config.wrap { inherit pkgs; };
+  testNvim = wrapper.config.wrap {
     inherit pkgs;
-    nixCats = inputs.nixCats;
+    isTest = true;
   };
 in
 {
-  home.packages = (builtins.attrValues nixCats);
-
-  systemd.user.tmpfiles.rules = [
-    "L /home/perchun/.config/nvim - - - - /home/perchun/dotfiles/nvim"
+  home.packages = [
+    nvim
+    testNvim
   ];
 
   my.persistence.directories = [

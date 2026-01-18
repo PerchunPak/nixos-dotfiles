@@ -69,7 +69,10 @@
     };
 
     # Neovim
-    nixCats.url = "github:BirdeeHub/nixCats-nvim";
+    wrappers = {
+      url = "github:BirdeeHub/nix-wrapper-modules";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
@@ -136,10 +139,6 @@
 
       outputs-builder = channels: {
         formatter = channels.nixpkgs.nixfmt;
-        nixCats = import ./nvim {
-          inherit inputs;
-          origPkgs = channels.nixpkgs;
-        };
       };
     };
 }

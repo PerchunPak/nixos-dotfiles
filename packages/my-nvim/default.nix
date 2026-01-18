@@ -1,8 +1,10 @@
 {
   inputs,
   pkgs,
+  lib,
 }:
-(import ../../nvim {
-  inherit pkgs;
-  nixCats = inputs.nixCats;
-}).neovim
+let
+  module = lib.modules.importApply ../../nvim inputs;
+  wrapper = inputs.wrappers.lib.evalModule module;
+in
+wrapper.config.wrap { inherit pkgs; }
