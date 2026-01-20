@@ -61,6 +61,7 @@
       libnotify
       hcloud
       cosmic-files
+      tmux
     ]
     ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
 }
