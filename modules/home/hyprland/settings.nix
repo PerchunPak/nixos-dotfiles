@@ -159,16 +159,16 @@ in
         "match:title" = "^Список друзів$";
 
         workspace = 4;
-        float = "";
-        center = "";
+        float = "on";
+        center = "on";
         size = "383, 691";
       }
       {
         name = "Calculator";
         "match:class" = "^org.gnome.Calculator$";
 
-        float = "";
-        center = "";
+        float = "on";
+        center = "on";
         size = "383, 691";
       }
     ];
