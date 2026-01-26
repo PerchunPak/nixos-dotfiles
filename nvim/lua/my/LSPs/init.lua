@@ -33,6 +33,15 @@ return {
   { 'typos_lsp', lsp = {} },
   { 'yamlls', lsp = {} },
 
+  {
+    'harper_ls',
+    lsp = {
+      linters = {
+        SentenceCapitalization = false,
+      },
+    },
+  },
+
   { import = 'my.LSPs.frontend' },
   { import = 'my.LSPs.lua' },
   { import = 'my.LSPs.nix' },
