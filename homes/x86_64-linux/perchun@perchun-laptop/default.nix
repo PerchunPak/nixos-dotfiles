@@ -7,7 +7,7 @@
 
   my = {
     # gaming.additional-games = with pkgs; [ xonotic ];
-    setup-stuff.backlight.command = "${lib.getExe pkgs.brightnessctl} s 70%";
+    setup-stuff.backlight.command = "${lib.getExe pkgs.brightnessctl} s 40%";
   };
 
   # `allowUnfree` for experimental nix commands
