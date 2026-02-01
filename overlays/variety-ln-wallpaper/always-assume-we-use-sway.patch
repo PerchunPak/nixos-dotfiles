@@ -1,8 +1,8 @@
-diff --git a/data/scripts/set_wallpaper b/data/scripts/set_wallpaper
-index 089a6d6..5f25837 100755
---- a/data/scripts/set_wallpaper
-+++ b/data/scripts/set_wallpaper
-@@ -233,7 +233,7 @@ elif [ "$DE" == "fluxbox" ]; then
+diff --git a/variety/data/scripts/set_wallpaper b/variety/data/scripts/set_wallpaper
+index 98c88e4..4f231b2 100755
+--- a/variety/data/scripts/set_wallpaper
++++ b/variety/data/scripts/set_wallpaper
+@@ -259,7 +259,7 @@ elif [ "$DE" == "fluxbox" ]; then
      mkdir -p ~/.fluxbox
      echo '$''full ''$'"full|$WP||:0.0" >~/.fluxbox/lastwallpaper
  
