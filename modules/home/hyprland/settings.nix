@@ -77,6 +77,7 @@ in
       "ALT, F8, exec, ${autoclicker-script}"
       "SUPER, F9, exec, hyprpanel toggleWindow settings-dialog"
       "SUPER, F10, exec, bash -c 'pgrep legcord -f | xargs kill'"
+      "SUPER, F11, exec, bash -c 'pgrep hyprpanel -f | xargs kill -9 && systemctl --user start hyprpanel'"
       "SUPER SHIFT, B, exec, variety --previous"
 
       # Move focus with mainMod + arrow keys
