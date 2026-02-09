@@ -37,7 +37,7 @@
       gnumake
       dig
       mtr
-      mpv
+      (mpv.override { youtubeSupport = false; })
       zip
       unzip
       bintools
