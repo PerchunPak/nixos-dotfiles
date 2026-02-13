@@ -30,7 +30,7 @@ in
     home.packages =
       with pkgs;
       [
-        wineWowPackages.waylandFull
+        wineWow64Packages.waylandFull
         heroic
       ]
       ++ cfg.additional-games;
