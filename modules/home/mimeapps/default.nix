@@ -18,7 +18,7 @@
       "application/vnd.stardivision.draw" = "draw.desktop";
       "application/vnd.ms-publisher" = "draw.desktop";
       "application/vnd.visio" = "draw.desktop";
-      "application/pdf" = "draw.desktop";
+      "application/pdf" = "zen-beta.desktop";
       "application/vnd.corel-draw" = "draw.desktop";
       "application/x-pagemaker" = "draw.desktop";
       "application/vnd.stardivision.impress" = "impress.desktop";
