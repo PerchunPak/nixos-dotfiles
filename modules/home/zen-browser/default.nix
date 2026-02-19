@@ -169,6 +169,7 @@ in
 
   programs.zen-browser = {
     enable = true;
+    suppressXdgMigrationWarning = true; # https://github.com/0xc000022070/zen-browser-flake#missing-configuration-after-update
     languagePacks = [
       "uk"
       "ru" # sorry
@@ -183,10 +184,10 @@ in
   };
 
   my.persistence.directories = [
-    ".zen"
+    ".config/zen"
     ".cache/zen"
   ];
 
-  home.file.".zen/perchun/search.json.mozlz4".force = lib.mkForce true;
-  home.file.".zen/stuff/search.json.mozlz4".force = lib.mkForce true;
+  # home.file.".config/zen/perchun/search.json.mozlz4".force = lib.mkForce true;
+  # home.file.".config/zen/stuff/search.json.mozlz4".force = lib.mkForce true;
 }
