@@ -188,6 +188,6 @@ in
     ".cache/zen"
   ];
 
-  # home.file.".config/zen/perchun/search.json.mozlz4".force = lib.mkForce true;
-  # home.file.".config/zen/stuff/search.json.mozlz4".force = lib.mkForce true;
+  home.file."/home/perchun/.config/zen/perchun/search.json.mozlz4".force = lib.mkForce true;
+  home.file."/home/perchun/.config/zen/stuff/search.json.mozlz4".force = lib.mkForce true;
 }
