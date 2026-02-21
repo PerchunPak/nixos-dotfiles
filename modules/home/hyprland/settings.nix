@@ -53,7 +53,7 @@ in
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "uwsm app -s b -- swaybg"
-      "uwsm app -- zen"
+      "uwsm app -- zen-beta"
       "uwsm app -- legcord"
       "[workspace special:btop silent] uwsm app -- kitty btop"
     ]
