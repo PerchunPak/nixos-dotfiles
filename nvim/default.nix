@@ -83,6 +83,7 @@ inputs:
           undotree
           vim-sleuth
           which-key-nvim
+          zellij-nav-nvim
 
           # debug
           nvim-dap

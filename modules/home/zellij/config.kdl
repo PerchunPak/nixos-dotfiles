@@ -1,0 +1,37 @@
+keybinds {
+    normal clear-defaults=true {
+        bind "Ctrl f" { SwitchToMode "Tmux"; }
+        unbind "Ctrl b"
+    }
+
+    tmux clear-defaults=true {
+        bind "Ctrl f" { Write 2; SwitchToMode "Normal"; }
+        bind "Esc" { SwitchToMode "Normal"; }
+        bind "g" { SwitchToMode "Locked"; }
+        bind "p" { SwitchToMode "Pane"; }
+        bind "t" { SwitchToMode "Tab"; }
+        bind "n" { SwitchToMode "Resize"; }
+        bind "h" { SwitchToMode "Move"; }
+        bind "s" { SwitchToMode "Scroll"; }
+        bind "o" { SwitchToMode "Session"; }
+        bind "q" { Quit; }
+    }
+
+    scroll clear-defaults=true {}
+    search clear-defaults=true {}
+
+    shared_among "scroll" "search" {
+        bind "PageDown" { PageScrollDown; }
+        bind "PageUp" { PageScrollUp; }
+        bind "d" { HalfPageScrollDown; }
+        bind "u" { HalfPageScrollUp; }
+        bind "Ctrl d" { HalfPageScrollDown; }
+        bind "Ctrl u" { HalfPageScrollUp; }
+        bind "G" { ScrollToBottom; }
+        bind "h" { PageScrollUp; }
+        bind "j" { ScrollDown; }
+        bind "k" { ScrollUp; }
+        bind "l" { PageScrollDown; }
+        bind "Ctrl s" { SwitchToMode "normal"; }
+    }
+}

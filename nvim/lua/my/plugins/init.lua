@@ -19,5 +19,6 @@ return {
   { import = 'my.plugins.toggleterm' },
   { import = 'my.plugins.undotree' },
   { import = 'my.plugins.which-key' },
+  { import = 'my.plugins.zellij-nav' },
   { 'vim-sleuth', event = 'DeferredUIEnter' },
 }
