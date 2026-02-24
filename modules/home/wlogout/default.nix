@@ -24,7 +24,7 @@
       }
       {
         label = "shutdown";
-        action = "systemctl poweroff";
+        action = "hyprshutdown --post-cmd 'systemctl poweroff'";
         text = "Shutdown [ S ]";
         keybind = "s";
       }
@@ -36,7 +36,7 @@
       }
       {
         label = "reboot";
-        action = "systemctl reboot";
+        action = "hyprshutdown --post-cmd 'systemctl reboot'";
         text = "Reboot [ R ]";
         keybind = "r";
       }

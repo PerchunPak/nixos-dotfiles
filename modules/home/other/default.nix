@@ -61,6 +61,7 @@
       hcloud
       cosmic-files
       tmux
+      hyprshutdown
     ]
     ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
 }
