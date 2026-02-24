@@ -51,7 +51,6 @@
       _7zz-rar
       rustc
       cargo
-      signal-desktop
       wget
       gparted
       dbeaver-bin

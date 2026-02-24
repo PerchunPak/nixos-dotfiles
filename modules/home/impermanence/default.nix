@@ -9,7 +9,6 @@
       directories = [
         ".cache/huggingface"
         ".cache/nix"
-        ".config/Signal"
         ".config/asciinema"
         ".eclipse"
         ".local/share/DBeaverData"
