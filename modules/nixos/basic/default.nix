@@ -35,7 +35,10 @@
 
   programs.light.enable = true;
 
-  environment.variables."EDITOR" = "nvim";
+  environment.variables = {
+    EDITOR = "nvim";
+    SSL_CERT_FILE = "/etc/ssl/certs/ca-bundle.crt";
+  };
 
   environment.systemPackages = with pkgs; [
     gcc
