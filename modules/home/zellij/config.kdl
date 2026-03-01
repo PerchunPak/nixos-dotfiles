@@ -1,37 +1,45 @@
 keybinds {
-    normal clear-defaults=true {
-        bind "Ctrl f" { SwitchToMode "Tmux"; }
-        unbind "Ctrl b"
+    normal {
+        bind "Enter" {
+            // Passthru `Enter`.
+            WriteChars "\u{000D}";
+            // Invoke autolock to immediately assess proper lock state.
+            // (This provides a snappier experience compared to
+            // solely relying on `reaction_seconds` to elapse.)
+            MessagePlugin "autolock" {};
+        }
     }
 
-    tmux clear-defaults=true {
-        bind "Ctrl f" { Write 2; SwitchToMode "Normal"; }
-        bind "Esc" { SwitchToMode "Normal"; }
-        bind "g" { SwitchToMode "Locked"; }
-        bind "p" { SwitchToMode "Pane"; }
-        bind "t" { SwitchToMode "Tab"; }
-        bind "n" { SwitchToMode "Resize"; }
-        bind "h" { SwitchToMode "Move"; }
-        bind "s" { SwitchToMode "Scroll"; }
-        bind "o" { SwitchToMode "Session"; }
-        bind "q" { Quit; }
+    locked {
+        bind "Alt n" { NewPane; }
     }
 
-    scroll clear-defaults=true {}
-    search clear-defaults=true {}
+    search {
+        bind "Shift N" { Search "up"; }
+    }
 
-    shared_among "scroll" "search" {
-        bind "PageDown" { PageScrollDown; }
-        bind "PageUp" { PageScrollUp; }
-        bind "d" { HalfPageScrollDown; }
-        bind "u" { HalfPageScrollUp; }
-        bind "Ctrl d" { HalfPageScrollDown; }
-        bind "Ctrl u" { HalfPageScrollUp; }
-        bind "G" { ScrollToBottom; }
-        bind "h" { PageScrollUp; }
-        bind "j" { ScrollDown; }
-        bind "k" { ScrollUp; }
-        bind "l" { PageScrollDown; }
-        bind "Ctrl s" { SwitchToMode "normal"; }
+    shared_except "move" "locked" {
+        unbind "Ctrl h"
+        bind "Ctrl m" { SwitchToMode "Move"; }
+    }
+
+    shared {
+        bind "Alt f" { ToggleFloatingPanes; }
+        bind "Ctrl Shift T" { NewTab; }
+
+        bind "Ctrl Shift H" { GoToPreviousTab; }
+        bind "Ctrl Shift L" { GoToNextTab; }
+        bind "Ctrl Shift J" { GoToPreviousTab; }
+        bind "Ctrl Shift K" { GoToNextTab; }
+    }
+
+    shared_except "locked" {
+        bind "Ctrl h" { MoveFocus "Left"; }
+        bind "Ctrl l" { MoveFocus "Right"; }
+        bind "Ctrl j" { MoveFocus "Down"; }
+        bind "Ctrl k" { MoveFocus "Up"; }
+
+        unbind "Alt h" "Alt l" "Alt j" "Alt k"
+        unbind "Alt Left" "Alt Right" "Alt Down" "Alt Up"
     }
 }

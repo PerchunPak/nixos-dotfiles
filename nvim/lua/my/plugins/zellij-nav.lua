@@ -25,5 +25,10 @@ return {
   },
   after = function()
     require('zellij-nav').setup()
+
+    vim.api.nvim_create_autocmd('VimLeave', {
+      pattern = '*',
+      command = 'silent !zellij action switch-mode normal',
+    })
   end,
 }
