@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    libreoffice
+    stable.libreoffice
     hunspell
     hunspellDicts.en_US-large
     hunspellDicts.cs_CZ

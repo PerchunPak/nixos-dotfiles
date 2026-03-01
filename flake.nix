@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs?rev=b097075bf24c9c9d3d2a0f6978effd7f150d2a89";
 
     # my icons and other binary files I need
     storage = {
