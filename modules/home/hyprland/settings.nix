@@ -55,12 +55,12 @@ in
       "uwsm app -s b -- swaybg"
       "uwsm app -- zen-beta"
       "uwsm app -- legcord"
-      "[workspace special:btop silent] uwsm app -- kitty btop"
+      "[workspace special:btop silent] uwsm app -- alacritty -e btop"
     ]
     ++ (lib.lists.optional (!nixosConfig.my.economInternetTraffic) "uwsm app -s b -- variety");
 
     bind = [
-      "SUPER, A, exec, kitty"
+      "SUPER, A, exec, alacritty"
       "SUPER, C, killactive,"
       "SUPER, M, exec, hyprctl dispatch dpms on"
       "SUPER, ., exec, cosmic-files"

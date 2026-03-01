@@ -18,7 +18,6 @@
       ls = "${pkgs.eza}/bin/eza --icons --git";
       la = "ls -la";
       lt = "la --tree";
-      kssh = "kitten ssh";
       rebuildt = "rebuild -- --show-trace --option eval-cache false";
       rebuildu = "pushd ~/dotfiles && git pull && rebuild && popd";
       mount-diskroot = "sudo mkdir /disk-root && sudo mount /dev/root_vg/root /disk-root";
