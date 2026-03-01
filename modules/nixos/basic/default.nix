@@ -48,6 +48,7 @@
 
   boot.supportedFilesystems = [ "ntfs" ];
 
+  nix.package = pkgs.nixVersions.latest;
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
