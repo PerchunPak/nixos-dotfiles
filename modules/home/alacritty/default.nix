@@ -16,6 +16,7 @@
         };
         size = 13.0;
       };
+      mouse.hide_when_typing = true;
     };
   };
 }
