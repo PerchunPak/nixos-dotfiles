@@ -17,7 +17,7 @@
       show-icons = true;
       sidebar-mode = true;
       ssh-client = "kitten ssh";
-      terminal = "kitty";
+      terminal = "alacritty -e";
     };
   };
 }
