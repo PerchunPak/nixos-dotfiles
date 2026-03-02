@@ -10,6 +10,8 @@
         set PATH "./node_modules/.bin:$PATH"
 
         ${builtins.readFile ./venv.fish}
+
+        set -U __done_exclude '^(v|nvim|testNvim)'
       '';
 
     shellAliases = {
