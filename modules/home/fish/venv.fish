@@ -11,6 +11,7 @@ function __auto_source_venv --on-variable PWD --description "Activate/Deactivate
     while string match "$gitdir*" "$cwd" &>/dev/null
       if test -e "$cwd/.venv/bin/activate.fish"
         source "$cwd/.venv/bin/activate.fish" &>/dev/null
+        export LD_LIBRARY_PATH="$NIX_LD_LIBRARY_PATH"
         return
       else
         set cwd (path dirname "$cwd")
