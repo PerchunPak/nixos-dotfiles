@@ -10,6 +10,7 @@
         ".cache/huggingface"
         ".cache/nix"
         ".config/asciinema"
+        ".config/harper-ls"
         ".eclipse"
         ".local/share/DBeaverData"
         ".local/share/Steam"
