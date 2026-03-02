@@ -3,8 +3,10 @@ return {
     'nvim-lspconfig',
     on_require = { 'lspconfig' },
     lsp = function(plugin)
-      vim.lsp.config(plugin.name, plugin.lsp or {})
-      vim.lsp.enable(plugin.name)
+      vim.lsp.config(plugin.name, plugin.lsp)
+      if not plugin.disable then
+        vim.lsp.enable(plugin.name)
+      end
     end,
     keys = {
       {
@@ -35,9 +37,15 @@ return {
 
   {
     'harper_ls',
+    disable = true,
     lsp = {
-      linters = {
-        SentenceCapitalization = false,
+      settings = {
+        ['harper-ls'] = {
+          linters = {
+            SentenceCapitalization = false,
+            SpellCheck = false,
+          },
+        },
       },
     },
   },
