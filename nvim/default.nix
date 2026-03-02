@@ -35,6 +35,7 @@ inputs:
       lua-language-server
       marksman
       nixd
+      ruff
       rust-analyzer
       svelte-language-server
       tailwindcss-language-server
@@ -104,14 +105,7 @@ inputs:
     # specMods.collateGrammars = lib.mkDefault true;
 
     hosts = {
-      python3 = {
-        nvim-host.enable = true;
-        withPackages =
-          pyPkgs: with pyPkgs; [
-            python-lsp-server
-            python-lsp-ruff
-          ];
-      };
+      python3.nvim-host.enable = false;
       perl.nvim-host.enable = false;
       node.nvim-host.enable = false;
       ruby.nvim-host.enable = false;

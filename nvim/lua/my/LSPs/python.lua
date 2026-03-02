@@ -1,58 +1,43 @@
 return {
   {
-    'pylsp',
+    'ruff',
     lsp = {
-      cmd = { vim.g.python3_host_prog, '-m', 'pylsp' },
       settings = {
-        pylsp = {
-          plugins = {
-            flake8 = { enabled = false },
-            pydocstyle = { enabled = false },
-            jedi_completion = {
-              fuzzy = true,
-              eager = true,
-            },
-            ruff = {
-              enabled = true,
-              -- copied from https://github.com/py-mine/mcstatus/blob/master/pyproject.toml
-              select = {
-                'F', -- Pyflakes
-                'W', -- Pycodestyle (warnings)
-                'E', -- Pycodestyle (errors)
-                'N', -- pep8-naming
-                'ANN', -- flake8-annotations
-                'B', -- flake8-bugbear
-                'FA', -- flake8-future-annotations
-                'TID', -- flake8-tidy-imports
-                'UP007', -- flake8-new-union-types equivalent rule
-                'RUF', -- ruff's custom rules
-              },
-              ignore = {
-                'ANN002', -- Missing type annotation for *args
-                'ANN003', -- Missing type annotation for **kwargs
-                'ANN101', -- Missing type annotation for self in method
-                'ANN102', -- Missing type annotation for cls in classmethod
-                'ANN204', -- Missing return type annotation for special method
-                'B904', -- Exception raised within try-except should use raise ... from exc
-                'RUF012', -- Mutable class attributes should be annotated with `typing.ClassVar`
+        lint = {
+          -- copied from https://github.com/py-mine/mcstatus/blob/master/pyproject.toml
+          select = { 'ALL' },
+          unfixable = { 'F401' }, -- unused import
+          ignore = {
+            'A', -- Shadowing builtins
+            'EM', -- Very weird rules for using exceptions
+            'FIX', -- Line contains TODO, consider resolving the issue
+            'COM812', -- Missing trailing comma (in multiline lists/tuples/...)
+            'D203', -- Blank line required before class docstring
+            'D213', -- Multi-line docstring summary should start at the second line
+            'PLR2004', -- Magic value used in comparison
+            'RET504', -- Unnecessary assignment to a variable before `return` statement
+            'S101', -- Use of `assert` detected
+            'S311', -- Standard pseudo-random generators are not suitable for cryptographic purposes
+            'TD002', -- Missing author in TODO
+            'TD003', -- Missing issue link for this TODO
+            'TRY003', -- Avoid specifying long messages outside the exception class
+            'ISC002', -- Multi line implicit string concatenation
 
-                -- Redundant rules with ruff-format:
-                'E111', -- Indentation of a non-multiple of 4 spaces
-                'E114', -- Comment with indentation  of a non-multiple of 4 spaces
-                'E117', -- Checks for over-indented code
-                'D206', -- Checks for docstrings indented with tabs
-                'D300', -- Checks for docstring that use ''' instead of """
-                'Q000', -- Checks of inline strings that use wrong quotes (' instead of ")
-                'Q001', -- Multiline string that use wrong quotes (''' instead of """)
-                'Q002', -- Checks for docstrings that use wrong quotes (''' instead of """)
-                'Q003', -- Checks for avoidable escaped quotes ("\"" -> '"')
-                'COM812', -- Missing trailing comma (in multi-line lists/tuples/...)
-                'COM819', -- Prohibited trailing comma (in single-line lists/tuples/...)
-                'ISC001', -- Single line implicit string concatenation ("hi" "hey" -> "hihey")
-                'ISC002', -- Multi line implicit string concatenation
-              },
-              targetVersion = 'py312',
-            },
+            'D100', -- Missing docstring in public module
+            'D101', -- Missing docstring in public class
+            'D102', -- Missing docstring in public method
+            'D103', -- Missing docstring in public function
+            'D104', -- Missing docstring in public package
+            'D105', -- Missing docstring in magic method
+            'D106', -- Missing docstring in public nested class
+            'D107', -- Missing docstring in __init__
+            'D413', -- Missing blank line after last section
+          },
+
+          isort = {
+            ['order-by-type'] = false,
+            ['case-sensitive'] = true,
+            ['combine-as-imports'] = true,
           },
         },
       },
