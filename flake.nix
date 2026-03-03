@@ -2,8 +2,12 @@
   description = "My NixOS system";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:PerchunPak/nixpkgs/patched";
+    nixpkgs-upstream.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
+
+    nixpkgs-patch-10.url = "https://github.com/NixOS/nixpkgs/compare/master...PerchunPak:nixpkgs:zellij-plugins.diff?full_index=1";
+    nixpkgs-patch-10.flake = false;
 
     # my icons and other binary files I need
     storage = {

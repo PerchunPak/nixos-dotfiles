@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  imports = [ ./plugins-module.nix ];
+
   home.packages = [ pkgs.tmux ];
 
   programs.zellij = {
@@ -20,7 +22,7 @@
     };
     extraConfig = builtins.readFile ./config.kdl;
 
-    plugins = [ pkgs.zellijPlugins.zellij-autolock ];
+    plugins = [ pkgs.zellijPlugins.autolock ];
   };
 
   my.persistence.directories = [ ".cache/zellij" ];
