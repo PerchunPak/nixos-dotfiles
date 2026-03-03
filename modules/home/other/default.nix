@@ -48,7 +48,7 @@
       erlang_27
       rebar3
       nixpkgs-review
-      _7zz-rar
+      (_7zz-rar.override { useUasm = false; })
       rustc
       cargo
       wget
