@@ -4,7 +4,7 @@ return {
   keys = {
     {
       '<c-h>',
-      '<cmd>ZellijNavigateLeftTab<cr>',
+      '<cmd>ZellijNavigateLeft<cr>',
       { silent = true, desc = 'Move focus to the right window' },
     },
     {
@@ -19,7 +19,7 @@ return {
     },
     {
       '<c-l>',
-      '<cmd>ZellijNavigateRightTab<cr>',
+      '<cmd>ZellijNavigateRight<cr>',
       { silent = true, desc = 'Move focus to the left window' },
     },
   },
