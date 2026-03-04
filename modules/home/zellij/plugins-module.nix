@@ -30,11 +30,17 @@ in
       settings = {
         plugins = lib.mkIf (cfg.plugins != [ ]) (
           lib.mergeAttrsList (
-            lib.map (plugin: {
-              ${plugin.pname}._props = {
-                location = "file:${plugin}";
-              };
-            }) cfg.plugins
+            lib.map (
+              plugin:
+              let
+                pluginName = lib.removePrefix "zellij-" plugin.pname;
+              in
+              {
+                ${pluginName}._props = {
+                  location = "file:${plugin}";
+                };
+              }
+            ) cfg.plugins
           )
         );
         load_plugins = lib.mkIf (cfg.plugins != [ ]) {

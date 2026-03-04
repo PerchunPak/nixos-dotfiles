@@ -14,7 +14,7 @@
       scrollback_lines_to_serialize = 0;
 
       plugins = {
-        zellij-autolock = {
+        autolock = {
           triggers = "v|nvim|vim|lazygit";
           reaction_seconds = "1.0";
         };
