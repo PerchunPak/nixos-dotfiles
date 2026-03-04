@@ -12,6 +12,10 @@ keybinds {
 
     locked {
         bind "Alt n" { NewPane; SwitchToMode "Normal"; }
+        bind "Ctrl g" { // Disable the autolock plugin, so it doesn't lock immediately after
+            MessagePlugin "autolock" {payload "disable";};
+            SwitchToMode "Normal";
+        }
     }
 
     search {
@@ -36,6 +40,10 @@ keybinds {
         bind "Ctrl Shift L" { GoToNextTab; SwitchToMode "Normal"; }
         bind "Ctrl Shift J" { GoToPreviousTab; SwitchToMode "Normal"; }
         bind "Ctrl Shift K" { GoToNextTab; SwitchToMode "Normal"; }
+
+        bind "Ctrl Shift G" {
+            MessagePlugin "autolock" {payload "enable";};
+        }
     }
 
     shared_except "locked" {
