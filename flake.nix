@@ -94,6 +94,7 @@
           pkg:
           builtins.elem (lib.getName pkg) [
             "7zz"
+            "claude-code"
             "nvidia-x11"
             "steam"
             "steam-original"

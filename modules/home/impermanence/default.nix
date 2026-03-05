@@ -12,6 +12,7 @@
         ".config/asciinema"
         ".config/harper-ls"
         ".eclipse"
+        ".claude"
         ".local/share/DBeaverData"
         ".local/share/Steam"
         ".local/share/docker"
@@ -23,6 +24,7 @@
         "dotfiles"
         "persistent"
       ];
+      files = [ ".claude.json" ];
     };
   };
 }
