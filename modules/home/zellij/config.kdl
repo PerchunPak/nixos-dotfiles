@@ -161,10 +161,30 @@ keybinds clear-defaults=true {
         bind "Alt Shift p" { ToggleGroupMarking; }
     }
     shared_among "normal" "locked" "scroll" {
-        bind "Ctrl h" { MoveFocus "Left"; }
-        bind "Ctrl l" { MoveFocus "Right"; }
-        bind "Ctrl j" { MoveFocus "Down"; }
-        bind "Ctrl k" { MoveFocus "Up"; }
+        bind "Ctrl h" {
+            MessagePlugin "vim-zellij-navigator" {
+                name "move_focus";
+                payload "left";
+            };
+        }
+        bind "Ctrl l" {
+            MessagePlugin "vim-zellij-navigator" {
+                name "move_focus";
+                payload "right";
+            };
+        }
+        bind "Ctrl j" {
+            MessagePlugin "vim-zellij-navigator" {
+                name "move_focus";
+                payload "down";
+            };
+        }
+        bind "Ctrl k" {
+            MessagePlugin "vim-zellij-navigator" {
+                name "move_focus";
+                payload "up";
+            };
+        }
     }
     shared_except "locked" "renametab" "renamepane" {
         bind "Ctrl g" { SwitchToMode "locked"; }
