@@ -17,7 +17,7 @@
     };
     settings = {
       user = {
-        name = "PerchunPak";
+        name = "Perchun Pak";
         email = "git@perchun.it";
       };
 
