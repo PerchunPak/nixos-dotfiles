@@ -14,13 +14,13 @@
   gtk.enable = true;
 
   programs = {
-    ripgrep.enable = true;
     bat.enable = true;
     chromium.enable = true;
-    obs-studio.enable = true;
+    eza.enable = true;
     htop.enable = true;
     jq.enable = true;
-    eza.enable = true;
+    obs-studio.enable = true;
+    ripgrep.enable = true;
   };
 
   my.persistence.directories = [
@@ -30,38 +30,38 @@
   home.packages =
     with pkgs;
     [
-      fd
-      ncdu
-      tor-browser
-      meld
-      gnumake
-      dig
-      mtr
-      (mpv.override { youtubeSupport = false; })
-      zip
-      unzip
-      bintools
-      pavucontrol
-      nixfmt
-      wl-clipboard
-      gleam
-      erlang_27
-      rebar3
-      nixpkgs-review
       (_7zz-rar.override { useUasm = false; })
-      rustc
-      cargo
-      wget
-      gparted
-      dbeaver-bin
+      (mpv.override { youtubeSupport = false; })
+      bintools
       btdu # ncdu for btrfs
+      cargo
       cargo-expand
-      tabiew
-      libnotify
-      hcloud
       cosmic-files
-      tmux
+      dbeaver-bin
+      dig
+      erlang_27
+      fd
+      gleam
+      gnumake
+      gparted
+      hcloud
       hyprshutdown
+      libnotify
+      meld
+      mtr
+      ncdu
+      nixfmt
+      nixpkgs-review
+      pavucontrol
+      rebar3
+      rustc
+      tabiew
+      tmux
+      tor-browser
+      unzip
+      wget
+      wl-clipboard
+      zip
     ]
     ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
 }
