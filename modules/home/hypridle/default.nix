@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 let
-  light = lib.getExe pkgs.light;
+  light = lib.getExe pkgs.brightnessctl;
 in
 {
   services.hypridle.settings = {
@@ -13,8 +13,8 @@ in
     listener = [
       {
         timeout = 5 * 60;
-        on-timeout = "${light} -O && ${light} -S 10";
-        on-resume = "${light} -I";
+        on-timeout = "${light} -s && ${light} set 10%";
+        on-resume = "${light} -r";
       }
       {
         timeout = 8 * 60;

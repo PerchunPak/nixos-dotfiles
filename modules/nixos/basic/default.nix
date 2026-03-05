@@ -33,8 +33,6 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
-  programs.light.enable = true;
-
   environment.variables = {
     EDITOR = "nvim";
     SSL_CERT_FILE = "/etc/ssl/certs/ca-bundle.crt";
