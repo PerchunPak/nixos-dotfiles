@@ -1,3 +1,6 @@
+// zellij can't find proper commands to resurrect with nix
+post_command_discovery_hook "fish"
+
 keybinds {
     normal {
         bind "Enter" {
@@ -18,7 +21,7 @@ keybinds {
         }
     }
 
-    search {
+    shared_among "search" "scroll" {
         bind "Shift N" { Search "up"; }
         bind "g" { ScrollToTop; }
         bind "Shift G" { ScrollToBottom; }
