@@ -7,12 +7,13 @@
   config = {
     my.persistence = {
       directories = [
+        ".cache/claude-cli-nodejs"
         ".cache/huggingface"
         ".cache/nix"
+        ".claude"
         ".config/asciinema"
         ".config/harper-ls"
         ".eclipse"
-        ".claude"
         ".local/share/DBeaverData"
         ".local/share/Steam"
         ".local/share/docker"
