@@ -28,12 +28,14 @@ jobs:
         continue-on-error: true
         run: |
           nix flake update nixpkgs-upstream
-          git diff --exit-code
+          ! git diff --exit-code
 
       - name: Update my fork
         if: steps.check.outcome == 'success'
         run: |
           nix run github:katrinafyi/nix-patcher
+        env:
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
 
       - name: Update flake.lock
         if: steps.check.outcome == 'success'
