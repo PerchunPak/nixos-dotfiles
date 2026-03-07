@@ -169,7 +169,6 @@ in
 
   programs.zen-browser = {
     enable = true;
-    suppressXdgMigrationWarning = true; # https://github.com/0xc000022070/zen-browser-flake#missing-configuration-after-update
     languagePacks = [
       "uk"
       "ru" # sorry
