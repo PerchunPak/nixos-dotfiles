@@ -15,9 +15,6 @@ jobs:
           app-id: ${{ secrets.GH_APP_ID }}
           private-key: ${{ secrets.GH_APP_SECRET_KEY }}
           owner: ${{ github.repository_owner }}
-          repositories: |
-            nixos-dotfiles
-            nixpkgs
 
       - name: Checkout repository
         uses: actions/checkout@v4
