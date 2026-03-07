@@ -14,7 +14,6 @@ jobs:
         with:
           app-id: ${{ secrets.GH_APP_ID }}
           private-key: ${{ secrets.GH_APP_SECRET_KEY }}
-          owner: ${{ github.repository_owner }}
 
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -36,7 +35,7 @@ jobs:
         run: |
           nix run github:katrinafyi/nix-patcher
         env:
-          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+          GITHUB_TOKEN: ${{ secrets.FORK_UPDATE_TOKEN }}
 
       - name: Update flake.lock
         if: steps.check.outcome == 'success'
