@@ -39,6 +39,7 @@ inputs:
       rust-analyzer
       svelte-language-server
       tailwindcss-language-server
+      tombi
       typescript-language-server
       typos-lsp
       yaml-language-server

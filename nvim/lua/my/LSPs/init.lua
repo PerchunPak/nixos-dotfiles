@@ -32,6 +32,7 @@ return {
   { 'graphql', lsp = {} },
   { 'marksman', lsp = {} },
   { 'rust_analyzer', lsp = {} },
+  { 'tombi', lsp = {} },
   { 'typos_lsp', lsp = {} },
   { 'yamlls', lsp = {} },
 
