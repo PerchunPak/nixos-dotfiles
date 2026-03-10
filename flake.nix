@@ -10,11 +10,14 @@
     nixpkgs-patch-10.url = "https://github.com/PerchunPak/nixpkgs/commit/574c03f1027a0c985cacadeef76f739ab0889a27.diff?full_index=1";
     nixpkgs-patch-10.flake = false;
     # zellij: rename package file name
-    nixpkgs-patch-20.url = "https://github.com/PerchunPak/nixpkgs/commit/bc9970a5ec55c9807c3a040c91ed4db72ae61ddb.diff?full_index=1";
-    nixpkgs-patch-20.flake = false;
+    nixpkgs-patch-11.url = "https://github.com/PerchunPak/nixpkgs/commit/bc9970a5ec55c9807c3a040c91ed4db72ae61ddb.diff?full_index=1";
+    nixpkgs-patch-11.flake = false;
     # zellijPlugins: init
-    nixpkgs-patch-30.url = "https://github.com/PerchunPak/nixpkgs/commit/236d5b8f240643c345e6380dc43b5d0976745c9e.diff?full_index=1";
-    nixpkgs-patch-30.flake = false;
+    nixpkgs-patch-12.url = "https://github.com/PerchunPak/nixpkgs/commit/236d5b8f240643c345e6380dc43b5d0976745c9e.diff?full_index=1";
+    nixpkgs-patch-12.flake = false;
+    # wayle: init at 0-unstable-2026-03-10
+    nixpkgs-patch-20.url = "https://github.com/PerchunPak/nixpkgs/commit/282113d3b4787b9138fb5bc417d9655cf020fa38.diff?full_index=1";
+    nixpkgs-patch-20.flake = false;
 
     # my icons and other binary files I need
     storage = {

@@ -10,6 +10,7 @@ let
 in
 linkFarmFromDrvs "long-builds-to-cache" (
   (with pkgs; [
+    wayle
     zellij
     zellijPlugins.vim-zellij-navigator
   ])
