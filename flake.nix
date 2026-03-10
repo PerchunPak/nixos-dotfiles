@@ -6,8 +6,15 @@
     nixpkgs-upstream.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
 
-    nixpkgs-patch-10.url = "https://github.com/NixOS/nixpkgs/compare/master...PerchunPak:nixpkgs:zellij-plugins.diff?full_index=1";
+    # pkgsCross.wasi32.buildPackages.rustc: fix build
+    nixpkgs-patch-10.url = "https://github.com/PerchunPak/nixpkgs/commit/574c03f1027a0c985cacadeef76f739ab0889a27.diff?full_index=1";
     nixpkgs-patch-10.flake = false;
+    # zellij: rename package file name
+    nixpkgs-patch-20.url = "https://github.com/PerchunPak/nixpkgs/commit/bc9970a5ec55c9807c3a040c91ed4db72ae61ddb.diff?full_index=1";
+    nixpkgs-patch-20.flake = false;
+    # zellijPlugins: init
+    nixpkgs-patch-30.url = "https://github.com/PerchunPak/nixpkgs/commit/236d5b8f240643c345e6380dc43b5d0976745c9e.diff?full_index=1";
+    nixpkgs-patch-30.flake = false;
 
     # my icons and other binary files I need
     storage = {

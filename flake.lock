@@ -238,13 +238,37 @@
     "nixpkgs-patch-10": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-n6JtZVXwI1CBm3Kgu+1u/G7HAQVCLkS2MyY/3R2G138=",
+        "narHash": "sha256-g7SKe9xJgn2q4LCx88mZhf+9O/CEy2foj3Z1WtBHHt0=",
         "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/compare/master...PerchunPak:nixpkgs:zellij-plugins.diff?full_index=1"
+        "url": "https://github.com/PerchunPak/nixpkgs/commit/574c03f1027a0c985cacadeef76f739ab0889a27.diff?full_index=1"
       },
       "original": {
         "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/compare/master...PerchunPak:nixpkgs:zellij-plugins.diff?full_index=1"
+        "url": "https://github.com/PerchunPak/nixpkgs/commit/574c03f1027a0c985cacadeef76f739ab0889a27.diff?full_index=1"
+      }
+    },
+    "nixpkgs-patch-20": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-KU+2N0eLUAw+h/DIbB84SxRWP0Fx+TrfexYSim8+bSg=",
+        "type": "file",
+        "url": "https://github.com/PerchunPak/nixpkgs/commit/bc9970a5ec55c9807c3a040c91ed4db72ae61ddb.diff?full_index=1"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/PerchunPak/nixpkgs/commit/bc9970a5ec55c9807c3a040c91ed4db72ae61ddb.diff?full_index=1"
+      }
+    },
+    "nixpkgs-patch-30": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-saPXuV0rjHreJeyeiIMXTgI+e5EPOME/Umg/IbJ/Jzs=",
+        "type": "file",
+        "url": "https://github.com/PerchunPak/nixpkgs/commit/236d5b8f240643c345e6380dc43b5d0976745c9e.diff?full_index=1"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/PerchunPak/nixpkgs/commit/236d5b8f240643c345e6380dc43b5d0976745c9e.diff?full_index=1"
       }
     },
     "nixpkgs-stable": {
@@ -291,6 +315,8 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "nixpkgs-patch-10": "nixpkgs-patch-10",
+        "nixpkgs-patch-20": "nixpkgs-patch-20",
+        "nixpkgs-patch-30": "nixpkgs-patch-30",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-upstream": "nixpkgs-upstream",
         "rycee-nur": "rycee-nur",
