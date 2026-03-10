@@ -1,24 +1,23 @@
 {
-  buildEnv,
+  linkFarmFromDrvs,
   inputs,
   pkgs,
-  system,
+  stdenv,
 }:
 let
+  inherit (stdenv.hostPlatform) system;
   nix-index-packages = import "${inputs.nix-index-database}/default.nix" { inherit pkgs; };
 in
-buildEnv {
-  name = "long-builds-to-cache";
-  paths = [
+linkFarmFromDrvs "long-builds-to-cache" (
+  (with pkgs; [
+    zellij
+    zellijPlugins.vim-zellij-navigator
+  ])
+  ++ [
     nix-index-packages.comma-with-db
   ]
   ++ (with inputs.catppuccin.packages.${system}; [
     whiskers
     cursors
   ])
-  ++ (with pkgs; [
-    zellij
-    zellijPlugins.vim-zellij-navigator
-  ]);
-  ignoreCollisions = true;
-}
+)
