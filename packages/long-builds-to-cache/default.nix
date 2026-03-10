@@ -15,6 +15,10 @@ buildEnv {
   ++ (with inputs.catppuccin.packages.${system}; [
     whiskers
     cursors
+  ])
+  ++ (with pkgs; [
+    zellij
+    zellijPlugins.vim-zellij-navigator
   ]);
   ignoreCollisions = true;
 }
