@@ -22,6 +22,7 @@ return {
             'TD003', -- Missing issue link for this TODO
             'TRY003', -- Avoid specifying long messages outside the exception class
             'ISC002', -- Multi line implicit string concatenation
+            'ISC003', -- Multi line explicit string concatenation
 
             'D100', -- Missing docstring in public module
             'D101', -- Missing docstring in public class
@@ -50,6 +51,9 @@ return {
         basedpyright = {
           analysis = {
             diagnosticMode = 'workspace',
+            diagnosticSeverityOverrides = {
+              reportImplicitStringConcatenation = 'none',
+            },
           },
         },
       },
