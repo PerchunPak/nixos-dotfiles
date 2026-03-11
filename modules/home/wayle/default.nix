@@ -25,7 +25,7 @@
               "systray"
               "clock"
               "keyboard-input"
-              "notification"
+              "notifications"
             ];
           }
         ];

@@ -221,11 +221,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1773155309,
-        "narHash": "sha256-3IJ2vLFbJ0RCL+6N5Y5gO+E4UYEm4lppD0d4qh/zlpc=",
+        "lastModified": 1773219513,
+        "narHash": "sha256-6soqIiK0wVcG+lOy4Y63pLS6z+qR6urKmqkR4xtzkOA=",
         "owner": "PerchunPak",
         "repo": "nixpkgs",
-        "rev": "e1fc681cd60352cdd4b0ac93afcc22267f7a26b6",
+        "rev": "32df96a5782cf6972717faf8c6798bbdaa494363",
         "type": "github"
       },
       "original": {
@@ -274,13 +274,13 @@
     "nixpkgs-patch-20": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-AOIjbgfafb51PPSSMHXMz/AlX/nmJIjBw+cgI1Ajj8c=",
+        "narHash": "sha256-AmImi4KRVASnj3rozaz9beoJLl/MDzFRL3SQjFe7al8=",
         "type": "file",
-        "url": "https://github.com/PerchunPak/nixpkgs/commit/282113d3b4787b9138fb5bc417d9655cf020fa38.diff?full_index=1"
+        "url": "https://github.com/PerchunPak/nixpkgs/commit/259890fe35b534bb701252ce62308126a1b1c203.diff?full_index=1"
       },
       "original": {
         "type": "file",
-        "url": "https://github.com/PerchunPak/nixpkgs/commit/282113d3b4787b9138fb5bc417d9655cf020fa38.diff?full_index=1"
+        "url": "https://github.com/PerchunPak/nixpkgs/commit/259890fe35b534bb701252ce62308126a1b1c203.diff?full_index=1"
       }
     },
     "nixpkgs-stable": {

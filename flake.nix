@@ -15,8 +15,8 @@
     # zellijPlugins: init
     nixpkgs-patch-12.url = "https://github.com/PerchunPak/nixpkgs/commit/236d5b8f240643c345e6380dc43b5d0976745c9e.diff?full_index=1";
     nixpkgs-patch-12.flake = false;
-    # wayle: init at 0-unstable-2026-03-10
-    nixpkgs-patch-20.url = "https://github.com/PerchunPak/nixpkgs/commit/282113d3b4787b9138fb5bc417d9655cf020fa38.diff?full_index=1";
+    # wayle: init at 0-unstable-2026-03-11
+    nixpkgs-patch-20.url = "https://github.com/PerchunPak/nixpkgs/commit/259890fe35b534bb701252ce62308126a1b1c203.diff?full_index=1";
     nixpkgs-patch-20.flake = false;
 
     # my icons and other binary files I need
