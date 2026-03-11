@@ -115,6 +115,8 @@ in
       "SHIFT, PRINT, exec, screenshot-edit.sh"
 
       # fn keys
+      ", code:232, exec, brightnessctl set 10%+"
+      ", code:233, exec, brightnessctl set 10%-"
       ", code:121, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ", code:122, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ", code:123, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"

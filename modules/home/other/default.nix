@@ -34,6 +34,7 @@
       (_7zz-rar.override { useUasm = false; })
       (mpv.override { youtubeSupport = false; })
       bintools
+      brightnessctl
       btdu # ncdu for btrfs
       cargo
       cargo-expand
