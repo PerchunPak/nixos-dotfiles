@@ -52,6 +52,7 @@ return {
           analysis = {
             diagnosticMode = 'workspace',
             diagnosticSeverityOverrides = {
+              reportAny = 'none',
               reportImplicitStringConcatenation = 'none',
             },
           },
