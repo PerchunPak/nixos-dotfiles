@@ -7,13 +7,13 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
 
     # pkgsCross.wasi32.buildPackages.rustc: fix build
-    nixpkgs-patch-10.url = "https://github.com/PerchunPak/nixpkgs/commit/7175b187bb6c6c407503be1703e950a26c460c80.diff?full_index=1";
+    nixpkgs-patch-10.url = "https://github.com/PerchunPak/nixpkgs/commit/6775837acffa29c932dd4a734198aa28d9c2770b.diff?full_index=1";
     nixpkgs-patch-10.flake = false;
     # zellij: rename package file name
     nixpkgs-patch-11.url = "https://github.com/PerchunPak/nixpkgs/commit/02a2ff6e3a2804528fbaef5d5fa6839c403d4473.diff?full_index=1";
     nixpkgs-patch-11.flake = false;
     # zellijPlugins: init
-    nixpkgs-patch-12.url = "https://github.com/PerchunPak/nixpkgs/commit/6775837acffa29c932dd4a734198aa28d9c2770b.diff?full_index=1";
+    nixpkgs-patch-12.url = "https://github.com/PerchunPak/nixpkgs/commit/7175b187bb6c6c407503be1703e950a26c460c80.diff?full_index=1";
     nixpkgs-patch-12.flake = false;
     # wayle: init at 0-unstable-2026-03-11
     nixpkgs-patch-20.url = "https://github.com/PerchunPak/nixpkgs/commit/648deaccdb4cc4daf614b9f1929592eb60a89301.diff?full_index=1";
