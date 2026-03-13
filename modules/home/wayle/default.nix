@@ -46,6 +46,8 @@
           style = "wave";
           direction = "mirror";
           left-click = "dropdown:media";
+          noise-reduction = 0.3;
+          monstercat = 0.5;
         };
         idle-inhibit = {
           label-show = false;
