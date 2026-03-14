@@ -31,9 +31,12 @@ jobs:
           ! git diff --exit-code
 
       - name: Update my fork
+        uses: Wandalen/wretry.action@v3.8.0
         if: steps.check.outcome == 'success'
-        run: |
-          nix run github:katrinafyi/nix-patcher
+        with:
+          command: nix run github:katrinafyi/nix-patcher
+          attempt_limit: 3
+          attempt_delay: 10000
         env:
           GITHUB_TOKEN: ${{ secrets.FORK_UPDATE_TOKEN }}
 
