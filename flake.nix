@@ -16,7 +16,7 @@
     nixpkgs-patch-12.url = "https://github.com/PerchunPak/nixpkgs/commit/872811dce3bb220f53de549df3f522d709c33725.diff?full_index=1";
     nixpkgs-patch-12.flake = false;
     # wayle: init at 0-unstable-2026-03-11
-    nixpkgs-patch-20.url = "https://github.com/PerchunPak/nixpkgs/commit/f483409d1aa9d07feb1daef0ecd1e446672d2bc1.diff?full_index=1";
+    nixpkgs-patch-20.url = "https://github.com/PerchunPak/nixpkgs/commit/c08d0ef932c289f5e23f32b5bfe67f22c2e44d0a.diff?full_index=1";
     nixpkgs-patch-20.flake = false;
 
     # my icons and other binary files I need
