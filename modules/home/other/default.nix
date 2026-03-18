@@ -7,6 +7,12 @@
   };
 
   home.file = {
+    ".config/tombi/config.toml".text =
+      # toml
+      ''
+        [lint.rules]
+        tables-out-of-order = "off"
+      '';
     ".config/qalculate/.keep".text = "";
     "Downloads/.keep".text = "";
   };
