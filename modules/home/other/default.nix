@@ -63,7 +63,6 @@
       pavucontrol
       rebar3
       rustc
-      signal-desktop
       tabiew
       tmux
       tor-browser
