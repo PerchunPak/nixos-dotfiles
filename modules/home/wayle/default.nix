@@ -56,7 +56,7 @@
         };
         keyboard-input = {
           icon-show = false;
-          language-name-map = {
+          layout-alias-map = {
             "English (US)" = "🇺🇸";
             "Czech (QWERTY)" = "🇨🇿";
             "Ukrainian" = "🇺🇦";
