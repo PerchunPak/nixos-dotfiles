@@ -69,6 +69,7 @@
       unzip
       wget
       wl-clipboard
+      xxd
       zip
     ]
     ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
