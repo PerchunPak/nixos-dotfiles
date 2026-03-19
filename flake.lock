@@ -274,13 +274,13 @@
     "nixpkgs-patch-20": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-4fz7RqNmtM3ZTH32H1tMOLCMh2zpL+NaHDFa3Mt/cAU=",
+        "narHash": "sha256-MLX3xYlE12nYJwdy3NDeirvXt9P1wk1HW15OAzhx8J4=",
         "type": "file",
-        "url": "https://github.com/PerchunPak/nixpkgs/commit/b918bae5eb3adc7f56cd0ba36b376f4e33f099b1.diff?full_index=1"
+        "url": "https://github.com/PerchunPak/nixpkgs/commit/e74327a46103e9b01f2951b8cdb4924ecb704465.diff?full_index=1"
       },
       "original": {
         "type": "file",
-        "url": "https://github.com/PerchunPak/nixpkgs/commit/b918bae5eb3adc7f56cd0ba36b376f4e33f099b1.diff?full_index=1"
+        "url": "https://github.com/PerchunPak/nixpkgs/commit/e74327a46103e9b01f2951b8cdb4924ecb704465.diff?full_index=1"
       }
     },
     "nixpkgs-stable": {
