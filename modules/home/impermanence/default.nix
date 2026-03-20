@@ -11,6 +11,7 @@
         ".cache/huggingface"
         ".cache/nix"
         ".claude"
+        ".config/Signal"
         ".config/asciinema"
         ".config/harper-ls"
         ".eclipse"
