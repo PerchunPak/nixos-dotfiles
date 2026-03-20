@@ -43,6 +43,7 @@
         };
         cava = {
           bars = 10;
+          framerate = 25;
           style = "wave";
           direction = "mirror";
           left-click = "dropdown:media";
