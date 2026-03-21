@@ -156,6 +156,22 @@
         "type": "github"
       }
     },
+    "gh-cherry-pick": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1774134412,
+        "narHash": "sha256-OtRlcKwQVqx4VuweProaxpAk8HA0FsK5+NbpuSaSYvc=",
+        "owner": "PerchunPak",
+        "repo": "gh-cherry-pick",
+        "rev": "a7559006573175b8e1f76c0b6c180ec85801d1ad",
+        "type": "github"
+      },
+      "original": {
+        "owner": "PerchunPak",
+        "repo": "gh-cherry-pick",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -235,54 +251,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-patch-10": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-ENPowxMlU6jCvzgRNQrWnSJKec86hx7JE3Gax5q4138=",
-        "type": "file",
-        "url": "https://github.com/PerchunPak/nixpkgs/commit/40ba0dffe22130e1d6112a7205507cc7e2d3ac1a.diff?full_index=1"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/PerchunPak/nixpkgs/commit/40ba0dffe22130e1d6112a7205507cc7e2d3ac1a.diff?full_index=1"
-      }
-    },
-    "nixpkgs-patch-11": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-KU+2N0eLUAw+h/DIbB84SxRWP0Fx+TrfexYSim8+bSg=",
-        "type": "file",
-        "url": "https://github.com/PerchunPak/nixpkgs/commit/ff7dc8bed1cb6fc15a4fd3f0b343d6e9372a2717.diff?full_index=1"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/PerchunPak/nixpkgs/commit/ff7dc8bed1cb6fc15a4fd3f0b343d6e9372a2717.diff?full_index=1"
-      }
-    },
-    "nixpkgs-patch-12": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-DIFOvt96Pzqu2oL2y8mw1ovbxYpGl76q1aGXjU0OVes=",
-        "type": "file",
-        "url": "https://github.com/PerchunPak/nixpkgs/commit/51d9e7e5c29384363510c24d3a6f2e936216533c.diff?full_index=1"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/PerchunPak/nixpkgs/commit/51d9e7e5c29384363510c24d3a6f2e936216533c.diff?full_index=1"
-      }
-    },
-    "nixpkgs-patch-20": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-078VK6Q3Ggq72eMRuiiIhN8SCBjbOYuWOqmrkvAc7gk=",
-        "type": "file",
-        "url": "https://github.com/PerchunPak/nixpkgs/commit/3c346496c4566f18f64dc7bf590a1e9462d9fff6.diff?full_index=1"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/PerchunPak/nixpkgs/commit/3c346496c4566f18f64dc7bf590a1e9462d9fff6.diff?full_index=1"
-      }
-    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1773964973,
@@ -322,14 +290,11 @@
         "ctp-trippy": "ctp-trippy",
         "disko": "disko",
         "flake-utils-plus": "flake-utils-plus",
+        "gh-cherry-pick": "gh-cherry-pick",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-patch-10": "nixpkgs-patch-10",
-        "nixpkgs-patch-11": "nixpkgs-patch-11",
-        "nixpkgs-patch-12": "nixpkgs-patch-12",
-        "nixpkgs-patch-20": "nixpkgs-patch-20",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-upstream": "nixpkgs-upstream",
         "rycee-nur": "rycee-nur",

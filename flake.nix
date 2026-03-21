@@ -6,19 +6,6 @@
     nixpkgs-upstream.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
 
-    # pkgsCross.wasi32.buildPackages.rustc: fix build
-    nixpkgs-patch-10.url = "https://github.com/PerchunPak/nixpkgs/commit/40ba0dffe22130e1d6112a7205507cc7e2d3ac1a.diff?full_index=1";
-    nixpkgs-patch-10.flake = false;
-    # zellij: rename package file name
-    nixpkgs-patch-11.url = "https://github.com/PerchunPak/nixpkgs/commit/ff7dc8bed1cb6fc15a4fd3f0b343d6e9372a2717.diff?full_index=1";
-    nixpkgs-patch-11.flake = false;
-    # zellijPlugins: init
-    nixpkgs-patch-12.url = "https://github.com/PerchunPak/nixpkgs/commit/51d9e7e5c29384363510c24d3a6f2e936216533c.diff?full_index=1";
-    nixpkgs-patch-12.flake = false;
-    # wayle: init at 0-unstable-2026-03-17
-    nixpkgs-patch-20.url = "https://github.com/PerchunPak/nixpkgs/commit/3c346496c4566f18f64dc7bf590a1e9462d9fff6.diff?full_index=1";
-    nixpkgs-patch-20.flake = false;
-
     # my icons and other binary files I need
     storage = {
       url = "github:PerchunPak/storage";
@@ -82,6 +69,11 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
+    };
+
+    gh-cherry-pick = {
+      url = "github:PerchunPak/gh-cherry-pick";
+      flake = false;
     };
   };
 

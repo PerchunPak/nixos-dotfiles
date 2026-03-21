@@ -34,7 +34,23 @@ jobs:
         uses: Wandalen/wretry.action@v3.8.0
         if: steps.check.outcome == 'success'
         with:
-          command: nix run github:katrinafyi/nix-patcher
+          command: |
+            nixpkgs_rev=$(
+              nix flake metadata --json \
+                | jq -er '.locks.nodes."nixpkgs-upstream".locked.rev'
+            )
+
+            nix run .#gh-cherry-pick -- \
+              --target PerchunPak/nixpkgs/patched \
+              --first-hard-reset-to "NixOS/nixpkgs/$nixpkgs_rev" \
+              `: # pkgsCross.wasi32.buildPackages.rustc: fix build` \
+              PerchunPak/nixpkgs/40ba0dffe22130e1d6112a7205507cc7e2d3ac1a \
+              `: # zellij: rename package file name` \
+              PerchunPak/nixpkgs/ff7dc8bed1cb6fc15a4fd3f0b343d6e9372a2717 \
+              `: # zellijPlugins: init` \
+              PerchunPak/nixpkgs/51d9e7e5c29384363510c24d3a6f2e936216533c \
+              `: # wayle: init at 0-unstable-2026-03-17` \
+              PerchunPak/nixpkgs/3c346496c4566f18f64dc7bf590a1e9462d9fff6
           attempt_limit: 3
           attempt_delay: 10000
         env:
