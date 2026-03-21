@@ -7,16 +7,16 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
 
     # pkgsCross.wasi32.buildPackages.rustc: fix build
-    nixpkgs-patch-10.url = "https://github.com/PerchunPak/nixpkgs/commit/aa2356dc65ff1b5798a2453f764dae4f706bc5e0.diff?full_index=1";
+    nixpkgs-patch-10.url = "https://github.com/PerchunPak/nixpkgs/commit/40ba0dffe22130e1d6112a7205507cc7e2d3ac1a.diff?full_index=1";
     nixpkgs-patch-10.flake = false;
     # zellij: rename package file name
-    nixpkgs-patch-11.url = "https://github.com/PerchunPak/nixpkgs/commit/5b42d84065933a04fc9b0b36704bdcae6ca01bc0.diff?full_index=1";
+    nixpkgs-patch-11.url = "https://github.com/PerchunPak/nixpkgs/commit/ff7dc8bed1cb6fc15a4fd3f0b343d6e9372a2717.diff?full_index=1";
     nixpkgs-patch-11.flake = false;
     # zellijPlugins: init
-    nixpkgs-patch-12.url = "https://github.com/PerchunPak/nixpkgs/commit/241fd794077b0b605507c5028d6c46d1f52075fe.diff?full_index=1";
+    nixpkgs-patch-12.url = "https://github.com/PerchunPak/nixpkgs/commit/51d9e7e5c29384363510c24d3a6f2e936216533c.diff?full_index=1";
     nixpkgs-patch-12.flake = false;
     # wayle: init at 0-unstable-2026-03-17
-    nixpkgs-patch-20.url = "https://github.com/PerchunPak/nixpkgs/commit/e74327a46103e9b01f2951b8cdb4924ecb704465.diff?full_index=1";
+    nixpkgs-patch-20.url = "https://github.com/PerchunPak/nixpkgs/commit/34af28676ae15918809b49963529deb70c6c741b.diff?full_index=1";
     nixpkgs-patch-20.flake = false;
 
     # my icons and other binary files I need
