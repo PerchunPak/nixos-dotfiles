@@ -25,7 +25,7 @@
       cat "$1"1 > "$1"
     '')
 
-    (pkgs.writeShellScriptBin "modify-undo" ''
+    (pkgs.writeShellScriptBin "modifyu" ''
       set -ex
       mv "$1" "$1".modified
       mv "$1"1 "$1"
