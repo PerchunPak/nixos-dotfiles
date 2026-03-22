@@ -35,11 +35,12 @@ jobs:
         if: steps.check.outcome == 'success'
         with:
           command: |
+            nix flake update gh-cherry-pick
+
             nixpkgs_rev=$(
               nix flake metadata --json \
                 | jq -er '.locks.nodes."nixpkgs-upstream".locked.rev'
             )
-
             nix run .#gh-cherry-pick -- \
               --target PerchunPak/nixpkgs/patched \
               --first-hard-reset-to "NixOS/nixpkgs/$nixpkgs_rev" \
@@ -55,6 +56,8 @@ jobs:
           attempt_delay: 10000
         env:
           GITHUB_TOKEN: ${{ secrets.FORK_UPDATE_TOKEN }}
+
+      - run: git reset --hard HEAD
 
       - name: Update flake.lock
         if: steps.check.outcome == 'success'
