@@ -2,7 +2,7 @@
 {
   imports = [ ./module.nix ];
 
-  programs.wayle = {
+  services.wayle = {
     enable = true;
 
     settings = {
