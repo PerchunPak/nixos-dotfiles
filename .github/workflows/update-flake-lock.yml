@@ -51,7 +51,7 @@ jobs:
               `: # zellijPlugins: init` \
               PerchunPak/nixpkgs/51d9e7e5c29384363510c24d3a6f2e936216533c \
               `: # wayle: init at 0-unstable-2026-03-23` \
-              PerchunPak/nixpkgs/a1227bd08a81848b498913ed473d943d1bcbecd2
+              PerchunPak/nixpkgs/128e0cc8a01b93c335e2b41365896f0292e58514
           attempt_limit: 3
           attempt_delay: 10000
         env:
