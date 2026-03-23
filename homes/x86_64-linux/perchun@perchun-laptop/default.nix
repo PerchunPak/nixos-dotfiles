@@ -6,8 +6,12 @@
   };
 
   my = {
-    # gaming.additional-games = with pkgs; [ xonotic ];
     setup-stuff.backlight.command = "${lib.getExe pkgs.brightnessctl} s 40%";
+    gaming = {
+      # additional-games = with pkgs; [ xonotic ];
+      minecraft.enable = false;
+      satisfactory.enable = false;
+    };
   };
 
   # `allowUnfree` for experimental nix commands

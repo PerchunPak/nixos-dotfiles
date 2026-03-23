@@ -16,7 +16,7 @@ in
     };
   };
 
-  config = lib.mkIf cfg.minecraft.enable {
+  config = lib.mkIf cfg.satisfactory.enable {
     home.packages = with pkgs; [ satisfactorymodmanager ];
 
     my.persistence.directories = [
