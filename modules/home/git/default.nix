@@ -8,6 +8,7 @@
   programs.git = {
     enable = true;
     signing = {
+      format = "openpgp";
       key = "313F67D1EAB770F9";
       signByDefault = true;
     };

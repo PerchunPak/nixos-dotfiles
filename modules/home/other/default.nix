@@ -1,4 +1,9 @@
-{ pkgs, nixosConfig, ... }:
+{
+  lib,
+  pkgs,
+  nixosConfig,
+  ...
+}:
 {
   home.sessionVariables = {
     # Run Electron apps natively on Wayland
@@ -18,6 +23,7 @@
   };
 
   gtk.enable = true;
+  gtk.gtk4.theme = lib.mkDefault null;
 
   programs = {
     bat.enable = true;
