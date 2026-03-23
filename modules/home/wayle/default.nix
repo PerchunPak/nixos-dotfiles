@@ -40,6 +40,7 @@
           app-icons-show = true;
           monitor-specific = false;
           show-special = false;
+          urgent-show = false;
         };
         cava = {
           bars = 10;
