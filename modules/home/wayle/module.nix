@@ -122,11 +122,21 @@ in
 
       # Systemd service for main wayle shell.
       systemd.user.services.wayle = {
-        Unit.Description = "Wayle - Shell";
-        Install.WantedBy = [ "graphical-session.target" ];
+        Unit = {
+          Description = "Wayland Elements - A compositor agnostic shell with extensive customization";
+          Documentation = "https://github.com/Jas-SinghFSU/wayle";
+          PartOf = [ config.wayland.systemd.target ];
+          After = [ config.wayland.systemd.target ];
+          ConditionEnvironment = "WAYLAND_DISPLAY";
+        };
+
         Service = {
-          ExecStart = "${getExe' cfg.package "wayle-shell"}";
+          ExecStart = "${cfg.package}/bin/wayle-shell";
           Restart = "on-failure";
+        };
+
+        Install = {
+          WantedBy = [ config.wayland.systemd.target ];
         };
       };
 
