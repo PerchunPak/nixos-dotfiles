@@ -72,6 +72,7 @@ inputs:
           indent-blankline-nvim
           kulala-nvim
           lazydev-nvim
+          lualine-nvim
           luvit-meta
           mini-nvim
           nvim-lspconfig
