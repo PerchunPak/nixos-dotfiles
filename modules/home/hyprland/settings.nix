@@ -148,7 +148,7 @@ in
 
     windowrule = [
       "match:class ^zen-beta$, workspace 1 silent"
-      "match:class ^legcord$, workspace 3 silent"
+      "match:title ^Legcord$, workspace 3 silent"
       "match:title ^Steam$, workspace 4 silent" # the dialog that updates steam on startup
       "match:class ^steam$, workspace 4 silent"
       "match:class ^heroic$, workspace 4 silent"
