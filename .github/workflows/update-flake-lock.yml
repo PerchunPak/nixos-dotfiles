@@ -44,14 +44,8 @@ jobs:
             nix run .#gh-cherry-pick -- \
               --target PerchunPak/nixpkgs@patched \
               --first-hard-reset-to "NixOS/nixpkgs/$nixpkgs_rev" \
-              `: # pkgsCross.wasi32.buildPackages.rustc: fix build` \
-              PerchunPak/nixpkgs/40ba0dffe22130e1d6112a7205507cc7e2d3ac1a \
-              `: # zellij: rename package file name` \
-              PerchunPak/nixpkgs/ff7dc8bed1cb6fc15a4fd3f0b343d6e9372a2717 \
-              `: # zellijPlugins: init` \
-              PerchunPak/nixpkgs/51d9e7e5c29384363510c24d3a6f2e936216533c \
-              `: # wayle: init at 0-unstable-2026-03-23` \
-              PerchunPak/nixpkgs/128e0cc8a01b93c335e2b41365896f0292e58514
+              PerchunPak/nixpkgs@zellij-plugins \
+              PerchunPak/nixpkgs@wayle
           attempt_limit: 3
           attempt_delay: 10000
         env:

@@ -159,11 +159,11 @@
     "gh-cherry-pick": {
       "flake": false,
       "locked": {
-        "lastModified": 1774266927,
-        "narHash": "sha256-QtlKH7VdsFtic1LxWDzwu40Io9FMJy6O2QRc1M/vg6Q=",
+        "lastModified": 1774280174,
+        "narHash": "sha256-RtbgEsyd/zZrBGINpamhi3G2Oay8to18Q3jECSfNw90=",
         "owner": "PerchunPak",
         "repo": "gh-cherry-pick",
-        "rev": "29a5382b17d088b98053ba8bb71b71adcd9bc061",
+        "rev": "1efe92a0a292c3c9e2154b8d218656808822d66e",
         "type": "github"
       },
       "original": {
@@ -237,11 +237,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1774274425,
-        "narHash": "sha256-e7aXcn1o3smRmRXSRt+ZjQ722aT1kjqr0ILWgAxgEYw=",
+        "lastModified": 1774442103,
+        "narHash": "sha256-V6vpIfs6WBHnSIfis8Q2ZFBHX//fGgGkpgUgpLRpOPw=",
         "owner": "PerchunPak",
         "repo": "nixpkgs",
-        "rev": "99504568f7cede4d4fd7e601601105e0fd07b5b8",
+        "rev": "67fa4a2a39cab8ff178ea320c7cea3e953304451",
         "type": "github"
       },
       "original": {
