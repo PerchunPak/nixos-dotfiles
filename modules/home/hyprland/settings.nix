@@ -54,7 +54,7 @@ in
     exec-once = [
       "uwsm app -s b -- swaybg"
       "uwsm app -- zen-beta"
-      "uwsm app -- legcord"
+      "uwsm app -- equibop"
       "[workspace special:btop silent] uwsm app -- alacritty -e btop"
     ]
     ++ (lib.lists.optional (!nixosConfig.my.economInternetTraffic) "uwsm app -s b -- variety");
@@ -75,9 +75,6 @@ in
       "SUPER, B, exec, variety --next"
       "SUPER, P, pin"
       "ALT, F8, exec, ${autoclicker-script}"
-      "SUPER, F9, exec, hyprpanel toggleWindow settings-dialog"
-      "SUPER, F10, exec, bash -c 'pgrep legcord -f | xargs kill'"
-      "SUPER, F11, exec, bash -c 'pgrep hyprpanel -f | xargs kill -9 && systemctl --user start hyprpanel'"
       "SUPER SHIFT, B, exec, variety --previous"
 
       # Move focus with mainMod + arrow keys
@@ -148,7 +145,7 @@ in
 
     windowrule = [
       "match:class ^zen-beta$, workspace 1 silent"
-      "match:title ^Legcord$, workspace 3 silent"
+      "match:title ^Discord$, workspace 3 silent"
       "match:title ^Steam$, workspace 4 silent" # the dialog that updates steam on startup
       "match:class ^steam$, workspace 4 silent"
       "match:class ^heroic$, workspace 4 silent"
