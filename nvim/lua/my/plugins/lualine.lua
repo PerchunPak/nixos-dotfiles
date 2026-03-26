@@ -17,12 +17,18 @@ return {
             padding = { left = 0, right = 1 },
           },
         },
+        lualine_c = {
+          { 'filename', path = 1 },
+        },
         lualine_x = { 'filetype' },
         lualine_y = {},
       },
       inactive_sections = {
         lualine_a = { 'searchcount' },
         lualine_b = { 'lsp_status' },
+        lualine_c = {
+          { 'filename', path = 3 },
+        },
         lualine_x = { 'filetype', 'location' },
       },
     }
