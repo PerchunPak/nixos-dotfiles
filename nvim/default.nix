@@ -74,6 +74,7 @@ inputs:
           lazydev-nvim
           lualine-nvim
           luvit-meta
+          markview-nvim
           mini-nvim
           nvim-lspconfig
           nvim-treesitter-context
