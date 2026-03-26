@@ -78,7 +78,7 @@ return {
       },
       inactive_sections = {
         lualine_a = { 'searchcount' },
-        lualine_b = { 'lsp_status' },
+        lualine_b = {},
         lualine_c = {
           { 'filename', path = 3 },
         },
