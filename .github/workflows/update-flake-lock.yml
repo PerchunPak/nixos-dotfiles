@@ -34,18 +34,7 @@ jobs:
         uses: Wandalen/wretry.action@v3.8.0
         if: steps.check.outcome == 'success'
         with:
-          command: |
-            nix flake update gh-cherry-pick
-
-            nixpkgs_rev=$(
-              nix flake metadata --json \
-                | jq -er '.locks.nodes."nixpkgs-upstream".locked.rev'
-            )
-            nix run .#gh-cherry-pick -- \
-              --target PerchunPak/nixpkgs@patched \
-              --first-hard-reset-to "NixOS/nixpkgs/$nixpkgs_rev" \
-              PerchunPak/nixpkgs@zellij-plugins \
-              PerchunPak/nixpkgs@wayle
+          command: ./.github/update_nixpkgs_fork.sh
           attempt_limit: 3
           attempt_delay: 10000
         env:
