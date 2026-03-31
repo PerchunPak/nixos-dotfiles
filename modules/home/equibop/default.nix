@@ -935,36 +935,6 @@
         PictureInPicture = {
           enabled = false;
         };
-        PinDMs = {
-          canCollapseDmSection = false;
-          enabled = true;
-          pinOrder = 0;
-          userBasedCategoryList = {
-            "1212520390610395179" = [ ];
-            "379353300887273472" = [
-              {
-                channels = [
-                  "1378624549469425764"
-                  "1434151077506453544"
-                  "1389685650239914206"
-                  "1420450739737722891"
-                  "1351827681129271326"
-                ];
-                collapsed = false;
-                color = 10070709;
-                id = "dqj7hmjxw5q";
-                name = "work";
-              }
-              {
-                channels = [ "1113167740124024924" ];
-                collapsed = false;
-                color = 10070709;
-                id = "6285jppcl5q";
-                name = "personal";
-              }
-            ];
-          };
-        };
         PinIcon = {
           enabled = true;
         };
