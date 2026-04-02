@@ -45,6 +45,7 @@
     [
       (_7zz-rar.override { useUasm = false; })
       (mpv.override { youtubeSupport = false; })
+      ansifilter
       bintools
       brightnessctl
       btdu # ncdu for btrfs
