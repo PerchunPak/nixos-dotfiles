@@ -36,10 +36,6 @@
     ripgrep.enable = true;
   };
 
-  my.persistence.directories = [
-    ".config/hcloud"
-  ];
-
   home.packages =
     with pkgs;
     [
@@ -59,7 +55,6 @@
       gleam
       gnumake
       gparted
-      hcloud
       hyprshutdown
       libnotify
       meld
