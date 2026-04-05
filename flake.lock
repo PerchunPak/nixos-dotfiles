@@ -45,22 +45,6 @@
         "type": "github"
       }
     },
-    "ctp-trippy": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1768224646,
-        "narHash": "sha256-Y0kQ3K7TQG84xthLcZHn+BFtLtsi4G4uKYPEcRe9iPA=",
-        "owner": "PerchunPak",
-        "repo": "ctp-trippy",
-        "rev": "6381b6b91447a6443737d982329e21b257e93660",
-        "type": "github"
-      },
-      "original": {
-        "owner": "PerchunPak",
-        "repo": "ctp-trippy",
-        "type": "github"
-      }
-    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -287,7 +271,6 @@
       "inputs": {
         "agenix": "agenix",
         "catppuccin": "catppuccin",
-        "ctp-trippy": "ctp-trippy",
         "disko": "disko",
         "flake-utils-plus": "flake-utils-plus",
         "gh-cherry-pick": "gh-cherry-pick",
