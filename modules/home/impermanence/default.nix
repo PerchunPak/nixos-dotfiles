@@ -9,10 +9,12 @@
       directories = [
         ".cache/huggingface"
         ".cache/nix"
+        ".config/Actual"
         ".config/Signal"
         ".config/asciinema"
         ".config/harper-ls"
         ".eclipse"
+        ".local/share/Actual"
         ".local/share/DBeaverData"
         ".local/share/Steam"
         ".local/share/docker"
