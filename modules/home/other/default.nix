@@ -40,6 +40,7 @@
     [
       (_7zz-rar.override { useUasm = false; })
       (mpv.override { youtubeSupport = false; })
+      actual-client
       ansifilter
       bintools
       brightnessctl
