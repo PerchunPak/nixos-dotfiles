@@ -7,10 +7,8 @@
   config = {
     my.persistence = {
       directories = [
-        ".cache/claude-cli-nodejs"
         ".cache/huggingface"
         ".cache/nix"
-        ".claude"
         ".config/Signal"
         ".config/asciinema"
         ".config/harper-ls"
@@ -26,7 +24,6 @@
         "dotfiles"
         "persistent"
       ];
-      files = [ ".claude.json" ];
     };
   };
 }

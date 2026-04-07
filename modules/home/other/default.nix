@@ -28,7 +28,6 @@
   programs = {
     bat.enable = true;
     chromium.enable = true;
-    claude-code.enable = true;
     eza.enable = true;
     htop.enable = true;
     jq.enable = true;
