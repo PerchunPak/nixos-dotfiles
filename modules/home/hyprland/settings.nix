@@ -55,6 +55,7 @@ in
       "uwsm app -s b -- swaybg"
       "uwsm app -- zen-beta"
       "uwsm app -- equibop"
+      "uwsm app -- steam"
       "[workspace special:btop silent] uwsm app -- alacritty -e btop"
     ]
     ++ (lib.lists.optional (!nixosConfig.my.economInternetTraffic) "uwsm app -s b -- variety");
