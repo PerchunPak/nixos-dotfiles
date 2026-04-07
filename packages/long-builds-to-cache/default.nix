@@ -14,6 +14,10 @@ linkFarmFromDrvs "long-builds-to-cache" (
     wayle
     zellij
     zellijPlugins.vim-zellij-navigator
+
+    # OBS gets modified by `cudaSupport = true` and cuda's cache is updated
+    # once a week
+    obs-studio
   ])
   ++ [
     nix-index-packages.comma-with-db
