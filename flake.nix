@@ -66,11 +66,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-
-    gh-cherry-pick = {
-      url = "github:PerchunPak/gh-cherry-pick";
-      flake = false;
-    };
   };
 
   outputs =
