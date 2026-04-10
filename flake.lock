@@ -140,6 +140,22 @@
         "type": "github"
       }
     },
+    "gh-cherry-pick": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1775834548,
+        "narHash": "sha256-+Tfd3M9vrqXB1IwDs1z5O8TBXYXXIqdnen4JvFOgCAI=",
+        "owner": "PerchunPak",
+        "repo": "gh-cherry-pick",
+        "rev": "29ad2083d6aba179d696350e0179edbcc8c085c7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "PerchunPak",
+        "repo": "gh-cherry-pick",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -257,6 +273,7 @@
         "catppuccin": "catppuccin",
         "disko": "disko",
         "flake-utils-plus": "flake-utils-plus",
+        "gh-cherry-pick": "gh-cherry-pick",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
         "nix-index-database": "nix-index-database",
