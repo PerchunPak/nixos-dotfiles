@@ -10,6 +10,7 @@ let
 in
 linkFarmFromDrvs "long-builds-to-cache" (
   (with pkgs; [
+    actual-client
     trippy
     wayle
     zellij
