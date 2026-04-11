@@ -283,6 +283,7 @@
         "rycee-nur": "rycee-nur",
         "snowfall-lib": "snowfall-lib",
         "storage": "storage",
+        "wayle": "wayle",
         "wrappers": "wrappers",
         "zen-browser": "zen-browser"
       }
@@ -371,6 +372,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "wayle": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1775275163,
+        "narHash": "sha256-hHkMTEBZ3LGS43DzSIO6oXj7w8d8AC2rcJ2uasMv76Q=",
+        "owner": "wayle-rs",
+        "repo": "wayle",
+        "rev": "6d23a44a1f1e95a97c73db7f63b216ec86dc6d61",
+        "type": "github"
+      },
+      "original": {
+        "owner": "wayle-rs",
+        "repo": "wayle",
         "type": "github"
       }
     },

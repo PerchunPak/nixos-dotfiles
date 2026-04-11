@@ -71,6 +71,11 @@
       url = "github:PerchunPak/gh-cherry-pick";
       flake = false;
     };
+
+    wayle = {
+      url = "github:wayle-rs/wayle";
+      flake = false;
+    };
   };
 
   outputs =
