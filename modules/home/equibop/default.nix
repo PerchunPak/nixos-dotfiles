@@ -1,10 +1,12 @@
 {
   imports = [ ./module.nix ];
 
+  services.arrpc.enable = true;
+
   programs.equibop = {
     enable = true;
     settings = {
-      arRPC = false;
+      arRPC = true;
       discordBranch = "stable";
       minimizeToTray = false;
     };
