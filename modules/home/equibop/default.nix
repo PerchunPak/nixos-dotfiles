@@ -17,7 +17,7 @@
       cloud = {
         authenticated = false;
         settingsSync = false;
-        settingsSyncVersion = 1774438444129;
+        settingsSyncVersion = 1776081300451;
         url = "https://cloud.equicord.org/";
       };
       disableMinSize = false;
@@ -369,6 +369,9 @@
         ElementHighlighter = {
           enabled = false;
         };
+        EquibopStreamFixes = {
+          enabled = false;
+        };
         EquicordHelper = {
           accountStandingButton = false;
           disableAdoptTagPrompt = true;
@@ -718,6 +721,7 @@
           ignoreChannels = "";
           ignoreGuilds = "";
           ignoreSelf = false;
+          ignoreSelfEdits = false;
           ignoreUsers = "";
           inlineEdits = true;
           logDeletes = true;
@@ -937,6 +941,9 @@
         PictureInPicture = {
           enabled = false;
         };
+        PinDMs = {
+          enabled = false;
+        };
         PinIcon = {
           enabled = true;
         };
@@ -1044,7 +1051,7 @@
           };
           triggerQuestsRerender = false;
           unclaimedSubsort = "Expiring ASC";
-          unclaimedUnignoredQuests = 4;
+          unclaimedUnignoredQuests = 3;
         };
         QuestionMarkReplacement = {
           enabled = false;
@@ -1536,6 +1543,7 @@
           enabled = false;
         };
       };
+      themeActivationModes = { };
       themeLinks = [ ];
       themeNames = { };
       transparent = false;
