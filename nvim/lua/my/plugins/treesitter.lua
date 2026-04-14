@@ -3,8 +3,10 @@ return {
     'nvim-treesitter',
     lazy = false,
     after = function()
+      local nix_info = require(vim.g.nix_info_plugin_name)
+      local grammars_dir = nix_info.plugins.start.COLLATED_TS_GRAMMARS
       require('nvim-treesitter').setup {
-        install_dir = '/nix/store/f0wddl5kywsnszix4g3qldfcxzf3zm6r-vim-pack-dir/pack/myNeovimGrammars/start/vimplugin-treesitter-grammar-ALL-INCLUDED/',
+        install_dir = grammars_dir,
       }
 
       vim.api.nvim_create_autocmd('FileType', {
