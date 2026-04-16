@@ -16,9 +16,26 @@ in
   ];
 
   config = {
-    boot.initrd.postDeviceCommands =
-      lib.mkAfter # bash
-        ''
+    boot.initrd.systemd = {
+      initrdBin = with pkgs; [
+        btrfs-progs
+        coreutils
+        util-linux
+        findutils
+      ];
+
+      services.prune-subvolumes = {
+        wantedBy = [ "initrd.target" ];
+        after = [ "initrd-root-device.target" ];
+        before = [ "sysroot.mount" ];
+        unitConfig.DefaultDependencies = "no";
+        serviceConfig = {
+          Type = "oneshot";
+          # also print to TTY
+          StandardOutput = "journal+console";
+          StandardError = "journal+console";
+        };
+        script = ''
           mkdir /btrfs_tmp
           mount /dev/mapper/root_vg-root /btrfs_tmp
           if [[ -e /btrfs_tmp/root ]]; then
@@ -42,6 +59,8 @@ in
           btrfs subvolume create /btrfs_tmp/root
           umount /btrfs_tmp
         '';
+      };
+    };
 
     # Ensure that all files are properly chowned
     # https://github.com/Misterio77/nix-config/blob/61aa0ab5e26c528eb6be98dee1a8b9061003bf2e/hosts/common/global/optin-persistence.nix#L29-L38
