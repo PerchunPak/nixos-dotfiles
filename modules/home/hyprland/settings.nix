@@ -54,7 +54,7 @@ in
     exec-once = [
       "uwsm app -s b -- swaybg"
       "uwsm app -- zen-beta"
-      "uwsm app -- equibop"
+      "[workspace 3 silent] uwsm app -- equibop"
       "uwsm app -- steam"
       "[workspace special:btop silent] uwsm app -- alacritty -e btop"
     ]
