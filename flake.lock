@@ -221,11 +221,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1776311929,
-        "narHash": "sha256-LEHVVELqu2gZaGHmDf1QwGr7cZYv9v5p+52dWfeYtVs=",
+        "lastModified": 1776431704,
+        "narHash": "sha256-hV0Yx78HYuKqZjm5+4LWqCFf0DcMbPCv6fUgRK61Lls=",
         "owner": "PerchunPak",
         "repo": "nixpkgs",
-        "rev": "d875972748cdec4785ea10fb2c81f29b7997a02f",
+        "rev": "b576a6a128f0d1da88c16f55e4d7682058522080",
         "type": "github"
       },
       "original": {
@@ -378,11 +378,11 @@
     "wayle": {
       "flake": false,
       "locked": {
-        "lastModified": 1776156921,
-        "narHash": "sha256-MsQ8OlBO4W8woVy3jjW40zF/D2ZALexcKQp7kubcRIU=",
+        "lastModified": 1776399382,
+        "narHash": "sha256-YzDrvCTPuCOCkq0A79IHP+LYZ7ev3IpmWkk6sHuwDts=",
         "owner": "wayle-rs",
         "repo": "wayle",
-        "rev": "0d7184356d0be34c95505a43c4fdd96f1f3e9303",
+        "rev": "ea85d960ac7a319feef1f62b008ce289ffa729c4",
         "type": "github"
       },
       "original": {
