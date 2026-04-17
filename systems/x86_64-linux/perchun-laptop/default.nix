@@ -16,6 +16,7 @@
       "HDMI-A-1,1920x1080@60,1920x0,1"
     ];
     ydotool.enable = true;
+    # flatpak.enable = true;
   };
 
   services.power-profiles-daemon.enable = true;
