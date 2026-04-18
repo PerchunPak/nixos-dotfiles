@@ -11,7 +11,7 @@
       };
       font = {
         normal = {
-          family = "MesloLGS NF";
+          family = "MesloLGS Nerd Font";
           style = "Regular";
         };
         size = 13.0;

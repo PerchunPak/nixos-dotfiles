@@ -11,7 +11,7 @@
         disable-notifications = true;
         copy-command = "wl-copy";
       };
-      font.family = "MesloLGS NF Regular";
+      font.family = "MesloLGS Nerd Font Regular";
       color-palette = {
         palette = [
           "#f38ba8" # red
