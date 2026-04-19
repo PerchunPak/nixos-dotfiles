@@ -10,7 +10,6 @@ nix run ".#pkgs.$system.nixpkgs.gh-cherry-pick" -- \
   --target PerchunPak/nixpkgs@patched \
   --first-hard-reset-to "NixOS/nixpkgs/$nixpkgs_rev" \
   PerchunPak/nixpkgs@zellij-plugins \
-  PerchunPak/nixpkgs@wayle \
   PerchunPak/nixpkgs@actual
 
 nix flake update nixpkgs
