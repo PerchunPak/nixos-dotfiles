@@ -67,11 +67,15 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    nix-diff-rs = {
+      url = "github:Mic92/nix-diff-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     gh-cherry-pick = {
       url = "github:PerchunPak/gh-cherry-pick";
       flake = false;
     };
-
     wayle = {
       url = "github:wayle-rs/wayle";
       flake = false;

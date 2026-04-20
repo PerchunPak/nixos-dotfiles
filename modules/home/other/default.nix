@@ -2,8 +2,12 @@
   lib,
   pkgs,
   nixosConfig,
+  inputs,
   ...
 }:
+let
+  inherit (pkgs.stdenv.hostPlatform) system;
+in
 {
   home.sessionVariables = {
     # Run Electron apps natively on Wayland
@@ -38,6 +42,7 @@
   home.packages =
     with pkgs;
     [
+      inputs.nix-diff-rs.packages.${system}.default
       (_7zz-rar.override { useUasm = false; })
       (mpv.override { youtubeSupport = false; })
       actual-client
