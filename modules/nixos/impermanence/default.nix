@@ -25,10 +25,13 @@ in
       ];
 
       services.prune-subvolumes = {
-        wantedBy = [ "initrd.target" ];
-        after = [ "initrd-root-device.target" ];
-        before = [ "sysroot.mount" ];
-        unitConfig.DefaultDependencies = "no";
+        requiredBy = [ "initrd.target" ];
+        before = [ "local-fs-pre.target" ];
+        after = [
+          "initrd-root-device.target"
+          "systemd-hibernate-resume.service"
+        ];
+        unitConfig.DefaultDependencies = false;
         serviceConfig = {
           Type = "oneshot";
           # also print to TTY
@@ -46,6 +49,13 @@ in
 
           delete_subvolume_recursively() {
             IFS=$'\n'
+
+            # If we accidentally end up with a file or directory under old_roots,
+            # the code will enumerate all subvolumes under the main volume.
+            # We don't want to remove everything under true main volume. Only
+            # proceed if this path is a btrfs subvolume (inode=256).
+            if [ $(stat -c %i "$1") -ne 256 ]; then return; fi
+
             for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
               delete_subvolume_recursively "/btrfs_tmp/$i"
             done
