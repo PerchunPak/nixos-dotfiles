@@ -61,6 +61,7 @@ in
       gnumake
       gparted
       hyprshutdown
+      kdePackages.kate
       libnotify
       meld
       mtr
