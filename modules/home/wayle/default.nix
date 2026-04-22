@@ -1,7 +1,5 @@
 { inputs, ... }:
 {
-  imports = [ ./module.nix ];
-
   services.wayle = {
     enable = true;
 

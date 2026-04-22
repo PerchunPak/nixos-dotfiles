@@ -1,6 +1,4 @@
 {
-  imports = [ ./module.nix ];
-
   services.arrpc.enable = true;
 
   programs.equibop = {
