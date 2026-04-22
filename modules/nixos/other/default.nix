@@ -6,6 +6,10 @@
     trippy.enable = true;
   };
 
+  services = {
+    atd.enable = true;
+  };
+
   security.sudo.extraConfig = ''
     Defaults pwfeedback
     Defaults insults
