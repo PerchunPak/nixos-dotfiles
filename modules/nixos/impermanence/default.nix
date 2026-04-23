@@ -52,6 +52,7 @@ in
             mkdir -p $MOUNTDIR/old_roots
             timestamp=$(date --date="@$(stat -c %Y $MOUNTDIR/root)" "+%Y-%m-%-d_%H:%M:%S")
             mv $MOUNTDIR/root "$MOUNTDIR/old_roots/$timestamp"
+            btrfs property set "$MOUNTDIR/old_roots/$timestamp" ro true
           fi
 
           echo "Deleting old subvolumes"
