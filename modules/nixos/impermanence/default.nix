@@ -39,35 +39,30 @@ in
           StandardError = "journal+console";
         };
         script = ''
-          mkdir /btrfs_tmp
-          mount /dev/mapper/root_vg-root /btrfs_tmp
-          if [[ -e /btrfs_tmp/root ]]; then
-            mkdir -p /btrfs_tmp/old_roots
-            timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
-            mv /btrfs_tmp/root "/btrfs_tmp/old_roots/$timestamp"
+          set -e
+          MOUNTDIR=/mnt
+          BTRFS_VOL=/dev/mapper/root_vg-root
+
+          echo "Mounting btrfs..."
+          mkdir -p $MOUNTDIR
+          mount -t btrfs -o subvol=/,user_subvol_rm_allowed $BTRFS_VOL $MOUNTDIR
+
+          if [[ -e $MOUNTDIR/root ]]; then
+            echo "Moving existing root to the old_roots directory..."
+            mkdir -p $MOUNTDIR/old_roots
+            timestamp=$(date --date="@$(stat -c %Y $MOUNTDIR/root)" "+%Y-%m-%-d_%H:%M:%S")
+            mv $MOUNTDIR/root "$MOUNTDIR/old_roots/$timestamp"
           fi
 
-          delete_subvolume_recursively() {
-            IFS=$'\n'
-
-            # If we accidentally end up with a file or directory under old_roots,
-            # the code will enumerate all subvolumes under the main volume.
-            # We don't want to remove everything under true main volume. Only
-            # proceed if this path is a btrfs subvolume (inode=256).
-            if [ $(stat -c %i "$1") -ne 256 ]; then return; fi
-
-            for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
-              delete_subvolume_recursively "/btrfs_tmp/$i"
-            done
-            btrfs subvolume delete "$1"
-          }
-
-          for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +30); do
-            delete_subvolume_recursively "$i"
+          echo "Deleting old subvolumes"
+          for old_subvolume in $(find $MOUNTDIR/old_roots/ -maxdepth 1 -mtime +30); do
+            echo "Deleting $old_subvolume"
+            btrfs subvolume delete -R "$old_subvolume"
           done
 
-          btrfs subvolume create /btrfs_tmp/root
-          umount /btrfs_tmp
+          btrfs subvolume create $MOUNTDIR/root
+          umount $MOUNTDIR
+          echo "Done!"
         '';
       };
     };
