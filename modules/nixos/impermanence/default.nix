@@ -47,6 +47,12 @@ in
           mkdir -p $MOUNTDIR
           mount -t btrfs -o subvol=/,user_subvol_rm_allowed $BTRFS_VOL $MOUNTDIR
 
+          echo "Deleting old subvolumes"
+          for old_subvolume in $(find $MOUNTDIR/old_roots/ -maxdepth 1 -mtime +30); do
+            echo "Deleting $old_subvolume"
+            btrfs subvolume delete -R "$old_subvolume"
+          done
+
           if [[ -e $MOUNTDIR/root ]]; then
             echo "Moving existing root to the old_roots directory..."
             mkdir -p $MOUNTDIR/old_roots
@@ -54,12 +60,6 @@ in
             mv $MOUNTDIR/root "$MOUNTDIR/old_roots/$timestamp"
             btrfs property set "$MOUNTDIR/old_roots/$timestamp" ro true
           fi
-
-          echo "Deleting old subvolumes"
-          for old_subvolume in $(find $MOUNTDIR/old_roots/ -maxdepth 1 -mtime +30); do
-            echo "Deleting $old_subvolume"
-            btrfs subvolume delete -R "$old_subvolume"
-          done
 
           btrfs subvolume create $MOUNTDIR/root
           umount $MOUNTDIR
