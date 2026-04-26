@@ -38,8 +38,29 @@ return {
     },
   },
   after = function()
-    require('conform').setup {
-      notify_on_error = false,
+    local conform = require 'conform'
+
+    local formatters_by_ft = {
+      nix = { 'nixfmt' },
+      lua = { 'stylua' },
+      python = { 'ruff_fix', 'ruff_format', 'ruff_organize_imports' },
+      rust = { 'rustfmt' },
+      ['*'] = { 'codespell', 'trim_whitespace' },
+    }
+    for _, filetype in ipairs {
+      'javascript',
+      'typescript',
+      'css',
+      'html',
+      'svelte',
+      'react',
+    } do
+      formatters_by_ft[filetype] =
+        { 'prettierd', 'prettier', stop_after_first = true }
+    end
+
+    conform.setup {
+      notify_on_error = true,
       format_on_save = function(bufnr)
         -- Disable with a global or buffer-local variable
         if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
@@ -68,17 +89,10 @@ return {
           lsp_fallback = lsp_format_opt,
         }
       end,
-      formatters_by_ft = {
-        nix = { 'nixfmt' },
-        lua = { 'stylua' },
-        python = { 'ruff_fix', 'ruff_format', 'ruff_organize_imports' },
-        javascript = { 'prettierd', 'prettier', stop_after_first = true },
-        rust = { 'rustfmt' },
-        ['*'] = { 'codespell', 'trim_whitespace' },
-      },
+      formatters_by_ft = formatters_by_ft,
     }
 
-    require('conform').formatters.codespell = {
+    conform.formatters.codespell = {
       prepend_args = {
         '-L',
         -- codespell please stop bullying me 😭
