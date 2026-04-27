@@ -144,17 +144,17 @@
         "flake-utils": "flake-utils"
       },
       "locked": {
-        "lastModified": 1768690151,
-        "narHash": "sha256-thSKCWUI900ntDPpdD1qZ7n6+KMYui14dMVRdGevXWQ=",
+        "lastModified": 1715533576,
+        "narHash": "sha256-fT4ppWeCJ0uR300EH3i7kmgRZnAVxrH+XtK09jQWihk=",
         "owner": "gytis-ivaskevicius",
         "repo": "flake-utils-plus",
-        "rev": "14d3fa54bbb4d61ce0128793a529e57bf70ac182",
+        "rev": "3542fe9126dc492e53ddd252bb0260fe035f2c0f",
         "type": "github"
       },
       "original": {
         "owner": "gytis-ivaskevicius",
         "repo": "flake-utils-plus",
-        "rev": "14d3fa54bbb4d61ce0128793a529e57bf70ac182",
+        "rev": "3542fe9126dc492e53ddd252bb0260fe035f2c0f",
         "type": "github"
       }
     },
@@ -327,7 +327,6 @@
         "agenix": "agenix",
         "catppuccin": "catppuccin",
         "disko": "disko",
-        "flake-utils-plus": "flake-utils-plus",
         "gh-cherry-pick": "gh-cherry-pick",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
@@ -363,25 +362,22 @@
     "snowfall-lib": {
       "inputs": {
         "flake-compat": "flake-compat",
-        "flake-utils-plus": [
-          "flake-utils-plus"
-        ],
+        "flake-utils-plus": "flake-utils-plus",
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1768690217,
-        "narHash": "sha256-7ddUeLJu3s0Fxk0WRIHPStAZh3jcwC9+FTTzZsO6j6E=",
+        "lastModified": 1765361626,
+        "narHash": "sha256-kX0Dp/kYSRbQ+yd9e3lmmUWdNbipufvKfL2IzbrSpnY=",
         "owner": "snowfallorg",
         "repo": "lib",
-        "rev": "e66423e29b722122f878cd4f332ed656fdb3dec4",
+        "rev": "c566ad8b7352c30ec3763435de7c8f1c46ebb357",
         "type": "github"
       },
       "original": {
         "owner": "snowfallorg",
         "repo": "lib",
-        "rev": "e66423e29b722122f878cd4f332ed656fdb3dec4",
         "type": "github"
       }
     },
