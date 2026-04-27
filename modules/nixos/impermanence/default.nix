@@ -6,6 +6,8 @@
   ...
 }:
 let
+  # https://github.com/snowfallorg/lib/issues/188
+  inherit (config._module.args) utils;
   cfg = config.my.persistence;
   impermanenceOptions = lib.my.getImpermanenceOptions { inherit pkgs inputs config; };
 in
@@ -24,48 +26,57 @@ in
         findutils
       ];
 
-      services.prune-subvolumes = {
-        requiredBy = [ "initrd.target" ];
-        before = [ "local-fs-pre.target" ];
-        after = [
-          "initrd-root-device.target"
-          "systemd-hibernate-resume.service"
-        ];
-        unitConfig.DefaultDependencies = false;
-        serviceConfig = {
-          Type = "oneshot";
-          # also print to TTY
-          StandardOutput = "journal+console";
-          StandardError = "journal+console";
-        };
-        script = ''
-          set -e
-          MOUNTDIR=/mnt
-          BTRFS_VOL=/dev/mapper/root_vg-root
+      services.wipe-file-systems = (
+        let
+          btrfs-volume = "/dev/mapper/root_vg-root";
+        in
+        {
+          # Specify dependencies explicitly
+          unitConfig.DefaultDependencies = false;
+          # The script needs to run to completion before this service is done
+          serviceConfig.Type = "oneshot";
+          # This service is required for boot to succeed
+          requiredBy = [ "initrd.target" ];
+          # Should complete before any file systems are mounted
+          before = [ "sysroot.mount" ];
 
-          echo "Mounting btrfs..."
-          mkdir -p $MOUNTDIR
-          mount -t btrfs -o subvol=/,user_subvol_rm_allowed $BTRFS_VOL $MOUNTDIR
+          # Wait for the disk to appear
+          requires = [ "${utils.escapeSystemdPath btrfs-volume}.device" ];
+          after = [
+            "${utils.escapeSystemdPath btrfs-volume}.device"
+            # Allow hibernation to resume before trying to alter any data
+            "local-fs-pre.target"
+          ];
 
-          echo "Deleting old subvolumes"
-          for old_subvolume in $(find $MOUNTDIR/old_roots/ -maxdepth 1 -mtime +30); do
-            echo "Deleting $old_subvolume"
-            btrfs subvolume delete -R "$old_subvolume"
-          done
+          script = ''
+            set -e
+            MOUNTDIR=/mnt
+            BTRFS_VOL=${btrfs-volume}
 
-          if [[ -e $MOUNTDIR/root ]]; then
-            echo "Moving existing root to the old_roots directory..."
-            mkdir -p $MOUNTDIR/old_roots
-            timestamp=$(date --date="@$(stat -c %Y $MOUNTDIR/root)" "+%Y-%m-%-d_%H:%M:%S")
-            mv $MOUNTDIR/root "$MOUNTDIR/old_roots/$timestamp"
-            btrfs property set "$MOUNTDIR/old_roots/$timestamp" ro true
-          fi
+            echo "Mounting btrfs..."
+            mkdir -p $MOUNTDIR
+            mount -t btrfs -o subvol=/,user_subvol_rm_allowed $BTRFS_VOL $MOUNTDIR
 
-          btrfs subvolume create $MOUNTDIR/root
-          umount $MOUNTDIR
-          echo "Done!"
-        '';
-      };
+            echo "Deleting old subvolumes"
+            for old_subvolume in $(find $MOUNTDIR/old_roots/ -maxdepth 1 -mtime +30); do
+              echo "Deleting $old_subvolume"
+              btrfs subvolume delete -R "$old_subvolume"
+            done
+
+            if [[ -e $MOUNTDIR/root ]]; then
+              echo "Moving existing root to the old_roots directory..."
+              mkdir -p $MOUNTDIR/old_roots
+              timestamp=$(date --date="@$(stat -c %Y $MOUNTDIR/root)" "+%Y-%m-%-d_%H:%M:%S")
+              mv $MOUNTDIR/root "$MOUNTDIR/old_roots/$timestamp"
+              btrfs property set "$MOUNTDIR/old_roots/$timestamp" ro true
+            fi
+
+            btrfs subvolume create $MOUNTDIR/root
+            umount $MOUNTDIR
+            echo "Done!"
+          '';
+        }
+      );
     };
 
     # Ensure that all files are properly chowned
