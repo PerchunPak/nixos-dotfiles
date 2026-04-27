@@ -120,11 +120,6 @@
           ];
       };
 
-      overlays = with inputs; [
-      ];
-
-      systems.modules.nixos = with inputs; [ disko.nixosModules.default ];
-
       outputs-builder = channels: {
         formatter = channels.nixpkgs.nixfmt;
       };
