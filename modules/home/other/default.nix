@@ -61,6 +61,7 @@ in
       dig
       erlang_27
       fd
+      gh-cherry-pick
       gleam
       gnumake
       gparted
