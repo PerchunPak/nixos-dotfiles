@@ -40,9 +40,13 @@ in
   };
 
   home.packages =
+    let
+      # by using `inputs.nix-diff-rs.packages.default` it somehow triggers
+      # `x86_64-darwin` deprecation warning
+      nix-diff-rs = pkgs.callPackage "${inputs.nix-diff-rs}/package.nix" { };
+    in
     with pkgs;
     [
-      inputs.nix-diff-rs.packages.${system}.default
       (_7zz-rar.override { useUasm = false; })
       (mpv.override { youtubeSupport = false; })
       actual-client
@@ -66,6 +70,7 @@ in
       meld
       mtr
       ncdu
+      nix-diff-rs
       nixfmt
       nixpkgs-review
       pavucontrol
