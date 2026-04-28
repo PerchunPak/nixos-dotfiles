@@ -9,10 +9,13 @@ nixpkgs_rev=$(
 nix run ".#pkgs.$system.nixpkgs.gh-cherry-pick" -- \
   --target PerchunPak/nixpkgs@patched \
   --first-hard-reset-to "NixOS/nixpkgs/$nixpkgs_rev" \
-  PerchunPak/nixpkgs@zellij-plugins \
-  PerchunPak/nixpkgs@actual \
-  PerchunPak/nixpkgs@equibop-2.2.0 \
-  `: # updates cyclopts, so gh-cherry-pick builds` \
-  PerchunPak/nixpkgs/a4ba4b34b029face2600564e3b6e130eec4e91cf
+  `: # zellijPlugins: init` \
+  https://github.com/NixOS/nixpkgs/pull/511825 \
+  `: # actual-client: init` \
+  https://github.com/NixOS/nixpkgs/pull/506686 \
+  `: # equibop: 2.1.9 -> 2.2.0` \
+  https://github.com/NixOS/nixpkgs/pull/514209 \
+  `: # updates cyclopts, so it builds` \
+  https://github.com/NixOS/nixpkgs/pull/514199
 
 nix flake update nixpkgs
