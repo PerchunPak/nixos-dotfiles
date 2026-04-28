@@ -33,8 +33,13 @@ in
         {
           # Specify dependencies explicitly
           unitConfig.DefaultDependencies = false;
-          # The script needs to run to completion before this service is done
-          serviceConfig.Type = "oneshot";
+          serviceConfig = {
+            # The script needs to run to completion before this service is done
+            Type = "oneshot";
+            # also print to TTY
+            StandardOutput = "journal+console";
+            StandardError = "journal+console";
+          };
           # This service is required for boot to succeed
           requiredBy = [ "initrd.target" ];
           # Should complete before any file systems are mounted
