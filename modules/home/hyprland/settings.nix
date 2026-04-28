@@ -39,7 +39,7 @@ let
       (
         YDOTOOL_BUTTON_LEFT=0xc0
         while true; do
-            ${lib.getExe pkgs.ydotool} click $YDOTOOL_BUTTON_LEFT >>/dev/null
+          ${lib.getExe pkgs.ydotool} click $YDOTOOL_BUTTON_LEFT > /dev/null
         done
       ) &
       pid=$!
@@ -47,6 +47,11 @@ let
       disown
     fi
     exit 0
+  '';
+
+  spawn-btop-workspace = pkgs.writeShellScript "spawn-btop-workspace.sh" ''
+    zellij delete-session btop || true
+    exec alacritty -e zellij --new-session-with-layout btop --session btop
   '';
 in
 {
@@ -56,7 +61,7 @@ in
       "uwsm app -- zen-beta"
       "[workspace 3 silent] uwsm app -- equibop"
       "uwsm app -- steam"
-      "[workspace special:btop silent] uwsm app -- alacritty -e btop"
+      "[workspace special:btop silent] uwsm app -- ${spawn-btop-workspace}"
     ]
     ++ (lib.lists.optional (!nixosConfig.my.economInternetTraffic) "uwsm app -s b -- variety");
 

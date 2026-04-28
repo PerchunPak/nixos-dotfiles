@@ -23,5 +23,7 @@
     plugins = [ pkgs.zellijPlugins.vim-zellij-navigator ];
   };
 
+  xdg.configFile."zellij/layouts/btop.kdl".source = ./btop-layout.kdl;
+
   my.persistence.directories = [ ".cache/zellij" ];
 }
