@@ -23,10 +23,6 @@
     };
   };
 
-  home.sessionVariables = {
-    UV_LINK_MODE = "symlink";
-  };
-
   my.persistence.directories = [
     ".local/share/pypoetry"
     ".local/share/uv"
