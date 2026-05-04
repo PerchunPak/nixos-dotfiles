@@ -99,6 +99,7 @@
           pkg:
           builtins.elem (lib.getName pkg) [
             "7zz"
+            "nvidia-kernel-modules"
             "nvidia-x11"
             "steam"
             "steam-original"
