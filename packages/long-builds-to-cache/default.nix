@@ -11,6 +11,7 @@ in
 linkFarmFromDrvs "long-builds-to-cache" (
   (with pkgs; [
     actual-client
+    linuxPackages_zen.nvidia_x11_latest
     trippy
     wayle
     zellij
