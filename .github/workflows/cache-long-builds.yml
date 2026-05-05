@@ -15,7 +15,7 @@ jobs:
       - name: Install Nix
         uses: cachix/install-nix-action@v31
 
-      - uses: cachix/cachix-action@v14
+      - uses: cachix/cachix-action@v17
         with:
           name: perchunpak
           signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
