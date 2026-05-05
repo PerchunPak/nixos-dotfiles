@@ -19,9 +19,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v21
-        with:
-          determinate: false
+        uses: cachix/install-nix-action@v31
 
       - name: Check if nixpkgs got updated
         id: check
