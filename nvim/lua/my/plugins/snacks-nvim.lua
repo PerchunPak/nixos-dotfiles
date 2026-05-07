@@ -1,3 +1,33 @@
+local custom_ignore_list = {
+  '.venv',
+  '__pycache__',
+  'node_modules',
+  '.svelte-kit',
+  '.pytest_cache',
+}
+
+local function find_with_custom_ignore_list()
+  local Snacks = require 'snacks'
+  local args = { '--hidden', '--no-ignore' }
+
+  for _, pattern in ipairs(custom_ignore_list) do
+    table.insert(args, '--exclude=' .. pattern)
+  end
+
+  Snacks.picker.files { cmd = 'rg', args = args }
+end
+
+local function grep_with_custom_ignore_list()
+  local Snacks = require 'snacks'
+  local args = { '--hidden', '--no-ignore' }
+
+  for _, pattern in ipairs(custom_ignore_list) do
+    table.insert(args, '--glob=!' .. pattern)
+  end
+
+  Snacks.picker.grep { args = args }
+end
+
 return {
   'snacks.nvim',
   priority = 999,
@@ -75,6 +105,7 @@ return {
     { "<leader><space>", function() Snacks.picker.smart() end,                                   desc = "Smart Find Files" },
     { "<leader>,",       function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
     { "<leader>/",       function() Snacks.picker.grep() end,                                    desc = "Grep" },
+    { "<leader>?",       grep_with_custom_ignore_list,                                           desc = "Grep with custom ignore list" },
     { "<leader>:",       function() Snacks.picker.command_history() end,                         desc = "Command History" },
     { "<leader>n",       function() Snacks.picker.notifications() end,                           desc = "Notification History" },
     { "<leader>t",       function() Snacks.explorer() end,                                       desc = "File Explorer" },
@@ -82,6 +113,7 @@ return {
     { "<leader>fb",      function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
     { "<leader>fc",      function() Snacks.picker.files({ cwd = "/home/perchun/dotfiles" }) end, desc = "Find Config File" },
     { "<leader>ff",      function() Snacks.picker.files() end,                                   desc = "Find Files" },
+    { "<leader>fF",      find_with_custom_ignore_list,                                           desc = "Find with custom ignore list" },
     { "<leader>fg",      function() Snacks.picker.git_files() end,                               desc = "Find Git Files" },
     { "<leader>fp",      function() Snacks.picker.projects() end,                                desc = "Projects" },
     { "<leader>fr",      function() Snacks.picker.recent() end,                                  desc = "Recent" },
