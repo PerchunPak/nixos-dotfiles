@@ -4,7 +4,7 @@
   cloud = {
     authenticated = false;
     settingsSync = false;
-    settingsSyncVersion = 1778180741971;
+    settingsSyncVersion = 1778181695462;
     url = "https://cloud.equicord.org/";
   };
   disableMinSize = false;
@@ -242,7 +242,16 @@
       enabled = false;
     };
     CollapsibleUI = {
+      channelListCollapsed = false;
+      chatButtonsCollapsed = false;
+      collapsedSize = 12;
       enabled = false;
+      guildBarCollapsed = false;
+      headerBarCollapsed = false;
+      membersListCollapsed = false;
+      titleBarCollapsed = false;
+      transitionMs = 160;
+      userAreaCollapsed = false;
     };
     ColorSighted = {
       enabled = false;
@@ -322,6 +331,11 @@
     };
     CustomStatusTimeouts = {
       enabled = false;
+      extraDays = "1, 2";
+      extraHours = "2, 4, 6, 12";
+      extraMinutes = "5, 10, 30";
+      extraSeconds = "15, 30, 45";
+      showForeverOnTop = true;
     };
     CustomTimestamps = {
       enabled = false;
@@ -853,7 +867,7 @@
       enabled = true;
     };
     NoMiddleClickPaste = {
-      enabled = false;
+      enabled = true;
     };
     NoMosaic = {
       enabled = false;
@@ -990,7 +1004,7 @@
       enabled = true;
     };
     ProfileSectionsAPI = {
-      enabled = false;
+      enabled = true;
     };
     ProfileSets = {
       enabled = false;
@@ -999,15 +1013,19 @@
       enabled = false;
     };
     Questify = {
+      allowChangingDangerousSettings = true;
       autoCompleteQuestTypes = {
         ACHIEVEMENT_IN_ACTIVITY = false;
         PLAY_ACTIVITY = false;
         PLAY_ON_DESKTOP = false;
         PLAY_ON_PLAYSTATION = false;
         PLAY_ON_XBOX = false;
-        WATCH_VIDEO = false;
-        WATCH_VIDEO_ON_MOBILE = false;
+        WATCH_VIDEO = true;
+        WATCH_VIDEO_ON_MOBILE = true;
       };
+      autoCompleteQuestsSimultaneously = false;
+      claimedSubsort = "Claimed DESC";
+      completeVideoQuestsQuicker = false;
       disableAccountPanelPromo = true;
       disableAccountPanelQuestProgress = false;
       disableFriendsListPromo = true;
@@ -1015,34 +1033,47 @@
       disableOrbsAndQuestsBadges = false;
       disableQuestsEverything = false;
       disableRelocationNotices = true;
-      disableSponsoredBanner = false;
+      disableSponsoredBanner = true;
       enabled = true;
+      expiredSubsort = "Expiring DESC";
       ignoredQuestIDs = {
         questIDs = [ ];
       };
-      isOnQuestsPage = false;
+      ignoredSubsort = "Recent DESC";
+      isOnQuestsPage = true;
+      lastQuestPageFilters = {
+        "[\"task\",\"task_video\"]" = {
+          filter = "task_video";
+          group = "task";
+        };
+      };
+      lastQuestPageSort = "questify";
+      makeMobileVideoQuestsDesktopCompatible = true;
       migrationVersion = 1;
       newExcludedQuestAlertSound = null;
+      newExcludedQuestAlertVolume = 100;
       newQuestAlertSound = "discodo";
+      newQuestAlertVolume = 27.8958;
       notifyOnNewExcludedQuests = false;
       notifyOnNewQuests = true;
+      notifyOnQuestComplete = true;
       questButtonBadgeColor = 2842239;
-      questButtonBadgeCount = 6;
-      questButtonDisplay = "always";
+      questButtonBadgeCount = 0;
+      questButtonDisplay = "never";
       questButtonIncludedTypes = {
         "1" = true;
         "2" = true;
         "3" = true;
         "4" = true;
         "5" = true;
-        ACHIEVEMENT_IN_ACTIVITY = true;
-        ACHIEVEMENT_IN_GAME = true;
-        PLAY_ACTIVITY = true;
-        PLAY_ON_DESKTOP = true;
-        PLAY_ON_DESKTOP_V2 = true;
-        PLAY_ON_PLAYSTATION = true;
-        PLAY_ON_XBOX = true;
-        STREAM_ON_DESKTOP = true;
+        ACHIEVEMENT_IN_ACTIVITY = false;
+        ACHIEVEMENT_IN_GAME = false;
+        PLAY_ACTIVITY = false;
+        PLAY_ON_DESKTOP = false;
+        PLAY_ON_DESKTOP_V2 = false;
+        PLAY_ON_PLAYSTATION = false;
+        PLAY_ON_XBOX = false;
+        STREAM_ON_DESKTOP = false;
         WATCH_VIDEO = true;
         WATCH_VIDEO_ON_MOBILE = true;
       };
@@ -1050,8 +1081,38 @@
       questButtonLeftClickAction = "open-quests";
       questButtonMiddleClickAction = "plugin-settings";
       questButtonRightClickAction = "context-menu";
+      questCompletedAlertSound = "bop_message1";
+      questCompletedAlertVolume = 0;
       questFetchInterval = 2700;
+      questOrder = [
+        "UNCLAIMED"
+        "CLAIMED"
+        "IGNORED"
+        "EXPIRED"
+      ];
+      questTileClaimedColor = {
+        color = 6105983;
+        enabled = true;
+      };
+      questTileExpiredColor = {
+        color = 2368553;
+        enabled = true;
+      };
+      questTileGradient = "intense";
+      questTileIgnoredColor = {
+        color = 8334124;
+        enabled = true;
+      };
+      questTilePreload = true;
+      questTileUnclaimedColor = {
+        color = 2842239;
+        enabled = true;
+      };
+      rememberQuestPageFilters = true;
+      rememberQuestPageSort = true;
       resumeInterruptedQuests = false;
+      resumeQuestIDs = { };
+      unclaimedSubsort = "Expiring ASC";
     };
     QuestionMarkReplacement = {
       enabled = false;
@@ -1491,7 +1552,7 @@
       rejoinTimeout = 30;
     };
     VoiceStats = {
-      enabled = false;
+      enabled = true;
     };
     VolumeBooster = {
       enabled = true;
