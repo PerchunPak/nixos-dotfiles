@@ -851,7 +851,7 @@
       enabled = false;
     };
     NoProfileThemes = {
-      enabled = true;
+      enabled = false;
     };
     NoPushToTalk = {
       enabled = false;
