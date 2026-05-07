@@ -14,7 +14,7 @@ local function find_with_custom_ignore_list()
     table.insert(args, '--exclude=' .. pattern)
   end
 
-  Snacks.picker.files { cmd = 'rg', args = args }
+  Snacks.picker.files { args = args }
 end
 
 local function grep_with_custom_ignore_list()
