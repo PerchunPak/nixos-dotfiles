@@ -4,7 +4,7 @@
   cloud = {
     authenticated = false;
     settingsSync = false;
-    settingsSyncVersion = 1776081300451;
+    settingsSyncVersion = 1778180741971;
     url = "https://cloud.equicord.org/";
   };
   disableMinSize = false;
@@ -171,6 +171,9 @@
       trackSelf = true;
       watchLargeGuilds = false;
     };
+    CancelFriendRequest = {
+      enabled = false;
+    };
     ChannelBadges = {
       enabled = false;
     };
@@ -238,6 +241,9 @@
     ClientTheme = {
       enabled = false;
     };
+    CollapsibleUI = {
+      enabled = false;
+    };
     ColorSighted = {
       enabled = false;
     };
@@ -245,6 +251,12 @@
       enabled = false;
     };
     CommandsAPI = {
+      enabled = true;
+    };
+    ConcatenatedComponentExtractor = {
+      enabled = true;
+    };
+    ConcatenatedModules = {
       enabled = true;
     };
     ConsoleJanitor = {
@@ -308,6 +320,9 @@
     CustomSounds = {
       enabled = false;
     };
+    CustomStatusTimeouts = {
+      enabled = false;
+    };
     CustomTimestamps = {
       enabled = false;
     };
@@ -366,6 +381,7 @@
       disableDMContextMenu = false;
       enabled = true;
       forceRoleIcon = false;
+      jsonGateway = false;
       noBulletPoints = false;
       noDefaultHangStatus = false;
       noMirroredCamera = false;
@@ -726,6 +742,7 @@
       blacklistedIds = "457912077277855764";
       cacheLimit = 1000;
       cacheMessagesFromServers = true;
+      clearLogsOnRestart = false;
       enabled = true;
       hideMessageFromMessageLoggers = false;
       hideMessageFromMessageLoggersDeletedMessage = "redacted eh";
@@ -834,6 +851,9 @@
     };
     NoMaskedUrlPaste = {
       enabled = true;
+    };
+    NoMiddleClickPaste = {
+      enabled = false;
     };
     NoMosaic = {
       enabled = false;
@@ -969,6 +989,9 @@
     ProfileCollectionsAPI = {
       enabled = true;
     };
+    ProfileSectionsAPI = {
+      enabled = false;
+    };
     ProfileSets = {
       enabled = false;
     };
@@ -976,69 +999,59 @@
       enabled = false;
     };
     Questify = {
-      claimedSubsort = "Claimed DESC";
-      completeAchievementQuestsInBackground = true;
-      completeGameQuestsInBackground = true;
-      completeVideoQuestsInBackground = true;
-      disableFriendsListActiveNowPromotion = true;
-      disableMembersListActivelyPlayingIcon = true;
-      disableQuestsBadgeOnUserProfiles = false;
-      disableQuestsDirectMessagesTab = false;
-      disableQuestsDiscoveryTab = true;
+      autoCompleteQuestTypes = {
+        ACHIEVEMENT_IN_ACTIVITY = false;
+        PLAY_ACTIVITY = false;
+        PLAY_ON_DESKTOP = false;
+        PLAY_ON_PLAYSTATION = false;
+        PLAY_ON_XBOX = false;
+        WATCH_VIDEO = false;
+        WATCH_VIDEO_ON_MOBILE = false;
+      };
+      disableAccountPanelPromo = true;
+      disableAccountPanelQuestProgress = false;
+      disableFriendsListPromo = true;
+      disableMembersListPromo = true;
+      disableOrbsAndQuestsBadges = false;
       disableQuestsEverything = false;
-      disableQuestsFetchingQuests = false;
-      disableQuestsGiftInventoryRelocationNotice = true;
-      disableQuestsPageSponsoredBanner = true;
-      disableQuestsPopupAboveAccountPanel = true;
+      disableRelocationNotices = true;
+      disableSponsoredBanner = false;
       enabled = true;
-      expiredSubsort = "Expiring DESC";
-      fetchingQuestsAlert = "discodo";
-      fetchingQuestsAlertVolume = 0;
-      fetchingQuestsInterval = 0;
       ignoredQuestIDs = {
-        "1212520390610395179" = [ ];
-        "379353300887273472" = [ ];
+        questIDs = [ ];
       };
-      ignoredQuestProfile = "private";
-      ignoredSubsort = "Recent DESC";
-      lastQuestPageFilters = {
-        task_video = {
-          filter = "task_video";
-          group = "task";
-        };
-      };
-      lastQuestPageSort = "most_recent";
-      makeMobileQuestsDesktopCompatible = true;
-      notifyOnQuestComplete = true;
-      onQuestsPage = false;
+      isOnQuestsPage = false;
+      migrationVersion = 1;
+      newExcludedQuestAlertSound = null;
+      newQuestAlertSound = "discodo";
+      notifyOnNewExcludedQuests = false;
+      notifyOnNewQuests = true;
       questButtonBadgeColor = 2842239;
-      questButtonDisplay = "never";
+      questButtonBadgeCount = 6;
+      questButtonDisplay = "always";
+      questButtonIncludedTypes = {
+        "1" = true;
+        "2" = true;
+        "3" = true;
+        "4" = true;
+        "5" = true;
+        ACHIEVEMENT_IN_ACTIVITY = true;
+        ACHIEVEMENT_IN_GAME = true;
+        PLAY_ACTIVITY = true;
+        PLAY_ON_DESKTOP = true;
+        PLAY_ON_DESKTOP_V2 = true;
+        PLAY_ON_PLAYSTATION = true;
+        PLAY_ON_XBOX = true;
+        STREAM_ON_DESKTOP = true;
+        WATCH_VIDEO = true;
+        WATCH_VIDEO_ON_MOBILE = true;
+      };
+      questButtonIndicator = "both";
       questButtonLeftClickAction = "open-quests";
       questButtonMiddleClickAction = "plugin-settings";
       questButtonRightClickAction = "context-menu";
-      questButtonUnclaimed = "pill";
-      questRewardIncludeCollectibles = true;
-      questRewardIncludeInGame = true;
-      questRewardIncludeNitroCode = true;
-      questRewardIncludeOrbs = true;
-      questRewardIncludeRewardCode = true;
-      rememberQuestPageFilters = true;
-      rememberQuestPageSort = true;
-      reorderQuests = "UNCLAIMED, CLAIMED, IGNORED, EXPIRED";
-      restyleQuestsClaimed = 6105983;
-      restyleQuestsExpired = 2368553;
-      restyleQuestsGradient = "intense";
-      restyleQuestsIgnored = 8334124;
-      restyleQuestsPreload = false;
-      restyleQuestsUnclaimed = 2842239;
-      resumeQuestIDs = {
-        achievement = [ ];
-        play = [ ];
-        watch = [ ];
-      };
-      triggerQuestsRerender = false;
-      unclaimedSubsort = "Expiring ASC";
-      unclaimedUnignoredQuests = 3;
+      questFetchInterval = 2700;
+      resumeInterruptedQuests = false;
     };
     QuestionMarkReplacement = {
       enabled = false;
@@ -1155,6 +1168,7 @@
     };
     Settings = {
       enabled = true;
+      includeVencordInfoWhenCopying = true;
       settingsLocation = "aboveNitro";
     };
     ShikiCodeblocks = {
@@ -1200,6 +1214,9 @@
       enabled = false;
     };
     Signature = {
+      enabled = false;
+    };
+    SilenceUsers = {
       enabled = false;
     };
     SilentMessageToggle = {
@@ -1473,6 +1490,9 @@
       rejoinDelay = 2;
       rejoinTimeout = 30;
     };
+    VoiceStats = {
+      enabled = false;
+    };
     VolumeBooster = {
       enabled = true;
       multiplier = 2;
@@ -1525,6 +1545,9 @@
     };
     YoutubeDescription = {
       enabled = true;
+    };
+    ZipPreview = {
+      enabled = false;
     };
     arRPCBun = {
       enabled = false;
