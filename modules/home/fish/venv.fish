@@ -23,3 +23,4 @@ function __auto_source_venv --on-variable PWD --description "Activate/Deactivate
     deactivate
   end
 end
+__auto_source_venv
