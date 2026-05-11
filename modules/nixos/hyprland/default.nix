@@ -43,6 +43,8 @@ in
         hyprlock.enable = true;
       };
 
+      xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal ];
+
       services.displayManager.defaultSession = "hyprland-uwsm";
     })
   ];

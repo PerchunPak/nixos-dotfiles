@@ -15,6 +15,11 @@
       systemd.enable = false;
     };
 
+    xdg.portal.extraPortals = [
+      pkgs.xdg-desktop-portal
+      pkgs.xdg-desktop-portal-gtk
+    ];
+
     programs = {
       hyprlock.enable = true;
       wlogout.enable = true;
