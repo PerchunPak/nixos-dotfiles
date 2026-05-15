@@ -44,7 +44,12 @@
 
   services.upower.enable = true;
 
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = [
+    "btrfs"
+    "exfat"
+    "ntfs"
+    "xfs"
+  ];
 
   nix.package = pkgs.nixVersions.latest;
   boot.kernelPackages = pkgs.linuxPackages_zen;
