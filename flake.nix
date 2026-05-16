@@ -70,8 +70,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    gh-cherry-pick = {
-      url = "github:PerchunPak/gh-cherry-pick";
+    ghcherry = {
+      url = "github:PerchunPak/ghcherry";
       flake = false;
     };
     wayle = {

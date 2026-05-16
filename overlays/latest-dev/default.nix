@@ -1,15 +1,8 @@
 { inputs, ... }:
 final: prev: {
-  gh-cherry-pick = prev.gh-cherry-pick.overridePythonAttrs (old: {
-    src = inputs.gh-cherry-pick;
+  ghcherry = prev.gh-cherry-pick.overridePythonAttrs (old: {
+    src = inputs.ghcherry;
 
-    nativeCheckInputs =
-      with final.python3Packages;
-      old.nativeCheckInputs
-      ++ [
-        faker
-        pytest-asyncio
-        pytest-httpx
-      ];
+    pythonImportsCheck = [ "ghcherry" ];
   });
 }
