@@ -73,6 +73,7 @@
         microphone.label-show = false;
         network.label-show = false;
       };
+      osd.toggle-keys = false;
     };
   };
 
