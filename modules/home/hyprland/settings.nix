@@ -57,7 +57,6 @@ in
 {
   wayland.windowManager.hyprland = {
     settings = {
-      econom_internet_traffic._var = nixosConfig.my.economInternetTraffic;
       monitor = cfg.monitors;
     };
 
@@ -74,6 +73,7 @@ in
         autoclicker-script
         spawn-btop-workspace
         ;
+      econom_internet_traffic = nixosConfig.my.economInternetTraffic;
     };
 
     "uwsm/env".text = ''

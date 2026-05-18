@@ -11,7 +11,7 @@ hl.on("hyprland.start", function()
 		workspace = "special:btop silent",
 	})
 
-	if not econom_internet_traffic then
+	if "@econom_internet_traffic@" ~= "true" then
 		hl.on("hyprland.start", function()
 			hl.exec_cmd("uwsm app -s b -- variety")
 		end)
