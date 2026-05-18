@@ -223,10 +223,10 @@ hl.gesture({
 
 hl.window_rule({ match = { class = "^zen-beta$" }, workspace = "1 silent" })
 hl.window_rule({ match = { class = "^equibop$" }, workspace = "3 silent" })
-hl.window_rule({ match = { title = "^Steam$", workspace = "4 silent" } })
-hl.window_rule({ match = { class = "^steam$", workspace = "4 silent" } })
-hl.window_rule({ match = { class = "^heroic$", workspace = "4 silent" } })
-hl.window_rule({ match = { class = "^Minecraft$", workspace = "4 silent" } })
+hl.window_rule({ match = { title = "^Steam$" }, workspace = "4 silent" })
+hl.window_rule({ match = { class = "^steam$" }, workspace = "4 silent" })
+hl.window_rule({ match = { class = "^heroic$" }, workspace = "4 silent" })
+hl.window_rule({ match = { class = "^Minecraft$" }, workspace = "4 silent" })
 hl.window_rule({
 	name = "dbeaver",
 	match = { class = "^DBeaver$", workspace = "5 silent" },
