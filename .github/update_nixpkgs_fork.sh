@@ -16,6 +16,8 @@ nix run ".#pkgs.$system.nixpkgs.ghcherry" -- \
   `: # equibop: 2.1.9 -> 2.2.0` \
   https://github.com/NixOS/nixpkgs/pull/514209 \
   `: # updates cyclopts, so it builds` \
-  https://github.com/NixOS/nixpkgs/pull/514199
+  https://github.com/NixOS/nixpkgs/pull/514199 \
+  `: # wayle: 0.2.3 -> 0.3.0` \
+  https://github.com/NixOS/nixpkgs/pull/521497
 
 nix flake update nixpkgs

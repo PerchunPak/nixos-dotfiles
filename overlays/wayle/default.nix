@@ -18,7 +18,7 @@ final: prev: {
 
     cargoDeps = final.rustPlatform.fetchCargoVendor {
       inherit (final.wayle) src;
-      hash = "sha256-omCcKXYouS9qPdhVINJC2mAjI7uG0M9MH14BN/4Zegs=";
+      hash = "sha256-sXoqNF7hzE97PkRMBnxVFNPa92CgD5gYeMd0RmzPJzY=";
     };
 
     checkFlags = [
