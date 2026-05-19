@@ -70,6 +70,8 @@ hl.bind("SUPER + SHIFT + R", hl.dsp.window.move({ workspace = 8 }))
 -- Special workspace
 hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind("SUPER + N", hl.dsp.workspace.toggle_special("btop"))
+hl.bind("SUPER + SHIFT + N", hl.dsp.window.move({ workspace = "special:btop" }))
 
 -- Move windows between monitors
 hl.bind("ALT + SUPER + Q", hl.dsp.window.move({ monitor = "left" }))
