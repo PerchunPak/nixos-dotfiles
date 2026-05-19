@@ -74,8 +74,8 @@ hl.bind("SUPER + N", hl.dsp.workspace.toggle_special("btop"))
 hl.bind("SUPER + SHIFT + N", hl.dsp.window.move({ workspace = "special:btop" }))
 
 -- Move windows between monitors
-hl.bind("ALT + SUPER + Q", hl.dsp.window.move({ monitor = "left" }))
-hl.bind("ALT + SUPER + E", hl.dsp.window.move({ monitor = "right" }))
+hl.bind("ALT + SUPER + Q", hl.dsp.workspace.move({ monitor = "+1" }))
+hl.bind("ALT + SUPER + E", hl.dsp.workspace.move({ monitor = "-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
