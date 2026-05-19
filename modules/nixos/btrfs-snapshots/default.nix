@@ -1,20 +1,28 @@
 { pkgs, lib, ... }:
+let
+  btrfs-backup = lib.getExe pkgs.my.btrfs-backup;
+in
 {
   environment.defaultPackages = [ pkgs.my.btrfs-backup ];
 
   systemd.services = {
-    btrfs-backup = {
+    btrfs-backup-on-boot = {
       description = "Run btrfs-backup on boot";
-      script =
-        let
-          btrfs-backup = lib.getExe pkgs.my.btrfs-backup;
-        in
-        "${btrfs-backup} --label boot --keep 20 -- /persist";
+      script = "${btrfs-backup} --label boot --keep 20 -- /persist";
 
       serviceConfig.Type = "oneshot";
       serviceConfig.RemainAfterExit = true;
       wantedBy = [ "multi-user.target" ];
       partOf = [ "multi-user.target" ];
+      onFailure = [ "btrfs-backup-on-failure.service" ];
+    };
+
+    btrfs-backup-quarterly = {
+      description = "Run btrfs-backup every 15 minutes";
+      script = "${btrfs-backup} --label quarterly --keep 8 -- /persist";
+
+      serviceConfig.Type = "oneshot";
+      startAt = "*:0/15";
       onFailure = [ "btrfs-backup-on-failure.service" ];
     };
 
