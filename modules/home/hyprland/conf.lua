@@ -12,9 +12,7 @@ hl.on("hyprland.start", function()
 	})
 
 	if "@econom_internet_traffic@" ~= "true" then
-		hl.on("hyprland.start", function()
-			hl.exec_cmd("uwsm app -s b -- variety")
-		end)
+		hl.exec_cmd("uwsm app -s b -- variety")
 	end
 end)
 
