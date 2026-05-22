@@ -8,7 +8,7 @@ in
   systemd.services = {
     btrfs-backup-on-boot = {
       description = "Run btrfs-backup on boot";
-      script = "${btrfs-backup} --label boot --keep 20 -- /persist";
+      script = "${btrfs-backup} --label boot --keep 5 -- /persist";
 
       serviceConfig.Type = "oneshot";
       serviceConfig.RemainAfterExit = true;
