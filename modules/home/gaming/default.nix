@@ -21,10 +21,7 @@ in
   config = lib.mkIf cfg.enable {
     my.persistence.directories = [
       ".config/heroic"
-      ".config/unity3d"
-      ".factorio"
       ".local/share/Celeste"
-      "Zomboid"
     ];
 
     home.packages =
