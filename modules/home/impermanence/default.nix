@@ -13,7 +13,6 @@
         ".config/Signal"
         ".config/asciinema"
         ".config/harper-ls"
-        ".eclipse"
         ".local/share/Actual"
         ".local/share/DBeaverData"
         ".local/share/Steam"
