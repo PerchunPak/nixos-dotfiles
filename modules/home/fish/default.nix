@@ -15,7 +15,7 @@
       '';
 
     shellAliases = {
-      ls = "${pkgs.eza}/bin/eza --icons --git";
+      ls = "${pkgs.eza}/bin/eza --icons";
       la = "ls -la";
       lt = "la --tree";
       rebuildt = "rebuild -- --show-trace --option eval-cache false";
