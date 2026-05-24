@@ -64,7 +64,6 @@ in
       kdePackages.kate
       libnotify
       meld
-      mtr
       ncdu
       nix-diff-rs
       nix-diff-rs
