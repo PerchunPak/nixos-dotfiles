@@ -16,7 +16,7 @@ inputs:
 
   config = {
     # The makeWrapper options are available
-    extraPackages = with pkgs; [
+    runtimePkgs = with pkgs; [
       fd
       imagemagick
       pandoc
