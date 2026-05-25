@@ -65,6 +65,7 @@ in
             echo "Deleting old subvolumes"
             for old_subvolume in $(find $MOUNTDIR/old_roots/ -maxdepth 1 -mtime +30); do
               echo "Deleting $old_subvolume"
+              btrfs property set "$MOUNTDIR/old_roots/$timestamp" ro false
               btrfs subvolume delete -R "$old_subvolume"
             done
 
