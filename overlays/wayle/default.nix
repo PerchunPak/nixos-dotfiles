@@ -13,11 +13,6 @@ final: prev: {
         url = "https://github.com/wayle-rs/wayle/commit/3bab4b752f5b93e89333d19b85cbda55d7be1f6f.diff?full_index=1";
         hash = "sha256-XSqZmrqEg6Db1+PZUCDxxTLu4NSF8w0sZPtAkaZT2iI=";
       })
-      # https://github.com/wayle-rs/wayle/pull/171
-      (final.fetchpatch2 {
-        url = "https://github.com/wayle-rs/wayle/commit/518e3ff4c665ba46ab94af383c2e7d3ddde7f2f5.diff?full_index=1";
-        hash = "sha256-LBjaXvOFWr0wo5n44lAAOD5ccLWazjZlOCDxnkxtAP0=";
-      })
     ];
 
     cargoDeps = final.rustPlatform.fetchCargoVendor {
