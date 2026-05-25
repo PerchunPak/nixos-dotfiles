@@ -14,10 +14,5 @@ final: prev: {
         hash = "sha256-XSqZmrqEg6Db1+PZUCDxxTLu4NSF8w0sZPtAkaZT2iI=";
       })
     ];
-
-    cargoDeps = final.rustPlatform.fetchCargoVendor {
-      inherit (final.wayle) src;
-      hash = "sha256-sXoqNF7hzE97PkRMBnxVFNPa92CgD5gYeMd0RmzPJzY=";
-    };
   });
 }
