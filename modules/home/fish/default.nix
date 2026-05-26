@@ -25,6 +25,8 @@
       gh = "GITHUB_TOKEN=(rbw get 'GitHub CLI token') ${pkgs.gh}/bin/gh";
       nixpkgs-review = "GITHUB_TOKEN=(rbw get 'GitHub CLI token') ${pkgs.nixpkgs-review}/bin/nixpkgs-review";
       list-generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
+      cl = "clear";
+      cll = "cd && clear";
     };
 
     plugins = [
