@@ -261,11 +261,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1779740758,
-        "narHash": "sha256-ucsgaZD4stpOivXkkTUe79Bdo2k3pE0uvS6NHwB+C2E=",
+        "lastModified": 1779812076,
+        "narHash": "sha256-C4NkarKFG43H0dF8MFHpEzlBdrwQDdOPo4vX/BaqYBc=",
         "owner": "PerchunPak",
         "repo": "nixpkgs",
-        "rev": "d1deb5957cccb3efa8c899e9297b71589fa7dd8a",
+        "rev": "09c42ff56546c5fcacec72f2f69bf66782ce739b",
         "type": "github"
       },
       "original": {
@@ -384,11 +384,11 @@
     "storage": {
       "flake": false,
       "locked": {
-        "lastModified": 1773145583,
-        "narHash": "sha256-qQS0ZWlRJWp9Z11O1JlHo1l8NwkIMA/SVw0jHdqlO1U=",
+        "lastModified": 1779812323,
+        "narHash": "sha256-u9yUkXpKn6STLwAArEoo+nOzjp5KPbfI6uT1K0ZTLKk=",
         "owner": "PerchunPak",
         "repo": "storage",
-        "rev": "109d3e7900d39a4f69aac986bdb4c7ae006b11c2",
+        "rev": "cac9f169cf5fb38552c9a934eefee9b39e4b653f",
         "type": "github"
       },
       "original": {
@@ -451,11 +451,11 @@
     "wayle": {
       "flake": false,
       "locked": {
-        "lastModified": 1779687799,
-        "narHash": "sha256-9o4al2K3qIV4p9+ZF49nDsZQCJD9Zc//G5czUOvYS9k=",
+        "lastModified": 1779784322,
+        "narHash": "sha256-gTvjGvS9jWijB7xVMTZZkltGfqreKtXanZlt1ZgFiC4=",
         "owner": "wayle-rs",
         "repo": "wayle",
-        "rev": "75fa661cf4cd20203a198787b0846e49440afe4c",
+        "rev": "cfd98e9983114896a8df562c4cd105a2d9d09519",
         "type": "github"
       },
       "original": {
