@@ -2,8 +2,6 @@
   catppuccin.hyprlock.useDefaultConfig = false;
 
   programs.hyprlock.settings = {
-    general.disable_loading_bar = true;
-
     background = {
       path = "$HOME/.background-image";
       # color = "$base";
@@ -34,7 +32,6 @@
       check_color = "$yellow";
       fail_color = "$red";
       fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>"; # can be set to empty
-      fail_transition = 300; # transition time in ms between normal outer_color and fail_color
       capslock_color = "$mauve";
       numlock_color = "$mauve";
       bothlock_color = "$mauve";
@@ -44,6 +41,9 @@
       halign = "center";
       valign = "center";
     };
+
+    # transition time between normal outer_color and fail_color
+    animation = "inputFieldColors, 1, 3, linear";
 
     label = [
       {
