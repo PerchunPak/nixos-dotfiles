@@ -4,6 +4,7 @@
 
   programs = {
     trippy.enable = true;
+    partition-manager.enable = true;
   };
 
   services = {

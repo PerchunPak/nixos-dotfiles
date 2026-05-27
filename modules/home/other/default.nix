@@ -59,7 +59,6 @@ in
       ghcherry
       gleam
       gnumake
-      gparted
       hyprshutdown
       kdePackages.kate
       libnotify
