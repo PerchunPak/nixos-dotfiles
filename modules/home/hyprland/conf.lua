@@ -6,7 +6,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("uwsm app -s b -- swaybg")
 	hl.exec_cmd("uwsm app -- zen-beta")
 	hl.exec_cmd("uwsm app -- equibop", { workspace = "3 silent" })
-	hl.exec_cmd("uwsm app -- steam")
+	hl.exec_cmd("sleep 5 && uwsm app -- steam")
 	hl.exec_cmd("uwsm app -- @spawn-btop-workspace@", {
 		workspace = "special:btop silent",
 	})
@@ -22,8 +22,6 @@ end)
 
 -- Launch applications
 hl.bind("SUPER + A", hl.dsp.exec_cmd("alacritty"))
-hl.bind("SUPER + M", hl.dsp.exec_cmd("hyprctl dispatch dpms on"))
-hl.bind("SUPER + code:60", hl.dsp.exec_cmd("cosmic-files")) -- SUPER + .
 hl.bind("SUPER + D", hl.dsp.exec_cmd("rofi -show drun"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("@rofi-calc-script@"))
 hl.bind("SUPER + SHIFT + V", hl.dsp.exec_cmd("@rofi-calc-with-copy@"))
@@ -39,6 +37,17 @@ hl.bind("SUPER + C", hl.dsp.window.close())
 hl.bind("SUPER + P", hl.dsp.window.pin({ action = "toggle" }))
 hl.bind("SUPER + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind("SUPER + G", hl.dsp.window.float({ action = "toggle" }))
+
+-- Scrolling workspaces
+hl.bind("SUPER + CTRL + H", hl.dsp.layout("move -col"))
+hl.bind("SUPER + CTRL + L", hl.dsp.layout("move +col"))
+hl.bind("SUPER + bracketleft", hl.dsp.layout("consume_or_expel prev"))
+hl.bind("SUPER + bracketright", hl.dsp.layout("consume_or_expel next"))
+hl.bind("SUPER + equal", hl.dsp.layout("colresize +0.1"))
+hl.bind("SUPER + minus", hl.dsp.layout("colresize -0.1"))
+hl.bind("SUPER + SHIFT + equal", hl.dsp.layout("colresize 0.5"))
+hl.bind("SUPER + SHIFT + minus", hl.dsp.layout("colresize 1"))
+hl.bind("SUPER + SHIFT + P", hl.dsp.layout("promote"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }))
@@ -221,15 +230,16 @@ hl.gesture({
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 
-hl.window_rule({ match = { class = "^zen-beta$" }, workspace = "1 silent" })
-hl.window_rule({ match = { class = "^equibop$" }, workspace = "3 silent" })
-hl.window_rule({ match = { title = "^Steam$" }, workspace = "4 silent" })
-hl.window_rule({ match = { class = "^steam$" }, workspace = "4 silent" })
-hl.window_rule({ match = { class = "^heroic$" }, workspace = "4 silent" })
-hl.window_rule({ match = { class = "^Minecraft$" }, workspace = "4 silent" })
+hl.window_rule({ match = { class = "^zen-beta$" }, workspace = "1" })
+hl.window_rule({ match = { class = "^equibop$" }, workspace = "3" })
+hl.window_rule({ match = { title = "^Steam$" }, workspace = "4", scrolling_width = 1 })
+hl.window_rule({ match = { class = "^steam$" }, workspace = "4", scrolling_width = 1 })
+hl.window_rule({ match = { class = "^heroic$" }, workspace = "4" })
+hl.window_rule({ match = { class = "^Minecraft$" }, workspace = "4" })
 hl.window_rule({
 	name = "dbeaver",
-	match = { class = "^DBeaver$", workspace = "5 silent" },
+	match = { class = "^DBeaver$" },
+	workspace = "5",
 	no_initial_focus = true,
 })
 
@@ -272,3 +282,10 @@ hl.window_rule({
 hl.layer_rule({ match = { namespace = "logout_dialog" }, blur = true })
 hl.layer_rule({ match = { namespace = "hyprpicker" }, no_anim = true })
 hl.layer_rule({ match = { namespace = "selection" }, no_anim = true })
+
+-- Workspace rules
+hl.workspace_rule({ workspace = "1", layout = "scrolling" })
+hl.workspace_rule({ workspace = "3", layout = "scrolling" })
+hl.workspace_rule({ workspace = "4", layout = "scrolling" })
+hl.workspace_rule({ workspace = "5", layout = "scrolling" })
+hl.workspace_rule({ workspace = "6", layout = "scrolling" })
