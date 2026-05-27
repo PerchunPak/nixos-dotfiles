@@ -6,6 +6,7 @@
       base_10_sizes = true;
       swap_disk = false;
       net_iface = "enp3s0";
+      disks_filter = "/ /boot";
     };
   };
 }
