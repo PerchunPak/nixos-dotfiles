@@ -10,7 +10,6 @@
     gaming = {
       # additional-games = with pkgs; [ xonotic ];
       minecraft.enable = false;
-      satisfactory.enable = false;
     };
   };
 

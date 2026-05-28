@@ -5,12 +5,11 @@ in
 {
   options = {
     my.user = {
-      enable = lib.my.mkEnableByDefaultOption "user configuration";
       password = lib.mkOption { type = with lib.types; passwdEntry str; };
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = {
     users.users = {
       perchun = {
         isNormalUser = true;
@@ -18,13 +17,13 @@ in
         hashedPassword = cfg.password;
         createHome = true;
         extraGroups = [
-          "wheel"
-          "networkmanager"
           "docker"
           "input"
+          "libvirtd"
+          "networkmanager"
           "video"
-        ]
-        ++ lib.optional config.my.vm.enable "libvirtd";
+          "wheel"
+        ];
       };
     };
 

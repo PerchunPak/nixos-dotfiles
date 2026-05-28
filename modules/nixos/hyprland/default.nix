@@ -1,18 +1,11 @@
 {
   lib,
-  config,
   pkgs,
   ...
 }:
-let
-  cfg = config.my.hyprland;
-  guiEnabled = config.my.gui.enable;
-in
 {
   options = {
     my.hyprland = {
-      enable = lib.my.mkEnableByDefaultOption "Hyprland";
-
       monitors = lib.mkOption {
         type =
           with lib.types;
@@ -28,29 +21,18 @@ in
     };
   };
 
-  config = lib.mkMerge [
-    {
-      assertions = [
-        (lib.mkIf cfg.enable {
-          assertion = guiEnabled;
-          message = "If you enable Hyprland, you must enable gui as well";
-        })
-      ];
-    }
-
-    (lib.mkIf cfg.enable {
-      programs = {
-        hyprland = {
-          enable = true;
-          xwayland.enable = true;
-          withUWSM = true;
-        };
-        hyprlock.enable = true;
+  config = {
+    programs = {
+      hyprland = {
+        enable = true;
+        xwayland.enable = true;
+        withUWSM = true;
       };
+      hyprlock.enable = true;
+    };
 
-      xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal ];
+    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal ];
 
-      services.displayManager.defaultSession = "hyprland-uwsm";
-    })
-  ];
+    services.displayManager.defaultSession = "hyprland-uwsm";
+  };
 }
