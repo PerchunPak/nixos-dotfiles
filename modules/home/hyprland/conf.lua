@@ -6,7 +6,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("uwsm app -s b -- swaybg")
 	hl.exec_cmd("uwsm app -- zen-beta")
 	hl.exec_cmd("uwsm app -- equibop", { workspace = "3 silent" })
-	hl.exec_cmd("sleep 5 && uwsm app -- steam")
+	hl.exec_cmd("uwsm app -- steam")
 	hl.exec_cmd("uwsm app -- @spawn-btop-workspace@", {
 		workspace = "special:btop silent",
 	})
