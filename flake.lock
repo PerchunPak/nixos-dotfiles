@@ -451,11 +451,11 @@
     "wayle": {
       "flake": false,
       "locked": {
-        "lastModified": 1779784322,
-        "narHash": "sha256-gTvjGvS9jWijB7xVMTZZkltGfqreKtXanZlt1ZgFiC4=",
+        "lastModified": 1779955924,
+        "narHash": "sha256-oFsKa10lGb2CkJ+FtkUoXZmkgjh+1NrgxXKVvFfiqNI=",
         "owner": "wayle-rs",
         "repo": "wayle",
-        "rev": "cfd98e9983114896a8df562c4cd105a2d9d09519",
+        "rev": "08e5aa8063eded7b69aaf2bb1f75b9ee0988a3ad",
         "type": "github"
       },
       "original": {

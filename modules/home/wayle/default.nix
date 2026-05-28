@@ -15,6 +15,7 @@
             ];
             monitor = "*";
             right = [
+              "brightness"
               "volume"
               "network"
               "idle-inhibit"
