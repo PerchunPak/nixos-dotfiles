@@ -21,7 +21,6 @@ in
   config = lib.mkIf cfg.enable {
     my.persistence.directories = [
       ".config/heroic"
-      ".local/share/Celeste"
     ];
 
     home.packages =
