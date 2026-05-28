@@ -18,7 +18,7 @@
       }
       {
         label = "logout";
-        action = "loginctl terminate-user $USER";
+        action = "hyprshutdown -t 'Logging out...'";
         text = "Logout [ O ]";
         keybind = "o";
       }

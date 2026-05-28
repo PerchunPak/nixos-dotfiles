@@ -36,9 +36,18 @@ in
     (lib.mkIf cfg.enable {
       services.xserver.enable = true;
 
-      services.displayManager.sddm = {
+      services.displayManager.ly = {
         enable = true;
-        package = pkgs.kdePackages.sddm;
+        settings = {
+          animation = "gameoflife";
+          bigclock = "en";
+          bigclock_seconds = true;
+          hide_version_string = true;
+          inactivity_cmd = "systemctl suspend";
+          inactivity_delay = 5 * 60;
+          sleep_cmd = "systemctl suspend";
+          numlock = true;
+        };
       };
 
       # Enable sound, these are settings from Gnome live ISO.
