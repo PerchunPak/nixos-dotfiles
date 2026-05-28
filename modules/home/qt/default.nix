@@ -1,15 +1,15 @@
 {
+  catppuccin = {
+    qt5ct = {
+      enable = true;
+      flavor = "macchiato";
+    };
+    kvantum.enable = false;
+  };
+
   qt = {
     enable = true;
     platformTheme.name = "qtct";
-    style.name = "kvantum";
-    kvantum = {
-      enable = true;
-      settings = {
-        General = {
-          theme = "catppuccin-mocha-maroon";
-        };
-      };
-    };
+    style.name = "darkly";
   };
 }
