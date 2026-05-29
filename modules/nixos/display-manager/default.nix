@@ -1,56 +1,21 @@
 {
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-let
-  cfg = config.my.gui;
-in
-{
-  # Configure keymap
-  services.xserver.xkb = {
-    layout = "us,cz,ua,ru";
-    variant = ",qwerty,,";
-  };
-
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "perchun";
-  };
-
-  programs.xwayland.enable = true;
-
-  services.xserver.excludePackages = [ pkgs.xterm ];
-  services.xserver.enable = true;
-
-  services.displayManager.ly = {
-    enable = true;
-    settings = {
-      animation = "gameoflife";
-      bigclock = "en";
-      bigclock_seconds = true;
-      hide_version_string = true;
-      inactivity_cmd = "systemctl suspend";
-      inactivity_delay = 5 * 60;
-      sleep_cmd = "systemctl suspend";
-      numlock = true;
+  services.displayManager = {
+    autoLogin = {
+      enable = true;
+      user = "perchun";
+    };
+    ly = {
+      enable = true;
+      settings = {
+        animation = "gameoflife";
+        bigclock = "en";
+        bigclock_seconds = true;
+        hide_version_string = true;
+        inactivity_cmd = "systemctl suspend";
+        inactivity_delay = 5 * 60;
+        sleep_cmd = "systemctl suspend";
+        numlock = true;
+      };
     };
   };
-
-  # Enable sound, these are settings from Gnome live ISO.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
 }
