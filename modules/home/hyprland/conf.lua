@@ -231,15 +231,15 @@ hl.gesture({
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 
 hl.window_rule({ match = { class = "^zen-beta$" }, workspace = "1" })
-hl.window_rule({ match = { class = "^equibop$" }, workspace = "3" })
-hl.window_rule({ match = { title = "^Steam$" }, workspace = "4", scrolling_width = 1 })
-hl.window_rule({ match = { class = "^steam$" }, workspace = "4", scrolling_width = 1 })
-hl.window_rule({ match = { class = "^heroic$" }, workspace = "4" })
-hl.window_rule({ match = { class = "^Minecraft$" }, workspace = "4" })
+hl.window_rule({ match = { class = "^equibop$" }, workspace = "3 silent" })
+hl.window_rule({ match = { title = "^Steam$" }, workspace = "4 silent", scrolling_width = 1 })
+hl.window_rule({ match = { class = "^steam$" }, workspace = "4 silent", scrolling_width = 1 })
+hl.window_rule({ match = { class = "^heroic$" }, workspace = "4 silent" })
+hl.window_rule({ match = { class = "^Minecraft$" }, workspace = "4 silent" })
 hl.window_rule({
 	name = "dbeaver",
 	match = { class = "^DBeaver$" },
-	workspace = "5",
+	workspace = "5 silent",
 	no_initial_focus = true,
 })
 
@@ -249,7 +249,7 @@ hl.window_rule({
 		class = "^steam$",
 		title = "^Список друзів$",
 	},
-	workspace = 4,
+	workspace = "4 silent",
 	float = true,
 	center = true,
 	size = "383, 691",
