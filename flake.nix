@@ -119,6 +119,9 @@
             "libcufft"
             "libnpp"
           ];
+        permittedInsecurePackages = [
+          "electron-39.8.10"
+        ];
       };
 
       outputs-builder = channels: {
