@@ -29,7 +29,6 @@ inputs:
       astro-language-server
       basedpyright
       bash-language-server
-      gleam
       graphql-language-service-cli
       harper
       lua-language-server
