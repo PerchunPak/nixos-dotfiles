@@ -4,6 +4,7 @@
 
   catppuccin = {
     enable = true;
+    autoEnable = true;
     accent = "maroon";
     flavor = "mocha";
 
