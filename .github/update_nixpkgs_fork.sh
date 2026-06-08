@@ -11,7 +11,7 @@ nix run ".#pkgs.$system.nixpkgs.ghcherry" -- \
   --first-hard-reset-to "NixOS/nixpkgs/$nixpkgs_rev" \
   `: # actual-client: init` \
   https://github.com/NixOS/nixpkgs/pull/506686 \
-  `: # wayle: 0.4.1 -> 0.6.0` \
-  https://github.com/NixOS/nixpkgs/pull/526419
+  `: # kulala-core: fix node_modules hash` \
+  https://github.com/NixOS/nixpkgs/pull/528816
 
 nix flake update nixpkgs
