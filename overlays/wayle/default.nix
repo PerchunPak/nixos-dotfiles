@@ -1,6 +1,6 @@
 { inputs, ... }:
 final: prev: {
-  wayle = prev.wayle.overrideAttrs (old: {
+  wayle = prev.wayle.overrideAttrs (old: rec {
     src = inputs.wayle;
 
     patches = [
@@ -14,5 +14,12 @@ final: prev: {
         hash = "sha256-XSqZmrqEg6Db1+PZUCDxxTLu4NSF8w0sZPtAkaZT2iI=";
       })
     ];
+
+    cargoDeps =
+      assert old.cargoHash == "sha256-4PUXJwUP5h/ggZQbY78BdqMh5oZes1XCeWuT2/S94Z4=";
+      final.rustPlatform.fetchCargoVendor {
+        inherit src;
+        hash = "sha256-rqMMtB4ogsSQ+iou6raKzMuI+EcOcqklfzxb+E7qJN0=";
+      };
   });
 }
