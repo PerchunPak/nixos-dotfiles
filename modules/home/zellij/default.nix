@@ -1,7 +1,5 @@
 { pkgs, ... }:
 {
-  imports = [ ./plugins-module.nix ];
-
   home.packages = [ pkgs.tmux ];
 
   programs.zellij = {
