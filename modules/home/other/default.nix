@@ -54,10 +54,8 @@ in
       cosmic-files
       dbeaver-bin
       dig
-      erlang_27
       fd
       ghcherry
-      gleam
       gnumake
       hyprshutdown
       kdePackages.kate
