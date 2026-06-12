@@ -10,8 +10,6 @@ nix run ".#pkgs.$system.nixpkgs.ghcherry" -- \
   --target PerchunPak/nixpkgs@patched \
   --first-hard-reset-to "NixOS/nixpkgs/$nixpkgs_rev" \
   `: # actual-client: init` \
-  https://github.com/NixOS/nixpkgs/pull/506686 \
-  `: # kulala-core: fix node_modules hash` \
-  https://github.com/NixOS/nixpkgs/pull/528816
+  https://github.com/NixOS/nixpkgs/pull/506686
 
 nix flake update nixpkgs
