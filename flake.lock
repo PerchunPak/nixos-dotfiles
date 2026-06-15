@@ -204,11 +204,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769548169,
-        "narHash": "sha256-03+JxvzmfwRu+5JafM0DLbxgHttOQZkUtDWBmeUkN8Y=",
+        "lastModified": 1781547779,
+        "narHash": "sha256-nO9naGXbxXxrCdNr8KqA5FKKxRvza5GYoqbbyWXRMdg=",
         "owner": "PerchunPak",
         "repo": "impermanence",
-        "rev": "7b1d382faf603b6d264f58627330f9faa5cba149",
+        "rev": "9a97b79137efb7384bcb59e1900d4c7f7b0c3658",
         "type": "github"
       },
       "original": {
