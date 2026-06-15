@@ -24,7 +24,7 @@
   };
 
   gtk.enable = config.my.gui.enable;
-  gtk.gtk4.theme = config.my.gui.enable;
+  gtk.gtk4.theme = lib.mkDefault null;
 
   programs = {
     bat.enable = true;

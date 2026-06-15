@@ -18,7 +18,7 @@
       signByDefault = true;
     };
     maintenance = {
-      enable = nixosConfig == null && (!nixosConfig.my.economInternetTraffic);
+      enable = nixosConfig != null && (!nixosConfig.my.economInternetTraffic);
       repositories = [ "/home/perchun/dev/nixpkgs/master" ];
     };
     settings = {
