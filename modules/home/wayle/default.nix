@@ -1,7 +1,7 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 {
   services.wayle = {
-    enable = true;
+    enable = config.my.gui.enable;
 
     settings = {
       bar = {

@@ -1,13 +1,10 @@
 {
   lib,
   pkgs,
-  nixosConfig,
-  inputs,
+  nixosConfig ? null,
+  config,
   ...
 }:
-let
-  inherit (pkgs.stdenv.hostPlatform) system;
-in
 {
   home.sessionVariables = {
     # Run Electron apps natively on Wayland
@@ -26,58 +23,60 @@ in
     "Downloads/.keep".text = "";
   };
 
-  gtk.enable = true;
-  gtk.gtk4.theme = lib.mkDefault null;
+  gtk.enable = config.my.gui.enable;
+  gtk.gtk4.theme = config.my.gui.enable;
 
   programs = {
     bat.enable = true;
-    chromium.enable = true;
+    chromium.enable = config.my.gui.enable;
     eza.enable = true;
     htop.enable = true;
     jq.enable = true;
-    obs-studio.enable = true;
+    obs-studio.enable = config.my.gui.enable;
     ripgrep.enable = true;
   };
 
   home.packages =
     with pkgs;
-    [
-      (_7zz-rar.override { useUasm = false; })
-      (mpv.override { youtubeSupport = false; })
-      actual-client
-      ansifilter
-      bintools
-      brightnessctl
-      btdu # ncdu for btrfs
-      cargo
-      cargo-expand
-      cosmic-files
-      dbeaver-bin
-      dig
-      fd
-      ghcherry
-      gnumake
-      hyprshutdown
-      kdePackages.kate
-      libnotify
-      meld
-      ncdu
-      nix-diff-rs
-      nix-diff-rs
-      nixfmt
-      nixpkgs-review
-      pavucontrol
-      rebar3
-      rustc
-      signal-desktop
-      tabiew
-      tmux
-      tor-browser
-      unzip
-      wget
-      wl-clipboard
-      xxd
-      zip
-    ]
-    ++ (lib.lists.optional nixosConfig.my.flatpak.enable pkgs.flatpak);
+    lib.mkMerge [
+      [
+        (_7zz-rar.override { useUasm = false; })
+        ansifilter
+        bintools
+        brightnessctl
+        btdu # ncdu for btrfs
+        cargo
+        cargo-expand
+        dig
+        fd
+        ghcherry
+        gnumake
+        libnotify
+        meld
+        ncdu
+        nix-diff-rs
+        nixfmt
+        nixpkgs-review
+        rustc
+        tabiew
+        tmux
+        unzip
+        wget
+        xxd
+        zip
+      ]
+      (lib.mkIf (nixosConfig != null && nixosConfig.my.flatpak.enable) [ pkgs.flatpak ])
+      (lib.mkIf config.my.gui.enable [
+        (mpv.override { youtubeSupport = false; })
+        actual-client
+        cosmic-files
+        dbeaver-bin
+        hyprshutdown
+        kdePackages.kate
+        pavucontrol
+        signal-desktop
+        tor-browser
+        wl-clipboard
+      ])
+    ];
 }

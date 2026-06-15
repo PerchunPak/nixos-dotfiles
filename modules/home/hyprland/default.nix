@@ -1,6 +1,5 @@
 {
-  nixosConfig,
-  lib,
+  config,
   pkgs,
   ...
 }:
@@ -11,7 +10,7 @@
 
   catppuccin.hyprland.enable = false;
   wayland.windowManager.hyprland = {
-    enable = true;
+    enable = config.my.gui.enable;
     systemd.enable = false;
     configType = "lua";
   };
@@ -22,13 +21,13 @@
   ];
 
   programs = {
-    hyprlock.enable = true;
-    wlogout.enable = true;
+    hyprlock.enable = config.my.gui.enable;
+    wlogout.enable = config.my.gui.enable;
   };
 
   services = {
-    hypridle.enable = true;
-    hyprpolkitagent.enable = true;
+    hypridle.enable = config.my.gui.enable;
+    hyprpolkitagent.enable = config.my.gui.enable;
   };
 
   home.packages = with pkgs; [

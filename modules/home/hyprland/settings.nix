@@ -1,6 +1,6 @@
 {
   pkgs,
-  nixosConfig,
+  nixosConfig ? null,
   lib,
   ...
 }:
@@ -55,7 +55,7 @@ let
   '';
 in
 {
-  wayland.windowManager.hyprland = {
+  wayland.windowManager.hyprland = lib.mkIf (nixosConfig != null) {
     settings = {
       monitor = cfg.monitors;
     };
@@ -73,7 +73,7 @@ in
         autoclicker-script
         spawn-btop-workspace
         ;
-      econom_internet_traffic = nixosConfig.my.economInternetTraffic;
+      econom_internet_traffic = nixosConfig != null && nixosConfig.my.economInternetTraffic;
     };
 
     "uwsm/env".text = ''

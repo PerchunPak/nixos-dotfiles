@@ -2,6 +2,7 @@
   pkgs,
   inputs,
   lib,
+  config,
   ...
 }:
 let
@@ -166,26 +167,28 @@ in
     inputs.zen-browser.homeModules.beta
   ];
 
-  programs.zen-browser = {
-    enable = true;
-    languagePacks = [
-      "uk"
-      "ru" # sorry
-      "cs" # czech
-    ];
-    profiles = {
-      perchun = profile;
-      stuff = profile // {
-        id = 1;
+  config = lib.mkIf config.my.gui.enable {
+    programs.zen-browser = {
+      enable = true;
+      languagePacks = [
+        "uk"
+        "ru" # sorry
+        "cs" # czech
+      ];
+      profiles = {
+        perchun = profile;
+        stuff = profile // {
+          id = 1;
+        };
       };
     };
+
+    my.persistence.directories = [
+      ".config/zen"
+      ".cache/zen"
+    ];
+
+    home.file."/home/perchun/.config/zen/perchun/search.json.mozlz4".force = lib.mkForce true;
+    home.file."/home/perchun/.config/zen/stuff/search.json.mozlz4".force = lib.mkForce true;
   };
-
-  my.persistence.directories = [
-    ".config/zen"
-    ".cache/zen"
-  ];
-
-  home.file."/home/perchun/.config/zen/perchun/search.json.mozlz4".force = lib.mkForce true;
-  home.file."/home/perchun/.config/zen/stuff/search.json.mozlz4".force = lib.mkForce true;
 }

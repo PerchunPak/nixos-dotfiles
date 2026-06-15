@@ -1,15 +1,22 @@
-{ pkgs, ... }:
 {
-  home.packages = [ pkgs.variety ];
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
+  config = lib.mkIf config.my.gui.enable {
+    home.packages = [ pkgs.variety ];
 
-  xdg.configFile = {
-    "variety/ui.conf".source = ./ui.conf;
-    "variety/variety.conf".source = ./variety.conf;
-  };
+    xdg.configFile = {
+      "variety/ui.conf".source = ./ui.conf;
+      "variety/variety.conf".source = ./variety.conf;
+    };
 
-  home.file."Pictures/.keep".text = "Variety needs this";
+    home.file."Pictures/.keep".text = "Variety needs this";
 
-  my.persistence = {
-    directories = [ ".config/variety" ];
+    my.persistence = {
+      directories = [ ".config/variety" ];
+    };
   };
 }

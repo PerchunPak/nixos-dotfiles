@@ -1,14 +1,15 @@
+{ config, ... }:
 {
   catppuccin = {
     qt5ct = {
-      enable = true;
+      enable = config.my.gui.enable;
       flavor = "macchiato";
     };
     kvantum.enable = false;
   };
 
   qt = {
-    enable = true;
+    enable = config.my.gui.enable;
     platformTheme.name = "qtct";
     style.name = "darkly";
   };

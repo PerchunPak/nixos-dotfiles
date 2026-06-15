@@ -1,8 +1,9 @@
+{ config, ... }:
 {
-  services.arrpc.enable = true;
+  services.arrpc.enable = config.my.gui.enable;
 
   programs.equibop = {
-    enable = true;
+    enable = config.my.gui.enable;
     settings = {
       arRPC = true;
       discordBranch = "stable";

@@ -1,4 +1,8 @@
-{ pkgs, nixosConfig, ... }:
+{
+  pkgs,
+  nixosConfig ? null,
+  ...
+}:
 {
   home.packages = with pkgs; [
     git-extras
@@ -14,8 +18,8 @@
       signByDefault = true;
     };
     maintenance = {
-      enable = !nixosConfig.my.economInternetTraffic;
-      repositories = [ "/home/perchun/dev/nixpkgs/review" ];
+      enable = nixosConfig == null && (!nixosConfig.my.economInternetTraffic);
+      repositories = [ "/home/perchun/dev/nixpkgs/master" ];
     };
     settings = {
       user = {

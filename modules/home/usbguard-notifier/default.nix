@@ -1,6 +1,11 @@
-{ pkgs, lib, ... }:
 {
-  systemd.user.services.usbguard-notifier = {
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
+  systemd.user.services.usbguard-notifier = lib.mkIf config.my.gui.enable {
     Unit = {
       Description = "USBGuard Notifier";
       After = [ "usbguard.service" ];
