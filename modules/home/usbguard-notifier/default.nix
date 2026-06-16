@@ -1,11 +1,12 @@
 {
   pkgs,
   lib,
-  config,
+  nixosConfig,
   ...
 }:
 {
-  systemd.user.services.usbguard-notifier = lib.mkIf config.my.gui.enable {
+  home.packages = lib.mkIf nixosConfig.my.gui.enable [ pkgs.pkgs.usbguard-notifier ];
+  systemd.user.services.usbguard-notifier = lib.mkIf nixosConfig.my.gui.enable {
     Unit = {
       Description = "USBGuard Notifier";
       After = [ "usbguard.service" ];

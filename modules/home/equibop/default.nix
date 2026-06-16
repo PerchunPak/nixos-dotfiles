@@ -1,9 +1,9 @@
-{ config, ... }:
+{ nixosConfig, ... }:
 {
-  services.arrpc.enable = config.my.gui.enable;
+  services.arrpc.enable = nixosConfig.my.gui.enable;
 
   programs.equibop = {
-    enable = config.my.gui.enable;
+    enable = nixosConfig.my.gui.enable;
     settings = {
       arRPC = true;
       discordBranch = "stable";

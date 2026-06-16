@@ -1,9 +1,9 @@
-{ pkgs, config, ... }:
+{ pkgs, nixosConfig, ... }:
 {
   catppuccin.rofi.enable = false;
 
   programs.rofi = {
-    enable = config.my.gui.enable;
+    enable = nixosConfig.my.gui.enable;
     theme = {
       "@theme" = "${./theme.rasi}";
     };

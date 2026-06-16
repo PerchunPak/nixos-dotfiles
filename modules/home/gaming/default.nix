@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  nixosConfig,
   pkgs,
   ...
 }:
@@ -11,7 +12,7 @@ in
   options = {
     my.gaming = {
       enable = (lib.my.mkEnableByDefaultOption "Gaming") // {
-        default = config.my.gui.enable;
+        default = nixosConfig.my.gui.enable;
       };
       additional-games = lib.mkOption {
         type = with lib.types; listOf package;

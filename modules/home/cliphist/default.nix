@@ -1,11 +1,11 @@
 {
-  config,
+  nixosConfig,
   lib,
   pkgs,
   ...
 }:
 {
-  config = lib.mkIf config.my.gui.enable {
+  config = lib.mkIf nixosConfig.my.gui.enable {
     services.cliphist.enable = true;
 
     home.packages = [

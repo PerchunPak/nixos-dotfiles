@@ -1,11 +1,11 @@
 {
   pkgs,
-  config,
+  nixosConfig,
   lib,
   ...
 }:
 {
-  home.packages = lib.mkIf config.my.gui.enable (
+  home.packages = lib.mkIf nixosConfig.my.gui.enable (
     with pkgs;
     [
       libreoffice

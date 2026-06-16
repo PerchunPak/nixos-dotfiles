@@ -2,10 +2,11 @@
   lib,
   pkgs,
   config,
+  nixosConfig,
   ...
 }:
 {
-  config = lib.mkIf config.my.gui.enable {
+  config = lib.mkIf nixosConfig.my.gui.enable {
     home.packages = [ pkgs.qbittorrent ];
 
     my.persistence.directories = [

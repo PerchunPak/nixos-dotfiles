@@ -2,7 +2,7 @@
   pkgs,
   inputs,
   lib,
-  config,
+  nixosConfig,
   ...
 }:
 let
@@ -167,7 +167,7 @@ in
     inputs.zen-browser.homeModules.beta
   ];
 
-  config = lib.mkIf config.my.gui.enable {
+  config = lib.mkIf nixosConfig.my.gui.enable {
     programs.zen-browser = {
       enable = true;
       languagePacks = [

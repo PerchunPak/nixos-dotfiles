@@ -1,6 +1,7 @@
 {
-  config,
+  nixosConfig,
   pkgs,
+  lib,
   ...
 }:
 {
@@ -8,30 +9,32 @@
     ./settings.nix
   ];
 
-  catppuccin.hyprland.enable = false;
-  wayland.windowManager.hyprland = {
-    enable = config.my.gui.enable;
-    systemd.enable = false;
-    configType = "lua";
+  config = lib.mkIf nixosConfig.my.gui.enable {
+    catppuccin.hyprland.enable = false;
+    wayland.windowManager.hyprland = {
+      enable = true;
+      systemd.enable = false;
+      configType = "lua";
+    };
+
+    xdg.portal.extraPortals = [
+      pkgs.xdg-desktop-portal
+      pkgs.xdg-desktop-portal-gtk
+    ];
+
+    programs = {
+      hyprlock.enable = true;
+      wlogout.enable = true;
+    };
+
+    services = {
+      hypridle.enable = true;
+      hyprpolkitagent.enable = true;
+    };
+
+    home.packages = with pkgs; [
+      hyprcursor
+      swaybg
+    ];
   };
-
-  xdg.portal.extraPortals = [
-    pkgs.xdg-desktop-portal
-    pkgs.xdg-desktop-portal-gtk
-  ];
-
-  programs = {
-    hyprlock.enable = config.my.gui.enable;
-    wlogout.enable = config.my.gui.enable;
-  };
-
-  services = {
-    hypridle.enable = config.my.gui.enable;
-    hyprpolkitagent.enable = config.my.gui.enable;
-  };
-
-  home.packages = with pkgs; [
-    hyprcursor
-    swaybg
-  ];
 }

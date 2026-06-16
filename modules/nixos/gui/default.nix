@@ -1,9 +1,22 @@
-{ pkgs, ... }:
 {
-  services.xserver = {
-    enable = true;
-    excludePackages = [ pkgs.xterm ];
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
+  options = {
+    my.gui = {
+      enable = lib.mkEnableOption "GUI";
+    };
   };
 
-  programs.xwayland.enable = true;
+  config = lib.mkIf config.my.gui.enable {
+    services.xserver = {
+      enable = true;
+      excludePackages = [ pkgs.xterm ];
+    };
+
+    programs.xwayland.enable = true;
+  };
 }

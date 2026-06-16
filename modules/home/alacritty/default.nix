@@ -1,7 +1,6 @@
-{ config, ... }:
 {
   programs.alacritty = {
-    enable = config.my.gui.enable;
+    enable = true;
 
     settings = {
       window = {

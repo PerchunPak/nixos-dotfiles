@@ -1,8 +1,7 @@
 {
   lib,
   pkgs,
-  nixosConfig ? null,
-  config,
+  nixosConfig,
   ...
 }:
 {
@@ -23,16 +22,16 @@
     "Downloads/.keep".text = "";
   };
 
-  gtk.enable = config.my.gui.enable;
+  gtk.enable = nixosConfig.my.gui.enable;
   gtk.gtk4.theme = lib.mkDefault null;
 
   programs = {
     bat.enable = true;
-    chromium.enable = config.my.gui.enable;
+    chromium.enable = nixosConfig.my.gui.enable;
     eza.enable = true;
     htop.enable = true;
     jq.enable = true;
-    obs-studio.enable = config.my.gui.enable;
+    obs-studio.enable = nixosConfig.my.gui.enable;
     ripgrep.enable = true;
   };
 
@@ -65,8 +64,8 @@
         xxd
         zip
       ]
-      (lib.mkIf (nixosConfig != null && nixosConfig.my.flatpak.enable) [ pkgs.flatpak ])
-      (lib.mkIf config.my.gui.enable [
+      (lib.mkIf (nixosConfig.my.flatpak.enable) [ pkgs.flatpak ])
+      (lib.mkIf nixosConfig.my.gui.enable [
         (mpv.override { youtubeSupport = false; })
         actual-client
         cosmic-files

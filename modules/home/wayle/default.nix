@@ -1,7 +1,7 @@
-{ inputs, config, ... }:
+{ inputs, nixosConfig, ... }:
 {
   services.wayle = {
-    enable = config.my.gui.enable;
+    enable = nixosConfig.my.gui.enable;
 
     settings = {
       bar = {

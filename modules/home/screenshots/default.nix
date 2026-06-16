@@ -1,11 +1,11 @@
 {
   pkgs,
   lib,
-  config,
+  nixosConfig,
   ...
 }:
 {
-  config = lib.mkIf config.my.gui.enable {
+  config = lib.mkIf nixosConfig.my.gui.enable {
     programs.satty = {
       enable = true;
       settings = {
