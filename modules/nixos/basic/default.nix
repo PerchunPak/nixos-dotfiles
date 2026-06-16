@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   # Configure keymap
   services.xserver.xkb = {
@@ -27,7 +27,7 @@
 
   boot.loader = {
     grub = {
-      enable = true;
+      enable = lib.mkDefault true;
       device = "nodev";
       efiSupport = true;
       useOSProber = true;
@@ -36,14 +36,6 @@
   };
 
   networking.networkmanager.enable = true;
-  networking.nameservers = [
-    # OpenDNS
-    "208.67.222.222"
-    "208.67.220.220"
-    # NextDNS
-    "45.90.28.142"
-    "45.90.30.142"
-  ];
 
   security.polkit.enable = true;
 

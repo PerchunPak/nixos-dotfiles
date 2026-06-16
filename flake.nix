@@ -65,6 +65,11 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-diff-rs = {
       url = "github:Mic92/nix-diff-rs";
       inputs.nixpkgs.follows = "nixpkgs";
