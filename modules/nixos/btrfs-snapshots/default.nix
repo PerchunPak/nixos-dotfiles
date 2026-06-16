@@ -5,13 +5,13 @@
   ...
 }:
 let
-  cfg = config.my.btrfs-backups;
+  cfg = config.my.btrfs-snapshots;
   btrfs-backup = lib.getExe pkgs.my.btrfs-backup;
 in
 {
   options = {
-    my.btrfs-backups = {
-      enable = lib.mkEnableOption "btrfs backups";
+    my.btrfs-snapshots = {
+      enable = lib.mkEnableOption "btrfs snapshots";
     };
   };
 

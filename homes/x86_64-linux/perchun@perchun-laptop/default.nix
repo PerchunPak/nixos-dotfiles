@@ -6,7 +6,6 @@
   };
 
   my = {
-    gui.enable = true;
     setup-stuff.backlight.command = "${lib.getExe pkgs.brightnessctl} s 40%";
     gaming = {
       # additional-games = with pkgs; [ xonotic ];
