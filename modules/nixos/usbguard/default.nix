@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   services.usbguard = {
-    enable = true;
+    enable = config.my.gui.enable;
     IPCAllowedUsers = [ "perchun" ];
     rules = ''
       # my laptop devices
@@ -23,6 +23,4 @@
       reject with-interface all-of { 08:*:* 02:*:* }
     '';
   };
-
-  environment.defaultPackages = [ pkgs.usbguard-notifier ];
 }

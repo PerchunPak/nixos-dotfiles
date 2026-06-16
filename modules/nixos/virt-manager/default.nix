@@ -1,4 +1,7 @@
+{ config, lib, ... }:
 {
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
+  config = lib.mkIf config.my.gui.enable {
+    virtualisation.libvirtd.enable = true;
+    programs.virt-manager.enable = true;
+  };
 }

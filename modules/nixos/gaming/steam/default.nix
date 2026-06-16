@@ -1,9 +1,10 @@
+{ config, ... }:
 {
   programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
+    enable = config.my.gui.enable;
+    gamescopeSession.enable = config.my.gui.enable;
   };
-  programs.gamemode.enable = true;
+  programs.gamemode.enable = config.my.gui.enable;
 
   environment.variables = {
     FONTCONFIG_PATH = "/etc/fonts";

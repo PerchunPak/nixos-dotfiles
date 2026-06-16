@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   # Workaround for crashing session on auto-login
   # see https://github.com/NixOS/nixpkgs/issues/103746
@@ -7,8 +12,10 @@
 
   programs.dconf.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    gnome-calculator
-    loupe # image viewer
-  ];
+  environment.systemPackages =
+    with pkgs;
+    lib.mkIf config.my.gui.enable [
+      gnome-calculator
+      loupe # image viewer
+    ];
 }

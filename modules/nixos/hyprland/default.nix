@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }:
 {
@@ -21,7 +22,7 @@
     };
   };
 
-  config = {
+  config = lib.mkIf config.my.gui.enable {
     programs = {
       hyprland = {
         enable = true;

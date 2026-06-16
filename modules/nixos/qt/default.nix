@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ config, ... }:
 {
   qt = {
-    enable = true;
+    enable = config.my.gui.enable;
     platformTheme = "qt5ct";
   };
 }

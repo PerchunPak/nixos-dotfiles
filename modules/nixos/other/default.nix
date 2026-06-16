@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   environment.defaultPackages = with pkgs; [ ];
 
   programs = {
     trippy.enable = true;
-    partition-manager.enable = true;
+    partition-manager.enable = config.my.gui.enable;
   };
 
   services = {

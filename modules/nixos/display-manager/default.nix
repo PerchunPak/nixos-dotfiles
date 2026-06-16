@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   services.displayManager = {
     autoLogin = {
@@ -5,7 +6,7 @@
       user = "perchun";
     };
     ly = {
-      enable = true;
+      enable = config.my.gui.enable;
       settings = {
         animation = "gameoflife";
         bigclock = "en";
