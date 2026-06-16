@@ -204,30 +204,6 @@
         ]
       },
       "locked": {
-        "lastModified": 1781547779,
-        "narHash": "sha256-nO9naGXbxXxrCdNr8KqA5FKKxRvza5GYoqbbyWXRMdg=",
-        "owner": "PerchunPak",
-        "repo": "impermanence",
-        "rev": "9a97b79137efb7384bcb59e1900d4c7f7b0c3658",
-        "type": "github"
-      },
-      "original": {
-        "owner": "PerchunPak",
-        "ref": "patched",
-        "repo": "impermanence",
-        "type": "github"
-      }
-    },
-    "impermanence-upstream": {
-      "inputs": {
-        "home-manager": [
-          "home-manager"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
         "lastModified": 1769548169,
         "narHash": "sha256-03+JxvzmfwRu+5JafM0DLbxgHttOQZkUtDWBmeUkN8Y=",
         "owner": "nix-community",
@@ -354,7 +330,6 @@
         "ghcherry": "ghcherry",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
-        "impermanence-upstream": "impermanence-upstream",
         "nix-diff-rs": "nix-diff-rs",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
