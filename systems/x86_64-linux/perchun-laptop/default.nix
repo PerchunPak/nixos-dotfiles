@@ -38,4 +38,6 @@
   };
 
   services.power-profiles-daemon.enable = true;
+
+  virtualisation.docker.storageDriver = "btrfs";
 }
