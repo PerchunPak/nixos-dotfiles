@@ -39,6 +39,9 @@
         "ssh://git@gitlab.com/" = {
           insteadOf = [ "https://gitlab.com/" ];
         };
+        "ssh://git@git.alteryx.com/" = {
+          insteadOf = [ "https://git.alteryx.com/" ];
+        };
       };
       tag.gpgSign = false;
 
