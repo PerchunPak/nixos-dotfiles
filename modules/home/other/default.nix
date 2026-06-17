@@ -51,6 +51,7 @@
         ghcherry
         gnumake
         libnotify
+        lsof
         meld
         ncdu
         nix-diff-rs
