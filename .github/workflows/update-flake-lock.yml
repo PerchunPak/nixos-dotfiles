@@ -16,7 +16,7 @@ jobs:
           private-key: ${{ secrets.GH_APP_SECRET_KEY }}
 
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Install Nix
         uses: cachix/install-nix-action@v31
