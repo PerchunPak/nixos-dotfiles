@@ -7,6 +7,7 @@
   ];
 
   networking.hostName = "perchun-laptop";
+  networking.networkmanager.dns = "none";
   networking.nameservers = [
     # OpenDNS
     "208.67.222.222"
