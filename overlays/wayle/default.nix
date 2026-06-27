@@ -19,7 +19,7 @@ final: prev: {
       assert old.cargoHash == "sha256-4PUXJwUP5h/ggZQbY78BdqMh5oZes1XCeWuT2/S94Z4=";
       final.rustPlatform.fetchCargoVendor {
         inherit src;
-        hash = "sha256-rqMMtB4ogsSQ+iou6raKzMuI+EcOcqklfzxb+E7qJN0=";
+        hash = "sha256-ZvwScjQ+MgVFmIYCSbOjmjh128FomUaIq3cl4hV2s54=";
       };
   });
 }
