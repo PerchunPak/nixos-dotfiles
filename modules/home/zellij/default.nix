@@ -1,7 +1,5 @@
 { pkgs, ... }:
 {
-  home.packages = [ pkgs.tmux ];
-
   programs.zellij = {
     enable = true;
 

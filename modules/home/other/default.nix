@@ -59,13 +59,12 @@
         nixpkgs-review
         rustc
         tabiew
-        tmux
         unzip
         wget
         xxd
         zip
       ]
-      (lib.mkIf (nixosConfig.my.flatpak.enable) [ pkgs.flatpak ])
+      (lib.mkIf (nixosConfig.my.flatpak.enable) [ flatpak ])
       (lib.mkIf nixosConfig.my.gui.enable [
         (mpv.override { youtubeSupport = false; })
         actual-client
