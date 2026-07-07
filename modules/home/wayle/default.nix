@@ -5,6 +5,7 @@
 
     settings = {
       bar = {
+        background-opacity = 20;
         layout = [
           {
             center = [ "window-title" ];
