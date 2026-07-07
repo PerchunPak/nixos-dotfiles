@@ -27,6 +27,7 @@
       list-generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
       cl = "clear";
       cll = "cd && clear";
+      zz = "zellij";
     };
 
     plugins = [
