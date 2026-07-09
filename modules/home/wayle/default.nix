@@ -6,7 +6,8 @@
     settings = {
       bar = {
         background-opacity = 0;
-        insert-edge = 0.5;
+        inset-edge = 0.3;
+        inset-ends = 0.5;
         padding = 0;
         padding-ends = 0.1;
         layout = [
