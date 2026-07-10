@@ -1,10 +1,9 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    python313
-    python313Packages.pip
-    python313Packages.black
-    python313Packages.ipython
+    python314
+    python314Packages.pip
+    python314Packages.ipython
     uv
     ruff
     cruft
@@ -12,7 +11,7 @@
 
   programs = {
     poetry = {
-      enable = false;
+      enable = true;
       settings = {
         # use python 3.12 instead of what nixos installs poetry with (3.11)
         #
