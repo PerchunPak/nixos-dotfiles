@@ -6,7 +6,7 @@
       trap 'popd' EXIT
 
       pushd ~/dotfiles
-      git add .
+      git add -A
       sudo true
       nh os switch "$@"
     '')
