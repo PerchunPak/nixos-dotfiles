@@ -1,16 +1,16 @@
 diff --git a/crates/wayle-shell/src/shell/bar/icons.rs b/crates/wayle-shell/src/shell/bar/icons.rs
-index 99f6c98..f280b17 100644
+index 1ae9480..2829e33 100644
 --- a/crates/wayle-shell/src/shell/bar/icons.rs
 +++ b/crates/wayle-shell/src/shell/bar/icons.rs
-@@ -315,10 +315,8 @@ fn resolve_symbolic_desktop_icon(identifier: &str) -> Option<String> {
+@@ -320,10 +320,7 @@ fn resolve_symbolic_desktop_icon(identifier: &str) -> Option<String> {
      gdk::Display::default()?;
  
-     let icon: String = lookup_desktop_entry(identifier)?.icon()?.to_string()?.into();
+     let icon = desktop_entry_icon(identifier)?;
 -    let base = icon.strip_suffix("-symbolic").unwrap_or(&icon);
 -    let symbolic = format!("{base}-symbolic");
- 
+-
 -    icon_exists(&symbolic).then_some(symbolic)
 +    icon_exists(&icon).then_some(icon)
  }
  
- fn lookup_desktop_entry(identifier: &str) -> Option<gio_unix::DesktopAppInfo> {
+ /// Reads the `Icon=` value from an app's desktop entry — by desktop id first,

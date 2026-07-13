@@ -25,6 +25,10 @@ final: prev: {
         url = "https://github.com/wayle-rs/wayle/commit/9ebf9bb8d89ca406a6947e407b8cc484222e48b0.diff?full_index=1";
         hash = "sha256-r0WC3yRkUXbyCsvQQM0g/VAjyYWmnHPtFMtADiM55Zc=";
       })
+      (final.fetchpatch2 {
+        url = "https://github.com/wayle-rs/wayle/commit/557d1b3e1964ab3fe97e60586694cf66edf1e1a6.diff?full_index=1";
+        hash = "sha256-Zy/5A1gh0pn3hI5xCa24qaGvh9pAHqmRVaOBX8NohCo=";
+      })
       ./show-color-icons.patch
     ];
 
