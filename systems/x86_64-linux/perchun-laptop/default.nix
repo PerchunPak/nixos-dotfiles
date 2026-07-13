@@ -7,15 +7,6 @@
   ];
 
   networking.hostName = "perchun-laptop";
-  networking.networkmanager.dns = "none";
-  networking.nameservers = [
-    # OpenDNS
-    "208.67.222.222"
-    "208.67.220.220"
-    # NextDNS
-    "45.90.28.142"
-    "45.90.30.142"
-  ];
 
   my = {
     user.password = "$y$j9T$yfBs4FZDXyK/iBDi9UTo51$ydnsektCwQhSR72L.9OEOyV1cJdREhnlZ5/DHCdC1a5";
