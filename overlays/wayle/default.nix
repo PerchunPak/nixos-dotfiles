@@ -15,28 +15,12 @@ final: prev: {
         hash = "sha256-XSqZmrqEg6Db1+PZUCDxxTLu4NSF8w0sZPtAkaZT2iI=";
       })
 
-      # https://github.com/wayle-rs/wayle/pull/325
-      # feat: optional fallback to symbolic desktop icon
-      (final.fetchpatch2 {
-        url = "https://github.com/wayle-rs/wayle/commit/a420c316cef733bfb09517e999912d4346d8fd8f.diff?full_index=1";
-        hash = "sha256-z6n+2xyT2daFsWyRIcTKw2yyJi38DTMOiYz5xZD0Fl0=";
-      })
-      (final.fetchpatch2 {
-        url = "https://github.com/wayle-rs/wayle/commit/9ebf9bb8d89ca406a6947e407b8cc484222e48b0.diff?full_index=1";
-        hash = "sha256-r0WC3yRkUXbyCsvQQM0g/VAjyYWmnHPtFMtADiM55Zc=";
-      })
-      (final.fetchpatch2 {
-        url = "https://github.com/wayle-rs/wayle/commit/557d1b3e1964ab3fe97e60586694cf66edf1e1a6.diff?full_index=1";
-        hash = "sha256-Zy/5A1gh0pn3hI5xCa24qaGvh9pAHqmRVaOBX8NohCo=";
-      })
       ./show-color-icons.patch
     ];
 
-    cargoDeps =
-      assert old.cargoHash == "sha256-4PUXJwUP5h/ggZQbY78BdqMh5oZes1XCeWuT2/S94Z4=";
-      final.rustPlatform.fetchCargoVendor {
-        inherit src;
-        hash = "sha256-ZvwScjQ+MgVFmIYCSbOjmjh128FomUaIq3cl4hV2s54=";
-      };
+    cargoDeps = final.rustPlatform.fetchCargoVendor {
+      inherit src;
+      hash = "sha256-Kxp5RDYhe6yzxCTFL60cDg+PykAJDWB+fpLELovh++E=";
+    };
   });
 }

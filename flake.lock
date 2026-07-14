@@ -489,15 +489,15 @@
     "wayle": {
       "flake": false,
       "locked": {
-        "lastModified": 1781763811,
-        "narHash": "sha256-qYQbrdTynpcbi1hTyhrHa0J4sEY1RynH9IaKboQUok0=",
-        "owner": "wayle-rs",
+        "lastModified": 1784005018,
+        "narHash": "sha256-LG66aQc8cmK6f06YDbMASlafkxAQRClF8mfKqcpB5Yk=",
+        "owner": "waltmck",
         "repo": "wayle",
-        "rev": "6556df3a8fe6fe2bfa8cc4bf88a5f136e38a3604",
+        "rev": "78f4e77a6162e182f3c51efec28e00f4e47d4a57",
         "type": "github"
       },
       "original": {
-        "owner": "wayle-rs",
+        "owner": "waltmck",
         "repo": "wayle",
         "type": "github"
       }

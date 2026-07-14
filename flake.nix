@@ -80,7 +80,7 @@
       flake = false;
     };
     wayle = {
-      url = "github:wayle-rs/wayle";
+      url = "github:waltmck/wayle";
       flake = false;
     };
   };
