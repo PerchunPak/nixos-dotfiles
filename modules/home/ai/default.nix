@@ -8,6 +8,7 @@ let
   claude-code = wrapper.config.wrap { inherit pkgs; };
 in
 {
+  programs.codex.enable = true;
   programs.claude-code = {
     enable = true;
     package = claude-code;
@@ -19,6 +20,7 @@ in
     directories = [
       ".cache/claude-cli-nodejs"
       ".claude"
+      ".codex"
       ".t3"
     ];
     files = [ ".claude.json" ];
