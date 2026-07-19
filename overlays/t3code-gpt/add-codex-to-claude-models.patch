@@ -1,0 +1,61 @@
+diff --git a/apps/server/src/provider/Layers/ClaudeProvider.ts b/apps/server/src/provider/Layers/ClaudeProvider.ts
+index bd5f7ebff..c7a494801 100644
+--- a/apps/server/src/provider/Layers/ClaudeProvider.ts
++++ b/apps/server/src/provider/Layers/ClaudeProvider.ts
+@@ -43,6 +43,30 @@ const DEFAULT_CLAUDE_MODEL_CAPABILITIES: ModelCapabilities = createModelCapabili
+   optionDescriptors: [],
+ });
+ 
++const GPT_5_6_MODELS = [
++  { slug: "gpt-5.6-sol", name: "GPT-5.6 Sol" },
++  { slug: "gpt-5.6-terra", name: "GPT-5.6 Terra" },
++  { slug: "gpt-5.6-luna", name: "GPT-5.6 Luna" },
++] as const;
++
++const GPT_5_6_MODEL_CAPABILITIES: ModelCapabilities = createModelCapabilities({
++  optionDescriptors: [
++    buildSelectOptionDescriptor({
++      id: "effort",
++      label: "Reasoning",
++      options: [
++        { value: "low", label: "Low" },
++        { value: "medium", label: "Medium" },
++        { value: "high", label: "High", isDefault: true },
++        { value: "xhigh", label: "Extra High" },
++        { value: "max", label: "Max" },
++      ],
++    }),
++  ],
++});
++
++const GPT_5_6_MODEL_SLUGS: ReadonlySet<string> = new Set(GPT_5_6_MODELS.map((model) => model.slug));
++
+ const PROVIDER = ProviderDriverKind.make("claudeAgent");
+ const CLAUDE_PRESENTATION = {
+   displayName: "Claude",
+@@ -53,6 +77,11 @@ const MINIMUM_CLAUDE_OPUS_4_8_VERSION = "2.1.154";
+ const MINIMUM_CLAUDE_OPUS_4_7_VERSION = "2.1.111";
+ 
+ const BUILT_IN_MODELS: ReadonlyArray<ServerProviderModel> = [
++  ...GPT_5_6_MODELS.map((model) => ({
++    ...model,
++    isCustom: false,
++    capabilities: GPT_5_6_MODEL_CAPABILITIES,
++  })),
+   {
+     slug: "claude-fable-5",
+     name: "Claude Fable 5",
+@@ -322,7 +351,12 @@ export function normalizeClaudeCliEffort(
+   if (effort === "ultracode") {
+     return "xhigh";
+   }
+-  if (effort === "xhigh" && model !== "claude-fable-5" && model !== "claude-opus-4-8") {
++  if (
++    effort === "xhigh" &&
++    model !== "claude-fable-5" &&
++    model !== "claude-opus-4-8" &&
++    !GPT_5_6_MODEL_SLUGS.has(model ?? "")
++  ) {
+     return "max";
+   }
+   if (effort === "max" && model === "claude-sonnet-4-6") {
