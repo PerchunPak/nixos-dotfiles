@@ -104,6 +104,7 @@
           pkg:
           builtins.elem (lib.getName pkg) [
             "7zz"
+            "claude-code"
             "nvidia-kernel-modules"
             "nvidia-x11"
             "steam"
