@@ -177,7 +177,7 @@ in
       ];
       profiles = {
         perchun = profile;
-        stuff = profile // {
+        work = profile // {
           id = 1;
         };
       };
@@ -189,6 +189,6 @@ in
     ];
 
     home.file."/home/perchun/.config/zen/perchun/search.json.mozlz4".force = lib.mkForce true;
-    home.file."/home/perchun/.config/zen/stuff/search.json.mozlz4".force = lib.mkForce true;
+    home.file."/home/perchun/.config/zen/work/search.json.mozlz4".force = lib.mkForce true;
   };
 }
