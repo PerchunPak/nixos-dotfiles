@@ -39,7 +39,10 @@
     with pkgs;
     lib.mkMerge [
       [
-        (_7zz-rar.override { useUasm = false; })
+        (_7zz.override {
+          useUasm = false;
+          enableUnfree = true; # enable .rar
+        })
         ansifilter
         bintools
         brightnessctl
