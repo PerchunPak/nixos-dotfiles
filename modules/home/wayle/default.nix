@@ -1,10 +1,15 @@
-{ inputs, nixosConfig, ... }:
+{
+  inputs,
+  nixosConfig,
+  pkgs,
+  ...
+}:
 {
   services.wayle = {
     enable = nixosConfig.my.gui.enable;
 
     settings = {
-      general.symbolic-icon-fallback = true;
+      general.prefer-color-icons = true;
       bar = {
         background-opacity = 0;
         inset-edge = 0.3;
@@ -89,4 +94,11 @@
     "wayle/icons/hicolor/scalable/actions/tb-zzz-off-symbolic.svg".source =
       "${inputs.storage}/icons/tb-zzz-off-symbolic.svg";
   };
+
+  systemd.user.services.wayle = {
+    Service.Type = "notify";
+  };
+
+  xdg.portal.extraPortals = [ pkgs.wayle ];
+  xdg.portal.config.common."org.freedesktop.impl.portal.Notification" = "wayle";
 }
