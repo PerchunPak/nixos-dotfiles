@@ -9,7 +9,7 @@
     enable = nixosConfig.my.gui.enable;
 
     settings = {
-      general.prefer-color-icons = true;
+      general.symbolic-icon-fallback = true;
       bar = {
         background-opacity = 0;
         inset-edge = 0.3;
