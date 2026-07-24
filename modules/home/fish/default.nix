@@ -12,7 +12,7 @@
         ${builtins.readFile ./venv.fish}
 
         set -U __done_exclude '^(v|nvim|testNvim)'
-        set -U __done_notification_duration -1
+        set -U __done_notification_duration -2
       '';
 
     shellAliases = {
