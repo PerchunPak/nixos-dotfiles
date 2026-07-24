@@ -81,7 +81,7 @@
     };
     wayle = {
       url = "github:waltmck/wayle";
-      flake = false;
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -97,6 +97,13 @@
       snowfall = {
         namespace = "my";
       };
+
+      overlays = with inputs; [
+        wayle.overlays.default
+      ];
+      systems.modules.nixos = with inputs; [
+        wayle.nixosModules.default
+      ];
 
       channels-config = {
         cudaSupport = true;

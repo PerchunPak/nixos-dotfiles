@@ -487,7 +487,11 @@
       }
     },
     "wayle": {
-      "flake": false,
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
       "locked": {
         "lastModified": 1784853036,
         "narHash": "sha256-0UrRn+gbJnIJ9tTaxUwWnmwgloLhcsRgyzpL6gBkrWk=",

@@ -1,12 +1,11 @@
 {
   inputs,
-  nixosConfig,
   pkgs,
   ...
 }:
 {
   services.wayle = {
-    enable = nixosConfig.my.gui.enable;
+    enable = true;
 
     settings = {
       general.symbolic-icon-fallback = true;
@@ -88,17 +87,17 @@
     };
   };
 
-  xdg.dataFile = {
-    "wayle/icons/hicolor/scalable/actions/tb-zzz-symbolic.svg".source =
-      "${inputs.storage}/icons/tb-zzz-symbolic.svg";
-    "wayle/icons/hicolor/scalable/actions/tb-zzz-off-symbolic.svg".source =
-      "${inputs.storage}/icons/tb-zzz-off-symbolic.svg";
-  };
-
-  systemd.user.services.wayle = {
-    Service.Type = "notify";
-  };
-
-  xdg.portal.extraPortals = [ pkgs.wayle ];
-  xdg.portal.config.common."org.freedesktop.impl.portal.Notification" = "wayle";
+  # xdg.dataFile = {
+  #   "wayle/icons/hicolor/scalable/actions/tb-zzz-symbolic.svg".source =
+  #     "${inputs.storage}/icons/tb-zzz-symbolic.svg";
+  #   "wayle/icons/hicolor/scalable/actions/tb-zzz-off-symbolic.svg".source =
+  #     "${inputs.storage}/icons/tb-zzz-off-symbolic.svg";
+  # };
+  #
+  # systemd.user.services.wayle = {
+  #   Service.Type = "notify";
+  # };
+  #
+  # xdg.portal.extraPortals = [ pkgs.wayle ];
+  # xdg.portal.config.common."org.freedesktop.impl.portal.Notification" = "wayle";
 }
