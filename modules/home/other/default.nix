@@ -51,6 +51,7 @@
         cargo-expand
         dig
         fd
+        ffmpeg
         ghcherry
         gnumake
         libnotify
