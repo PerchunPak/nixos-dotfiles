@@ -4,7 +4,7 @@
     enable = true;
     libraries = with pkgs; [
       e2fsprogs
-      libgcc
+      gcc16.cc
     ];
   };
 
