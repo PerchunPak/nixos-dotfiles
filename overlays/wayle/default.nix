@@ -25,7 +25,7 @@ final: prev: {
 
     cargoDeps = final.rustPlatform.fetchCargoVendor {
       inherit src;
-      hash = "sha256-EgB0fEJjQ52xSI/dS+vUXbZBvdITkNt02BKu7MFGo+A=";
+      hash = "sha256-lN7ZsbOn/hNyi050OvIUQUBy89HahidaVIHP7EqEZ0Y=";
     };
 
     postInstall = (old.postInstall or "") + ''
