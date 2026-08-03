@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     (import ./disko.nix { device = "/dev/nvme0n1"; })
     ../../../manual-modules/impermanence
+    ./dns.nix
   ];
 
   networking.hostName = "perchun-laptop";
