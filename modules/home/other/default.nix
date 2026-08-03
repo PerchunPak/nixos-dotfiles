@@ -66,6 +66,7 @@
         unzip
         wget
         xxd
+        yq-go
         zip
       ]
       (lib.mkIf (nixosConfig.my.flatpak.enable) [ flatpak ])
