@@ -8,7 +8,7 @@
 
   config = {
     package = pkgs.claude-code;
-    env = {
+    envDefault = {
       ANTHROPIC_BASE_URL = "http://127.0.0.1:8317";
       ANTHROPIC_AUTH_TOKEN = "123";
       ANTHROPIC_DEFAULT_OPUS_MODEL = "gpt-5.6-sol";
@@ -21,6 +21,9 @@
       DISABLE_NON_ESSENTIAL_MODEL_CALLS = "1";
       DISABLE_TELEMETRY = "1";
       DISABLE_INSTALLATION_CHECKS = "1";
+    };
+    flags = {
+      "--dangerously-skip-permissions" = true;
     };
   };
 }
