@@ -15,13 +15,13 @@ let
       "${pkgs.jq}/bin/jq" -rs '
         [ .[] | select(.type == "assistant" and (.message.usage? != null)) | .message.usage ]
         | {
-            input: (map((.input_tokens // 0) + (.cache_creation_input_tokens // 0) + (.cache_read_input_tokens // 0)) | add // 0),
+            input: (map(.input_tokens // 0) | add // 0),
             output: (map(.output_tokens // 0) | add // 0)
           }
-        | "Tokens: in \(.input | tostring | gsub("(?<=\\d)(?=(\\d{3})+$)"; " ")) | out \(.output | tostring | gsub("(?<=\\d)(?=(\\d{3})+$)"; " "))"
+        | "in \(.input | tostring | gsub("(?<=\\d)(?=(\\d{3})+$)"; " ")) | out \(.output | tostring | gsub("(?<=\\d)(?=(\\d{3})+$)"; " "))"
       ' "$transcript_path"
     else
-      printf 'Tokens: in 0 | out 0\n'
+      printf 'in 0 | out 0\n'
     fi
   '';
 in
