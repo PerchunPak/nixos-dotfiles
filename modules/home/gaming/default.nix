@@ -24,7 +24,7 @@ in
   config = lib.mkIf cfg.enable {
     my.persistence.directories = [
       ".config/heroic"
-      ".local/state/Larian Studios"
+      ".local/share/Larian Studios"
     ];
 
     home.packages =
