@@ -7,7 +7,7 @@ in
     general = {
       lock_cmd = "pidof hyprlock || hyprlock"; # avoid starting multiple hyprlock instances.
       before_sleep_cmd = "loginctl lock-session"; # lock before suspend.
-      after_sleep_cmd = "hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'"; # to avoid having to press a key twice to turn on the display.
+      after_sleep_cmd = "${light} -r; hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'"; # to avoid having to press a key twice to turn on the display.
     };
 
     listener = [
