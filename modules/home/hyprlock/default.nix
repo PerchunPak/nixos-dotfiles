@@ -58,7 +58,7 @@
 
       # Hours
       {
-        text = "cmd[update:1] echo \"<b><big> $(date +\"%H:%M:%S\") </big></b>\"";
+        text = "cmd[update:1000] echo \"<b><big> $(date +\"%H:%M:%S\") </big></b>\"";
         color = "$text";
         font_size = 36;
         shadow_passes = 3;
