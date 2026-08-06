@@ -319,7 +319,7 @@
       enabled = false;
     };
     CustomIdle = {
-      enabled = true;
+      enabled = false;
       idleTimeout = 0;
       remainInIdle = false;
     };
