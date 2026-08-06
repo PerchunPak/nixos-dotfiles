@@ -52,6 +52,7 @@
         dig
         fd
         ffmpeg
+        file
         ghcherry
         gnumake
         libnotify
