@@ -62,6 +62,7 @@
         nix-diff-rs
         nixfmt
         nixpkgs-review
+        pulseaudio
         rustc
         tabiew
         unzip
