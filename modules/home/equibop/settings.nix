@@ -4,7 +4,7 @@
   cloud = {
     authenticated = false;
     settingsSync = false;
-    settingsSyncVersion = 1778181695462;
+    settingsSyncVersion = 1786357260476;
     url = "https://cloud.equicord.org/";
   };
   disableMinSize = false;
@@ -28,6 +28,9 @@
     AccountPanelServerProfile = {
       enabled = true;
       prioritizeServerProfile = false;
+    };
+    AdvancedPermissions = {
+      enabled = false;
     };
     AllCallTimers = {
       enabled = true;
@@ -79,6 +82,9 @@
     AudioPlayerAPI = {
       enabled = true;
     };
+    AutoJumpToMessage = {
+      enabled = false;
+    };
     AutoZipper = {
       enabled = false;
     };
@@ -107,6 +113,13 @@
     };
     BetterFolders = {
       enabled = false;
+    };
+    BetterForwards = {
+      dontFollowForwards = false;
+      enabled = true;
+      forwardPreface = ">";
+      resendOnFail = true;
+      selfForward = false;
     };
     BetterGifAltText = {
       enabled = false;
@@ -241,6 +254,9 @@
     ClientTheme = {
       enabled = false;
     };
+    ClipUpload = {
+      enabled = true;
+    };
     CollapsibleUI = {
       channelListCollapsed = false;
       chatButtonsCollapsed = false;
@@ -373,6 +389,9 @@
     DontRoundMyTimestamps = {
       enabled = false;
     };
+    DownloadAllAttachments = {
+      enabled = false;
+    };
     DragFavoriteEmotes = {
       enabled = false;
     };
@@ -395,6 +414,7 @@
       disableDMContextMenu = false;
       enabled = true;
       forceRoleIcon = false;
+      hideVoiceIndicatorForMutedChannels = false;
       jsonGateway = false;
       noBulletPoints = false;
       noDefaultHangStatus = false;
@@ -422,6 +442,9 @@
     };
     ExpressionCloner = {
       enabled = false;
+    };
+    ExtraContextMenusAPI = {
+      enabled = true;
     };
     F8Break = {
       enabled = false;
@@ -487,9 +510,6 @@
     ForceOwnerCrown = {
       enabled = true;
     };
-    ForwardAnywhere = {
-      enabled = true;
-    };
     FrequentQuickSwitcher = {
       enabled = false;
     };
@@ -531,6 +551,9 @@
     };
     GifCollections = {
       enabled = false;
+    };
+    GifMaker = {
+      enabled = true;
     };
     GifPaste = {
       enabled = false;
@@ -669,7 +692,7 @@
     LastActive = {
       enabled = false;
     };
-    LastFMRichPresence = {
+    LimitlessScreenshare = {
       enabled = false;
     };
     ListenBrainzRPC = {
@@ -680,6 +703,10 @@
     };
     LoginWithQR = {
       enabled = false;
+    };
+    MarkdownTables = {
+      enabled = true;
+      hideToggle = true;
     };
     MediaPlaybackSpeed = {
       enabled = false;
@@ -751,7 +778,7 @@
       ShowWhereMessageIsFrom = true;
       alwaysLogCurrentChannel = true;
       alwaysLogDirectMessages = true;
-      attachmentFileExtensions = "png,jpg,jpeg,gif,webp,mp4,webm,mp3,ogg,wav";
+      attachmentFileExtensions = "none";
       attachmentSizeLimitInMegabytes = 12;
       blacklistedIds = "457912077277855764";
       cacheLimit = 1000;
@@ -771,6 +798,7 @@
       messageLimit = 200;
       messagesToDisplayAtOnceInLogs = 100;
       permanentlyRemoveLogByDefault = false;
+      preserveCurrentChannel = true;
       saveImages = true;
       saveMessages = true;
       sortNewest = true;
@@ -819,6 +847,9 @@
       enabled = false;
     };
     MusicControls = {
+      enabled = false;
+    };
+    MusicRichPresence = {
       enabled = false;
     };
     MutualGroupDMs = {
@@ -915,6 +946,9 @@
     };
     NormalizeMessageLinks = {
       enabled = false;
+    };
+    NoticesAPI = {
+      enabled = true;
     };
     NotificationVolume = {
       enabled = false;
@@ -1209,6 +1243,9 @@
     SecretRingToneEnabler = {
       enabled = false;
     };
+    SedEnhanced = {
+      enabled = false;
+    };
     SekaiStickers = {
       enabled = false;
     };
@@ -1267,6 +1304,9 @@
       enabled = false;
     };
     ShowResourceChannels = {
+      enabled = false;
+    };
+    ShowRolesInChat = {
       enabled = false;
     };
     ShowSongName = {
@@ -1346,6 +1386,12 @@
     StickerPaste = {
       enabled = true;
     };
+    StopAutoUnread = {
+      enabled = false;
+    };
+    Streaks = {
+      enabled = false;
+    };
     StreamerModeOn = {
       enabled = false;
     };
@@ -1364,7 +1410,13 @@
     SupportHelper = {
       enabled = true;
     };
+    SurfaceClassesAPI = {
+      enabled = false;
+    };
     TalkInReverse = {
+      enabled = false;
+    };
+    TenorGifSearch = {
       enabled = false;
     };
     TextReplace = {
@@ -1383,15 +1435,17 @@
       enabled = true;
     };
     Timezones = {
-      "24h Time" = false;
-      "Show Own Timezone" = true;
       askedTimezone = true;
       databaseUrl = "https://timezone.creations.works";
       enabled = true;
       preferDatabaseOverLocal = true;
+      recipientTimezoneInDms = false;
+      showLocalTimezone = false;
       showMessageHeaderTime = true;
+      showOwnTimezone = true;
       showProfileTime = true;
       showTimezoneInfo = true;
+      twentyFourHourFormat = true;
       useDatabase = true;
     };
     Title = {
@@ -1452,7 +1506,7 @@
       myUnits = "metric";
     };
     UniversalMention = {
-      enabled = true;
+      enabled = false;
       globalMention = false;
       onlyDMUsers = false;
     };
@@ -1630,4 +1684,5 @@
   userCssVars = { };
   winCtrlQ = false;
   winNativeTitleBar = false;
+  windowsMaterial = "none";
 }
