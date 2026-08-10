@@ -1013,15 +1013,18 @@
       enabled = false;
     };
     Questify = {
-      allowChangingDangerousSettings = true;
+      acknowledgedNotices = {
+        quest-ban-warning-2026-08-07 = true;
+      };
+      allowChangingDangerousSettings = false;
       autoCompleteQuestTypes = {
         ACHIEVEMENT_IN_ACTIVITY = false;
         PLAY_ACTIVITY = false;
         PLAY_ON_DESKTOP = false;
         PLAY_ON_PLAYSTATION = false;
         PLAY_ON_XBOX = false;
-        WATCH_VIDEO = true;
-        WATCH_VIDEO_ON_MOBILE = true;
+        WATCH_VIDEO = false;
+        WATCH_VIDEO_ON_MOBILE = false;
       };
       autoCompleteQuestsSimultaneously = false;
       claimedSubsort = "Claimed DESC";
@@ -1031,7 +1034,7 @@
       disableFriendsListPromo = true;
       disableMembersListPromo = true;
       disableOrbsAndQuestsBadges = false;
-      disableQuestsEverything = false;
+      disableQuestsEverything = true;
       disableRelocationNotices = true;
       disableSponsoredBanner = true;
       enabled = true;
@@ -1040,7 +1043,7 @@
         questIDs = [ ];
       };
       ignoredSubsort = "Recent DESC";
-      isOnQuestsPage = true;
+      isOnQuestsPage = false;
       lastQuestPageFilters = {
         "[\"task\",\"task_video\"]" = {
           filter = "task_video";
@@ -1048,7 +1051,7 @@
         };
       };
       lastQuestPageSort = "questify";
-      makeMobileVideoQuestsDesktopCompatible = true;
+      makeMobileVideoQuestsDesktopCompatible = false;
       migrationVersion = 1;
       newExcludedQuestAlertSound = null;
       newExcludedQuestAlertVolume = 100;
@@ -1057,8 +1060,9 @@
       notifyOnNewExcludedQuests = false;
       notifyOnNewQuests = true;
       notifyOnQuestComplete = true;
+      preventVideoQuestsPausing = false;
       questButtonBadgeColor = 2842239;
-      questButtonBadgeCount = 0;
+      questButtonBadgeCount = 1;
       questButtonDisplay = "never";
       questButtonIncludedTypes = {
         "1" = true;
