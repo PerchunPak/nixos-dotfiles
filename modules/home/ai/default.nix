@@ -66,6 +66,11 @@ in
   programs.claude-code = {
     enable = true;
     package = claude-code;
+    # gpt doesn't output thinking summaries without this
+    context = ''
+      Before major tool-call groups, provide one concise progress update. Between major phases, report what was completed and what comes next. Do not expose private chain-of-thought or narrate routine commands.
+      Never spawn agents unless the user asks to.
+    '';
     settings = {
       model = "opus";
       skipDangerousModePermissionPrompt = true;
