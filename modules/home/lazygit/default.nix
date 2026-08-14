@@ -4,10 +4,10 @@
     settings = {
       gui.filterMode = "fuzzy";
       git = {
-        pagers = [
+        diffRenderers = [
           {
             colorArg = "always";
-            pager = "delta --dark --paging=never";
+            command = "delta --dark --paging=never";
           }
         ];
         overrideGpg = true;
