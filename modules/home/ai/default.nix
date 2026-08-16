@@ -70,6 +70,7 @@ in
     context = ''
       Before major tool-call groups, provide one concise progress update. Between major phases, report what was completed and what comes next. Do not expose private chain-of-thought or narrate routine commands.
       Never spawn agents unless the user asks to.
+      If you need a command that is not installed, use `, command`.
     '';
     settings = {
       model = "opus";
