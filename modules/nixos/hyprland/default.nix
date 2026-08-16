@@ -1,9 +1,15 @@
 {
+  inputs,
   lib,
   pkgs,
   config,
   ...
 }:
+let
+  hyprlandPackages =
+    assert pkgs.hyprland.version == "0.56.2";
+    inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
+in
 {
   options = {
     my.hyprland = {
@@ -26,6 +32,8 @@
     programs = {
       hyprland = {
         enable = true;
+        package = hyprlandPackages.hyprland;
+        portalPackage = hyprlandPackages.xdg-desktop-portal-hyprland;
         xwayland.enable = true;
         withUWSM = true;
       };

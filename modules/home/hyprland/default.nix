@@ -1,9 +1,15 @@
 {
+  inputs,
   nixosConfig,
   pkgs,
   lib,
   ...
 }:
+let
+  hyprlandPackage =
+    assert pkgs.hyprland.version == "0.56.2";
+    inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+in
 {
   imports = [
     ./settings.nix
@@ -13,6 +19,7 @@
     catppuccin.hyprland.enable = false;
     wayland.windowManager.hyprland = {
       enable = true;
+      package = hyprlandPackage;
       systemd.enable = false;
       configType = "lua";
     };
