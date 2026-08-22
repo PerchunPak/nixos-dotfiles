@@ -42,6 +42,9 @@
         "ssh://git@git.alteryx.com/" = {
           insteadOf = [ "https://git.alteryx.com/" ];
         };
+        "ssh://git@git.h4folks.com:222/" = {
+          insteadOf = [ "https://git.h4folks.com/" ];
+        };
       };
       tag.gpgSign = false;
 
