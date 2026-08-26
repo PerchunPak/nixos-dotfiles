@@ -8,10 +8,12 @@ keybinds clear-defaults=true {
         bind "down" { MoveFocus "down"; }
         bind "up" { MoveFocus "up"; }
         bind "right" { MoveFocus "right"; }
+        bind ";" { FocusLastPane; }
         bind "c" { SwitchToMode "renamepane"; PaneNameInput 0; }
         bind "d" { NewPane "down"; SwitchToMode "locked"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "locked"; }
+        bind "Shift f" { ToggleFocusNoUiFullscreen; SwitchToMode "locked"; }
         bind "h" { MoveFocus "left"; }
         bind "i" { TogglePanePinned; SwitchToMode "locked"; }
         bind "j" { MoveFocus "down"; }
@@ -91,6 +93,7 @@ keybinds clear-defaults=true {
         bind "Alt down" { MoveFocus "down"; SwitchToMode "locked"; }
         bind "Alt up" { MoveFocus "up"; SwitchToMode "locked"; }
         bind "Alt right" { MoveFocusOrTab "right"; SwitchToMode "locked"; }
+        bind "c" { CopyLastCommandOutput; SwitchToMode "locked"; }
         bind "e" { EditScrollback; SwitchToMode "locked"; }
         bind "f" { SwitchToMode "entersearch"; SearchInput 0; }
         bind "Alt h" { MoveFocusOrTab "left"; SwitchToMode "locked"; }
@@ -107,6 +110,8 @@ keybinds clear-defaults=true {
         bind "w" { SearchToggleOption "Wrap"; }
     }
     session {
+        bind "[" { FocusGuestSession; SwitchToMode "normal"; }
+        bind "]" { FocusHostSession; SwitchToMode "normal"; }
         bind "a" {
             LaunchOrFocusPlugin "zellij:about" {
                 floating true
@@ -122,6 +127,14 @@ keybinds clear-defaults=true {
             SwitchToMode "locked"
         }
         bind "d" { Detach; }
+        bind "f" { ToggleHostFullscreen; SwitchToMode "normal"; }
+        bind "l" {
+            LaunchOrFocusPlugin "zellij:layout-manager" {
+                floating true
+                move_to_focused_tab true
+            }
+            SwitchToMode "locked"
+        }
         bind "o" { SwitchToMode "normal"; }
         bind "p" {
             LaunchOrFocusPlugin "plugin-manager" {
@@ -176,11 +189,11 @@ keybinds clear-defaults=true {
     shared_except "locked" "entersearch" "renametab" "renamepane" {
         bind "esc" { SwitchToMode "locked"; }
     }
-    shared_except "locked" "entersearch" "renametab" "renamepane" "move" {
-        bind "m" { SwitchToMode "move"; }
-    }
     shared_except "locked" "entersearch" "search" "renametab" "renamepane" "session" {
         bind "o" { SwitchToMode "session"; }
+    }
+    shared_except "locked" "scroll" "entersearch" "search" "renametab" "renamepane" "move" {
+        bind "m" { SwitchToMode "move"; }
     }
     shared_except "locked" "tab" "entersearch" "renametab" "renamepane" {
         bind "t" { SwitchToMode "tab"; }
@@ -201,6 +214,8 @@ keybinds clear-defaults=true {
         bind "down" { ScrollDown; }
         bind "up" { ScrollUp; }
         bind "right" { PageScrollDown; }
+        bind "[" { ScrollToPreviousPrompt; }
+        bind "]" { ScrollToNextPrompt; }
         bind "Ctrl b" { PageScrollUp; }
         bind "Ctrl c" { ScrollToBottom; SwitchToMode "locked"; }
         bind "d" { HalfPageScrollDown; }
@@ -209,6 +224,7 @@ keybinds clear-defaults=true {
         bind "j" { ScrollDown; }
         bind "k" { ScrollUp; }
         bind "l" { PageScrollDown; }
+        bind "m" { SelectCommandAtScrollPosition; }
         bind "u" { HalfPageScrollUp; }
     }
     entersearch {
@@ -250,6 +266,7 @@ plugins {
 // eg. "file:/path/to/my-plugin.wasm"
 // eg. "https://example.com/my-plugin.wasm"
 load_plugins {
+    zellij:link
 }
 web_client {
     font "monospace"
@@ -262,10 +279,27 @@ web_client {
 //
 // simplified_ui true
 
+// Enable OSC8 hyperlink output
+// Options:
+//   - true (Default)
+//   - false
+//
+// osc8_hyperlinks true
+
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "catppuccin-mocha"
+// theme "dracula"
+
+// Theme to use when the host terminal reports a dark color palette.
+// Requires `theme_light` to also be set; otherwise `theme` is used.
+//
+// theme_dark "dracula"
+
+// Theme to use when the host terminal reports a light color palette.
+// Requires `theme_dark` to also be set; otherwise `theme` is used.
+//
+// theme_light "solarized-light"
 
 // Choose the base input mode of zellij.
 // Default: normal
@@ -312,6 +346,13 @@ default_mode "locked"
 //
 // pane_frames false
 
+// Set the pane frame style when pane_frames is enabled
+// Options:
+//   - full
+//   - titles (default)
+//
+// pane_frame_style "titles"
+
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
 // or should each user have their own cursor (false)
@@ -336,7 +377,7 @@ default_mode "locked"
 // Valid values: positive integers
 // Default value: 10000
 //
-scroll_buffer_size 1000000
+// scroll_buffer_size 10000
 
 // Provide a command to execute when copying text. The text will be piped to
 // the stdin of the program to perform the copy. This can be used with
@@ -406,7 +447,7 @@ scroll_buffer_size 1000000
 // defaults to the scrollback size. If this number is higher than the scrollback size, it will
 // also default to the scrollback size. This does nothing if `serialize_pane_viewport` is not true.
 //
-scrollback_lines_to_serialize 0
+// scrollback_lines_to_serialize 10000
 
 // Enable or disable the rendering of styled and colored underlines (undercurl).
 // May need to be disabled for certain unsupported terminals
@@ -431,6 +472,12 @@ scrollback_lines_to_serialize 0
 // Default: true (if the host terminal supports it)
 //
 // support_kitty_keyboard_protocol false
+
+// Enable or disable support for the Kitty Graphics Protocol, used to display images (the host terminal must also support it)
+// (Requires restart)
+// Default: true (if the host terminal supports it)
+//
+// support_kitty_graphics_protocol false
 // Whether to make sure a local web server is running when a new Zellij session starts.
 // This web server will allow creating new sessions and attaching to existing ones that have
 // opted in to being shared in the browser.
@@ -483,10 +530,15 @@ scrollback_lines_to_serialize 0
 //
 // stacked_resize false
 
+// Whether stacked panes display as a list with the expanded pane pinned to the bottom
+// Default: true
+//
+// stacked_pane_list false
+
 // Whether to show tips on startup
 // Default: true
 //
-show_startup_tips false
+// show_startup_tips false
 
 // Whether to show release notes on first version run
 // Default: true
@@ -496,6 +548,40 @@ show_startup_tips false
 // Whether to enable mouse hover effects and pane grouping functionality
 // default is true
 // advanced_mouse_actions false
+
+// Whether Ctrl+ScrollWheel resizes panes
+// default is true
+// mouse_scroll_resize false
+
+// Whether to enable mouse hover visual effects (frame highlight and help text)
+// default is true
+// mouse_hover_effects false
+
+// Whether to show mouse hover help-text tips (resize help and group shortcuts)
+// default is true
+// mouse_hover_tips false
+
+// Whether to show visual bell indicators (pane/tab frame flash and [!] suffix)
+// default is true
+// visual_bell true
+
+// Whether to focus panes on mouse hover
+// default is false
+// focus_follows_mouse false
+
+// Whether clicking a pane to focus it also sends the click into the pane
+// default is false
+// mouse_click_through false
+
+// Whether triple-clicking inside command output marked by the shell (OSC 133) selects
+// the command and its output instead of the logical line
+// default is true
+// osc133_command_selection false
+
+// Characters that terminate a word when double-clicking to select it
+// whitespace is always a separator and need not be listed here
+// default is "[]{}<>()"
+// word_separators "[]{}<>()"
 
 // The ip address the web server should listen on when it starts
 // Default: "127.0.0.1"
@@ -513,3 +599,37 @@ show_startup_tips false
 // can be useful for removing wrappers around commands
 // Note: be sure to escape backslashes and similar characters properly
 // post_command_discovery_hook "echo $RESURRECT_COMMAND | sed <your_regex_here>"
+
+// Number of async worker tasks to spawn per active client.
+//
+// Allocating few tasks may result in resource contention and lags. Small values (around 4) should
+// typically work best. Set to 0 to use the number of (physical) CPU cores.
+// Note: This only applies to web clients at the moment.
+// client_async_worker_tasks 4
+
+// Whether to let programs running inside panes read the paste buffer
+// (clipboard) with the OSC 52 escape sequence. When enabled, any program
+// in any pane - including one running on a remote machine over SSH - can
+// read the clipboard without the user being asked.
+// Default: false
+// dangerously_enable_paste_buffer_read false
+
+// How to handle a nested Zellij session detected inside a pane.
+// Options:
+//   - "ask" (Default — prompt with a modal)
+//   - "fullscreen" (always zoom into the nested session)
+//   - "descend" (always control the nested session on focus)
+//   - "never" (never prompt or descend; do it manually)
+//
+// nested_session_handling "ask"
+
+// Which escape sequence desktop notifications coming from panes are
+// forwarded to the host terminal with.
+// Options:
+//   - "auto" (Default — detect from the host terminal environment)
+//   - "osc9" (the legacy iTerm2 protocol, understood by most terminals)
+//   - "osc99" (kitty's notification protocol)
+//   - "bell" (ring the terminal bell instead)
+//   - "off" (do not forward notifications to the host terminal)
+//
+// host_notification_protocol "auto"
