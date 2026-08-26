@@ -120,8 +120,6 @@
             # Firefox extensions
             "enhancer-for-youtube"
             "grammarly"
-            "languagetool"
-            "limit-limit-distracting-sites"
             "improved-tube"
             # cuda
             "cuda_cccl"
@@ -131,9 +129,6 @@
             "libcufft"
             "libnpp"
           ];
-        permittedInsecurePackages = [
-          "electron-39.8.10"
-        ];
       };
 
       outputs-builder = channels: {

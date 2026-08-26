@@ -27,8 +27,8 @@ let
         disable-javascript
         grammarly
         improved-tube
-        languagetool
         refined-github
+        historyblock
         sponsorblock
         stylus
         ublock-origin
