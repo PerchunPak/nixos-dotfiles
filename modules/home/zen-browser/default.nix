@@ -7,35 +7,6 @@
 }:
 let
   rycee-nur = import "${inputs.rycee-nur}" { inherit pkgs; };
-  enhancer-for-youtube =
-    (rycee-nur.firefox-addons.buildFirefoxXpiAddon {
-      pname = "enhancer-for-youtube";
-      version = "2.0.130.1";
-      addonId = "enhancerforyoutube@maximerf.addons.mozilla.org";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4393561/enhancer_for_youtube-2.0.130.1.xpi";
-      sha256 = "6d84dcba9b197840f485d66d3fd435279d6e1bcd2155d28389999e87ea01312c";
-      meta = with lib; {
-        homepage = "https://www.mrfdev.com/enhancer-for-youtube";
-        description = "Take control of YouTube and boost your user experience!";
-        license = {
-          shortName = "enhancer-for-youtube";
-          fullName = "Custom License for Enhancer for YouTube™";
-          url = "https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube/license/";
-          free = false;
-        };
-        mozPermissions = [
-          "cookies"
-          "storage"
-          "*://www.youtube.com/*"
-          "*://www.youtube.com/embed/*"
-          "*://www.youtube.com/live_chat*"
-          "*://www.youtube.com/pop-up-player/*"
-          "*://www.youtube.com/shorts/*"
-        ];
-        platforms = platforms.all;
-      };
-    }).overrideAttrs
-      { src = "${inputs.storage}/firefox/enhancer_for_youtube-2.0.130.1.xpi"; };
 
   profile = {
     bookmarks = {
@@ -54,8 +25,8 @@ let
         bitwarden
         darkreader
         disable-javascript
-        enhancer-for-youtube
         grammarly
+        improved-tube
         languagetool
         refined-github
         sponsorblock
@@ -67,21 +38,6 @@ let
         # refined github
         "{a4c4eda4-fb84-4a84-b4a1-f7c1cbf2a1ad}".settings = {
           welcomed = true;
-        };
-        "enhancerforyoutube@maximerf.addons.mozilla.org".settings = {
-          controlbar = {
-            active = false;
-            autohide = false;
-            centered = true;
-            position = "absolute";
-          };
-          controls = [
-            "speed-minus"
-            "speed"
-            "speed-plus"
-          ];
-          controlsvisible = true;
-          speed = 2.4;
         };
         "uBlock0@raymondhill.net".settings = {
           selectedFilterLists = [

@@ -122,6 +122,7 @@
             "grammarly"
             "languagetool"
             "limit-limit-distracting-sites"
+            "improved-tube"
             # cuda
             "cuda_cccl"
             "cuda_cudart"
