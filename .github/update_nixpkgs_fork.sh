@@ -9,8 +9,6 @@ nixpkgs_rev=$(
 nix run ".#pkgs.$system.nixpkgs.ghcherry" -- \
   --target PerchunPak/nixpkgs@patched \
   --first-hard-reset-to "NixOS/nixpkgs/$nixpkgs_rev" \
-  `: # actual-client: init` \
-  https://github.com/NixOS/nixpkgs/pull/506686 \
   `: # cliproxyapi: init` \
   PerchunPak/nixpkgs@cliproxyapi
 
