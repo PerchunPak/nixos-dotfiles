@@ -63,6 +63,19 @@ let
 
     printf '%s%s\n' "$statusline_prefix" "$totals"
   '';
+
+  pstack = pkgs.fetchFromGitHub {
+    owner = "michael-denyer";
+    repo = "pstack-claude";
+    rev = "c2ade4bba14fb4706857286afb5528bc2244bf44";
+    hash = "sha256-e8I3TTf6JDHVc9FR+mz4AgKweEKqX8nJQ2b3uqz08Xw=";
+  };
+  mattpocock = pkgs.fetchFromGitHub {
+    owner = "mattpocock";
+    repo = "skills";
+    rev = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76";
+    hash = "sha256-N5tpUIHO2VFeJntBTl6/VLDIVpqoshwFxNJlfXXUwsQ=";
+  };
 in
 {
   programs.codex.enable = true;
@@ -84,6 +97,10 @@ in
         type = "command";
         command = statusline;
       };
+    };
+    skills = {
+      unslop = "${pstack}/plugins/pstack/skills/unslop";
+      writing-for-agents = "${mattpocock}/skills/productivity/writing-for-agents";
     };
   };
 
