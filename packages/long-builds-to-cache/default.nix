@@ -11,12 +11,11 @@ in
 linkFarmFromDrvs "long-builds-to-cache" (
   (with pkgs; [
     actual-client
+    hyprland
     linuxPackages_zen.nvidia_x11_latest
     nix-diff-rs
     trippy
     wayle
-    zellij
-    zellijPlugins.vim-zellij-navigator
 
     # OBS gets modified by `cudaSupport = true` and cuda's cache is updated
     # once a week
