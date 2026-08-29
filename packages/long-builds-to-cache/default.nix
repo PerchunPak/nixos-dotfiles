@@ -11,7 +11,6 @@ in
 linkFarmFromDrvs "long-builds-to-cache" (
   (with pkgs; [
     actual-client
-    hyprland
     linuxPackages_zen.nvidia_x11_latest
     nix-diff-rs
     trippy
@@ -27,5 +26,8 @@ linkFarmFromDrvs "long-builds-to-cache" (
   ++ (with inputs.catppuccin.packages.${system}; [
     whiskers
     cursors
+  ])
+  ++ (with inputs.hyprland.packages.${system}; [
+    hyprland
   ])
 )
