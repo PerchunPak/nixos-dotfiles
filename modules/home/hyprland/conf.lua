@@ -231,7 +231,7 @@ hl.gesture({
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 
 hl.window_rule({ match = { class = "^zen-beta$" }, workspace = "1", scrolling_width = 0.75 })
-hl.window_rule({ match = { class = "^equibop$" }, workspace = "3 silent" })
+hl.window_rule({ match = { class = "^equibop$" }, workspace = "3 silent", scrolling_width = 0.75 })
 hl.window_rule({ match = { title = "^Steam$" }, workspace = "4 silent", scrolling_width = 0.95 })
 hl.window_rule({ match = { class = "^steam$" }, workspace = "4 silent", scrolling_width = 0.95 })
 hl.window_rule({ match = { class = "^heroic$" }, workspace = "4 silent" })
