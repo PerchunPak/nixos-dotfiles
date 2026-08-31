@@ -10,6 +10,6 @@ nix run ".#pkgs.$system.nixpkgs.ghcherry" -- \
   --target PerchunPak/nixpkgs@patched \
   --first-hard-reset-to "NixOS/nixpkgs/$nixpkgs_rev" \
   `: # cliproxyapi: init` \
-  PerchunPak/nixpkgs@cliproxyapi
+  https://github.com/NixOS/nixpkgs/pull/532540
 
 nix flake update nixpkgs
