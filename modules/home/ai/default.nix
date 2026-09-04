@@ -82,6 +82,9 @@ in
     enable = true;
     context = ''
       If you need a command that is not installed, use `, command`.
+
+      If user asked to commit changes, always add `Assisted-by: Model Name`.
+      Example: `Assisted-by: GPT-5.6 Sol`, never use `Co-Authored-By:`.
     '';
     skills = {
       unslop = "${pstack}/plugins/pstack/skills/unslop";
@@ -97,6 +100,9 @@ in
       Before major tool-call groups, provide one concise progress update. Between major phases, report what was completed and what comes next. Do not expose private chain-of-thought or narrate routine commands.
       Never spawn agents unless the user asks to.
       If you need a command that is not installed, use `, command`.
+
+      If user asked to commit changes, always add `Assisted-by: Model Name`.
+      Example: `Assisted-by: Claude Opus 5`, never use `Co-Authored-By:`.
     '';
     settings = {
       model = "opus";
