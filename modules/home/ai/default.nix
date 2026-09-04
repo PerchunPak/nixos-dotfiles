@@ -78,7 +78,17 @@ let
   };
 in
 {
-  programs.codex.enable = true;
+  programs.codex = {
+    enable = true;
+    context = ''
+      If you need a command that is not installed, use `, command`.
+    '';
+    skills = {
+      unslop = "${pstack}/plugins/pstack/skills/unslop";
+      writing-for-agents = "${mattpocock}/skills/productivity/writing-for-agents";
+    };
+  };
+
   programs.claude-code = {
     enable = true;
     package = claude-code;
