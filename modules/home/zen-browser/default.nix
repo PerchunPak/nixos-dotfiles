@@ -22,13 +22,14 @@ let
     extensions = {
       force = true;
       packages = with rycee-nur.firefox-addons; [
+        better-history-ng
         bitwarden
         darkreader
         disable-javascript
         grammarly
+        historyblock
         improved-tube
         refined-github
-        historyblock
         sponsorblock
         stylus
         ublock-origin

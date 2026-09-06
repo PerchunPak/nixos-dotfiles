@@ -777,11 +777,11 @@
     "rycee-nur": {
       "flake": false,
       "locked": {
-        "lastModified": 1788581480,
-        "narHash": "sha256-SXd7V3KE7DALG3TVUf2oZJGXS9QGBPhkQIKNlbkvOzA=",
+        "lastModified": 1788678358,
+        "narHash": "sha256-xFu9deElkBd81tRYo2yRSZQ40LDXMnVd/gO1/uELxhI=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "8f383bcc9d61bf3153cb8e6254dda1eb19289b7c",
+        "rev": "2554c0e25259c6ab3e71dac5177f8d38f76a6e1c",
         "type": "gitlab"
       },
       "original": {
