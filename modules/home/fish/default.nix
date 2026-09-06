@@ -28,6 +28,7 @@
       cl = "clear";
       cll = "cd && clear";
       zz = "zellij";
+      codex = "codex --yolo";
     };
 
     plugins = [
