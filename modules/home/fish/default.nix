@@ -28,6 +28,7 @@
       cl = "clear";
       cll = "cd && clear";
       zz = "zellij";
+      "яя" = "zellij";
       codex = "codex --yolo";
     };
 
