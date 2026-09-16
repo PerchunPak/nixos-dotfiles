@@ -89,6 +89,8 @@ in
 
       If user asked to commit changes, always add `Assisted-by: Model Name`.
       Example: `Assisted-by: GPT-5.6 Sol`, never use `Co-Authored-By:`.
+
+      If user asks for an HTML report, always use dark scheme.
     '';
     skills = {
       unslop = "${pstack}/plugins/pstack/skills/unslop";
@@ -112,6 +114,9 @@ in
 
       If user asked to commit changes, always add `Assisted-by: Model Name`.
       Example: `Assisted-by: Claude Opus 5`, never use `Co-Authored-By:`.
+
+      If user asks for an HTML report, always use dark scheme and create
+      a local `.html` file. Never use Claude artifacts.
     '';
     settings = {
       model = "opus";
