@@ -28,5 +28,7 @@
     ];
     # Deduplicate and optimize nix store
     auto-optimise-store = true;
+    # Set caching for failed look-ups to 3s (usually this happens due to my network issues)
+    narinfo-cache-negative-ttl = 3;
   };
 }
