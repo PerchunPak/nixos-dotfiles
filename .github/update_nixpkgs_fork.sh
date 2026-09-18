@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+nix flake update nixpkgs
+exit
+
 set -ex
 
 system=$(nix-instantiate --eval --raw --expr 'builtins.currentSystem')
