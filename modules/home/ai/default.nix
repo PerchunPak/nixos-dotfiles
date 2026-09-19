@@ -1,5 +1,7 @@
 {
+  config,
   inputs,
+  lib,
   pkgs,
   ...
 }:
@@ -76,10 +78,55 @@ let
     rev = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76";
     hash = "sha256-N5tpUIHO2VFeJntBTl6/VLDIVpqoshwFxNJlfXXUwsQ=";
   };
+
+  resetAiConfigs = pkgs.writeShellApplication {
+    name = "reset-ai-configs";
+    text = ''
+      reset_config() {
+        local source="$1"
+        local target="$2"
+        local temporary
+
+        mkdir -p "$(dirname "$target")"
+        temporary="$(mktemp "$(dirname "$target")/.config-reset.XXXXXX")"
+        install -m 0600 "$source" "$temporary"
+        mv -f "$temporary" "$target"
+      }
+
+      reset_config \
+        ${lib.escapeShellArg config.home.file.".codex/config.toml".source} \
+        ${lib.escapeShellArg "${config.home.homeDirectory}/.codex/config.toml"}
+      reset_config \
+        ${
+          lib.escapeShellArg config.home.file."${config.home.homeDirectory}/.claude/settings.json".source
+        } \
+        ${lib.escapeShellArg "${config.home.homeDirectory}/.claude/settings.json"}
+    '';
+  };
 in
 {
   programs.codex = {
     enable = true;
+    settings = {
+      model = "gpt-5.6-sol";
+      model_reasoning_effort = "medium";
+      service_tier = "default";
+      apps.connector_openai_hotline.enabled = false;
+      tui = {
+        status_line = [
+          "model-with-reasoning"
+          "current-dir"
+          "context-remaining"
+          "five-hour-limit"
+          "weekly-limit"
+          "total-input-tokens"
+          "total-output-tokens"
+          "task-progress"
+        ];
+        status_line_use_colors = true;
+      };
+      notice.hide_rate_limit_model_nudge = true;
+    };
     context = ''
       If you need a command that is not installed, use `, command`. Example:
       $ glob **/*.py
@@ -135,6 +182,27 @@ in
   };
 
   home.packages = [ pkgs.t3code ];
+
+  # Home Manager normally exposes generated settings as read-only store
+  # symlinks. Replace those links with writable copies after activation, and
+  # restore the declarative copies whenever the user manager starts.
+  home.file = {
+    ".codex/config.toml".force = true;
+    "${config.home.homeDirectory}/.claude/settings.json".force = true;
+  };
+
+  home.activation.resetAiConfigs = inputs.home-manager.lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+    run ${lib.getExe resetAiConfigs}
+  '';
+
+  systemd.user.services.reset-ai-configs = {
+    Unit.Description = "Restore declarative Codex and Claude Code settings";
+    Service = {
+      Type = "oneshot";
+      ExecStart = lib.getExe resetAiConfigs;
+    };
+    Install.WantedBy = [ "default.target" ];
+  };
 
   my.persistence = {
     directories = [
