@@ -138,6 +138,9 @@ in
       Example: `Assisted-by: GPT-5.6 Sol`, never use `Co-Authored-By:`.
 
       If user asks for an HTML report, always use dark scheme.
+
+      If prompt is a question, answer it. Do not decide to do action unless
+      user explicitly asks to.
     '';
     skills = {
       unslop = "${pstack}/plugins/pstack/skills/unslop";
@@ -161,9 +164,13 @@ in
 
       If user asked to commit changes, always add `Assisted-by: Model Name`.
       Example: `Assisted-by: Claude Opus 5`, never use `Co-Authored-By:`.
+      Do not use built-in commit tool, always invoke `git commit` manually.
 
       If user asks for an HTML report, always use dark scheme and create
       a local `.html` file. Never use Claude artifacts.
+
+      If prompt is a question, answer it. Do not decide to do action unless
+      user explicitly asks to.
     '';
     settings = {
       model = "opus";
