@@ -128,11 +128,16 @@ in
       notice.hide_rate_limit_model_nudge = true;
     };
     context = ''
-      If you need a command that is not installed, use `, command`. Example:
+      If you need a command that is not installed, use `, command`. Do not use
+      `,` for commands that are already installed, only fallback to it if you
+      encounter an error. Example:
+      ```
       $ glob **/*.py
       bash: glob: command not found
       $ , glob **/*.py
       <correct output>
+      $ , rg foo # !!! bad, rg is already installed
+      ```
 
       If user asked to commit changes, always add `Assisted-by: Model Name`.
       Example: `Assisted-by: GPT-5.6 Sol`, never use `Co-Authored-By:`.
@@ -159,11 +164,16 @@ in
       Before major tool-call groups, provide one concise progress update. Between major phases, report what was completed and what comes next. Do not expose private chain-of-thought or narrate routine commands.
       Never spawn agents unless the user asks to.
 
-      If you need a command that is not installed, use `, command`. Example:
+      If you need a command that is not installed, use `, command`. Do not use
+      `,` for commands that are already installed, only fallback to it if you
+      encounter an error. Example:
+      ```
       $ glob **/*.py
       bash: glob: command not found
       $ , glob **/*.py
       <correct output>
+      $ , rg foo # !!! bad, rg is already installed
+      ```
 
       If user asked to commit changes, always add `Assisted-by: Model Name`.
       Example: `Assisted-by: Claude Opus 5`, never use `Co-Authored-By:`.
