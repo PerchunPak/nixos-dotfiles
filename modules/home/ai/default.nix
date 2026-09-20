@@ -141,9 +141,12 @@ in
 
       If prompt is a question, answer it. Do not decide to do action unless
       user explicitly asks to.
+
+      ---
+
+      ${builtins.readFile ./unslop.md}
     '';
     skills = {
-      unslop = "${pstack}/plugins/pstack/skills/unslop";
       writing-for-agents = "${mattpocock}/skills/productivity/writing-for-agents";
     };
   };
@@ -171,6 +174,10 @@ in
 
       If prompt is a question, answer it. Do not decide to do action unless
       user explicitly asks to.
+
+      ---
+
+      ${builtins.readFile ./unslop.md}
     '';
     settings = {
       model = "opus";
@@ -183,7 +190,6 @@ in
       };
     };
     skills = {
-      unslop = "${pstack}/plugins/pstack/skills/unslop";
       writing-for-agents = "${mattpocock}/skills/productivity/writing-for-agents";
     };
   };
