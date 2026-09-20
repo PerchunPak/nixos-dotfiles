@@ -164,8 +164,11 @@ in
     package = claude-code;
     # gpt doesn't output thinking summaries without this
     context = ''
-      Before major tool-call groups, provide one concise progress update. Between major phases, report what was completed and what comes next. Do not expose private chain-of-thought or narrate routine commands.
-      Never spawn agents unless the user asks to.
+      NEVER spawn agents unless the user asks to.
+
+      Before major tool-call groups, provide one concise progress update.
+      Between major phases, report what was completed and what comes next. Do
+      not expose private chain-of-thought or narrate routine commands.
 
       ${comma-skill}
 
@@ -174,7 +177,7 @@ in
       Do not use built-in commit tool, always invoke `git commit` manually.
 
       If user asks for an HTML report, always use dark scheme and create
-      a local `.html` file. Never use Claude artifacts.
+      a local `.html` file. NEVER use Claude artifacts.
 
       If prompt is a question, answer it. Do not decide to do action unless
       user explicitly asks to.
