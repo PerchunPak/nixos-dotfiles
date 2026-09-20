@@ -78,6 +78,18 @@ let
     rev = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76";
     hash = "sha256-N5tpUIHO2VFeJntBTl6/VLDIVpqoshwFxNJlfXXUwsQ=";
   };
+  comma-skill = ''
+    Run every command bare on the first attempt. Only after it fails with
+    "command not found" may you re-run it as `, <command>`.
+
+    Never put `,` in a command's first attempt, including when you are unsure
+    whether the binary exists. Running it is how you find out.
+
+    $ glob **/*.py
+    bash: glob: command not found
+    $ , glob **/*.py     # correct: only after the failure above
+    $ , rg foo           # wrong: rg was never tried bare
+  '';
 
   resetAiConfigs = pkgs.writeShellApplication {
     name = "reset-ai-configs";
@@ -128,16 +140,7 @@ in
       notice.hide_rate_limit_model_nudge = true;
     };
     context = ''
-      If you need a command that is not installed, use `, command`. Do not use
-      `,` for commands that are already installed, only fallback to it if you
-      encounter an error. Example:
-      ```
-      $ glob **/*.py
-      bash: glob: command not found
-      $ , glob **/*.py
-      <correct output>
-      $ , rg foo # !!! bad, rg is already installed
-      ```
+      ${comma-skill}
 
       If user asked to commit changes, always add `Assisted-by: Model Name`.
       Example: `Assisted-by: GPT-5.6 Sol`, never use `Co-Authored-By:`.
@@ -164,16 +167,7 @@ in
       Before major tool-call groups, provide one concise progress update. Between major phases, report what was completed and what comes next. Do not expose private chain-of-thought or narrate routine commands.
       Never spawn agents unless the user asks to.
 
-      If you need a command that is not installed, use `, command`. Do not use
-      `,` for commands that are already installed, only fallback to it if you
-      encounter an error. Example:
-      ```
-      $ glob **/*.py
-      bash: glob: command not found
-      $ , glob **/*.py
-      <correct output>
-      $ , rg foo # !!! bad, rg is already installed
-      ```
+      ${comma-skill}
 
       If user asked to commit changes, always add `Assisted-by: Model Name`.
       Example: `Assisted-by: Claude Opus 5`, never use `Co-Authored-By:`.
