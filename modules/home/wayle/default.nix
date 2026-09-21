@@ -50,6 +50,9 @@
           monitor-specific = false;
           show-special = false;
           urgent-show = false;
+          app-icon-map = {
+            "class:equibop" = "si-discord-symbolic";
+          };
         };
         cava = {
           bars = 10;
