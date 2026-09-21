@@ -881,11 +881,11 @@
     "wayle": {
       "flake": false,
       "locked": {
-        "lastModified": 1788915375,
-        "narHash": "sha256-xABS19+FhmZxp0/7BFa3SSrX7AI8e7RHz90yqySOrbM=",
+        "lastModified": 1789971891,
+        "narHash": "sha256-OWxA3k3pOaOsDhRJ0FIdQSx4Px9S8kDIDPd/7qxtBWc=",
         "owner": "waltmck",
         "repo": "wayle",
-        "rev": "f0058f4a20c0a23f2ec7333832d0ff8ad1d39803",
+        "rev": "e6fdf364e29edb2742c80ef474af575009fbf3f1",
         "type": "github"
       },
       "original": {
