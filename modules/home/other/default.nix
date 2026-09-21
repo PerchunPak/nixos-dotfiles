@@ -22,9 +22,6 @@
     "Downloads/.keep".text = "";
   };
 
-  gtk.enable = nixosConfig.my.gui.enable;
-  gtk.gtk4.theme = lib.mkDefault null;
-
   programs = {
     bat.enable = true;
     chromium.enable = nixosConfig.my.gui.enable;
