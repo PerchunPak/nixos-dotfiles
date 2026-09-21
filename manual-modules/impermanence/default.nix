@@ -54,31 +54,37 @@ in
           ];
 
           script = ''
-            set -e
+            set -euo pipefail
             MOUNTDIR=/mnt
             BTRFS_VOL=${btrfs-volume}
 
             echo "Mounting btrfs..."
-            mkdir -p $MOUNTDIR
-            mount -t btrfs -o subvol=/,user_subvol_rm_allowed $BTRFS_VOL $MOUNTDIR
+            mkdir -p "$MOUNTDIR"
+            mount -t btrfs -o subvol=/,user_subvol_rm_allowed "$BTRFS_VOL" "$MOUNTDIR"
+            trap 'umount "$MOUNTDIR"' EXIT
 
             echo "Deleting old subvolumes"
-            for old_subvolume in $(find $MOUNTDIR/old_roots/ -maxdepth 1 -mtime +30); do
-              echo "Deleting $old_subvolume"
-              btrfs property set "$old_subvolume" ro false
-              btrfs subvolume delete -R "$old_subvolume"
-            done
+            find "$MOUNTDIR/old_roots" -mindepth 1 -maxdepth 1 -type d -mtime +30 -print0 |
+              while IFS= read -r -d "" old_subvolume; do
+                # Leave ordinary directories alone, even if they are old.
+                if ! btrfs subvolume show "$old_subvolume" >/dev/null 2>&1; then
+                  echo "Skipping non-subvolume: $old_subvolume" >&2
+                  continue
+                fi
+                echo "Deleting $old_subvolume"
+                btrfs property set "$old_subvolume" ro false
+                btrfs subvolume delete -R "$old_subvolume"
+              done
 
-            if [[ -e $MOUNTDIR/root ]]; then
+            if [[ -e "$MOUNTDIR/root" ]]; then
               echo "Moving existing root to the old_roots directory..."
-              mkdir -p $MOUNTDIR/old_roots
-              timestamp=$(date --date="@$(stat -c %Y $MOUNTDIR/root)" "+%Y-%m-%-d_%H:%M:%S")
-              mv $MOUNTDIR/root "$MOUNTDIR/old_roots/$timestamp"
+              mkdir -p "$MOUNTDIR/old_roots"
+              timestamp=$(date --date="@$(stat -c %Y "$MOUNTDIR/root")" "+%Y-%m-%-d_%H:%M:%S")
+              mv -T "$MOUNTDIR/root" "$MOUNTDIR/old_roots/$timestamp"
               btrfs property set "$MOUNTDIR/old_roots/$timestamp" ro true
             fi
 
-            btrfs subvolume create $MOUNTDIR/root
-            umount $MOUNTDIR
+            btrfs subvolume create "$MOUNTDIR/root"
             echo "Done!"
           '';
         }
