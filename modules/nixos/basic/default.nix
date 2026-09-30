@@ -62,6 +62,7 @@
     "btrfs"
     "exfat"
     "ntfs"
+    "virtiofsd"
     "xfs"
   ];
 
