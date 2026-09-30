@@ -18,6 +18,7 @@ in
     settings = {
       server = nameservers;
       dhcp-leasefile = false;
+      bind-interfaces = true;
     };
   };
 
