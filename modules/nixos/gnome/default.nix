@@ -12,6 +12,8 @@
 
   programs.dconf.enable = true;
 
+  services.gnome.at-spi2-core.enable = true;
+
   environment.systemPackages =
     with pkgs;
     lib.mkIf config.my.gui.enable [

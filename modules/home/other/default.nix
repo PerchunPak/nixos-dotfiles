@@ -1,4 +1,5 @@
 {
+  inputs,
   lib,
   pkgs,
   nixosConfig,
@@ -67,6 +68,8 @@
         xxd
         yq-go
         zip
+
+        inputs.chatgpt.packages.x86_64-linux.codex-desktop-computer-use-ui
       ]
       (lib.mkIf (nixosConfig.my.flatpak.enable) [ flatpak ])
       (lib.mkIf nixosConfig.my.gui.enable [

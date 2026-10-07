@@ -87,6 +87,11 @@
       url = "github:waltmck/wayle";
       flake = false;
     };
+
+    chatgpt = {
+      url = "github:ilysenko/codex-desktop-linux";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -132,6 +137,7 @@
 
       outputs-builder = channels: {
         formatter = channels.nixpkgs.nixfmt;
+        lox = inputs.chatgpt.packages.x86_64-linux.codex-desktop-computer-use-ui;
       };
     };
 }
