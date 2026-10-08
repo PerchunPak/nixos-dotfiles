@@ -24,7 +24,7 @@ return {
     },
   },
   after = function()
-    require('zellij-nav').setup()
+    require('zellij-nav').setup {}
 
     vim.api.nvim_create_autocmd('VimLeave', {
       pattern = '*',
