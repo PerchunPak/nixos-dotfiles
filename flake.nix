@@ -137,7 +137,6 @@
 
       outputs-builder = channels: {
         formatter = channels.nixpkgs.nixfmt;
-        lox = inputs.chatgpt.packages.x86_64-linux.codex-desktop-computer-use-ui;
       };
     };
 }
