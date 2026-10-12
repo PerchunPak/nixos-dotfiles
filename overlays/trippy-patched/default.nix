@@ -5,12 +5,12 @@ final: prev: {
     src = final.fetchFromGitHub {
       owner = "fujiapple852";
       repo = "trippy";
-      rev = "fa153633fe355fedd0fc8e481addbf37dd9c1514";
-      hash = "sha256-bc6dlLR5j8h22H+LsawadBKvnMGh05L7G17X9Ipxbe8=";
+      rev = "38ce6acfc6ff3a1e697c3bc92f8c25d2429fd1e5";
+      hash = "sha256-ONxqKbFi5Og6v5/im4jAT/s/jyDYnJJM1IiV9B6/HM8=";
     };
     cargoDeps = final.rustPlatform.fetchCargoVendor {
       inherit src;
-      hash = "sha256-TL+mZBoiQKUQ3H3L56f2lmIN0hCNmx8D9d05eP6/Pqs=";
+      hash = "sha256-h30tCs4E6Q77xTamP+Nwlb4ReASXmlaodtcnDbeTfBk=";
     };
   };
 }
