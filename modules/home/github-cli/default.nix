@@ -2,7 +2,7 @@
   programs.gh = {
     enable = true;
     settings = {
-      git_protool = "ssh";
+      git_protocol = "ssh";
     };
   };
 

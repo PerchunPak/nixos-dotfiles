@@ -33,6 +33,12 @@
     ripgrep.enable = true;
   };
 
+  my.persistence = {
+    directories = [
+      ".config/glab-cli"
+    ];
+  };
+
   home.packages =
     with pkgs;
     lib.mkMerge [
@@ -52,6 +58,7 @@
         ffmpeg
         file
         ghcherry
+        glab
         gnumake
         libnotify
         lsof
