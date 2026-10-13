@@ -28,4 +28,7 @@ linkFarmFromDrvs "long-builds-to-cache" (
     whiskers
     cursors
   ])
+  ++ (with inputs.hyprland.packages.${system}; [
+    hyprland
+  ])
 )
