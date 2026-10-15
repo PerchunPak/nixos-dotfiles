@@ -30,5 +30,6 @@ linkFarmFromDrvs "long-builds-to-cache" (
   ])
   ++ (with inputs.hyprland.packages.${system}; [
     hyprland
+    xdg-desktop-portal-hyprland
   ])
 )
