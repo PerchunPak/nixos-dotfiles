@@ -76,7 +76,7 @@
         yq-go
         zip
 
-        inputs.chatgpt.packages.x86_64-linux.codex-desktop-computer-use-ui
+        inputs.chatgpt.packages.${pkgs.stdenv.hostPlatform.system}.codex-desktop-computer-use-ui
       ]
       (lib.mkIf (nixosConfig.my.flatpak.enable) [ flatpak ])
       (lib.mkIf nixosConfig.my.gui.enable [

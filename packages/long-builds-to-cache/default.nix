@@ -32,4 +32,7 @@ linkFarmFromDrvs "long-builds-to-cache" (
     hyprland
     xdg-desktop-portal-hyprland
   ])
+  ++ (with inputs.chatgpt.packages.${system}; [
+    codex-desktop-computer-use-ui
+  ])
 )
