@@ -14,17 +14,6 @@ let
       overlays = with inputs.hyprland.overlays; [
         hyprland-packages
         hyprland-extras
-        (final: prev: {
-          hyprtoolkit = prev.hyprtoolkit.overrideAttrs {
-            version = "0.5.4";
-            src = final.fetchFromGitHub {
-              owner = "hyprwm";
-              repo = "hyprtoolkit";
-              tag = "v0.5.4";
-              hash = "sha256-gJSBj4Pd4e9nERAKo/qiHqDMpS2hBfyOI0uGCbbiML4=";
-            };
-          };
-        })
       ];
     };
 in

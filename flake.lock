@@ -337,6 +337,7 @@
         "hyprland-guiutils": "hyprland-guiutils",
         "hyprland-protocols": "hyprland-protocols",
         "hyprlang": "hyprlang",
+        "hyprtoolkit": "hyprtoolkit",
         "hyprutils": "hyprutils",
         "hyprwayland-scanner": "hyprwayland-scanner",
         "hyprwire": "hyprwire",
@@ -348,16 +349,16 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1788777480,
-        "narHash": "sha256-F33tKTtFrhst7rc5P20BkpgAJo4Qp3JQeyaHeVxZNJQ=",
-        "owner": "hyprwm",
+        "lastModified": 1791971117,
+        "narHash": "sha256-VW8dTSnbhi4zKCW25qIHlU7JqRx/Gts987SI+0fiV1E=",
+        "owner": "PerchunPak",
         "repo": "Hyprland",
-        "rev": "7ebf13abb3c391604c60c9f627c7a403bcec8d17",
+        "rev": "7ff9489450753b181b1708313df248e4256ca9c3",
         "type": "github"
       },
       "original": {
-        "owner": "hyprwm",
-        "ref": "7ebf13abb3c391604c60c9f627c7a403bcec8d17",
+        "owner": "PerchunPak",
+        "ref": "fixed",
         "repo": "Hyprland",
         "type": "github"
       }
@@ -376,7 +377,10 @@
           "hyprland",
           "hyprlang"
         ],
-        "hyprtoolkit": "hyprtoolkit",
+        "hyprtoolkit": [
+          "hyprland",
+          "hyprtoolkit"
+        ],
         "hyprutils": [
           "hyprland",
           "hyprutils"
@@ -466,37 +470,30 @@
       "inputs": {
         "aquamarine": [
           "hyprland",
-          "hyprland-guiutils",
           "aquamarine"
         ],
         "hyprgraphics": [
           "hyprland",
-          "hyprland-guiutils",
           "hyprgraphics"
         ],
         "hyprlang": [
           "hyprland",
-          "hyprland-guiutils",
           "hyprlang"
         ],
         "hyprutils": [
           "hyprland",
-          "hyprland-guiutils",
           "hyprutils"
         ],
         "hyprwayland-scanner": [
           "hyprland",
-          "hyprland-guiutils",
           "hyprwayland-scanner"
         ],
         "nixpkgs": [
           "hyprland",
-          "hyprland-guiutils",
           "nixpkgs"
         ],
         "systems": [
           "hyprland",
-          "hyprland-guiutils",
           "systems"
         ]
       },
@@ -510,6 +507,7 @@
       },
       "original": {
         "owner": "hyprwm",
+        "ref": "af515b69dfbe366dc7873aa1475cb2f4db3ebad7",
         "repo": "hyprtoolkit",
         "type": "github"
       }
