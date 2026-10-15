@@ -349,11 +349,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1791971117,
-        "narHash": "sha256-VW8dTSnbhi4zKCW25qIHlU7JqRx/Gts987SI+0fiV1E=",
+        "lastModified": 1792107339,
+        "narHash": "sha256-6ElbLOVeXuxrWGxILTUdHfGKY0taIF8XNyKgXXFd/lw=",
         "owner": "PerchunPak",
         "repo": "Hyprland",
-        "rev": "7ff9489450753b181b1708313df248e4256ca9c3",
+        "rev": "b0babb22c0b52fb4df76b92bc597aa57d843d6de",
         "type": "github"
       },
       "original": {
