@@ -75,8 +75,6 @@
         xxd
         yq-go
         zip
-
-        inputs.chatgpt.packages.${pkgs.stdenv.hostPlatform.system}.codex-desktop-computer-use-ui
       ]
       (lib.mkIf (nixosConfig.my.flatpak.enable) [ flatpak ])
       (lib.mkIf nixosConfig.my.gui.enable [
@@ -90,6 +88,8 @@
         signal-desktop
         tor-browser
         wl-clipboard
+
+        inputs.chatgpt.packages.${pkgs.stdenv.hostPlatform.system}.codex-desktop-computer-use-ui
       ])
     ];
 }
