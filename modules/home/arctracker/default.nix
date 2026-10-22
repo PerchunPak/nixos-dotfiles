@@ -13,7 +13,7 @@
 
   my.persistence.directories = [
     ".cache/arctracker-link"
-    ".local/state/arctracker-link"
+    ".local/share/arctracker-link"
     ".local/state/arctracker-link"
   ];
 }
