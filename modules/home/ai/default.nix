@@ -120,7 +120,7 @@ in
   programs.codex = {
     enable = true;
     settings = {
-      model = "gpt-5.6-sol";
+      model = "gpt-6.1-sol";
       model_reasoning_effort = "medium";
       service_tier = "default";
       apps.connector_openai_hotline.enabled = false;
