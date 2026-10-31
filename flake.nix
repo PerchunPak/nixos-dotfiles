@@ -107,6 +107,11 @@
         namespace = "my";
       };
 
+      overlays = [
+        inputs.hyprland.overlays.hyprland-packages
+        inputs.hyprland.overlays.hyprland-extras
+      ];
+
       channels-config = {
         cudaSupport = true;
         allowUnfreePredicate =

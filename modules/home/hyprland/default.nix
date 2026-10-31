@@ -1,22 +1,9 @@
 {
-  inputs,
   nixosConfig,
   pkgs,
   lib,
   ...
 }:
-let
-  hyprlandPackages =
-    # these nasty workarounds to fix cursor flickering are needed only until the next release
-    assert pkgs.hyprland.version == "0.56.2";
-    import inputs.nixpkgs {
-      localSystem = pkgs.stdenv.hostPlatform.system;
-      overlays = with inputs.hyprland.overlays; [
-        hyprland-packages
-        hyprland-extras
-      ];
-    };
-in
 {
   imports = [
     ./settings.nix
@@ -26,8 +13,6 @@ in
     catppuccin.hyprland.enable = false;
     wayland.windowManager.hyprland = {
       enable = true;
-      package = hyprlandPackages.hyprland;
-      portalPackage = hyprlandPackages.xdg-desktop-portal-hyprland;
       systemd.enable = false;
       configType = "lua";
     };
