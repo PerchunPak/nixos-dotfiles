@@ -152,6 +152,8 @@ in
       If prompt is a question, answer it. Do not decide to do action unless
       user explicitly asks to.
 
+      Prefer to use ripgrep and `fd` over usual UNIX `grep` and `find`.
+
       ---
 
       ${builtins.readFile ./unslop.md}
@@ -186,6 +188,8 @@ in
 
       If prompt is a question, answer it. Do not decide to do action unless
       user explicitly asks to.
+
+      Prefer to use ripgrep and `fd` over usual UNIX `grep` and `find`.
 
       ---
 
