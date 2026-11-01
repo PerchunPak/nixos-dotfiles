@@ -143,7 +143,9 @@ in
       ${comma-skill}
 
       If user asked to commit changes, always add `Assisted-by: Model Name`.
-      Example: `Assisted-by: GPT-5.6 Sol`, never use `Co-Authored-By:`.
+      Example: `Assisted-by: GPT-6.1 Sol`, never use `Co-Authored-By:`. Name
+      the specific model, do not write generic names like `GPT` or `GPT-6`.
+      If you do not know which model you are, mention it to the user.
 
       If user asks for an HTML report, always use dark scheme.
 
@@ -173,7 +175,10 @@ in
       ${comma-skill}
 
       If user asked to commit changes, always add `Assisted-by: Model Name`.
-      Example: `Assisted-by: Claude Opus 5`, never use `Co-Authored-By:`.
+      Example: `Assisted-by: Claude Opus 5`, never use `Co-Authored-By:`. Name
+      the specific model, do not write generic names like `Claude`. If you do
+      not know which model you are, mention it to the user.
+
       Do not use built-in commit tool, always invoke `git commit` manually.
 
       If user asks for an HTML report, always use dark scheme and create
