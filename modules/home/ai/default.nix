@@ -204,6 +204,7 @@ in
         type = "command";
         command = statusline;
       };
+      autoMemoryEnabled = false;
     };
     skills = {
       writing-for-agents = "${mattpocock}/skills/productivity/writing-for-agents";
