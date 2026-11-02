@@ -205,6 +205,8 @@ in
         command = statusline;
       };
       autoMemoryEnabled = false;
+      allowedMcpServers = [ ];
+      disableClaudeAiConnectors = true;
     };
     skills = {
       writing-for-agents = "${mattpocock}/skills/productivity/writing-for-agents";
