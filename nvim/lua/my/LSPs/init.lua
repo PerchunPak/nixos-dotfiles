@@ -3,6 +3,11 @@ return {
     'nvim-lspconfig',
     on_require = { 'lspconfig' },
     lsp = function(plugin)
+      if plugin.name == 'tailwindcss' then
+        plugin.lsp.filetypes = vim.tbl_filter(function(filetype)
+          return filetype ~= 'markdown'
+        end, vim.lsp.config.tailwindcss.filetypes)
+      end
       vim.lsp.config(plugin.name, plugin.lsp)
       if not plugin.disable then
         vim.lsp.enable(plugin.name)
