@@ -205,7 +205,6 @@ in
         command = statusline;
       };
       autoMemoryEnabled = false;
-      allowedMcpServers = [ ];
       disableClaudeAiConnectors = true;
     };
     skills = {
