@@ -17,11 +17,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland = {
-      url = "github:PerchunPak/Hyprland/fixed";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     snowfall-lib = {
       url = "github:snowfallorg/lib";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -106,11 +101,6 @@
       snowfall = {
         namespace = "my";
       };
-
-      overlays = [
-        inputs.hyprland.overlays.hyprland-packages
-        inputs.hyprland.overlays.hyprland-extras
-      ];
 
       channels-config = {
         cudaSupport = true;

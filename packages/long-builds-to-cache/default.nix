@@ -28,10 +28,6 @@ linkFarmFromDrvs "long-builds-to-cache" (
     whiskers
     cursors
   ])
-  ++ (with inputs.hyprland.packages.${system}; [
-    hyprland
-    xdg-desktop-portal-hyprland
-  ])
   ++ (with inputs.chatgpt.packages.${system}; [
     codex-desktop-computer-use-ui
   ])
