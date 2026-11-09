@@ -10,7 +10,7 @@
 
   my = {
     gui.enable = false;
-    user.password = "$y$j9T$PQmCrgTV4zyANdfqVCGxW/$7zLGsLYwRicDOFiYPTrIvSC.l.fT82Q8pysYE8uIeZ8";
+    user.password = "$y$j9T$MOnKRLa06LS3z.zByavxg0$rqF5HHow3ZgcPJniHR7uu4aC64Kqtke4vE/SZiWVuv7";
   };
 
   wsl.enable = true;

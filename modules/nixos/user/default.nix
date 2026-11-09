@@ -5,6 +5,7 @@ in
 {
   options = {
     my.user = {
+      # generate using mkpasswd
       password = lib.mkOption { type = with lib.types; passwdEntry str; };
     };
   };
@@ -29,5 +30,7 @@ in
     };
 
     nix.settings.trusted-users = [ "@wheel" ];
+
+    security.sudo.wheelNeedsPassword = true;
   };
 }
