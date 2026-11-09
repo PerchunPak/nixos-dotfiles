@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-nix flake update nixpkgs
-exit
-
 set -ex
 
 system=$(nix-instantiate --eval --raw --expr 'builtins.currentSystem')
@@ -12,7 +9,7 @@ nixpkgs_rev=$(
 nix run ".#pkgs.$system.nixpkgs.ghcherry" -- \
   --target PerchunPak/nixpkgs@patched \
   --first-hard-reset-to "NixOS/nixpkgs/$nixpkgs_rev" \
-  `: # cliproxyapi: init` \
-  https://github.com/NixOS/nixpkgs/pull/532540
+  `: # variety: 0.9.0-b1 -> 0.9.2` \
+  https://github.com/NixOS/nixpkgs/pull/585616
 
 nix flake update nixpkgs
