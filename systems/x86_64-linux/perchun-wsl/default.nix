@@ -16,4 +16,7 @@
   wsl.enable = true;
   wsl.defaultUser = "perchun";
   wsl.interop.includePath = false;
+
+  # on my desktop, impermanence clears it
+  boot.tmp.cleanOnBoot = true;
 }
