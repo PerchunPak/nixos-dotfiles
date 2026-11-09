@@ -10,6 +10,7 @@ in
   };
 
   config = {
+    users.mutableUsers = false;
     users.users = {
       perchun = {
         isNormalUser = true;
