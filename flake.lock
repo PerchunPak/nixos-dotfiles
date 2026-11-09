@@ -310,11 +310,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1794249836,
-        "narHash": "sha256-6I7JdnBeMbHC3y55TOF1q39prt/C2T1ubK/sTkoVolg=",
+        "lastModified": 1794264378,
+        "narHash": "sha256-yKUW7iq98kHyfdEKXgq3nXE6UP62hY0QFg12dshi530=",
         "owner": "PerchunPak",
         "repo": "nixpkgs",
-        "rev": "f0d46afdf427b1e1e2dfe6d9c6b52e592f39b005",
+        "rev": "80fce6ad2a4152ab9f0616f5594223085626a743",
         "type": "github"
       },
       "original": {
