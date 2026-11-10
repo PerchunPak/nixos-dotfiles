@@ -117,7 +117,6 @@
             "steam-unwrapped"
             "zerotierone"
             # Firefox extensions
-            "enhancer-for-youtube"
             "grammarly"
             "improved-tube"
             # cuda
