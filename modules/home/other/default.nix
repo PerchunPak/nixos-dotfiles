@@ -88,6 +88,7 @@
         signal-desktop
         tor-browser
         wl-clipboard
+        wtype
 
         inputs.chatgpt.packages.${pkgs.stdenv.hostPlatform.system}.codex-desktop-computer-use-ui
       ])
