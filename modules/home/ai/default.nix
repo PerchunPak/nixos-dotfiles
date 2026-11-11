@@ -49,7 +49,11 @@ let
 
     if [ -n "$transcript_path" ] && [ -f "$transcript_path" ]; then
       totals="$("${pkgs.jq}/bin/jq" -rs '
-        [ .[] | select(.type == "assistant" and (.message.usage? != null)) | .message.usage ]
+        # Claude Code writes one line per content block, each repeating the
+        # response usage, so count every API response once.
+        [ .[] | select(.type == "assistant" and (.message.usage? != null)) ]
+        | unique_by(.message.id)
+        | map(.message.usage)
         | {
             input: (map(
                 (.input_tokens // 0)
