@@ -218,6 +218,8 @@ in
       };
       autoMemoryEnabled = false;
       disableClaudeAiConnectors = true;
+      awaySummaryEnabled = false;
+      spinnerTipsEnabled = false;
     };
     skills = {
       writing-for-agents = "${mattpocock}/skills/productivity/writing-for-agents";
