@@ -48,6 +48,14 @@ let
     transcript_path="$(printf '%s' "$input" | "${pkgs.jq}/bin/jq" -r '.transcript_path // empty')"
 
     if [ -n "$transcript_path" ] && [ -f "$transcript_path" ]; then
+      # Subagent transcripts live in <session>/subagents/**/agent-<id>.jsonl.
+      subagent_transcripts=()
+      if [ -d "''${transcript_path%.jsonl}/subagents" ]; then
+        mapfile -t subagent_transcripts < <(
+          "${pkgs.findutils}/bin/find" "''${transcript_path%.jsonl}/subagents" \
+            -type f -name 'agent-*.jsonl'
+        )
+      fi
       totals="$("${pkgs.jq}/bin/jq" -rs '
         # Claude Code writes one line per content block, each repeating the
         # response usage, so count every API response once.
@@ -62,7 +70,7 @@ let
             output: (map(.output_tokens // 0) | add // 0)
           }
         | "in \(.input | tostring | gsub("(?<=\\d)(?=(\\d{3})+$)"; " ")) · out \(.output | tostring | gsub("(?<=\\d)(?=(\\d{3})+$)"; " "))"
-      ' "$transcript_path")"
+      ' "$transcript_path" "''${subagent_transcripts[@]}")"
     else
       totals='in 0 · out 0'
     fi
