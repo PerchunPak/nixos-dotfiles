@@ -154,10 +154,13 @@ in
     context = ''
       ${comma-skill}
 
-      If user asked to commit changes, always add `Assisted-by: Model Name`.
-      Example: `Assisted-by: GPT-6.1 Sol`, never use `Co-Authored-By:`. Name
-      the specific model, do not write generic names like `GPT` or `GPT-6`.
-      If you do not know which model you are, mention it to the user.
+      If user asked to commit changes, always add an
+      `Assisted-by: Codex <Model Name Version>` trailer. Example:
+      `Assisted-by: Codex <GPT-6.1 Sol>`. Never use `Co-Authored-By:`, it does
+      not count as disclosure. Include both the tool name and the specific
+      model with its version, do not write generic names like `GPT` or `GPT-6`.
+      If you do not know which model you are, do not commit, mention it to the
+      user and stop.
 
       If user asks for an HTML report, always use dark scheme.
 
@@ -188,10 +191,13 @@ in
 
       ${comma-skill}
 
-      If user asked to commit changes, always add `Assisted-by: Model Name`.
-      Example: `Assisted-by: Claude Opus 5`, never use `Co-Authored-By:`. Name
-      the specific model, do not write generic names like `Claude`. If you do
-      not know which model you are, mention it to the user.
+      If user asked to commit changes, always add an
+      `Assisted-by: Claude Code <Model Name Version>` trailer. Example:
+      `Assisted-by: Claude Code <Claude Opus 5.5>`. Never use
+      `Co-Authored-By:`, it does not count as disclosure. Include both the tool
+      name and the specific model with its version, do not write generic names
+      like `Claude` or `Claude Opus`. If you do not know which model you are,
+      do not commit, mention it to the user and stop.
 
       Do not use built-in commit tool, always invoke `git commit` manually.
 
