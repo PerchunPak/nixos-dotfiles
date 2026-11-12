@@ -7,4 +7,11 @@ let
   module = lib.modules.importApply ../../nvim inputs;
   wrapper = inputs.wrappers.lib.evalModule module;
 in
-wrapper.config.wrap { inherit pkgs; }
+lib.lazyDerivation {
+  meta.mainProgram = "nvim";
+  outputs = [
+    "out"
+    "debug"
+  ];
+  derivation = wrapper.config.wrap { inherit pkgs; };
+}
