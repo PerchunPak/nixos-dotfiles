@@ -13,7 +13,10 @@ let
 in
 writeShellApplication {
   name = "btrfs-backup";
-  text = builtins.readFile (toString src);
+  text = ''
+    # shellcheck disable=SC1091
+    source ${src}
+  '';
   runtimeInputs = [
     btrfs-progs
     busybox
@@ -22,6 +25,7 @@ writeShellApplication {
   checkPhase = ''
     runHook preCheck
     ${stdenv.shellDryRun} "$target"
+    ${stdenv.shellDryRun} ${src}
     runHook postCheck
   '';
 }
