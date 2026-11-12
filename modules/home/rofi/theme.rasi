@@ -1,112 +1,133 @@
-// from https://github.com/catppuccin/rofi/blob/b636a00fd40a7899a8206195464ae8b7f0450a6d/basic/.local/share/rofi/themes/catppuccin-mocha.rasi
+// change on the text.
 * {
-    bg-col:  #1e1e2e;
-    bg-col-light: #1e1e2e;
-    border-col: #1e1e2e;
-    selected-col: #1e1e2e;
-    blue: #89b4fa;
-    fg-col: #cdd6f4;
-    fg-col2: #f38ba8;
-    grey: #6c7086;
+    base:     #1e1e2e;
+    mantle:   #181825;
+    surface0: #313244;
+    surface1: #45475a;
+    text:     #cdd6f4;
+    subtext:  #a6adc8;
+    overlay:  #6c7086;
+    blue:     #89b4fa;
+    mauve:    #cba6f7;
 
-    width: 600;
-    font: "JetBrainsMono Nerd Font 14";
-}
+    width: 980;
+    // Same family as alacritty.
+    font: "MesloLGS Nerd Font 16";
 
-element-text, element-icon , mode-switcher {
-    background-color: inherit;
-    text-color:       inherit;
+    background-color: transparent;
+    text-color:       @text;
 }
 
 window {
-    height: 360px;
-    border: 3px;
-    border-color: @border-col;
-    background-color: @bg-col;
+    location: center;
+    anchor:   center;
+    // Same treatment as a hyprland window: 2px accent border, 6px radius.
+    border:        2px;
+    border-radius: 6px;
+    border-color:  @blue;
+    padding:       18px;
+    // 0.7 alpha to match alacritty.
+    background-color: #1e1e2eB3;
 }
 
 mainbox {
-    background-color: @bg-col;
+    // message is where rofi-calc shows the live result.
+    children: [inputbar, message, listview, mode-switcher];
+    spacing:  14px;
 }
 
 inputbar {
-    children: [prompt,entry];
-    background-color: @bg-col;
-    border-radius: 5px;
-    padding: 2px;
+    children: [prompt, entry];
+    spacing:  10px;
+    padding:  0px;
 }
 
 prompt {
     background-color: @blue;
-    padding: 6px;
-    text-color: @bg-col;
-    border-radius: 3px;
-    margin: 20px 0px 0px 20px;
-}
-
-textbox-prompt-colon {
-    expand: false;
-    str: ":";
+    text-color:       @base;
+    padding:          8px 14px;
+    border-radius:    6px;
 }
 
 entry {
-    padding: 6px;
-    margin: 20px 0px 0px 10px;
-    text-color: @fg-col;
-    background-color: @bg-col;
+    padding:          8px 12px;
+    background-color: @mantle;
+    border-radius:    6px;
+    text-color:       @text;
+    placeholder:      "Search";
+    placeholder-color: @overlay;
 }
 
 listview {
-    border: 0px 0px 0px;
-    padding: 6px 0px 0px;
-    margin: 10px 0px 0px 20px;
-    columns: 2;
-    lines: 5;
-    background-color: @bg-col;
+    spacing:   4px;
+    padding:   0px;
+    columns:   1;
+    lines:     10;
+    scrollbar: false;
+    // true, so filtering does not shrink the window a row at a time as you
+    // type -- the list always reserves `lines` rows.
+    fixed-height: true;
 }
 
 element {
-    padding: 5px;
-    background-color: @bg-col;
-    text-color: @fg-col  ;
-}
-
-element-icon {
-    size: 25px;
+    padding:       8px 12px;
+    spacing:       12px;
+    border-radius: 6px;
+    text-color:    @subtext;
 }
 
 element selected {
-    background-color:  @selected-col ;
-    text-color: @fg-col2  ;
+    background-color: @surface0;
+    text-color:       @blue;
+}
+
+element urgent {
+    text-color: #f38ba8;
+}
+
+element active {
+    text-color: @mauve;
+}
+
+element-icon {
+    size:             28px;
+    background-color: transparent;
+    vertical-align:   0.5;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+    // make the matched substring obvious while typing
+    highlight:        bold #cba6f7;
 }
 
 mode-switcher {
-    spacing: 0;
-  }
+    spacing: 8px;
+}
 
 button {
-    padding: 10px;
-    background-color: @bg-col-light;
-    text-color: @grey;
-    vertical-align: 0.5; 
-    horizontal-align: 0.5;
+    // Buttons are equal width, so the longest label decides whether any of
+    // them truncate. A smaller face keeps every name whole. Set here, not on
+    // mode-switcher: font does not cascade to the button children.
+    font:          "MesloLGS Nerd Font 12";
+    padding:       6px 8px;
+    border-radius: 6px;
+    text-color:    @overlay;
 }
 
 button selected {
-  background-color: @bg-col;
-  text-color: @blue;
+    background-color: @surface0;
+    text-color:       @mauve;
 }
 
 message {
-    background-color: @bg-col-light;
-    margin: 2px;
-    padding: 2px;
-    border-radius: 5px;
+    padding:          8px 12px;
+    border-radius:    6px;
+    background-color: @mantle;
 }
 
 textbox {
-    padding: 6px;
-    margin: 20px 0px 0px 20px;
-    text-color: @blue;
-    background-color: @bg-col-light;
+    text-color: @subtext;
 }

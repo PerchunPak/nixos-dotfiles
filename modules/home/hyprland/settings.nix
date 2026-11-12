@@ -15,17 +15,8 @@ let
   rofi-calc-with-copy = pkgs.writeShellScript "rofi-calc-with-copy" ''
     ${rofi-calc} | wl-copy
   '';
-  rofi-calc-script = pkgs.writeShellScript "rofi-calc-script" ''
-    output=$(${rofi-calc})
-    if [[ -n "$output" ]]; then
-      output=$(echo -n "$output" | tr ';' '\n')
-      if [[ $output != *$'\n'* ]]; then
-        output=$(echo -n "$output" | sed '1 s/.* = //')
-      fi
-      echo -n "$output" \
-      | sed 's/approx\. //' \
-      | wl-copy
-    fi
+  rofi-menu = pkgs.writeShellScript "rofi-menu" ''
+    exec rofi -show "$1" -calc-command "echo -n '{result}' | ${lib.getExe' pkgs.wl-clipboard "wl-copy"}"
   '';
 
   autoclicker-script = pkgs.writeShellScript "autoclicker" ''
@@ -68,7 +59,7 @@ in
     "hypr/hyprland-conf.lua".source = pkgs.replaceVars ./conf.lua {
       inherit
         wlogout-script
-        rofi-calc-script
+        rofi-menu
         rofi-calc-with-copy
         autoclicker-script
         spawn-btop-workspace
