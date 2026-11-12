@@ -10,7 +10,7 @@ jobs:
         id: generate-token
         uses: actions/create-github-app-token@v3
         with:
-          client-id: ${{ secrets.GH_APP_ID }}
+          app-id: ${{ secrets.GH_APP_ID }}
           private-key: ${{ secrets.GH_APP_SECRET_KEY }}
 
       - name: Checkout repository
