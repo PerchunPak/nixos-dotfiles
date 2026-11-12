@@ -26,7 +26,76 @@ jobs:
           sudo aa-teardown || true
           sudo systemctl stop apparmor
 
-      - run: nix build --print-build-logs .#long-builds-to-cache --keep-going
+      - name: Build and cache packages
+        id: build
+        background: true
+        run: nix build --print-build-logs .#long-builds-to-cache --keep-going
+
+      - name: Evaluate NixOS configurations
+        id: eval
+        background: true
+        # explicit `bash` enables pipefail
+        shell: bash
+        run: |
+          if ! systems=$(nix eval .#nixosConfigurations --apply builtins.attrNames --json | jq -r '.[]'); then
+            echo "Failed to list nixosConfigurations" >&2
+            echo "failed=" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+
+          failed=()
+          : > warnings.txt
+          for system in $systems; do
+            echo "::group::$system"
+            if ! nix eval --raw ".#nixosConfigurations.$system.config.system.build.toplevel.drvPath" 2> stderr.txt; then
+              failed+=("$system")
+            fi
+            echo
+            cat stderr.txt >&2
+            # Warnings start with a prefix, continuation lines are indented.
+            awk -v name="$system" '
+              /^(evaluation warning:|trace: warning:)/ { in_warning = 1; print "[" name "] " $0; next }
+              in_warning && /^[[:space:]]/ { print; next }
+              { in_warning = 0 }
+            ' stderr.txt >> warnings.txt
+            echo "::endgroup::"
+          done
+
+          echo "failed=${failed[*]}" >> "$GITHUB_OUTPUT"
+          [ ${#failed[@]} -eq 0 ]
+
+      - name: Wait for build and eval
+        wait: [build, eval]
+
+      - name: Compose PR message
+        if: always()
+        run: |
+          {
+            if [ "${{ steps.build.outcome }}" = success ]; then
+              echo "✅ Packages were cached!"
+            else
+              echo "❌ Caching packages failed, see the [workflow run]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)."
+            fi
+            echo
+
+            if [ "${{ steps.eval.outcome }}" = success ]; then
+              echo "✅ All systems evaluate without errors."
+            elif [ -n "${{ steps.eval.outputs.failed }}" ]; then
+              echo "❌ These systems failed to evaluate: \`${{ steps.eval.outputs.failed }}\`"
+            else
+              echo "❌ Evaluating systems failed."
+            fi
+
+            if [ -s warnings.txt ]; then
+              echo
+              echo "⚠️ Evaluation produced warnings:"
+              echo
+              echo '```'
+              cat warnings.txt
+              echo '```'
+            fi
+          } > pr-message.md
+          cat pr-message.md
 
       - name: Retrieve PR number
         if: always()
@@ -41,5 +110,5 @@ jobs:
         if: always()
         uses: thollander/actions-comment-pull-request@v3
         with:
-          message: Packages were cached!
+          file-path: pr-message.md
           pr-number: ${{ steps.pr_number.outputs.PR_NUMBER }}
