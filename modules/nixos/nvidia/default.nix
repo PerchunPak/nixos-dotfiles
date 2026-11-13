@@ -52,7 +52,7 @@
       nvidiaSettings = false;
 
       # Optionally, you may need to select the appropriate driver version for your specific GPU.
-      package = pkgs.linuxPackages_zen.nvidia_x11_latest;
+      package = config.boot.kernelPackages.nvidia_x11_latest;
     };
   };
 }
