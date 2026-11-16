@@ -21,5 +21,8 @@
 
   xdg.configFile."zellij/layouts/btop.kdl".source = ./btop-layout.kdl;
 
-  my.persistence.directories = [ ".cache/zellij" ];
+  my.persistence.directories = [
+    ".cache/zellij"
+    ".local/share/zellij"
+  ];
 }
