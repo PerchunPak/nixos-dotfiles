@@ -1,0 +1,28 @@
+{ ... }:
+{
+  imports = [
+    ./hardware-configuration.nix
+    (import ./disko.nix { device = "/dev/nvme0n1"; })
+    ../../../manual-modules/impermanence
+    ../../../manual-modules/dns.nix
+  ];
+
+  networking.hostName = "perchun-pc";
+
+  my = {
+    user.password = "$y$j9T$d9jmKHxBK8BbsxiDQ94GV/$7x8GrN32KPK7cX9zWPaOwjDfqb58d7cvjDw3/f/Fg81";
+    gui.enable = true;
+    hyprland.monitors = [
+      {
+        output = "HDMI-A-1";
+        mode = "highrr"; # highest refresh rate at the highest resolution; or e.g. "2560x1440@144"
+        position = "0x0";
+        scale = 1;
+      }
+    ];
+    btrfs-snapshots.enable = true;
+    # flatpak.enable = true;
+  };
+
+  virtualisation.docker.storageDriver = "btrfs";
+}
