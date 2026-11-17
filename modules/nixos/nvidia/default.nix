@@ -1,11 +1,16 @@
 {
-  pkgs,
   config,
   lib,
   ...
 }:
+
 {
-  config = lib.mkIf config.my.gui.enable {
+  options = {
+    my.nvidia = {
+      enable = lib.mkEnableOption "Nvidia";
+    };
+  };
+  config = lib.mkIf config.my.nvidia.enable {
     # Enable OpenGL
     hardware.graphics.enable = true;
 

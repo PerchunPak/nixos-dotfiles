@@ -6,5 +6,5 @@
     daemon.settings.data-root = "/persist/system/docker";
     enableOnBoot = false;
   };
-  hardware.nvidia-container-toolkit.enable = config.my.gui.enable;
+  hardware.nvidia-container-toolkit.enable = config.my.nvidia.enable;
 }

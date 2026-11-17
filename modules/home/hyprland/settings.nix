@@ -68,8 +68,10 @@ in
     };
 
     "uwsm/env".text = ''
-      export LIBVA_DRIVER_NAME=nvidia
       export XDG_SESSION_TYPE=wayland
+    ''
+    + lib.optionalString nixosConfig.my.nvidia.enable ''
+      export LIBVA_DRIVER_NAME=nvidia
       export GBM_BACKEND=nvidia-drm
       export __GLX_VENDOR_LIBRARY_NAME=nvidia
     '';

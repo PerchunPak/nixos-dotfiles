@@ -12,6 +12,7 @@
   my = {
     user.password = "$y$j9T$yfBs4FZDXyK/iBDi9UTo51$ydnsektCwQhSR72L.9OEOyV1cJdREhnlZ5/DHCdC1a5";
     gui.enable = true;
+    nvidia.enable = true;
     hyprland.monitors = [
       {
         output = "eDP-1";
