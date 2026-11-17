@@ -14,8 +14,8 @@
     gui.enable = true;
     hyprland.monitors = [
       {
-        output = "HDMI-A-1";
-        mode = "highrr"; # highest refresh rate at the highest resolution; or e.g. "2560x1440@144"
+        output = "DP-2";
+        mode = "2560x1440@239.97";
         position = "0x0";
         scale = 1;
       }

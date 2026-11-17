@@ -143,6 +143,10 @@ hl.config({
 			passes = 2,
 		},
 	},
+
+	render = {
+		cm_auto_hdr = true,
+	},
 })
 
 -- Curves and animations
