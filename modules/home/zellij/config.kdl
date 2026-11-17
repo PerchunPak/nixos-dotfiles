@@ -1,177 +1,220 @@
 keybinds clear-defaults=true {
+    normal {
+    }
     locked {
         bind "Ctrl g" { SwitchToMode "normal"; }
         bind "Alt n" { NewPane; SwitchToMode "locked"; }
     }
-    pane {
-        bind "left" { MoveFocus "left"; }
-        bind "down" { MoveFocus "down"; }
-        bind "up" { MoveFocus "up"; }
-        bind "right" { MoveFocus "right"; }
-        bind ";" { FocusLastPane; }
-        bind "c" { SwitchToMode "renamepane"; PaneNameInput 0; }
-        bind "d" { NewPane "down"; SwitchToMode "locked"; }
-        bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
-        bind "f" { ToggleFocusFullscreen; SwitchToMode "locked"; }
-        bind "Shift f" { ToggleFocusNoUiFullscreen; SwitchToMode "locked"; }
-        bind "h" { MoveFocus "left"; }
-        bind "i" { TogglePanePinned; SwitchToMode "locked"; }
-        bind "j" { MoveFocus "down"; }
-        bind "k" { MoveFocus "up"; }
-        bind "l" { MoveFocus "right"; }
-        bind "n" { NewPane; SwitchToMode "locked"; }
-        bind "p" { SwitchToMode "normal"; }
-        bind "r" { NewPane "right"; SwitchToMode "locked"; }
-        bind "s" { NewPane "stacked"; SwitchToMode "locked"; }
-        bind "w" { ToggleFloatingPanes; SwitchToMode "locked"; }
-        bind "x" { CloseFocus; SwitchToMode "locked"; }
-        bind "z" { TogglePaneFrames; SwitchToMode "locked"; }
-        bind "tab" { SwitchFocus; }
-    }
-    tab {
-        bind "left" { GoToPreviousTab; }
-        bind "down" { GoToNextTab; }
-        bind "up" { GoToPreviousTab; }
-        bind "right" { GoToNextTab; }
-        bind "1" { GoToTab 1; SwitchToMode "locked"; }
-        bind "2" { GoToTab 2; SwitchToMode "locked"; }
-        bind "3" { GoToTab 3; SwitchToMode "locked"; }
-        bind "4" { GoToTab 4; SwitchToMode "locked"; }
-        bind "5" { GoToTab 5; SwitchToMode "locked"; }
-        bind "6" { GoToTab 6; SwitchToMode "locked"; }
-        bind "7" { GoToTab 7; SwitchToMode "locked"; }
-        bind "8" { GoToTab 8; SwitchToMode "locked"; }
-        bind "9" { GoToTab 9; SwitchToMode "locked"; }
-        bind "[" { BreakPaneLeft; SwitchToMode "locked"; }
-        bind "]" { BreakPaneRight; SwitchToMode "locked"; }
-        bind "b" { BreakPane; SwitchToMode "locked"; }
-        bind "h" { GoToPreviousTab; }
-        bind "j" { GoToNextTab; }
-        bind "k" { GoToPreviousTab; }
-        bind "l" { GoToNextTab; }
-        bind "n" { NewTab; SwitchToMode "locked"; }
-        bind "r" { SwitchToMode "renametab"; TabNameInput 0; }
-        bind "s" { ToggleActiveSyncTab; SwitchToMode "locked"; }
-        bind "t" { SwitchToMode "normal"; }
-        bind "x" { CloseTab; SwitchToMode "locked"; }
-        bind "tab" { ToggleTab; }
-    }
     resize {
-        bind "left" { Resize "Increase left"; }
-        bind "down" { Resize "Increase down"; }
-        bind "up" { Resize "Increase up"; }
-        bind "right" { Resize "Increase right"; }
-        bind "+" { Resize "Increase"; }
-        bind "-" { Resize "Decrease"; }
-        bind "=" { Resize "Increase"; }
-        bind "H" { Resize "Decrease left"; }
-        bind "J" { Resize "Decrease down"; }
-        bind "K" { Resize "Decrease up"; }
-        bind "L" { Resize "Decrease right"; }
-        bind "h" { Resize "Increase left"; }
-        bind "j" { Resize "Increase down"; }
-        bind "k" { Resize "Increase up"; }
-        bind "l" { Resize "Increase right"; }
         bind "r" { SwitchToMode "normal"; }
+        bind "h" "Left" { Resize "Increase Left"; }
+        bind "l" "Right" { Resize "Increase Right"; }
+        bind "j" "Down" { Resize "Increase Down"; }
+        bind "k" "Up" { Resize "Increase Up"; }
+        bind "H" { Resize "Decrease Left"; }
+        bind "L" { Resize "Decrease Right"; }
+        bind "J" { Resize "Decrease Down"; }
+        bind "K" { Resize "Decrease Up"; }
+        bind "=" "+" { Resize "Increase"; }
+        bind "-" { Resize "Decrease"; }
+    }
+    pane {
+        bind "p" { SwitchToMode "normal"; }
+        bind "h" "Left" { MoveFocus "Left"; }
+        bind "l" "Right" { MoveFocus "Right"; }
+        bind "k" "Up" { MoveFocus "Up"; }
+        bind "j" "Down" { MoveFocus "Down"; }
+        bind "Tab" { SwitchFocus; }
+        bind ";" { FocusLastPane; }
+        bind "n" { NewPane; SwitchToMode "Locked"; }
+        bind "a" { NewFloatingPane; SwitchToMode "Locked"; }
+        bind "d" { NewPane "Down"; SwitchToMode "Locked"; }
+        bind "r" { NewPane "Right"; SwitchToMode "Locked"; }
+        bind "s" { NewPane "stacked"; SwitchToMode "Locked"; }
+        bind "Shift s" { ToggleStackListOrientation; SwitchToMode "Locked"; }
+        bind "x" { CloseFocus; SwitchToMode "Locked"; }
+        bind "f" { ToggleFocusFullscreen; SwitchToMode "Locked"; }
+        bind "Shift f" { ToggleFocusNoUiFullscreen; SwitchToMode "Locked"; }
+        bind "z" { TogglePaneFrames; SwitchToMode "Locked"; }
+        bind "Shift z" { ToggleBars; SwitchToMode "Locked"; }
+        bind "w" { ToggleFloatingPanes; SwitchToMode "locked"; }
+        bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
+        bind "c" { SwitchToMode "renamepane"; PaneNameInput 0; }
+        bind "i" { TogglePanePinned; SwitchToMode "locked"; }
+        bind "u" { MutePane; SwitchToMode "Locked"; }
+        bind "g" { IgnorePaneOutput; SwitchToMode "Locked"; }
+        bind "v" { WatchPane; SwitchToMode "Locked"; }
     }
     move {
-        bind "left" { MovePane "left"; }
-        bind "down" { MovePane "down"; }
-        bind "up" { MovePane "up"; }
-        bind "right" { MovePane "right"; }
-        bind "h" { MovePane "left"; }
-        bind "j" { MovePane "down"; }
-        bind "k" { MovePane "up"; }
-        bind "l" { MovePane "right"; }
-        bind "m" { SwitchToMode "normal"; }
-        bind "n" { MovePane; }
+        bind "m" { SwitchToMode "Normal"; }
+        bind "n" "Tab" { MovePane; }
         bind "p" { MovePaneBackwards; }
-        bind "tab" { MovePane; }
+        bind "h" "Left" { MovePane "Left"; }
+        bind "l" "Right" { MovePane "Right"; }
+        bind "j" "Down" { MovePane "Down"; }
+        bind "k" "Up" { MovePane "Up"; }
+    }
+    tab {
+        bind "t" { SwitchToMode "Normal"; }
+        bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
+        bind "h" "Left" "Up" "k" { GoToPreviousTab; }
+        bind "l" "Right" "Down" "j" { GoToNextTab; }
+        bind "n" { NewTab; SwitchToMode "Locked"; }
+        bind "x" { CloseTab; SwitchToMode "Locked"; }
+        bind "s" { ToggleActiveSyncTab; SwitchToMode "Locked"; }
+        bind "b" { BreakPane; SwitchToMode "Locked"; }
+        bind "]" { BreakPaneRight; SwitchToMode "Locked"; }
+        bind "[" { BreakPaneLeft; SwitchToMode "Locked"; }
+        bind "1" { GoToTab 1; SwitchToMode "Locked"; }
+        bind "2" { GoToTab 2; SwitchToMode "Locked"; }
+        bind "3" { GoToTab 3; SwitchToMode "Locked"; }
+        bind "4" { GoToTab 4; SwitchToMode "Locked"; }
+        bind "5" { GoToTab 5; SwitchToMode "Locked"; }
+        bind "6" { GoToTab 6; SwitchToMode "Locked"; }
+        bind "7" { GoToTab 7; SwitchToMode "Locked"; }
+        bind "8" { GoToTab 8; SwitchToMode "Locked"; }
+        bind "9" { GoToTab 9; SwitchToMode "Locked"; }
+        bind "Tab" { ToggleTab; }
+        bind "Space" { NextSwapLayout; }
+        bind "Shift Space" { PreviousSwapLayout; }
+        bind "u" { MuteTab; SwitchToMode "Locked"; }
     }
     scroll {
-        bind "e" { EditScrollback; SwitchToMode "locked"; }
-        bind "s" { SwitchToMode "normal"; }
+        bind "s" { SwitchToMode "Normal"; }
+        bind "e" { EditScrollback; SwitchToMode "Locked"; }
+        bind "Ctrl c" { ScrollToBottom; SwitchToMode "Locked"; }
+        bind "Alt Left" { MoveFocusOrTab "left"; SwitchToMode "locked"; }
+        bind "Alt Down" { MoveFocus "down"; SwitchToMode "locked"; }
+        bind "Alt Up" { MoveFocus "up"; SwitchToMode "locked"; }
+        bind "Alt Right" { MoveFocusOrTab "right"; SwitchToMode "locked"; }
+        bind "Alt h" { MoveFocusOrTab "left"; SwitchToMode "locked"; }
+        bind "Alt j" { MoveFocus "down"; SwitchToMode "locked"; }
+        bind "Alt k" { MoveFocus "up"; SwitchToMode "locked"; }
+        bind "Alt l" { MoveFocusOrTab "right"; SwitchToMode "locked"; }
+        bind "[" { ScrollToPreviousPrompt; }
+        bind "]" { ScrollToNextPrompt; }
+        bind "m" { SelectCommandAtScrollPosition; }
+        bind "c" { CopyLastCommandOutput; SwitchToMode "Locked"; }
     }
     search {
-        bind "c" { SearchToggleOption "CaseSensitivity"; }
         bind "n" { Search "down"; }
-        bind "o" { SearchToggleOption "WholeWord"; }
-        bind "p" { Search "up"; }
         bind "Shift N" { Search "up"; }
+        bind "p" { Search "up"; }
+        bind "c" { SearchToggleOption "CaseSensitivity"; }
         bind "w" { SearchToggleOption "Wrap"; }
+        bind "o" { SearchToggleOption "WholeWord"; }
+    }
+    entersearch {
+        bind "Enter" { SwitchToMode "Search"; }
+    }
+    renametab {
+        bind "Esc" { UndoRenameTab; SwitchToMode "Tab"; }
+    }
+    renamepane {
+        bind "Esc" { UndoRenamePane; SwitchToMode "Pane"; }
+    }
+    renamesession {
+        bind "Esc" { UndoRenameSession; SwitchToMode "Session"; }
+    }
+    shared_among "entersearch" "renametab" "renamepane" "renamesession" {
+        bind "Ctrl c" "Enter" { SwitchToMode "Locked"; }
     }
     session {
-        bind "[" { FocusGuestSession; SwitchToMode "normal"; }
-        bind "]" { FocusHostSession; SwitchToMode "normal"; }
-        bind "a" {
-            LaunchOrFocusPlugin "zellij:about" {
+        bind "o" { SwitchToMode "normal"; }
+        bind "d" { Detach; }
+        bind "i" { ToggleSessionCard; SwitchToMode "Locked"; }
+        bind "r" { SwitchToMode "RenameSession"; SessionNameInput 0; }
+        bind "]" { FocusHostSession; SwitchToMode "Locked"; }
+        bind "[" { FocusGuestSession; SwitchToMode "Locked"; }
+        bind "f" { ToggleHostFullscreen; SwitchToMode "Locked"; }
+        bind "u" { MuteSession; SwitchToMode "Locked"; }
+        bind "Tab" { ToggleSession; SwitchToMode "Locked"; }
+        bind "H" "Left" { GoToPreviousSession; SwitchToMode "Locked"; }
+        bind "L" "Right" { GoToNextSession; SwitchToMode "Locked"; }
+        bind "n" { GoToNextAttention; SwitchToMode "Locked"; }
+        bind "w" {
+            LaunchOrFocusPlugin "session-manager" {
                 floating true
                 move_to_focused_tab true
-            }
-            SwitchToMode "locked"
+            };
+            SwitchToMode "Locked"
         }
         bind "c" {
             LaunchOrFocusPlugin "configuration" {
                 floating true
                 move_to_focused_tab true
-            }
-            SwitchToMode "locked"
+            };
+            SwitchToMode "Locked"
         }
-        bind "f" { ToggleHostFullscreen; SwitchToMode "normal"; }
-        bind "l" {
-            LaunchOrFocusPlugin "zellij:layout-manager" {
-                floating true
-                move_to_focused_tab true
-            }
-            SwitchToMode "locked"
-        }
-        bind "d" { Detach; }
-        bind "o" { SwitchToMode "normal"; }
         bind "p" {
             LaunchOrFocusPlugin "plugin-manager" {
                 floating true
                 move_to_focused_tab true
-            }
-            SwitchToMode "locked"
+            };
+            SwitchToMode "Locked"
+        }
+        bind "a" {
+            LaunchOrFocusPlugin "zellij:about" {
+                floating true
+                move_to_focused_tab true
+            };
+            SwitchToMode "Locked"
         }
         bind "s" {
             LaunchOrFocusPlugin "zellij:share" {
                 floating true
                 move_to_focused_tab true
-            }
-            SwitchToMode "locked"
+            };
+            SwitchToMode "Locked"
         }
-        bind "w" {
-            LaunchOrFocusPlugin "session-manager" {
+        bind "l" {
+            LaunchOrFocusPlugin "zellij:layout-manager" {
                 floating true
                 move_to_focused_tab true
-            }
-            SwitchToMode "locked"
+            };
+            SwitchToMode "Locked"
         }
     }
-    shared {
-        bind "Alt f" { ToggleFloatingPanes; }
-        bind "Ctrl Shift T" { NewTab; SwitchToMode "locked"; }
-
-        bind "Ctrl Shift H" { GoToPreviousTab; SwitchToMode "locked"; }
-        bind "Ctrl Shift L" { GoToNextTab; SwitchToMode "locked"; }
-        bind "Ctrl Shift J" { GoToPreviousTab; SwitchToMode "locked"; }
-        bind "Ctrl Shift K" { GoToNextTab; SwitchToMode "locked"; }
+    shared_except "locked" "renametab" "renamepane" "renamesession" {
+        bind "Ctrl g" { SwitchToMode "Locked"; }
+        bind "Ctrl q" { Quit; }
+    }
+    shared_except "renamepane" "renametab" "renamesession" "entersearch" "locked" {
+        bind "Esc" { SwitchToMode "Locked"; }
     }
     shared_among "normal" "locked" {
-        bind "Alt +" { Resize "Increase"; }
+        bind "Alt n" { NewPane; }
+        bind "Alt i" { MoveTab "Left"; }
+        bind "Alt o" { MoveTab "Right"; }
+        bind "Alt =" "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
-        bind "Alt =" { Resize "Increase"; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
-        bind "Alt f" { ToggleFloatingPanes; }
-        bind "Alt i" { MoveTab "left"; }
-        bind "Alt n" { NewPane; }
-        bind "Alt o" { MoveTab "right"; }
         bind "Alt p" { TogglePaneInGroup; }
         bind "Alt Shift p" { ToggleGroupMarking; }
     }
-    shared_among "normal" "locked" "scroll" {
+    shared_except "locked" "renametab" "renamepane" "renamesession" {
+        bind "Enter" { SwitchToMode "Locked"; }
+    }
+    shared_except "pane" "locked" "renametab" "renamepane" "renamesession" "entersearch" {
+        bind "p" { SwitchToMode "Pane"; }
+    }
+    shared_except "resize" "locked" "renametab" "renamepane" "renamesession" "entersearch" {
+        bind "r" { SwitchToMode "Resize"; }
+    }
+    shared_except "scroll" "locked" "renametab" "renamepane" "renamesession" "entersearch" {
+        bind "s" { SwitchToMode "Scroll"; }
+    }
+    shared_except "session" "locked" "renametab" "renamepane" "renamesession" "entersearch" {
+        bind "o" { SwitchToMode "Session"; }
+    }
+    shared_except "tab" "locked" "renametab" "renamepane" "renamesession" "entersearch" {
+        bind "t" { SwitchToMode "Tab"; }
+    }
+    shared_except "move" "locked" "renametab" "renamepane" "renamesession" "entersearch" {
+        bind "m" { SwitchToMode "Move"; }
+    }
+    shared_among "normal" "locked" "scroll" "search" {
         bind "Ctrl h" {
             MessagePlugin "vim-zellij-navigator" {
                 name "move_focus";
@@ -197,166 +240,32 @@ keybinds clear-defaults=true {
             };
         }
     }
-    shared_except "locked" "renametab" "renamepane" {
-        bind "Ctrl g" { SwitchToMode "locked"; }
-        bind "Ctrl q" { Quit; }
-    }
-    shared_except "locked" "entersearch" {
-        bind "enter" { SwitchToMode "locked"; }
-    }
-    shared_except "locked" "entersearch" "renametab" "renamepane" {
-        bind "esc" { SwitchToMode "locked"; }
-    }
-    shared_except "locked" "entersearch" "search" "renametab" "renamepane" "session" {
-        bind "o" { SwitchToMode "session"; }
-    }
-    shared_except "locked" "scroll" "entersearch" "search" "renametab" "renamepane" "move" {
-        bind "m" { SwitchToMode "move"; }
-    }
-    shared_except "locked" "tab" "entersearch" "renametab" "renamepane" {
-        bind "t" { SwitchToMode "tab"; }
-    }
-    shared_among "normal" "resize" "tab" "scroll" "prompt" "tmux" {
-        bind "p" { SwitchToMode "pane"; }
-    }
-    shared_among "normal" "resize" "search" "move" "prompt" "tmux" {
-        bind "s" { SwitchToMode "scroll"; }
-    }
-    shared_except "locked" "resize" "pane" "tab" "entersearch" "renametab" "renamepane" {
-        bind "r" { SwitchToMode "resize"; }
-    }
     shared_among "scroll" "search" {
         bind "f" "/" { SwitchToMode "entersearch"; SearchInput 0; }
-        bind "PageDown" { PageScrollDown; }
-        bind "PageUp" { PageScrollUp; }
-        bind "Ctrl b" { PageScrollUp; }
-        bind "Ctrl c" { ScrollToBottom; SwitchToMode "locked"; }
-        bind "d" { HalfPageScrollDown; }
-        bind "Ctrl f" { PageScrollDown; }
-        bind "h" { PageScrollUp; }
-        bind "j" { ScrollDown; }
-        bind "k" { ScrollUp; }
-        bind "l" { PageScrollDown; }
-        bind "u" { HalfPageScrollUp; }
-
+        bind "j" "Down" { ScrollDown; }
+        bind "k" "Up" { ScrollUp; }
+        bind "PageDown" "Right" "l" { PageScrollDown; }
+        bind "PageUp" "Left" "h" { PageScrollUp; }
+        bind "Ctrl u" "d" { HalfPageScrollDown; }
+        bind "Ctrl d" "u" { HalfPageScrollUp; }
         bind "g" { ScrollToTop; }
         bind "Shift G" { ScrollToBottom; }
-        bind "Ctrl d" { HalfPageScrollDown; }
-        bind "Ctrl u" { HalfPageScrollUp; }
-
+        bind "[" { ScrollToPreviousPrompt; }
+        bind "]" { ScrollToNextPrompt; }
         bind "c" { CopyLastCommandOutput; SwitchToMode "locked"; }
         bind "m" { SelectCommandAtScrollPosition; }
         bind "[" { ScrollToPreviousPrompt; }
         bind "]" { ScrollToNextPrompt; }
     }
-    entersearch {
-        bind "Ctrl c" { SwitchToMode "scroll"; }
-        bind "esc" { SwitchToMode "scroll"; }
-        bind "enter" { SwitchToMode "search"; }
-    }
-    renametab {
-        bind "esc" { UndoRenameTab; SwitchToMode "tab"; }
-    }
-    shared_among "renametab" "renamepane" {
-        bind "Ctrl c" { SwitchToMode "locked"; }
-    }
-    renamepane {
-        bind "esc" { UndoRenamePane; SwitchToMode "pane"; }
+    shared {
+        bind "Alt f" { ToggleFloatingPanes; }
+        bind "Ctrl Shift T" { NewTab; SwitchToMode "locked"; }
+        bind "Ctrl Shift H" { GoToPreviousTab; SwitchToMode "locked"; }
+        bind "Ctrl Shift L" { GoToNextTab; SwitchToMode "locked"; }
+        bind "Ctrl Shift J" { GoToPreviousTab; SwitchToMode "locked"; }
+        bind "Ctrl Shift K" { GoToNextTab; SwitchToMode "locked"; }
     }
 }
-
-web_client {
-    font "monospace"
-}
-
-// Use a simplified UI without special fonts (arrow glyphs)
-// Options:
-//   - true
-//   - false (Default)
-//
-// simplified_ui true
-
-// Enable OSC8 hyperlink output
-// Options:
-//   - true (Default)
-//   - false
-//
-// osc8_hyperlinks true
-
-// Choose the theme that is specified in the themes section.
-// Default: default
-//
-// theme "dracula"
-
-// Theme to use when the host terminal reports a dark color palette.
-// Requires `theme_light` to also be set; otherwise `theme` is used.
-//
-// theme_dark "dracula"
-
-// Theme to use when the host terminal reports a light color palette.
-// Requires `theme_dark` to also be set; otherwise `theme` is used.
-//
-theme "catppuccin-mocha"
-
-// Choose the base input mode of zellij.
-// Default: normal
-//
-default_mode "locked"
-
-// Choose the path to the default shell that zellij will use for opening new panes
-// Default: $SHELL
-//
-// default_shell "fish"
-
-// Choose the path to override cwd that zellij will use for opening new panes
-//
-// default_cwd "/tmp"
-
-// The name of the default layout to load on startup
-// Default: "default"
-//
-// default_layout "compact"
-
-// The folder in which Zellij will look for layouts
-// (Requires restart)
-//
-// layout_dir "/tmp"
-
-// The folder in which Zellij will look for themes
-// (Requires restart)
-//
-// theme_dir "/tmp"
-
-// Toggle enabling the mouse mode.
-// On certain configurations, or terminals this could
-// potentially interfere with copying text.
-// Options:
-//   - true (default)
-//   - false
-//
-// mouse_mode false
-
-// Toggle having pane frames around the panes
-// Options:
-//   - true (default, enabled)
-//   - false
-//
-// pane_frames false
-
-// Set the pane frame style when pane_frames is enabled
-// Options:
-//   - full
-//   - titles (default)
-//
-// pane_frame_style "titles"
-
-// When attaching to an existing session with other users,
-// should the session be mirrored (true)
-// or should each user have their own cursor (false)
-// (Requires restart)
-// Default: false
-//
-// mirror_session true
 
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
 // eg. when terminal window with an active zellij session is closed
@@ -367,13 +276,225 @@ default_mode "locked"
 //
 // on_force_close "quit"
 
+// Choose what the quit key (Ctrl q by default) does
+// Options:
+//   - ask_quit (Default - ask, with quitting preselected)
+//   - ask_detach (ask, with detaching preselected)
+//   - quit (quit without asking)
+//   - detach (detach without asking; the session keeps running)
+//
+// on_quit "ask_detach"
+
+// The name of the session to create when Zellij starts
+// Default: a random name
+// (Requires restart)
+//
+// session_name "My singleton session"
+
+// Attach to the session named in session_name if it already exists, instead of
+// failing to start
+// (Requires restart)
+// Default: false
+//
+// attach_to_session true
+
+// Bars a new session starts with hidden: "none" (Default), "all", or bar names
+// separated by commas, eg. "tab-bar,status-bar". Hidden bars come back with the
+// "Show bars" right-click menu item or the ToggleBars action.
+//
+// bars_hidden_on_start "all"
+
+// Briefly show a note saying what was hidden and how to show it again whenever
+// bars are hidden
+// Default: true
+//
+// hidden_bars_notification false
+
+// While the bar that shows the keys of the current mode is hidden, show those
+// keys in a corner of the screen when entering a mode
+// Default: true
+//
+// mode_hints_when_bars_hidden false
+
+// An extra key that stops typing into a live view of a pane (in the inbox or a
+// mirror) and gives the keys back to the plugin showing it. Alt Enter, the
+// inbox key or a click outside always do it. A key repeated, eg. "Esc Esc",
+// must be pressed twice in a row.
+// Default: not set
+//
+// live_view_release_key "Ctrl Alt Home"
+
+// Choose how to handle a nested Zellij session detected running inside a pane
+// Options:
+//   - ask (Default - prompt with a modal to zoom in or control on focus)
+//   - fullscreen (always zoom into the nested session)
+//   - descend (always control the nested session on focus)
+//   - never (never prompt or descend; do it manually)
+//
+// nested_session_handling "ask"
+
+//  Send a request for a simplified ui (without arrow fonts) to plugins
+//  Options:
+//    - true
+//    - false (Default)
+//
+// simplified_ui true
+
+// Choose the path to the default shell that zellij will use for opening new panes
+// Default: $SHELL
+//
+// default_shell "fish"
+
+// Choose the path to override cwd that zellij will use for opening new panes
+//
+// default_cwd ""
+
+// Toggle between having pane frames around the panes
+// Options:
+//   - true (default)
+//   - false
+//
+// pane_frames true
+
+// Set the pane frame style when pane_frames is enabled
+// Options:
+//   - titles (default - draw a title above each pane)
+//   - full (draw a full frame around each pane)
+//   - none (equivalent to pane_frames false)
+//
+// pane_frame_style "titles"
+
+// Configure the look of the pane frame borders
+//
+// ui {
+//     pane_frames {
+//         // round the corners of single-line borders
+//         rounded_corners true
+//         // hide the session name that is shown in the frame of the focused pane
+//         hide_session_name false
+//         // line style for all four sides of tiled pane frames
+//         // one of: single, double, heavy, dashed, heavy_dashed
+//         border_style "single"
+//         // per-side overrides, eg. a double top border with single sides
+//         border_top "double"
+//         border_right "single"
+//         border_bottom "single"
+//         border_left "single"
+//         // rounded corners for tiled panes only, overriding rounded_corners
+//         border_rounded_corners true
+//         // when two neighbouring panes disagree about a shared grid line
+//         // (pane frames off), that line falls back to border_style above
+//         // the same keys prefixed with "floating_" apply to floating panes,
+//         // they default to the values above
+//         floating_border_style "double"
+//         floating_border_top "double"
+//         floating_border_right "double"
+//         floating_border_bottom "double"
+//         floating_border_left "double"
+//         floating_border_rounded_corners false
+//     }
+// }
+
+// Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
+// Options:
+//   - true (default)
+//   - false
+//
+// auto_layout true
+
+// Whether sessions should be serialized to the cache folder (including their tabs/panes, cwds and running commands) so that they can later be resurrected
+// (Requires restart)
+// Options:
+//   - true (default)
+//   - false
+//
+// session_serialization false
+
+// Whether pane viewports are serialized along with the session
+// (Requires restart)
+// Options:
+//   - true
+//   - false (default)
+//
+// serialize_pane_viewport true
+
+// Scrollback lines to serialize along with the pane viewport when serializing sessions, 0
+// defaults to the scrollback size. If this number is higher than the scrollback size, it will
+// also default to the scrollback size. This does nothing if `serialize_pane_viewport` is not true.
+// (Requires restart)
+scrollback_lines_to_serialize 0
+
+// Define color themes for Zellij
+// For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
+// Once these themes are defined, one of them should to be selected in the "theme" section of this file
+// Built-in themes and themes from theme_dir are read-only in the settings screen (copy one to edit it)
+//
+// themes {
+//     dracula {
+//         fg 248 248 242
+//         bg 40 42 54
+//         red 255 85 85
+//         green 80 250 123
+//         yellow 241 250 140
+//         blue 98 114 164
+//         magenta 255 121 198
+//         orange 255 184 108
+//         cyan 139 233 253
+//         black 0 0 0
+//         white 255 255 255
+//     }
+// }
+
+// Choose the theme that is specified in the themes section.
+// Setting this pins the session to one theme and turns off the automatic
+// dark/light switching described below. The theme Zellij used before the
+// "default" and "default-light" pair is bundled as "classic".
+// Default: default
+theme "catppuccin-mocha"
+
+// Themes to use when the host terminal reports a dark or light color palette.
+// When neither is set and no `theme` is set either, the bundled "default" and
+// "default-light" themes are used. Setting only one of them pairs it with the
+// matching bundled default. Until the host terminal reports (or if it never
+// does), the dark theme is used.
+//
+// theme_dark "nightfox"
+// theme_light "dayfox"
+
+// Pin the session to a dark or light appearance, ignoring what the host
+// terminal reports. Resolved before the first render. When unset, the host
+// terminal decides.
+// Options: dark, light
+//
+// explicit_theme_hue "dark"
+
+// The name of the default layout to load on startup
+// Default: "default"
+// (Requires restart)
+//
+// default_layout "compact"
+
+// Choose the mode that zellij uses when starting up and returns to after actions.
+// Default: normal
+default_mode "locked"
+
+// Toggle enabling the mouse mode.
+// On certain configurations, or terminals this could
+// potentially interfere with copying text.
+// (Requires restart)
+// Options:
+//   - true (default)
+//   - false
+//
+// mouse_mode false
+
 // Configure the scroll back buffer size
-// This is the number of lines zellij stores for each pane in the scroll back
-// buffer. Excess number of lines are discarded in a FIFO fashion.
+// This is the number of display rows zellij stores for each pane in the scroll
+// back buffer. A logical line wider than the pane occupies one row per wrap.
+// Excess rows are discarded in a FIFO fashion.
 // (Requires restart)
 // Valid values: positive integers
-// Default value: 10000
-//
+// Default: 10000
 scroll_buffer_size 1000000
 
 // Provide a command to execute when copying text. The text will be piped to
@@ -385,8 +506,6 @@ scroll_buffer_size 1000000
 // copy_command "xclip -selection clipboard" // x11
 // copy_command "wl-copy"                    // wayland
 // copy_command "pbcopy"                     // osx
-//
-// copy_command "pbcopy"
 
 // Choose the destination for copied text
 // Allows using the primary selection buffer (on x11/wayland) instead of the system clipboard.
@@ -397,54 +516,37 @@ scroll_buffer_size 1000000
 //
 // copy_clipboard "primary"
 
-// Enable automatic copying (and clearing) of selection when releasing mouse
+// Enable or disable automatic copy (and clear) of selection when releasing mouse
 // Default: true
 //
-// copy_on_select true
+// copy_on_select false
 
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
+//
 // scrollback_editor "/usr/bin/vim"
 
-// A fixed name to always give the Zellij session.
-// Consider also setting `attach_to_session true,`
-// otherwise this will error if such a session exists.
-// Default: <RANDOM>
-//
-// session_name "My singleton session"
-
-// When `session_name` is provided, attaches to that session
-// if it is already running or creates it otherwise.
+// When attaching to an existing session with other users,
+// should the session be mirrored (true)
+// or should each user have their own cursor (false)
+// (Requires restart)
 // Default: false
 //
-// attach_to_session true
+// mirror_session true
 
-// Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
-// Options:
-//   - true (default)
-//   - false
+// The folder in which Zellij will look for layouts
 //
-// auto_layout false
+// layout_dir "/path/to/my/layout_dir"
 
-// Whether sessions should be serialized to the cache folder (including their tabs/panes, cwds and running commands) so that they can later be resurrected
-// Options:
-//   - true (default)
-//   - false
+// The folder in which Zellij will look for themes
+// Themes from this folder are read-only in the settings screen (copy one to edit it)
 //
-// session_serialization false
+// theme_dir "/path/to/my/theme_dir"
 
-// Whether pane viewports are serialized along with the session, default is false
-// Options:
-//   - true
-//   - false (default)
+// The folder in which Zellij will look for keybinding presets
+// Default: a "keybinds" folder in the config directory
 //
-// serialize_pane_viewport false
-
-// Scrollback lines to serialize along with the pane viewport when serializing sessions, 0
-// defaults to the scrollback size. If this number is higher than the scrollback size, it will
-// also default to the scrollback size. This does nothing if `serialize_pane_viewport` is not true.
-//
-scrollback_lines_to_serialize 0
+// keybinds_dir "/path/to/my/keybinds_dir"
 
 // Enable or disable the rendering of styled and colored underlines (undercurl).
 // May need to be disabled for certain unsupported terminals
@@ -453,16 +555,12 @@ scrollback_lines_to_serialize 0
 //
 // styled_underlines false
 
-// How often in seconds sessions are serialized
-//
-// serialization_interval 10000
-
 // Enable or disable writing of session metadata to disk (if disabled, other sessions might not know
 // metadata info on this session)
 // (Requires restart)
 // Default: false
 //
-// disable_session_metadata false
+// disable_session_metadata true
 
 // Enable or disable support for the enhanced Kitty Keyboard Protocol (the host terminal must also support it)
 // (Requires restart)
@@ -475,6 +573,18 @@ scrollback_lines_to_serialize 0
 // Default: true (if the host terminal supports it)
 //
 // support_kitty_graphics_protocol false
+
+// Count each grapheme cluster (an emoji sequence such as a flag or a skin tone, a letter with its accents) as one unit of width, as the Unicode standard does
+// When false, widths are counted per code point, the way older programs expect; programs can still ask for clusters with mode 2027
+// (Applies to new panes)
+// Default: true
+//
+// grapheme_clusters false
+
+// Whether a focused mirror of a pane in this session may resize that pane's program to the mirror's size, and whether new mirrors opened in this session resize their source pane by default
+// Default: true
+//
+// mirror_resizes_source_pane false
 
 // Whether to make sure a local web server is running when a new Zellij session starts.
 // This web server will allow creating new sessions and attaching to existing ones that have
@@ -491,7 +601,8 @@ scrollback_lines_to_serialize 0
 // - false
 // Default: false
 //
-// web_server false
+// web_server true
+
 // Whether to allow sessions started in the terminal to be shared through a local web server, assuming one is
 // running (see the `web_server` option for more details).
 // (Requires restart)
@@ -505,129 +616,606 @@ scrollback_lines_to_serialize 0
 // - "disabled" (do not allow web sharing and do not permit sessions started in the terminal to opt-in to it)
 // Default: "off"
 //
-// web_sharing "off"
+// web_sharing "on"
+
+// The ip address the web server should listen on when it starts
+// Default: "127.0.0.1"
+// (Requires restart)
+//
+// web_server_ip "127.0.0.1"
+
+
 // A path to a certificate file to be used when setting up the web client to serve the
 // connection over HTTPs
+// (Requires restart)
 //
-// web_server_cert "/path/to/cert.pem"
+// web_server_cert "/path/to/my/cert.pem"
+
 // A path to a key file to be used when setting up the web client to serve the
 // connection over HTTPs
+// (Requires restart)
 //
-// web_server_key "/path/to/key.pem"
-/// Whether to enforce https connections to the web server when it is bound to localhost
-/// (127.0.0.0/8)
-///
-/// Note: https is ALWAYS enforced when bound to non-local interfaces
-///
-/// Default: false
+// web_server_key "/path/to/my/key.pem"
+
+// Whether to enforce https connections to the web server when it is bound to localhost
+// (127.0.0.0/8)
+// (Requires restart)
 //
-// enforce_https_for_localhost false
+// Note: https is enforced when bound to non-local interfaces, unless
+// dangerously_allow_web_serving_without_a_certificate is set
+//
+// Default: false
+//
+// enforce_https_for_localhost true
+
+// DANGEROUS: allow the web server to serve plain, unencrypted HTTP when bound to a
+// non-local interface without web_server_cert and web_server_key.
+// Anyone on the network can read and tamper with the traffic, including login tokens.
+// Only use behind a trusted TLS-terminating proxy or on a fully trusted network.
+// Does not override enforce_https_for_localhost.
+// Default: false
+// (Requires restart)
+//
+// dangerously_allow_web_serving_without_a_certificate true
+
+// The port the web server should listen on when it starts
+// Default: 8082
+// (Requires restart)
+//
+// web_server_port 8082
 
 // Whether to stack panes when resizing beyond a certain size
 // Default: true
 //
 // stacked_resize false
 
+// Whether to let programs running inside panes read the paste buffer (clipboard)
+// with the OSC 52 escape sequence. When enabled, any program in any pane -
+// including one running on a remote machine over SSH - can read the clipboard
+// without the user being asked.
+// Default: false
+//
+// dangerously_enable_paste_buffer_read true
+
 // Whether stacked panes display as a list with the expanded pane pinned to the bottom
 // Default: true
 //
 // stacked_pane_list false
 
-// Whether to show tips on startup
-// Default: true
+// Whether new stacks show their titles in a column (vertical) or in a row (horizontal)
+// Options:
+//   - vertical (Default)
+//   - horizontal
 //
-show_startup_tips false
+// stacked_pane_list_orientation "horizontal"
 
 // Whether to show release notes on first version run
+// (Requires restart)
 // Default: true
 //
 // show_release_notes false
 
 // Whether to enable mouse hover effects and pane grouping functionality
-// default is true
+// Default: true
+//
 // advanced_mouse_actions false
 
 // Whether Ctrl+ScrollWheel resizes panes
-// default is true
+// Default: true
+//
 // mouse_scroll_resize false
 
+// Whether scrolling a pane implicitly enters and exits Scroll mode
+// Default: true
+//
+// scroll_mode_sync false
+
 // Whether to enable mouse hover visual effects (frame highlight and help text)
-// default is true
+// Default: true
+//
 // mouse_hover_effects false
 
 // Whether to show mouse hover help-text tips (resize help and group shortcuts)
-// default is true
+// Default: true
+//
 // mouse_hover_tips false
-
-// Whether to show visual bell indicators (pane/tab frame flash and [!] suffix)
-// default is true
-// visual_bell true
-
-// Whether to focus panes on mouse hover
-// default is false
-// focus_follows_mouse false
-
-// Whether clicking a pane to focus it also sends the click into the pane
-// default is false
-// mouse_click_through false
 
 // Whether triple-clicking inside command output marked by the shell (OSC 133) selects
 // the command and its output instead of the logical line
-// default is true
+// Default: true
+//
 // osc133_command_selection false
 
 // Characters that terminate a word when double-clicking to select it
 // whitespace is always a separator and need not be listed here
-// default is "[]{}<>()"
+// Default: "[]{}<>()"
+//
 // word_separators "[]{}<>()"
 
-// The ip address the web server should listen on when it starts
-// Default: "127.0.0.1"
+// Whether to output OSC8 hyperlink sequences
 // (Requires restart)
-// web_server_ip "127.0.0.1"
-
-// The port the web server should listen on when it starts
-// Default: 8082
-// (Requires restart)
-// web_server_port 8082
+// Default: true
+//
+// osc8_hyperlinks false
 
 // A command to run (will be wrapped with sh -c and provided the RESURRECT_COMMAND env variable)
 // after Zellij attempts to discover a command inside a pane when resurrecting sessions, the STDOUT
 // of this command will be used instead of the discovered RESURRECT_COMMAND
 // can be useful for removing wrappers around commands
 // Note: be sure to escape backslashes and similar characters properly
+//
 // post_command_discovery_hook "echo $RESURRECT_COMMAND | sed <your_regex_here>"
 
-// Number of async worker tasks to spawn per active client.
+// Number of background threads used by `zellij attach <url>` when it connects
+// from a terminal to a session on another machine. One set of threads is made
+// for that program, not one per client. The web server, browser clients and
+// local sessions are not affected.
+// (Requires restart)
 //
-// Allocating few tasks may result in resource contention and lags. Small values (around 4) should
-// typically work best. Set to 0 to use the number of (physical) CPU cores.
-// Note: This only applies to web clients at the moment.
+// Most of the work runs on the program's main thread, so these threads are
+// usually idle. Lower it only to save resources on a very small machine.
+// Set to 0 to use the number of (physical) CPU cores.
 // client_async_worker_tasks 4
 
-// Whether to let programs running inside panes read the paste buffer
-// (clipboard) with the OSC 52 escape sequence. When enabled, any program
-// in any pane - including one running on a remote machine over SSH - can
-// read the clipboard without the user being asked.
-// Default: false
-// dangerously_enable_paste_buffer_read false
-
-// How to handle a nested Zellij session detected inside a pane.
-// Options:
-//   - "ask" (Default — prompt with a modal)
-//   - "fullscreen" (always zoom into the nested session)
-//   - "descend" (always control the nested session on focus)
-//   - "never" (never prompt or descend; do it manually)
+// How often (in seconds) sessions are saved to disk so they can be resurrected
+// (Requires restart)
+// Default: 60
 //
-// nested_session_handling "ask"
+// serialization_interval 60
 
-// Which escape sequence desktop notifications coming from panes are
-// forwarded to the host terminal with.
+// Whether to show a startup tip when a new session starts
+// (Requires restart)
+// Default: true
+show_startup_tips false
+
+// Whether to flash pane and tab frames (and add a [!] suffix) when a terminal bell rings
+// Default: true
+//
+// visual_bell false
+
+// Whether hovering the mouse over a pane focuses it
+// Default: false
+//
+// focus_follows_mouse true
+
+// Whether the click that focuses a pane is also sent to the program running in it
+// Default: false
+//
+// mouse_click_through true
+
+// Whether to show the other sessions indicator in the tab bar and compact bar
+// Default: true
+//
+// session_indicator false
+
+// Whether to briefly show the name of the new swap layout when it is changed
+// Default: true
+//
+// swap_layout_notification false
+
+// How other sessions are suggested on the session card and in the session manager
+// The first matching rule decides the order; within a rule, running sessions come first,
+// then the most recently used
+// Facts: directory, git_repo, git_branch, git_worktree, hostname, or a custom `fact`
+// fact "project" command="echo $PROJECT" column="project" at="live"
+// script "~/.config/zellij/rank.sh" timeout_ms=300 hide_unlisted=false
+// record "~/.config/zellij/record.sh"
+//
+// session_suggestions {
+//     match "directory" "git_branch"
+//     match "git_repo" "git_branch"
+//     match "directory"
+//     match "git_repo"
+//     then "recent"
+// }
+
+// Whether a right click opens the right-click menu
+// When off, right clicks go to the focused pane only and Alt + right click clears the pane group
+// Plugins can still open the menu through their API
+// Default: true
+//
+// context_menu_enabled false
+
+// How notifications from programs inside Zellij are passed to the outer terminal
 // Options:
-//   - "auto" (Default — detect from the host terminal environment)
-//   - "osc9" (the legacy iTerm2 protocol, understood by most terminals)
-//   - "osc99" (kitty's notification protocol)
-//   - "bell" (ring the terminal bell instead)
-//   - "off" (do not forward notifications to the host terminal)
+//   - auto (Default - pick the best protocol the terminal supports)
+//   - osc9
+//   - osc99
+//   - bell
+//   - off
 //
 // host_notification_protocol "auto"
+
+// Settings for the web client (font, font_size, cursor_blink, cursor_style, ...)
+// (Requires restart)
+web_client {
+    // Font family the browser draws the terminal with
+    font "monospace"
+
+    // Font size in pixels
+    // font_size 14
+
+    // Whether the cursor blinks
+    // cursor_blink false
+
+    // Cursor shape: "block", "bar" or "underline"
+    // cursor_style "block"
+
+    // Cursor shape while the browser tab is not focused: "outline", "block",
+    // "bar", "underline" or "no_style"
+    // cursor_inactive_style "outline"
+
+    // Whether the Option key on macOS acts as Meta (Alt)
+    // Default: true
+    // mac_option_is_meta false
+
+    // The address the web client is served under, when it sits behind a
+    // reverse proxy at a sub-path
+    // base_url "/zellij"
+}
+
+// Options for the Zellij terminal (`zellij terminal`). Every key is optional;
+// with the whole section absent the terminal behaves exactly as it does with no
+// configuration at all.
+terminal {
+     // Font family to render with, resolved through the system's font
+     // configuration. An unresolvable family falls back to the built-in font.
+     font "MesloLGS Nerd Font"
+
+     // Families for bold, italic and bold italic text, each in place of the
+     // font family's own face for that style. A style without one keeps the
+     // font family's face, and so does one whose family does not resolve.
+     // font_bold "Iosevka Term"
+     // font_italic "Iosevka Term"
+     // font_bold_italic "Iosevka Term"
+
+     // Font size in points, as other terminals measure it
+     font_size 14
+
+     // Whether to consult the system's fonts for characters the primary font
+     // lacks
+     // system_fonts true
+
+     // Whether the font's ligatures are formed, so that sequences like -> or
+     // != are drawn as one shape.
+     ligatures false
+
+     // Weight of the regular face: a number from 100 to 900, or one of
+     // "thin", "extralight", "light", "regular", "medium", "semibold",
+     // "bold", "extrabold" or "black". Bold text uses a face 300 heavier,
+     // up to 900. Variable fonts are set to the exact weight.
+     // font_weight "regular"
+
+     // OpenType features to turn on, or off with a leading -, as
+     // four-character tags. Listing any feature shapes text even with
+     // ligatures false; then "liga", "calt" and "dlig" stay off unless
+     // listed here.
+     // font_features "ss01" "zero" "-calt"
+
+     // Height of a cell as a multiple of the font's own line height. The
+     // extra space is shared evenly above and below the text.
+     // line_height 1.0
+
+     // Width of a cell as a multiple of the font's own character width.
+     // Characters keep their shape and are centered in the cell.
+     // cell_width 1.0
+
+     // Pixels to move the text down (or up, when negative) inside its cell
+     // baseline_offset 0
+
+     // Pixels to move the underline down (or up, when negative), and pixels
+     // to add to (or remove from) its thickness. Both stay inside the cell.
+     // underline_offset 0
+     // underline_thickness 0
+
+     // Empty space around the text, in pixels, scaled with the display but
+     // not with zoom. `padding` sets every side; padding_top, padding_right,
+     // padding_bottom and padding_left override one side each.
+     // padding 0
+     // padding_top 0
+     // padding_right 0
+     // padding_bottom 0
+     // padding_left 0
+
+     // Whether the pixels left over when the window is not a whole number of
+     // cells are shared evenly on all sides instead of all going to the
+     // right and bottom edges.
+     // padding_balance false
+
+     // How the padding is painted: "background" (the default) uses the
+     // theme background and the window opacity; "extend" continues the
+     // background of the nearest cell at the edge of the grid.
+     // padding_color "background"
+
+     // The cursor shape to draw where the application in the pane has not
+     // asked for one: "block", "bar" or "underline". An application that does
+     // ask (with CSI <n> q) still gets the shape it asked for.
+     // cursor_style "block"
+
+     // Whether the cursor blinks. Unlike cursor_style, this wins over the
+     // application: set it to force a blinking or a steady cursor whatever
+     // the pane asks for. Leave it out to blink exactly when the application
+     // asks for a blinking cursor.
+     // cursor_blink false
+
+     // The chords the window claims for itself to paste. List no
+     // chords to leave them all to the session.
+     // paste_keys "Ctrl Shift v" "Shift Insert"
+
+     // The chords that copy text marked with shift+drag (see
+     // shift_drag_selects).
+     // copy_keys "Ctrl Shift c"
+
+     // The chords that switch the window between fullscreen and the size it
+     // had before. List no chords to leave them all to the session.
+     // fullscreen_keys "F11"
+
+     // The chords that make text larger, make it smaller, and return it to
+     // the configured font size. List no chords to leave them to the session.
+     // zoom_in_keys "Ctrl =" "Ctrl +"
+     // zoom_out_keys "Ctrl -"
+     // zoom_reset_keys "Ctrl 0"
+
+     // Whether the middle mouse button pastes the primary selection (the
+     // text last selected anywhere on Linux). A pane whose program asks for
+     // mouse reporting still gets the click instead.
+     // middle_click_paste true
+
+     // What the window does when a program rings the bell: "visual" (the
+     // default) asks the desktop to draw attention to the window, eg. by
+     // highlighting it in the taskbar, "audible" plays the system sound,
+     // "both" or "none"
+     // bell "visual"
+
+     // Whether programs in a session on another machine (attached with
+     // `zellij attach <url>`) may read this computer's clipboard with OSC 52.
+     // Local sessions follow dangerously_enable_paste_buffer_read instead.
+     // allow_remote_clipboard_read false
+
+     // Whether the mouse pointer is hidden while typing, until it moves again
+     hide_pointer_while_typing false
+
+     // Whether the cursor is drawn as an outlined block while the window is
+     // not focused
+     // cursor_unfocused_hollow true
+
+     // The lowest allowed contrast ratio between text and its background, from
+     // 1.0 (off) to 21.0; text colours are adjusted when below it.
+     // minimum_contrast 1.0
+
+     // Whether scrolling through a pane's scrollback slides the text to its
+     // new position instead of jumping. Applies to the mouse wheel, touchpad
+     // and scroll keys alike.
+     // smooth_scrolling true
+
+     // How long one scroll slide takes, in milliseconds, from 1 to 1000.
+     // Ignored when smooth_scrolling is false.
+     // scroll_animation_duration 100
+
+     // Whether a fast two-finger touchpad swipe through a pane's scrollback
+     // keeps scrolling for a moment after the fingers lift, slowing down
+     // until it stops. Touching the touchpad again, clicking, typing or
+     // moving the pointer to another pane stops it at once. Works
+     // independently of smooth_scrolling. Currently only has an effect on
+     // Wayland; on X11, Windows and macOS it is ignored (macOS already
+     // provides its own touchpad momentum).
+     // scroll_momentum true
+
+     // How quickly that continued scrolling slows down, from 0.5 to 10.0.
+     // Higher values stop sooner. Currently only has an effect on Wayland.
+     // scroll_momentum_friction 2.0
+
+     // Whether clicking an OSC 8 hyperlink opens it in the platform's default
+     // handler. A plain left click opens it; over a pane whose program has
+     // asked for mouse reporting, hold shift instead. Dragging is a selection
+     // and never opens anything, and the click still reaches the pane either
+     // way. Only http, https, ftp, ftps, mailto and file URLs are ever handed
+     // to the opener.
+     // open_links true
+
+     // Whether shift+click opens a link in every pane, not only in panes
+     // whose program has asked for mouse reporting. Has no effect when
+     // open_links is false.
+     open_links_with_shift true
+
+     // Whether dragging with shift held marks text anywhere in the window,
+     // including the tab bar, status bar and pane frames, and across pane
+     // borders.
+     // shift_drag_selects true
+
+     // Whether a session is shown in at most one desktop app window. When on,
+     // switching a window to a session that another app window already shows
+     // brings that other window forward and closes the switching one; the
+     // session it left keeps running. When off, the window always switches in
+     // place. Windows opened with --standalone always switch in place.
+     // reuse_session_windows true
+
+     // How opaque the window is, from 0.0 (invisible) to 1.0 (solid). Needs
+     // a compositor; without one the window stays solid.
+     opacity 0.7
+
+     // What the opacity applies to. "background" lets only the default
+     // background show through and keeps text, colored cells, the cursor and
+     // images solid. "everything" fades the whole window evenly.
+     // opacity_mode "background"
+
+     // Whether to ask the compositor to blur what is behind the window. Only
+     // visible with an opacity below 1.0; supported on macOS, KDE Plasma and
+     // Windows 11 22H2 or later, and ignored elsewhere. On Windows it is the
+     // system's Acrylic material, which shows only while the window is focused.
+     blur true
+
+     // Which Option key acts as Alt on macOS: "left" (the default), "right",
+     // "both" or "none". The other one keeps typing characters such as å or ˙.
+     // Ignored on other platforms.
+     // macos_option_as_alt "left"
+
+     // How a new window opens: "windowed", "maximized", "fullscreen", or
+     // "remember" (the default), which reopens at the size, counted in rows
+     // and columns, and in the state the last window was closed in. With
+     // nothing remembered yet, "remember" opens windowed at 120x40.
+     // (Requires restart)
+     // startup_mode "remember"
+
+     // Where a command opens when another app uses Zellij as its terminal
+     // (`zellij terminal -e <command>`, as xdg-terminal-exec or a file manager
+     // runs it): "new_session" (the default) gives it a session of its own;
+     // "existing_session" opens it as a new tab in the session whose window
+     // was focused last, or in a new session when no window is open.
+     // terminal_requests "new_session"
+
+     // The size, in columns and rows, of a window that has no remembered
+     // size to reopen at. The --cols and --rows arguments still win, and a
+     // size remembered by "remember" wins over these. A maximized or
+     // fullscreen window returns to this size when it is restored.
+     // (Requires restart)
+     // initial_columns 120
+     // initial_rows 40
+
+     // Colors the window paints itself. `foreground` and
+     // `background` default to the active Zellij theme; the sixteen ANSI
+     // colors have no theme equivalent and default to the standard table.
+     // theme {
+     //     foreground "#e5e5e5"
+     //     background "#000000"
+     //     cursor "#e5e5e5"
+     //     black "#000000"
+     //     red "#cd0000"
+     //     green "#00cd00"
+     //     yellow "#cdcd00"
+     //     blue "#0000ee"
+     //     magenta "#cd00cd"
+     //     cyan "#00cdcd"
+     //     white "#e5e5e5"
+     //     bright_black "#7f7f7f"
+     //     bright_red "#ff0000"
+     //     bright_green "#00ff00"
+     //     bright_yellow "#ffff00"
+     //     bright_blue "#5c5cff"
+     //     bright_magenta "#ff00ff"
+     //     bright_cyan "#00ffff"
+     //     bright_white "#ffffff"
+     // }
+}
+
+// Status of panes, tabs and sessions: the symbols on frames and tabs, the inbox,
+// and the desktop app's tray icon and notifications. Every key is optional.
+// To turn all of this off, set `enabled false`.
+//
+// Each pane can also be set apart from this, from its right-click menu, the
+// pane mode keys or `zellij action`:
+//   - Watch pane (WatchPane): asks for more. Every finished command, even a
+//     short one, the pane exiting and its output going quiet all count as
+//     needing you. New output alone is not reported. Stays on until turned off.
+//   - Ignore output (IgnorePaneOutput): hides only the "new output" note;
+//     needing you, failures and finished commands are still reported.
+//   - Mute pane (MutePane, also MuteTab and MuteSession): hides everything the
+//     pane reports, including desktop notifications. It is still tracked, so
+//     unmuting shows its current state.
+//
+// attention {
+//     // Track what panes need and show it anywhere. When false, panes report
+//     // nothing: no markers, inbox, session card, counts in the session
+//     // indicator, tray badge or desktop notifications, and the watch and
+//     // mute entries leave the right-click menu. The other keys below only
+//     // apply when this is true.
+//     enabled true
+//
+//     // Show what a pane needs (approval, a failure, a finished command) in
+//     // its frame title.
+//     frame_markers true
+//
+//     // Show what a tab's panes need as a symbol in the tab bar.
+//     tab_markers true
+//
+//     // Tell the terminal Zellij runs in what the session needs, when that
+//     // terminal supports it.
+//     host_status true
+//
+//     // Show the desktop app's tray icon (sessions and notifications go on
+//     // when it is hidden).
+//     tray_icon true
+//
+//     // Notice when busy output goes quiet in "all" panes, or only in
+//     // "watched" ones.
+//     idle_rule "all"
+//
+//     // Seconds a successful command must run before it is reported as done.
+//     done_threshold_secs 10
+//
+//     // List commands as working once they run longer than
+//     // done_threshold_secs (off unless turned on). Commands that use the
+//     // full screen (vim, less, htop) or that you type into are left out.
+//     track_commands false
+//
+//     // Seconds of steady output before quiet detection applies.
+//     idle_activity_secs 10
+//
+//     // Seconds of silence after busy output that count as gone quiet.
+//     idle_silence_secs 3
+//
+//     // When a new session shows its session card: "attention" (when
+//     // something needs you), "always" or "never".
+//     startup_card "attention"
+//
+//     // Which inbox items the desktop app shows as desktop notifications,
+//     // one type per line.
+//     desktop_notifications {
+//         // Show a pop-up when something needs you.
+//         needs_you true
+//
+//         // Show a pop-up when a command fails.
+//         failed true
+//
+//         // Show a pop-up when a long command finishes.
+//         done true
+//     }
+//
+//     // Which inbox items the desktop app's tray icon counts. The badge shows
+//     // the count of the most important type that is turned on.
+//     tray_badge {
+//         // Count items that need you.
+//         needs_you true
+//
+//         // Count failed commands.
+//         failed true
+//
+//         // Count finished commands.
+//         done true
+//
+//         // Count working programs.
+//         working true
+//
+//         // Count panes that went quiet.
+//         quiet false
+//
+//         // Count panes with output you have not seen.
+//         new_output false
+//     }
+//
+//     // The colour of the tray badge for each type, as a hex colour. The inbox
+//     // and the sessions list use these colours too. A type without a colour
+//     // keeps the default badge colour and the theme colour in lists.
+//     tray_badge_colors {
+//         // Items that need you.
+//         needs_you "#ff8c00"
+//
+//         // Failed commands.
+//         failed "#e5484d"
+//
+//         // Finished commands.
+//         done "#30a46c"
+//
+//         // Working programs.
+//         working "#3e82f7"
+//
+//         // Panes that went quiet.
+//         quiet "#8b8d98"
+//
+//         // Panes with output you have not seen.
+//         new_output "#12a594"
+//     }
+//
+//     // Show the program and command text in desktop notifications.
+//     notification_details true
+// }
