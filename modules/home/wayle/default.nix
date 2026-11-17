@@ -1,106 +1,130 @@
 {
+  config,
   inputs,
+  lib,
   nixosConfig,
   pkgs,
   ...
 }:
 {
-  services.wayle = {
-    enable = nixosConfig.my.gui.enable;
-
-    settings = {
-      bar = {
-        background-opacity = 0;
-        inset-edge = 0.3;
-        inset-ends = 0.5;
-        padding = 0;
-        padding-ends = 0.1;
-        layout = [
-          {
-            center = [ "window-title" ];
-            left = [
-              "hyprland-workspaces"
-              "cava"
-              "media"
-            ];
-            monitor = "*";
-            right = [
-              "brightness"
-              "volume"
-              "network"
-              "idle-inhibit"
-              "bluetooth"
-              "battery"
-              "systray"
-              "clock"
-              "keyboard-input"
-              "notifications"
-            ];
-          }
-        ];
-      };
-      modules = {
-        clock = {
-          format = "%H:%M:%S";
-          dropdown-show-seconds = false;
-        };
-        hyprland-workspaces = {
-          app-icons-dedupe = false;
-          app-icons-show = true;
-          monitor-specific = false;
-          show-special = false;
-          urgent-show = false;
-          app-icon-map = {
-            "class:equibop" = "si-discord-symbolic";
-          };
-        };
-        cava = {
-          bars = 10;
-          framerate = 25;
-          style = "wave";
-          direction = "mirror";
-          left-click = "dropdown:media";
-          noise-reduction = 0.3;
-          monstercat = 0.5;
-        };
-        idle-inhibit = {
-          label-show = false;
-          icon-inactive = "tb-zzz-symbolic";
-          icon-active = "tb-zzz-off-symbolic";
-        };
-        keyboard-input = {
-          icon-show = false;
-          layout-alias-map = {
-            "English (US)" = "🇺🇸";
-            "Czech (QWERTY)" = "🇨🇿";
-            "Ukrainian" = "🇺🇦";
-            "Russian" = "💩";
-          };
-        };
-
-        weather.location = "Prague";
-
-        window-title.label-max-length = 30;
-        media.label-max-length = 30;
-
-        bluetooth.label-show = false;
-        microphone.label-show = false;
-        network.label-show = false;
-      };
+  options = {
+    my.wayle = {
+      addBatteryModule = lib.mkEnableOption "Battery module in Wayle";
     };
   };
 
-  xdg.dataFile = {
-    "wayle/icons/hicolor/scalable/actions/tb-zzz-symbolic.svg".source =
-      "${inputs.storage}/icons/tb-zzz-symbolic.svg";
-    "wayle/icons/hicolor/scalable/actions/tb-zzz-off-symbolic.svg".source =
-      "${inputs.storage}/icons/tb-zzz-off-symbolic.svg";
-  };
+  config = {
+    services.wayle = {
+      enable = nixosConfig.my.gui.enable;
 
-  systemd.user.services.wayle = {
-    Service.Type = "notify";
-  };
+      settings = {
+        bar = {
+          background-opacity = 0;
+          inset-edge = 0.3;
+          inset-ends = 0.5;
+          padding = 0;
+          padding-ends = 0.1;
+          layout = [
+            {
+              center = [ "window-title" ];
+              left = [
+                "hyprland-workspaces"
+                "cava"
+                "media"
+              ];
+              monitor = "*";
+              right =
+                if config.my.wayle.addBatteryModule then
+                  [
+                    "brightness"
+                    "volume"
+                    "network"
+                    "idle-inhibit"
+                    "bluetooth"
+                    "battery"
+                    "systray"
+                    "clock"
+                    "keyboard-input"
+                    "notifications"
+                  ]
+                else
+                  [
+                    "brightness"
+                    "volume"
+                    "network"
+                    "idle-inhibit"
+                    "bluetooth"
+                    "systray"
+                    "clock"
+                    "keyboard-input"
+                    "notifications"
+                  ];
+            }
+          ];
+        };
+        modules = {
+          clock = {
+            format = "%H:%M:%S";
+            dropdown-show-seconds = false;
+          };
+          hyprland-workspaces = {
+            app-icons-dedupe = false;
+            app-icons-show = true;
+            monitor-specific = false;
+            show-special = false;
+            urgent-show = false;
+            app-icon-map = {
+              "class:equibop" = "si-discord-symbolic";
+            };
+          };
+          cava = {
+            bars = 10;
+            framerate = 25;
+            style = "wave";
+            direction = "mirror";
+            left-click = "dropdown:media";
+            noise-reduction = 0.3;
+            monstercat = 0.5;
+          };
+          idle-inhibit = {
+            label-show = false;
+            icon-inactive = "tb-zzz-symbolic";
+            icon-active = "tb-zzz-off-symbolic";
+          };
+          keyboard-input = {
+            icon-show = false;
+            layout-alias-map = {
+              "English (US)" = "🇺🇸";
+              "Czech (QWERTY)" = "🇨🇿";
+              "Ukrainian" = "🇺🇦";
+              "Russian" = "💩";
+            };
+          };
 
-  xdg.portal.extraPortals = [ pkgs.wayle ];
-  xdg.portal.config.common."org.freedesktop.impl.portal.Notification" = "wayle";
+          weather.location = "Prague";
+
+          window-title.label-max-length = 30;
+          media.label-max-length = 30;
+
+          bluetooth.label-show = false;
+          microphone.label-show = false;
+          network.label-show = false;
+        };
+      };
+    };
+
+    xdg.dataFile = {
+      "wayle/icons/hicolor/scalable/actions/tb-zzz-symbolic.svg".source =
+        "${inputs.storage}/icons/tb-zzz-symbolic.svg";
+      "wayle/icons/hicolor/scalable/actions/tb-zzz-off-symbolic.svg".source =
+        "${inputs.storage}/icons/tb-zzz-off-symbolic.svg";
+    };
+
+    systemd.user.services.wayle = {
+      Service.Type = "notify";
+    };
+
+    xdg.portal.extraPortals = [ pkgs.wayle ];
+    xdg.portal.config.common."org.freedesktop.impl.portal.Notification" = "wayle";
+  };
 }

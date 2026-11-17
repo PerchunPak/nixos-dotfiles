@@ -11,6 +11,7 @@
       # additional-games = with pkgs; [ xonotic ];
       minecraft.enable = false;
     };
+    wayle.addBatteryModule = true;
   };
 
   # `allowUnfree` for experimental nix commands
