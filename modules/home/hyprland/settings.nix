@@ -42,7 +42,7 @@ let
 
   spawn-btop-workspace = pkgs.writeShellScript "spawn-btop-workspace.sh" ''
     zellij delete-session btop || true
-    exec alacritty -e zellij --new-session-with-layout btop --session btop
+    exec zellij terminal --create btop options --default-layout btop
   '';
 in
 {

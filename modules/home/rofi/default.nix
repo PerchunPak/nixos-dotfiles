@@ -49,7 +49,7 @@ in
       drun-display-format = "{icon} {name}";
       show-icons = true;
       sidebar-mode = true;
-      terminal = "alacritty";
+      terminal = "zellij terminal";
     };
   };
 }

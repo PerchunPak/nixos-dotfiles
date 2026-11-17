@@ -20,7 +20,7 @@ end)
 ---------------------
 
 -- Launch applications
-hl.bind("SUPER + A", hl.dsp.exec_cmd("alacritty"))
+hl.bind("SUPER + A", hl.dsp.exec_cmd("zellij terminal"))
 hl.bind("SUPER + D", hl.dsp.exec_cmd("@rofi-menu@ drun"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("@rofi-menu@ calc"))
 hl.bind("SUPER + SHIFT + V", hl.dsp.exec_cmd("@rofi-calc-with-copy@"))
