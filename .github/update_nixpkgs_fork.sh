@@ -12,6 +12,8 @@ nix run ".#pkgs.$system.nixpkgs.ghcherry" -- \
   `: # variety: 0.9.0-b1 -> 0.9.2` \
   https://github.com/NixOS/nixpkgs/pull/585616 \
   `: # tabiew: add zstd & sqlcipher to buildInputs` \
-  https://github.com/NixOS/nixpkgs/pull/585747
+  https://github.com/NixOS/nixpkgs/pull/585747 \
+  `: # zellij-unwrapped: add missing runtime libs` \
+  https://github.com/NixOS/nixpkgs/pull/588966
 
 nix flake update nixpkgs
