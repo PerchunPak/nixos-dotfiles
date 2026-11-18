@@ -5,6 +5,7 @@
     (import ./disko.nix { device = "/dev/nvme0n1"; })
     ../../../manual-modules/impermanence
     ../../../manual-modules/dns.nix
+    ./openrgb
   ];
 
   networking.hostName = "perchun-pc";
