@@ -22,6 +22,7 @@
       }
     ];
     btrfs-snapshots.enable = true;
+    wifi.disableOnBoot = true;
     amdgpu.enable = true;
     # flatpak.enable = true;
   };
