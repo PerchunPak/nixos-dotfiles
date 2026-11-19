@@ -246,8 +246,8 @@ keybinds clear-defaults=true {
         bind "k" "Up" { ScrollUp; }
         bind "PageDown" "Right" "l" { PageScrollDown; }
         bind "PageUp" "Left" "h" { PageScrollUp; }
-        bind "Ctrl u" "d" { HalfPageScrollDown; }
-        bind "Ctrl d" "u" { HalfPageScrollUp; }
+        bind "Ctrl d" "d" { HalfPageScrollDown; }
+        bind "Ctrl u" "u" { HalfPageScrollUp; }
         bind "g" { ScrollToTop; }
         bind "Shift G" { ScrollToBottom; }
         bind "[" { ScrollToPreviousPrompt; }
