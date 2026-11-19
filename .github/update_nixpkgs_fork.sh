@@ -14,6 +14,8 @@ nix run ".#pkgs.$system.nixpkgs.ghcherry" -- \
   `: # tabiew: add zstd & sqlcipher to buildInputs` \
   https://github.com/NixOS/nixpkgs/pull/585747 \
   `: # zellij-unwrapped: add missing runtime libs` \
-  https://github.com/NixOS/nixpkgs/pull/588966
+  https://github.com/NixOS/nixpkgs/pull/588966 \
+  `: # equibop: 3.2.2 -> 3.3.4` \
+  https://github.com/NixOS/nixpkgs/pull/589090
 
 nix flake update nixpkgs
