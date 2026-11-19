@@ -3,6 +3,7 @@
 -------------------
 
 hl.on("hyprland.start", function()
+	hl.exec_cmd("uwsm app -- openrgb --startminimized")
 	hl.exec_cmd("uwsm app -- zen-beta")
 	hl.exec_cmd("uwsm app -- equibop", { workspace = "3 silent" })
 	hl.exec_cmd("uwsm app -- steam")
@@ -264,6 +265,13 @@ hl.window_rule({
 	float = true,
 	center = true,
 	size = "383, 691",
+})
+
+hl.window_rule({
+	name = "OpenRGB",
+	match = { class = "^org\\.openrgb\\.openrgb$" },
+	float = true,
+	center = true,
 })
 
 -- Fix some dragging issues with XWayland

@@ -1,0 +1,37 @@
+diff --git a/Controllers/ASRockPolychromeUSBController/ASRockPolychromeUSBController.cpp b/Controllers/ASRockPolychromeUSBController/ASRockPolychromeUSBController.cpp
+index db14066..b53d78a 100755
+--- a/Controllers/ASRockPolychromeUSBController/ASRockPolychromeUSBController.cpp
++++ b/Controllers/ASRockPolychromeUSBController/ASRockPolychromeUSBController.cpp
+@@ -117,14 +117,12 @@ void PolychromeUSBController::SetDeviceInfo()
+         settings_manager->SetSettings(detector_name, device_settings);
+         settings_manager->SaveSettings();
+     }
+-    else
++
++    for(std::size_t idx = 0; idx < 8; idx++)
+     {
+-        for(std::size_t idx = 0; idx < 8; idx++)
++        if(device_settings[json_rgswap].contains(polychrome_USB_zone_names[idx]))
+         {
+-            if(device_settings[json_rgswap].contains(polychrome_USB_zone_names[idx]))
+-            {
+-                rgswapconfig[idx] = device_settings[json_rgswap][polychrome_USB_zone_names[idx]];
+-            }
++            rgswapconfig[idx] = device_settings[json_rgswap][polychrome_USB_zone_names[idx]];
+         }
+     }
+ 
+@@ -142,7 +140,12 @@ void PolychromeUSBController::SetDeviceInfo()
+         }
+ 
+         newdev_info.num_leds = configtable[zonecnt];
+-        newdev_info.rgswap = ((configtable[8] >> zonecnt) & 1) || rgswapconfig[zonecnt];
++        /*-----------------------------------------------------------------*\
++        | Use only the settings value. The hardware RGSwap bit is set by    |
++        | the firmware (and by this driver), so OR-ing it in made the       |
++        | setting impossible to turn off and swapped R/G in Direct mode.    |
++        \*-----------------------------------------------------------------*/
++        newdev_info.rgswap = rgswapconfig[zonecnt];
+         rgswap_final[zonecnt] = newdev_info.rgswap;
+ 
+ 		/*--------------------------------------------------------------------------------------------------*\
