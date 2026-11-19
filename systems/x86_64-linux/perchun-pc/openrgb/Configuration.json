@@ -1,0 +1,936 @@
+{
+    "controllers": [
+        {
+            "active_mode": 15,
+            "colors": [
+                16777215,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                255,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                16777215,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535,
+                65535
+            ],
+            "configuration": null,
+            "description": "ASRock Polychrome USB Device",
+            "display_name": "",
+            "flags": 1,
+            "leds": [
+                {
+                    "name": "RGB LED 1 Header, LED 1"
+                },
+                {
+                    "name": "Addressable Header 1, LED 1"
+                },
+                {
+                    "name": "Addressable Header 1, LED 2"
+                },
+                {
+                    "name": "Addressable Header 1, LED 3"
+                },
+                {
+                    "name": "Addressable Header 1, LED 4"
+                },
+                {
+                    "name": "Addressable Header 1, LED 5"
+                },
+                {
+                    "name": "Addressable Header 1, LED 6"
+                },
+                {
+                    "name": "Addressable Header 1, LED 7"
+                },
+                {
+                    "name": "Addressable Header 1, LED 8"
+                },
+                {
+                    "name": "Addressable Header 1, LED 9"
+                },
+                {
+                    "name": "Addressable Header 1, LED 10"
+                },
+                {
+                    "name": "Addressable Header 1, LED 11"
+                },
+                {
+                    "name": "Addressable Header 1, LED 12"
+                },
+                {
+                    "name": "Addressable Header 1, LED 13"
+                },
+                {
+                    "name": "Addressable Header 1, LED 14"
+                },
+                {
+                    "name": "Addressable Header 1, LED 15"
+                },
+                {
+                    "name": "Addressable Header 1, LED 16"
+                },
+                {
+                    "name": "Addressable Header 1, LED 17"
+                },
+                {
+                    "name": "Addressable Header 1, LED 18"
+                },
+                {
+                    "name": "Addressable Header 1, LED 19"
+                },
+                {
+                    "name": "Addressable Header 1, LED 20"
+                },
+                {
+                    "name": "Addressable Header 1, LED 21"
+                },
+                {
+                    "name": "Addressable Header 1, LED 22"
+                },
+                {
+                    "name": "Addressable Header 1, LED 23"
+                },
+                {
+                    "name": "Addressable Header 1, LED 24"
+                },
+                {
+                    "name": "Addressable Header 1, LED 25"
+                },
+                {
+                    "name": "Addressable Header 1, LED 26"
+                },
+                {
+                    "name": "Addressable Header 1, LED 27"
+                },
+                {
+                    "name": "Addressable Header 1, LED 28"
+                },
+                {
+                    "name": "Addressable Header 1, LED 29"
+                },
+                {
+                    "name": "Addressable Header 1, LED 30"
+                },
+                {
+                    "name": "Addressable Header 1, LED 31"
+                },
+                {
+                    "name": "Addressable Header 1, LED 32"
+                },
+                {
+                    "name": "Addressable Header 1, LED 33"
+                },
+                {
+                    "name": "Addressable Header 1, LED 34"
+                },
+                {
+                    "name": "Addressable Header 1, LED 35"
+                },
+                {
+                    "name": "Addressable Header 1, LED 36"
+                },
+                {
+                    "name": "Addressable Header 1, LED 37"
+                },
+                {
+                    "name": "Addressable Header 1, LED 38"
+                },
+                {
+                    "name": "Addressable Header 1, LED 39"
+                },
+                {
+                    "name": "Addressable Header 1, LED 40"
+                },
+                {
+                    "name": "Addressable Header 1, LED 41"
+                },
+                {
+                    "name": "Addressable Header 1, LED 42"
+                },
+                {
+                    "name": "Addressable Header 1, LED 43"
+                },
+                {
+                    "name": "Addressable Header 1, LED 44"
+                },
+                {
+                    "name": "Addressable Header 1, LED 45"
+                },
+                {
+                    "name": "Addressable Header 1, LED 46"
+                },
+                {
+                    "name": "Addressable Header 1, LED 47"
+                },
+                {
+                    "name": "Addressable Header 1, LED 48"
+                },
+                {
+                    "name": "Addressable Header 2, LED 1"
+                },
+                {
+                    "name": "Addressable Header 2, LED 2"
+                },
+                {
+                    "name": "Addressable Header 2, LED 3"
+                },
+                {
+                    "name": "Addressable Header 2, LED 4"
+                },
+                {
+                    "name": "Addressable Header 2, LED 5"
+                },
+                {
+                    "name": "Addressable Header 2, LED 6"
+                },
+                {
+                    "name": "Addressable Header 2, LED 7"
+                },
+                {
+                    "name": "Addressable Header 2, LED 8"
+                },
+                {
+                    "name": "Addressable Header 2, LED 9"
+                },
+                {
+                    "name": "Addressable Header 2, LED 10"
+                },
+                {
+                    "name": "Addressable Header 2, LED 11"
+                },
+                {
+                    "name": "Addressable Header 2, LED 12"
+                },
+                {
+                    "name": "Addressable Header 2, LED 13"
+                },
+                {
+                    "name": "Addressable Header 2, LED 14"
+                },
+                {
+                    "name": "Addressable Header 2, LED 15"
+                },
+                {
+                    "name": "Addressable Header 2, LED 16"
+                },
+                {
+                    "name": "Addressable Header 2, LED 17"
+                },
+                {
+                    "name": "Addressable Header 2, LED 18"
+                },
+                {
+                    "name": "Addressable Header 2, LED 19"
+                },
+                {
+                    "name": "Addressable Header 2, LED 20"
+                },
+                {
+                    "name": "Addressable Header 2, LED 21"
+                },
+                {
+                    "name": "Addressable Header 2, LED 22"
+                },
+                {
+                    "name": "Addressable Header 2, LED 23"
+                },
+                {
+                    "name": "Addressable Header 2, LED 24"
+                },
+                {
+                    "name": "Addressable Header 2, LED 25"
+                },
+                {
+                    "name": "Addressable Header 2, LED 26"
+                },
+                {
+                    "name": "Addressable Header 2, LED 27"
+                },
+                {
+                    "name": "Addressable Header 2, LED 28"
+                },
+                {
+                    "name": "Addressable Header 2, LED 29"
+                },
+                {
+                    "name": "Addressable Header 2, LED 30"
+                },
+                {
+                    "name": "Addressable Header 2, LED 31"
+                },
+                {
+                    "name": "Addressable Header 2, LED 32"
+                },
+                {
+                    "name": "Addressable Header 2, LED 33"
+                },
+                {
+                    "name": "Addressable Header 2, LED 34"
+                },
+                {
+                    "name": "Addressable Header 2, LED 35"
+                },
+                {
+                    "name": "Addressable Header 2, LED 36"
+                },
+                {
+                    "name": "Addressable Header 2, LED 37"
+                },
+                {
+                    "name": "Addressable Header 2, LED 38"
+                },
+                {
+                    "name": "Addressable Header 2, LED 39"
+                },
+                {
+                    "name": "Addressable Header 2, LED 40"
+                },
+                {
+                    "name": "Addressable Header 2, LED 41"
+                },
+                {
+                    "name": "Addressable Header 2, LED 42"
+                },
+                {
+                    "name": "Addressable Header 2, LED 43"
+                },
+                {
+                    "name": "Addressable Header 2, LED 44"
+                },
+                {
+                    "name": "Addressable Header 2, LED 45"
+                },
+                {
+                    "name": "Addressable Header 2, LED 46"
+                },
+                {
+                    "name": "Addressable Header 2, LED 47"
+                },
+                {
+                    "name": "Addressable Header 2, LED 48"
+                },
+                {
+                    "name": "PCB, LED 1"
+                },
+                {
+                    "name": "PCB, LED 2"
+                },
+                {
+                    "name": "PCB, LED 3"
+                },
+                {
+                    "name": "PCB, LED 4"
+                },
+                {
+                    "name": "PCB, LED 5"
+                },
+                {
+                    "name": "PCB, LED 6"
+                },
+                {
+                    "name": "PCB, LED 7"
+                },
+                {
+                    "name": "PCB, LED 8"
+                },
+                {
+                    "name": "PCB, LED 9"
+                },
+                {
+                    "name": "PCB, LED 10"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 1"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 2"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 3"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 4"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 5"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 6"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 7"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 8"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 9"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 10"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 11"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 12"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 13"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 14"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 15"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 16"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 17"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 18"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 19"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 20"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 21"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 22"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 23"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 24"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 25"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 26"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 27"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 28"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 29"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 30"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 31"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 32"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 33"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 34"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 35"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 36"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 37"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 38"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 39"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 40"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 41"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 42"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 43"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 44"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 45"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 46"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 47"
+                },
+                {
+                    "name": "Addressable Header 3/Audio, LED 48"
+                }
+            ],
+            "location": "HID: /dev/hidraw0",
+            "modes": [
+                {
+                    "brightness": 0,
+                    "brightness_max": 0,
+                    "brightness_min": 0,
+                    "color_mode": 0,
+                    "colors_max": 0,
+                    "colors_min": 0,
+                    "direction": 0,
+                    "flags": 0,
+                    "name": "Off",
+                    "speed": 0,
+                    "speed_max": 0,
+                    "speed_min": 0
+                },
+                {
+                    "brightness": 0,
+                    "brightness_max": 0,
+                    "brightness_min": 0,
+                    "color_mode": 1,
+                    "colors_max": 0,
+                    "colors_min": 0,
+                    "direction": 0,
+                    "flags": 32,
+                    "name": "Static",
+                    "speed": 0,
+                    "speed_max": 0,
+                    "speed_min": 0
+                },
+                {
+                    "brightness": 0,
+                    "brightness_max": 0,
+                    "brightness_min": 0,
+                    "color_mode": 1,
+                    "colors_max": 0,
+                    "colors_min": 0,
+                    "direction": 0,
+                    "flags": 33,
+                    "name": "Breathing",
+                    "speed": 224,
+                    "speed_max": 0,
+                    "speed_min": 255
+                },
+                {
+                    "brightness": 0,
+                    "brightness_max": 0,
+                    "brightness_min": 0,
+                    "color_mode": 1,
+                    "colors_max": 0,
+                    "colors_min": 0,
+                    "direction": 0,
+                    "flags": 33,
+                    "name": "Strobe",
+                    "speed": 224,
+                    "speed_max": 0,
+                    "speed_min": 255
+                },
+                {
+                    "brightness": 0,
+                    "brightness_max": 0,
+                    "brightness_min": 0,
+                    "color_mode": 0,
+                    "colors_max": 0,
+                    "colors_min": 0,
+                    "direction": 0,
+                    "flags": 1,
+                    "name": "Spectrum Cycle",
+                    "speed": 224,
+                    "speed_max": 0,
+                    "speed_min": 255
+                },
+                {
+                    "brightness": 0,
+                    "brightness_max": 0,
+                    "brightness_min": 0,
+                    "color_mode": 0,
+                    "colors_max": 0,
+                    "colors_min": 0,
+                    "direction": 0,
+                    "flags": 1,
+                    "name": "Random",
+                    "speed": 224,
+                    "speed_max": 0,
+                    "speed_min": 255
+                },
+                {
+                    "brightness": 0,
+                    "brightness_max": 0,
+                    "brightness_min": 0,
+                    "color_mode": 0,
+                    "colors_max": 0,
+                    "colors_min": 0,
+                    "direction": 0,
+                    "flags": 16,
+                    "name": "Music",
+                    "speed": 224,
+                    "speed_max": 0,
+                    "speed_min": 255
+                },
+                {
+                    "brightness": 0,
+                    "brightness_max": 0,
+                    "brightness_min": 0,
+                    "color_mode": 0,
+                    "colors_max": 0,
+                    "colors_min": 0,
+                    "direction": 0,
+                    "flags": 1,
+                    "name": "Wave",
+                    "speed": 224,
+                    "speed_max": 0,
+                    "speed_min": 255
+                },
+                {
+                    "brightness": 0,
+                    "brightness_max": 0,
+                    "brightness_min": 0,
+                    "color_mode": 0,
+                    "colors_max": 0,
+                    "colors_min": 0,
+                    "direction": 0,
+                    "flags": 1,
+                    "name": "Spring",
+                    "speed": 224,
+                    "speed_max": 0,
+                    "speed_min": 255
+                },
+                {
+                    "brightness": 0,
+                    "brightness_max": 0,
+                    "brightness_min": 0,
+                    "color_mode": 0,
+                    "colors_max": 0,
+                    "colors_min": 0,
+                    "direction": 0,
+                    "flags": 1,
+                    "name": "Stack",
+                    "speed": 224,
+                    "speed_max": 0,
+                    "speed_min": 255
+                },
+                {
+                    "brightness": 0,
+                    "brightness_max": 0,
+                    "brightness_min": 0,
+                    "color_mode": 0,
+                    "colors_max": 0,
+                    "colors_min": 0,
+                    "direction": 0,
+                    "flags": 1,
+                    "name": "Cram",
+                    "speed": 224,
+                    "speed_max": 0,
+                    "speed_min": 255
+                },
+                {
+                    "brightness": 0,
+                    "brightness_max": 0,
+                    "brightness_min": 0,
+                    "color_mode": 0,
+                    "colors_max": 0,
+                    "colors_min": 0,
+                    "direction": 0,
+                    "flags": 1,
+                    "name": "Scan",
+                    "speed": 224,
+                    "speed_max": 0,
+                    "speed_min": 255
+                },
+                {
+                    "brightness": 0,
+                    "brightness_max": 0,
+                    "brightness_min": 0,
+                    "color_mode": 0,
+                    "colors_max": 0,
+                    "colors_min": 0,
+                    "direction": 0,
+                    "flags": 0,
+                    "name": "Neon",
+                    "speed": 0,
+                    "speed_max": 0,
+                    "speed_min": 0
+                },
+                {
+                    "brightness": 0,
+                    "brightness_max": 0,
+                    "brightness_min": 0,
+                    "color_mode": 0,
+                    "colors_max": 0,
+                    "colors_min": 0,
+                    "direction": 0,
+                    "flags": 1,
+                    "name": "Water",
+                    "speed": 224,
+                    "speed_max": 0,
+                    "speed_min": 255
+                },
+                {
+                    "brightness": 0,
+                    "brightness_max": 0,
+                    "brightness_min": 0,
+                    "color_mode": 0,
+                    "colors_max": 0,
+                    "colors_min": 0,
+                    "direction": 0,
+                    "flags": 1,
+                    "name": "Rainbow",
+                    "speed": 224,
+                    "speed_max": 0,
+                    "speed_min": 255
+                },
+                {
+                    "brightness": 0,
+                    "brightness_max": 0,
+                    "brightness_min": 0,
+                    "color_mode": 1,
+                    "colors_max": 0,
+                    "colors_min": 0,
+                    "direction": 0,
+                    "flags": 32,
+                    "name": "Direct",
+                    "speed": 0,
+                    "speed_max": 0,
+                    "speed_min": 0
+                }
+            ],
+            "name": "ASRock X870 Nova WiFi",
+            "serial": "",
+            "type": 0,
+            "vendor": "ASRock",
+            "version": "",
+            "zones": [
+                {
+                    "display_name": "",
+                    "flags": 0,
+                    "leds_count": 1,
+                    "leds_max": 1,
+                    "leds_min": 1,
+                    "matrix_map": {
+                        "height": 0,
+                        "width": 0
+                    },
+                    "name": "RGB LED 1 Header",
+                    "type": 1
+                },
+                {
+                    "display_name": "",
+                    "flags": 86078,
+                    "leds_count": 48,
+                    "leds_max": 100,
+                    "leds_min": 0,
+                    "matrix_map": {
+                        "height": 0,
+                        "width": 0
+                    },
+                    "name": "Addressable Header 1",
+                    "type": 0
+                },
+                {
+                    "display_name": "",
+                    "flags": 4158,
+                    "leds_count": 48,
+                    "leds_max": 100,
+                    "leds_min": 0,
+                    "matrix_map": {
+                        "height": 0,
+                        "width": 0
+                    },
+                    "name": "Addressable Header 2",
+                    "type": 1
+                },
+                {
+                    "display_name": "",
+                    "flags": 0,
+                    "leds_count": 10,
+                    "leds_max": 10,
+                    "leds_min": 10,
+                    "matrix_map": {
+                        "height": 0,
+                        "width": 0
+                    },
+                    "name": "PCB",
+                    "type": 1
+                },
+                {
+                    "display_name": "",
+                    "flags": 4158,
+                    "leds_count": 48,
+                    "leds_max": 100,
+                    "leds_min": 0,
+                    "matrix_map": {
+                        "height": 0,
+                        "width": 0
+                    },
+                    "name": "Addressable Header 3/Audio",
+                    "type": 1
+                }
+            ]
+        }
+    ],
+    "profile_name": "Controller Configuration",
+    "profile_version": 6
+}
