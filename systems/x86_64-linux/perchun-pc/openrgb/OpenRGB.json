@@ -1,0 +1,34 @@
+{
+    "ProfileManager": {
+        "exit_profile": {
+            "enabled": false,
+            "name": ""
+        },
+        "open_profile": {
+            "enabled": false,
+            "name": ""
+        },
+        "resume_profile": {
+            "enabled": false,
+            "name": ""
+        },
+        "service_shutdown_profile": {
+            "enabled": false,
+            "name": ""
+        },
+        "service_startup_profile": {
+            "enabled": false,
+            "name": ""
+        },
+        "suspend_profile": {
+            "enabled": false,
+            "name": ""
+        }
+    },
+    "Server": {
+        "all_controllers": false,
+        "default_host": "127.0.0.1",
+        "default_port": 6742,
+        "legacy_workaround": false
+    }
+}
