@@ -120,6 +120,10 @@ hl.bind(
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 5%+"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), { locked = true, repeating = true })
 
+for _, entry in ipairs(@lock-screen-actions@) do
+	hl.bind("SUPER + " .. entry.key, hl.dsp.exec_cmd("pidof -q hyprlock && " .. entry.action), { locked = true })
+end
+
 -----------------------
 ---- LOOK AND FEEL ----
 -----------------------

@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   nixosConfig,
   lib,
@@ -10,6 +11,13 @@ let
   wlogout-script = pkgs.writeShellScript "wlogout-script" ''
     flock -n "/var/run/user/$(id -u)/wlogout.lock" wlogout
   '';
+
+  lock-screen-actions = lib.generators.toLua { } (
+    map (entry: {
+      key = lib.toUpper entry.keybind;
+      inherit (entry) action;
+    }) (lib.filter (entry: entry.action != "hyprlock") config.programs.wlogout.layout)
+  );
 
   rofi-calc = "rofi -show calc -modi calc -no-show-match -no-sort";
   rofi-calc-with-copy = pkgs.writeShellScript "rofi-calc-with-copy" ''
@@ -63,6 +71,7 @@ in
         rofi-calc-with-copy
         autoclicker-script
         spawn-btop-workspace
+        lock-screen-actions
         ;
       econom_internet_traffic = nixosConfig.my.economInternetTraffic;
     };
