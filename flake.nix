@@ -103,14 +103,11 @@
       };
 
       channels-config = {
-        cudaSupport = true;
         allowUnfreePredicate =
           pkg:
           builtins.elem (lib.getName pkg) [
             "7zz"
             "claude-code"
-            "nvidia-kernel-modules"
-            "nvidia-x11"
             "steam"
             "steam-original"
             "steam-run"
@@ -119,13 +116,6 @@
             # Firefox extensions
             "grammarly"
             "improved-tube"
-            # cuda
-            "cuda_cccl"
-            "cuda_cudart"
-            "cuda_nvcc"
-            "libcublas"
-            "libcufft"
-            "libnpp"
           ];
       };
 

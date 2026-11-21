@@ -11,17 +11,12 @@ in
 linkFarmFromDrvs "long-builds-to-cache" (
   (with pkgs; [
     actual-client
-    linuxPackages_latest.nvidia_x11_latest
     nerd-fonts.meslo-lg
     nix-diff-rs
     openrgb
     trippy
     wayle
     zellijPlugins.vim-zellij-navigator
-
-    # OBS gets modified by `cudaSupport = true` and cuda's cache is updated
-    # once a week
-    obs-studio
   ])
   ++ [
     nix-index-packages.comma-with-db
