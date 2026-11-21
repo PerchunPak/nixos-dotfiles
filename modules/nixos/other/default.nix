@@ -14,6 +14,10 @@
   systemd = {
     settings.Manager.DefaultTimeoutStopSec = "30s";
     user.settings.Manager.DefaultTimeoutStopSec = config.systemd.settings.Manager.DefaultTimeoutStopSec;
+    coredump.settings.Coredump = {
+      Storage = "none";
+      ProcessSizeMax = 0;
+    };
   };
 
   security.sudo.extraConfig = ''
