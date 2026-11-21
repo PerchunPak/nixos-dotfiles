@@ -74,7 +74,7 @@ in
       legacy690 = { };
 
       device-settings.${devices.motherboard} = {
-        fan1.speed_fixed = 0;
+        fan1.profile_uid = profiles.caseFans;
         fan2.profile_uid = profiles.cpu;
         fan3.profile_uid = profiles.cpu;
         fan4.profile_uid = profiles.unmanaged;
@@ -169,6 +169,8 @@ in
             profiles.cpu
             profiles.gpu
             profiles.nvme
+            profiles.ram1
+            profiles.ram2
           ];
           mix_function_type = "Max";
         }
