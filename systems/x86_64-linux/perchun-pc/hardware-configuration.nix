@@ -22,6 +22,7 @@
     "usb_storage"
     "usbhid"
     "sd_mod"
+    "nct6775"
   ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-amd" ];

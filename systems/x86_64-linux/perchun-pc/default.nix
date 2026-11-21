@@ -5,6 +5,7 @@
     (import ./disko.nix { device = "/dev/nvme0n1"; })
     ../../../manual-modules/impermanence
     ../../../manual-modules/dns.nix
+    ./coolercontrol
     ./openrgb
   ];
 
