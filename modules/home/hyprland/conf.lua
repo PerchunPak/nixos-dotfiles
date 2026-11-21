@@ -21,15 +21,15 @@ end)
 ---------------------
 
 -- Launch applications
-hl.bind("SUPER + A", hl.dsp.exec_cmd("zellij terminal"))
+hl.bind("SUPER + A", hl.dsp.exec_cmd("uwsm app -- zellij terminal"))
 hl.bind("SUPER + D", hl.dsp.exec_cmd("@rofi-menu@ drun"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("@rofi-menu@ calc"))
 hl.bind("SUPER + SHIFT + V", hl.dsp.exec_cmd("@rofi-calc-with-copy@"))
-hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind("SUPER + L", hl.dsp.exec_cmd("uwsm app -- hyprlock"))
 hl.bind("SUPER + K", hl.dsp.exec_cmd("@wlogout-script@"))
 hl.bind("SUPER + X", hl.dsp.exec_cmd("@rofi-menu@ clipboard"))
 hl.bind("SUPER + B", hl.dsp.exec_cmd("variety --next"))
-hl.bind("ALT + F8", hl.dsp.exec_cmd("@autoclicker-script@"))
+hl.bind("ALT + F8", hl.dsp.exec_cmd("uwsm app -- @autoclicker-script@"))
 hl.bind("SUPER + SHIFT + B", hl.dsp.exec_cmd("variety --previous"))
 
 -- Window actions
@@ -90,7 +90,7 @@ hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Screenshot
 hl.bind("PRINT", hl.dsp.exec_cmd("screenshot.sh"))
-hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("screenshot-edit.sh"))
+hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("uwsm app -- screenshot-edit.sh"))
 
 -- Laptop multimedia keys for volume and LCD brightness
 

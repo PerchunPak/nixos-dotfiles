@@ -50,6 +50,8 @@ in
       show-icons = true;
       sidebar-mode = true;
       terminal = "zellij terminal";
+      run-command = "uwsm app -- {cmd}";
+      run-shell-command = "uwsm app -- {terminal} -e {cmd}";
     };
   };
 }
