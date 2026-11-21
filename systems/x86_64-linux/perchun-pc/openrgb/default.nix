@@ -7,6 +7,8 @@
     configFile = ./Configuration.json;
     # See overlays/openrgb-asrock-rgswap.
     settings = {
+      # Picks up the Logitech G305 mouse, which should not be managed by OpenRGB.
+      Detectors.detectors."Logitech HID++ 2.0" = false;
       "ASRock Polychrome USB".RGSwap = {
         "Addressable Header 1" = false;
         "Addressable Header 2" = false;
