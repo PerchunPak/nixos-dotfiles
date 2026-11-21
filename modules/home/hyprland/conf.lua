@@ -213,6 +213,7 @@ hl.config({
 		kb_layout = "us,cz,ua,ru",
 		kb_variant = ",qwerty,,",
 		kb_options = "grp:caps_toggle",
+		numlock_by_default = true,
 	},
 })
 
