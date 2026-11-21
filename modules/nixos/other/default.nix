@@ -11,6 +11,11 @@
     atd.enable = true;
   };
 
+  systemd = {
+    settings.Manager.DefaultTimeoutStopSec = "30s";
+    user.settings.Manager.DefaultTimeoutStopSec = config.systemd.settings.Manager.DefaultTimeoutStopSec;
+  };
+
   security.sudo.extraConfig = ''
     Defaults pwfeedback
     Defaults insults

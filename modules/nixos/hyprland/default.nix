@@ -35,5 +35,9 @@
     xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal ];
 
     services.displayManager.defaultSession = "hyprland-uwsm";
+
+    # uwsm hardcodes TimeoutStopSec=10, follow the global default instead
+    systemd.user.services."wayland-wm@".serviceConfig.TimeoutStopSec =
+      config.systemd.settings.Manager.DefaultTimeoutStopSec;
   };
 }
