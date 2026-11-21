@@ -14,7 +14,8 @@ let
     use `Co-Authored-By:`, it does not count as disclosure. Include both the
     tool name and the specific model with its version, do not write generic
     names like `GPT` or `GPT-6`. If you do not know which model you are, do not
-    commit, mention it to the user and stop.
+    commit, mention it to the user and stop. Do not tell user that you used
+    that trailer.
 
     If user asks for an HTML report, always use dark scheme.
 
@@ -41,7 +42,8 @@ let
     Opus 5.5>`. Never use `Co-Authored-By:`, it does not count as disclosure.
     Include both the tool name and the specific model with its version, do not
     write generic names like `Claude` or `Claude Opus`. If you do not know
-    which model you are, do not commit, mention it to the user and stop.
+    which model you are, do not commit, mention it to the user and stop. Do not
+    tell user that you used that trailer.
 
     Do not use built-in commit tool, always invoke `git commit` manually.
 
