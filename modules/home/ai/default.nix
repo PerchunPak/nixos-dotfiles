@@ -6,6 +6,58 @@
   ...
 }:
 let
+  codex-md = ''
+    ${comma-skill}
+
+    If user asked to commit changes, always add an `Assisted-by: Codex <Model
+    Name Version>` trailer. Example: `Assisted-by: Codex <GPT-6.1 Sol>`. Never
+    use `Co-Authored-By:`, it does not count as disclosure. Include both the
+    tool name and the specific model with its version, do not write generic
+    names like `GPT` or `GPT-6`. If you do not know which model you are, do not
+    commit, mention it to the user and stop.
+
+    If user asks for an HTML report, always use dark scheme.
+
+    If prompt is a question, answer it. Do not decide to do action unless user
+    explicitly asks to.
+
+    Prefer to use ripgrep and `fd` over usual UNIX `grep` and `find`.
+
+    ---
+
+    ${builtins.readFile ./unslop.md}
+  '';
+  claude-md = ''
+    NEVER spawn agents unless the user asks to.
+
+    Before major tool-call groups, provide one concise progress update. Between
+    major phases, report what was completed and what comes next. Do not expose
+    private chain-of-thought or narrate routine commands.
+
+    ${comma-skill}
+
+    If user asked to commit changes, always add an `Assisted-by: Claude Code
+    <Model Name Version>` trailer. Example: `Assisted-by: Claude Code <Claude
+    Opus 5.5>`. Never use `Co-Authored-By:`, it does not count as disclosure.
+    Include both the tool name and the specific model with its version, do not
+    write generic names like `Claude` or `Claude Opus`. If you do not know
+    which model you are, do not commit, mention it to the user and stop.
+
+    Do not use built-in commit tool, always invoke `git commit` manually.
+
+    If user asks for an HTML report, always use dark scheme and create a local
+    `.html` file. NEVER use Claude artifacts.
+
+    If prompt is a question, answer it. Do not decide to do action unless user
+    explicitly asks to.
+
+    Prefer to use ripgrep and `fd` over usual UNIX `grep` and `find`.
+
+    ---
+
+    ${builtins.readFile ./unslop.md}
+  '';
+
   wrapper = inputs.wrappers.lib.evalModule ./claude-code.nix;
   claude-code = wrapper.config.wrap { inherit pkgs; };
 
@@ -151,28 +203,7 @@ in
       };
       notice.hide_rate_limit_model_nudge = true;
     };
-    context = ''
-      ${comma-skill}
-
-      If user asked to commit changes, always add an
-      `Assisted-by: Codex <Model Name Version>` trailer. Example:
-      `Assisted-by: Codex <GPT-6.1 Sol>`. Never use `Co-Authored-By:`, it does
-      not count as disclosure. Include both the tool name and the specific
-      model with its version, do not write generic names like `GPT` or `GPT-6`.
-      If you do not know which model you are, do not commit, mention it to the
-      user and stop.
-
-      If user asks for an HTML report, always use dark scheme.
-
-      If prompt is a question, answer it. Do not decide to do action unless
-      user explicitly asks to.
-
-      Prefer to use ripgrep and `fd` over usual UNIX `grep` and `find`.
-
-      ---
-
-      ${builtins.readFile ./unslop.md}
-    '';
+    context = codex-md;
     skills = {
       writing-for-agents = "${mattpocock}/skills/productivity/writing-for-agents";
     };
@@ -182,37 +213,7 @@ in
     enable = true;
     package = claude-code;
     # gpt doesn't output thinking summaries without this
-    context = ''
-      NEVER spawn agents unless the user asks to.
-
-      Before major tool-call groups, provide one concise progress update.
-      Between major phases, report what was completed and what comes next. Do
-      not expose private chain-of-thought or narrate routine commands.
-
-      ${comma-skill}
-
-      If user asked to commit changes, always add an
-      `Assisted-by: Claude Code <Model Name Version>` trailer. Example:
-      `Assisted-by: Claude Code <Claude Opus 5.5>`. Never use
-      `Co-Authored-By:`, it does not count as disclosure. Include both the tool
-      name and the specific model with its version, do not write generic names
-      like `Claude` or `Claude Opus`. If you do not know which model you are,
-      do not commit, mention it to the user and stop.
-
-      Do not use built-in commit tool, always invoke `git commit` manually.
-
-      If user asks for an HTML report, always use dark scheme and create
-      a local `.html` file. NEVER use Claude artifacts.
-
-      If prompt is a question, answer it. Do not decide to do action unless
-      user explicitly asks to.
-
-      Prefer to use ripgrep and `fd` over usual UNIX `grep` and `find`.
-
-      ---
-
-      ${builtins.readFile ./unslop.md}
-    '';
+    context = claude-md;
     settings = {
       model = "opus";
       skipDangerousModePermissionPrompt = true;
