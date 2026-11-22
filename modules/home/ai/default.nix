@@ -6,6 +6,18 @@
   ...
 }:
 let
+  comma-skill = ''
+    Run every command bare on the first attempt. Only after it fails with
+    "command not found" may you re-run it as `, <command>`.
+
+    Never put `,` in a command's first attempt, including when you are unsure
+    whether the binary exists. Running it is how you find out.
+
+    $ glob **/*.py
+    bash: glob: command not found
+    $ , glob **/*.py     # correct: only after the failure above
+    $ , rg foo           # wrong: rg was never tried bare
+  '';
   codex-md = ''
     ${comma-skill}
 
@@ -148,18 +160,6 @@ let
     rev = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76";
     hash = "sha256-N5tpUIHO2VFeJntBTl6/VLDIVpqoshwFxNJlfXXUwsQ=";
   };
-  comma-skill = ''
-    Run every command bare on the first attempt. Only after it fails with
-    "command not found" may you re-run it as `, <command>`.
-
-    Never put `,` in a command's first attempt, including when you are unsure
-    whether the binary exists. Running it is how you find out.
-
-    $ glob **/*.py
-    bash: glob: command not found
-    $ , glob **/*.py     # correct: only after the failure above
-    $ , rg foo           # wrong: rg was never tried bare
-  '';
 
   resetAiConfigs = pkgs.writeShellApplication {
     name = "reset-ai-configs";
