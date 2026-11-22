@@ -17,6 +17,8 @@ let
     bash: glob: command not found
     $ , glob **/*.py     # correct: only after the failure above
     $ , rg foo           # wrong: rg was never tried bare
+
+    NOTE: `,` also exists on remote servers
   '';
   codex-md = ''
     ${comma-skill}
