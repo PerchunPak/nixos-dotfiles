@@ -24,6 +24,8 @@ let
 
     Prefer to use ripgrep and `fd` over usual UNIX `grep` and `find`.
 
+    Avoid unnecessary and obvious comments in code.
+
     ---
 
     ${builtins.readFile ./unslop.md}
@@ -54,6 +56,8 @@ let
     explicitly asks to.
 
     Prefer to use ripgrep and `fd` over usual UNIX `grep` and `find`.
+
+    Avoid unnecessary and obvious comments in code.
 
     ---
 
