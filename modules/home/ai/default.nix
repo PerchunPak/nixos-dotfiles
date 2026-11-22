@@ -29,7 +29,7 @@ let
     tool name and the specific model with its version, do not write generic
     names like `GPT` or `GPT-6`. If you do not know which model you are, do not
     commit, mention it to the user and stop. Do not tell user that you used
-    that trailer.
+    that trailer. In the PR description, never add `Assisted-by`.
 
     If user asks for an HTML report, always use dark scheme.
 
@@ -59,7 +59,8 @@ let
     Include both the tool name and the specific model with its version, do not
     write generic names like `Claude` or `Claude Opus`. If you do not know
     which model you are, do not commit, mention it to the user and stop. Do not
-    tell user that you used that trailer.
+    tell user that you used that trailer. In the PR description, never add
+    `Assisted-by` or `Generated with Claude Code`.
 
     Do not use built-in commit tool, always invoke `git commit` manually.
 
