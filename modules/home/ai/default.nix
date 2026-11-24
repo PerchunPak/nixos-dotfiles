@@ -29,6 +29,10 @@ let
     Prefer to use ripgrep and `fd` over usual UNIX `grep` and `find`.
 
     Do not add unnecessary and obvious comments in code.
+
+    If user asks you to commit, and the current branch is the default one (e.g.
+    main or master), commit directly on this branch. Do not create a feature
+    branch unless instructed otherwise.
   '';
   codex-md = ''
     ${comma-skill}
