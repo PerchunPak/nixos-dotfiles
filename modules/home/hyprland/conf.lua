@@ -31,6 +31,11 @@ hl.bind("SUPER + X", hl.dsp.exec_cmd("@rofi-menu@ clipboard"))
 hl.bind("SUPER + B", hl.dsp.exec_cmd("variety --next"))
 hl.bind("ALT + F8", hl.dsp.exec_cmd("uwsm app -- @autoclicker-script@"))
 hl.bind("SUPER + SHIFT + B", hl.dsp.exec_cmd("variety --previous"))
+hl.bind("SUPER + F12", function()
+	hl.timer(function()
+		hl.dispatch(hl.dsp.dpms({ action = "off" }))
+	end, { timeout = 500, type = "oneshot" })
+end)
 
 -- Window actions
 hl.bind("SUPER + C", hl.dsp.window.close())
@@ -199,6 +204,8 @@ hl.animation({
 hl.config({
 	misc = {
 		middle_click_paste = false,
+		key_press_enables_dpms = true,
+		mouse_move_enables_dpms = false,
 	},
 	ecosystem = {
 		no_update_news = true,
