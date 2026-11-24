@@ -155,7 +155,7 @@ hl.config({
 	},
 
 	render = {
-		cm_auto_hdr = true,
+		cm_enabled = false,
 	},
 })
 
