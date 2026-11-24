@@ -33,6 +33,9 @@ let
     If user asks you to commit, and the current branch is the default one (e.g.
     main or master), commit directly on this branch. Do not create a feature
     branch unless instructed otherwise.
+
+    If you want to write a Python script and need dependencies, create a uv
+    script.
   '';
   codex-md = ''
     ${comma-skill}
