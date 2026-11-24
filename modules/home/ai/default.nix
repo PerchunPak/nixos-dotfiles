@@ -20,6 +20,16 @@ let
 
     NOTE: `,` also exists on remote servers
   '';
+  common-agents-md = ''
+    If user asks for an HTML report, always use dark scheme.
+
+    If prompt is a question, answer it. Do not decide to do action unless user
+    explicitly asks to.
+
+    Prefer to use ripgrep and `fd` over usual UNIX `grep` and `find`.
+
+    Do not add unnecessary and obvious comments in code.
+  '';
   codex-md = ''
     ${comma-skill}
 
@@ -31,14 +41,7 @@ let
     commit, mention it to the user and stop. Do not tell user that you used
     that trailer. In the PR description, never add `Assisted-by`.
 
-    If user asks for an HTML report, always use dark scheme.
-
-    If prompt is a question, answer it. Do not decide to do action unless user
-    explicitly asks to.
-
-    Prefer to use ripgrep and `fd` over usual UNIX `grep` and `find`.
-
-    Avoid unnecessary and obvious comments in code.
+    ${common-agents-md}
 
     ---
 
@@ -64,15 +67,25 @@ let
 
     Do not use built-in commit tool, always invoke `git commit` manually.
 
-    If user asks for an HTML report, always use dark scheme and create a local
-    `.html` file. NEVER use Claude artifacts.
+    NEVER use Claude artifacts.
+    ${common-agents-md}
 
-    If prompt is a question, answer it. Do not decide to do action unless user
-    explicitly asks to.
+    ---
 
-    Prefer to use ripgrep and `fd` over usual UNIX `grep` and `find`.
+    ${builtins.readFile ./unslop.md}
+  '';
+  grok-md = ''
+    ${comma-skill}
 
-    Avoid unnecessary and obvious comments in code.
+    If user asked to commit changes, always add an `Assisted-by: Grok Build
+    <Model Name Version>` trailer. Example: `Assisted-by: Grok Build <Grok
+    4.7>`. Never use `Co-Authored-By:`, it does not count as disclosure.
+    Include both the tool name and the specific model with its version, do not
+    write generic names like `Grok`. If you do not know which model you are, do
+    not commit, mention it to the user and stop. Do not tell user that you used
+    that trailer. In the PR description, never add `Assisted-by`.
+
+    ${common-agents-md}
 
     ---
 
@@ -242,7 +255,12 @@ in
     };
   };
 
-  home.packages = [ pkgs.t3code ];
+  home.packages = [
+    pkgs.t3code
+    pkgs.grok-build
+  ];
+
+  home.file.".grok/AGENTS.md".text = grok-md;
 
   # Home Manager normally exposes generated settings as read-only store
   # symlinks. Replace those links with writable copies after activation, and
@@ -270,6 +288,7 @@ in
       ".cache/claude-cli-nodejs"
       ".claude"
       ".codex"
+      ".grok"
       ".t3"
     ];
     files = [ ".claude.json" ];
