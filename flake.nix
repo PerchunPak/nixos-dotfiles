@@ -108,6 +108,7 @@
           builtins.elem (lib.getName pkg) [
             "7zz"
             "claude-code"
+            "grok-build"
             "steam"
             "steam-original"
             "steam-run"
