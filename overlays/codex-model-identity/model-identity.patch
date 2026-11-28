@@ -1,0 +1,29 @@
+diff --git a/core/src/client.rs b/core/src/client.rs
+--- a/core/src/client.rs
++++ b/core/src/client.rs
+@@ -1289,16 +1289,16 @@ impl ModelClient {
+         } else {
+             Some(create_tools_raw_json_for_responses_api(&prompt.tools)?.into())
+         };
+-        if !prompt.base_instructions.text.is_empty() {
+-            let mut instructions = ContextualUserFragment::into(BaseInstructionsFragment(
+-                prompt.base_instructions.text.clone(),
+-            ));
+-            instructions.set_id(Some(ResponseItemId::with_suffix(
+-                "msg",
+-                Uuid::new_v5(&prefix_namespace, prompt.base_instructions.text.as_bytes()),
+-            )));
+-            prefix.push(instructions);
++        let mut instructions_text = format!("You are Codex, running as {}.", model_info.slug);
++        if !prompt.base_instructions.text.is_empty() {
++            instructions_text.push_str("\n\n");
++            instructions_text.push_str(&prompt.base_instructions.text);
+         }
++        let instructions_id = Uuid::new_v5(&prefix_namespace, instructions_text.as_bytes());
++        let mut instructions =
++            ContextualUserFragment::into(BaseInstructionsFragment(instructions_text));
++        instructions.set_id(Some(ResponseItemId::with_suffix("msg", instructions_id)));
++        prefix.push(instructions);
+         input.splice(0..0, prefix);
+         if !model_info.use_responses_lite {
+             // Only RLite accepts per-content attribution until the Responses API schema expands.
